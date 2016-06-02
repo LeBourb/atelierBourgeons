@@ -1,0 +1,178 @@
+/*
+html {
+    background: url(../img/homepage.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}*/
+
+
+#page {
+    position: relative;
+	min-height: 100%;
+}
+img.bgimg {
+    position: absolute;
+    top: 0px;
+    height: auto;
+    max-width: none;
+    display: block;
+}
+
+img.bgimg.show {
+    -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 3s; /* Firefox < 16 */
+    -ms-animation: fadein 3s; /* Internet Explorer */
+    -o-animation: fadein 3s; /* Opera < 12.1 */
+    animation: fadein 3s;
+    display : inline;
+}
+
+img.bgimg.hide {
+    -webkit-transition: fadeout 3s;
+    -moz-transition: fadeout 3s;
+    -ms-transition: fadeout 3s;
+    -o-transition: fadeout 3s;
+    display: none;
+}
+
+#cart-icon{
+    position: absolute;
+    top: 10px;
+    right: 400px;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+}
+
+#cart-icon > img {
+    width: 100%;
+}
+
+#about-page {
+
+    position: relative;
+    width: 1000px;
+    height: 75%;
+    min-height: 470px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    background-color: #fff;
+    display: none;
+    z-index: 100;
+    padding: 10px 20px 30px 20px;
+}
+
+#about-page.hide {
+    animation: movedown 2s 1 normal ease-out;
+    display: block;
+    top: 1000px;
+}
+
+#about-page.show {
+    animation: moveup 2s 1 normal ease-out;
+    display: block;
+}
+
+@keyframes moveup {
+    0% {
+        top:1000px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+
+@keyframes movedown {
+    0% {
+        top:0px;
+    }
+    100% {
+        top: 1000px;
+    }
+}
+
+#about-img {
+    display: inline-block;
+    width: 30%;
+    text-align: left;
+}
+
+#about-txt {
+    float: right;
+    text-align: center;
+    width: 55%;
+}
+
+#about-close {
+    width: 4ex;
+    text-align: center;
+    position: relative;
+    max-width: inherit;
+    margin: auto;
+    cursor: pointer;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+
+
+
+
+body {
+    overflow: hidden;
+    margin: 0px;
+    min-height: 100%;
+    min-width: 100%;
+    height: 100%;
+    position: absolute;
+
+}
+
+@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+    #about-page {
+        width: 100%;
+        height: auto;
+    }
+
+
+    #about-img {
+        display: block;
+    }
+}
+
+
+@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+    #about-page {
+        width: 100%;
+        height: auto;
+        overflow-y: scroll;
+    }
+
+
+    #about-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2em;
+    }
+
+    #about-txt {
+        text-align: center;
+        width: 100%;
+    }
+
+}
+
+

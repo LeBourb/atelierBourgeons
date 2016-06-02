@@ -1,0 +1,254 @@
+/***************
+ * Intro Panel *
+*************
+section#story-header {
+    color : #666;
+    .start {
+        top: 5px
+    }
+
+    .focus {
+        top: 50px
+    }
+
+    .to {
+        top: 500px
+    }
+
+    .end {
+        top: 5000px
+    }
+}
+
+
+#story-header #logo {
+    margin : 0px 0 0px 0;
+
+}
+
+#story-header h2 {
+    font-family: "Caecilia-Roman", Verdana, sans-serif;
+}
+
+#story-header .story {
+    width         : 850px;
+    padding-right : 0px;
+}
+
+#story-header p {
+    width     : 800px;
+    font-size : 16px;
+}
+
+#story-header ul li {
+    font-size : 16px;
+    margin    : 16px 0;
+}
+
+#story-header ul {
+    padding : 0px;
+}
+*/
+section {
+    display: inline-block; /* change the default display type to inline-block */
+    overflow: hidden;
+}
+
+.__web-inspector-hide-shortcut__{
+    display: none;
+}
+
+/***************
+ * Intel Panel *
+ ***************/
+section#story-header{
+    height : 100%;
+    min-height: 300px;
+    //max-height: 500px;
+}
+/*section#story-header.end {
+    top: 200px
+}*/
+
+
+section#story-foo{
+    height : 50%;
+    //max-height: 200px;
+}
+/*
+section#story-foo.end {
+    top: 300px;
+}
+*/
+#story-foo {
+    color      : #FFF;
+    background : #022639;
+}
+
+section#story-intel {
+    height : 80%;
+    //max-height: 200px;
+}
+
+img.bg.animate {
+    //position: fixed;
+    //width:auto;
+    //height:auto;
+    z-index: -1;
+}
+
+img.bg.animate.start {
+    top : -100px;
+}
+
+img.bg.animate.focus {
+    top : 0px;
+}
+
+img.bg.animate.end {
+    top : 100px;
+}
+
+
+/*
+section#story-intel.end {
+    top: 500px;
+}
+
+section#story-footer {
+    height : 100px;
+}
+
+section#story-footer.end {
+    top: 600px;
+}
+*/
+/*********************
+ * Ultrabook Project *
+ *********************/
+#story-william {
+    color      : #CCC;
+    background : #000;
+}
+
+#story-william .bg {
+    left  : auto;
+    right : 0px;
+}
+
+/**************
+ * Bing Panel *
+ **************/
+#story-bing {
+    color       : #FFF;
+    text-shadow : 1px 1px 1px #000;
+    background  : #C9BC33;
+}
+
+#story-bing .logo {
+    position : absolute;
+    right    : 20%;
+    bottom   : 50%;
+}
+
+#story-bing .logo.start {
+    bottom : 190%;
+}
+
+#story-bing .logo.end {
+    bottom : -90%;
+}
+
+/**************
+ * Nike Panel *
+ **************/
+#story-nike {
+    color      : #CCC;
+    background : #000;
+}
+
+#story-nike .logo {
+    position : absolute;
+    right    : 0%;
+    bottom   : 30%;
+}
+
+#story-nike .logo.start {
+    bottom : 170%;
+}
+
+#story-nike .logo.end {
+    bottom : -210%;
+}
+
+#story-nike .box {
+    background    : #000;
+    opacity       : .7;
+    border-radius : 10px;
+    position      : absolute;
+    top           : -10px;
+    right         : 440px;
+    bottom        : -10px;
+    left          : -10px;
+    z-index       : -1;
+}
+
+#story-nike ul.slide {
+    display     : block;
+    position    : absolute;
+    white-space : nowrap;
+    left        : -1426px;
+}
+
+#story-nike ul.slide.start {
+    left : -1425px;
+}
+
+#story-nike ul.slide li {
+    display : inline;
+}
+
+#story-nike ul.slide-1.start { opacity : 0; }
+#story-nike ul.slide-2.start { opacity : 0; }
+#story-nike ul.slide-3.start { opacity : 0; }
+
+#story-nike ul.slide-1 {
+    bottom : 0px;
+}
+
+#story-nike ul.slide-2, #story-nike ul.slide-2.to {
+    bottom : 176px;
+    left   : -1425px;
+}
+
+#story-nike ul.slide-2.start {
+    left : -1426px;
+}
+
+#story-nike ul.slide-3 {
+    bottom : 352px;
+}
+
+
+#story-nike ul.slide-1.to, #story-nike ul.slide-3.to {
+    left : -1425px;
+}
+
+#story-nike ul.slide-1.end {
+    right : 0px;
+    left  : auto;
+}
+
+#story-nike ul.slide-3.end {
+    right : 1200px;
+    left  : auto;
+}
+
+
+#story-nike ul.slide-2.to {
+    right : 0px;
+}
+
+#story-nike ul.slide-2.end {
+    left : 200px;
+}

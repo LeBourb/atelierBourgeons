@@ -1,0 +1,100 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 17 avr. 2016, 00:50:55
+    Author     : Romain
+
+
+@font-awesome {
+    font-family: font-awesome;
+    src: url(wp-content/themes/storefront-child/fonts/fontawesome-webfont.ttf);
+    font-weight: normal;
+}
+
+
+
+.fa-google-plus:before {
+    content: "\f0d5";
+}
+
+.fa-twitter:before {
+    content: "\f099";
+}
+
+.fa-facebook:before {
+    content: "\f09a";
+}
+
+.fa-linkedin:before {
+    content: "\f0e1";
+}
+
+.fa-instagram:before {
+    content: "\f16d";
+}
+
+.fa-pinterest:before {
+    content: "\f0d2";
+}
+
+body {
+    font-family: "\"Raleway\",\"Open Sans\",sans-serif,Helvetica,Arial";
+}*/
+.site-content {
+    background-color: #f8f8f8;
+}
+
+article{
+    background-color: white;
+    margin: 1em!important;
+}
+
+.share-product {
+    font-family: font-awesome;
+}
+
+.entry-content{
+    width: 100%!important;
+    float: none!important;
+}
+
+.col-full {
+    max-width: 90%;
+}
+
+.comments-area {
+    background-color: white;
+    margin:1em;
+    padding: 1em;
+}
+
+.author-header{
+    width: 100%;
+    height: 10em;
+    background-color: white;
+    margin: 1em;
+}
+
+@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+    .col-full{
+        width: 100%;
+        display: block;
+        max-width: 100%;
+    }
+    .content-area{
+        width:100%;
+        display: block;
+    }
+    .comments-area {
+        margin:1em;
+        padding: 1em;
+    }
+
+    #secondary {
+        display: block;
+
+    }
+}

@@ -1,0 +1,78 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 10 avr. 2016, 21:42:34
+    Author     : Romain
+*/
+
+@font-awesome {
+    font-family: font-awesome;
+    src: url(wp-content/themes/storefront-child/fonts/fontawesome-webfont.ttf);
+    font-weight: normal;
+}
+
+.share {
+    font-family: font-awesome!important;
+}
+#page {
+    min-width: 100%!important;
+}
+.col-full {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+
+}
+#primary{
+    margin-right: 1em;
+}
+article{
+    display: block;
+    width: 90%;
+    position: absolute;
+}
+
+.col-2 {
+    width: 45%;
+}
+
+.entry-content {
+    background-color: white;
+    width: 100%!important;
+}
+
+.hentry {
+    margin: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+#primary {
+    width : 100%;
+}
+
+.navigation.pagination {
+    position: absolute;
+    width: 100%;
+}
+
+.more-link {
+    display: table;
+    text-align: center;
+    margin-top: 1em;
+    border-bottom-width: 0.2em;
+    border-color: blue;
+    border-width: 0.2em;
+    border: 2px solid #987678;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.1em;
+}
+
+@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+
+}

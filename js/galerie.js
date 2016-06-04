@@ -154,4 +154,22 @@ $(document).ready(function() {
     
     $(window).resize(onresize);
     onresize();
+    
+    // on aviche de l'overlay quand on passe la souris sur l'image
+    $articles.each( function( idx ){
+           var article = $($articles[idx]);
+           article.mouseenter(function() {
+               $(this).find('.overlay').show();
+           }) ;
+           article.mouseleave(function() {
+               $(this).find('.overlay').hide();
+           }) ;
+    });
+    
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true
+    })
+    lightbox.init();
+    lightbox.start();
 });

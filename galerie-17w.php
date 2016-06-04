@@ -17,9 +17,15 @@
 <div class="galerie am-container" id="am-container">
 <?php 
 $images = get_attached_media('image', $post->ID);
+$index = 0;
 foreach($images as $image) { 
+    $index++;
    $image_attributes = wp_get_attachment_image_src($image->ID,'full');
    ?>
-    <a href="#" class="am-wrapper" style="display:none"><img src="<?php echo $image_attributes[0]?>" /></a>
+    <a href="<?php echo $image_attributes[0]?>" data-lightbox="roadtrip" class="am-wrapper" style="display:none" data-title="Optional caption."><img src="<?php echo $image_attributes[0]?>" />
+    
+					<div class="overlay" style="opacity: 0.9; display:none;"></div>
+				 
+				</a>
 <?php } ?>
 </div>

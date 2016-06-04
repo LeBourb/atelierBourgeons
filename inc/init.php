@@ -16,7 +16,7 @@
  * Structure.
  * Template functions used throughout the theme.
  */
-require_once(STYLESHEETPATH . '/inc/structure/hooks.php');
+
 // supprimé ??? 
 //require get_template_directory() . '/inc/structure/post.php';
 //require get_template_directory() . '/inc/structure/page.php';
@@ -24,10 +24,12 @@ require_once(STYLESHEETPATH . '/inc/structure/header.php');
 
 require_once(STYLESHEETPATH . '/inc/structure/post.php');
 
-require get_template_directory() . '/inc/class-storefront.php';
+//require get_template_directory() . '/inc/class-storefront.php';
 //require get_template_directory() . '/inc/storefront-functions.php';
 //require get_template_directory() . '/inc/storefront-template-functions.php';
-require get_template_directory() . '/inc/storefront-template-hooks.php';
+//require get_template_directory() . '/inc/storefront-template-hooks.php';
+
+require_once(STYLESHEETPATH . '/inc/structure/hooks.php');
 
 /**
  * Custom functions that act independently of the theme templates.
@@ -42,7 +44,7 @@ require get_template_directory() . '/inc/storefront-template-hooks.php';
 	
 	//require get_template_directory() . '/inc/customizer/custom-header.php';
 }*/
-require get_template_directory() . '/inc/customizer/class-storefront-customizer.php';
+//require get_template_directory() . '/inc/customizer/class-storefront-customizer.php';
 	
 	//require get_template_directory() . '/inc/customizer/class-storefront-customizer-control-more.php';
 	//require get_template_directory() . '/inc/customizer/class-storefront-customizer-control-radio-image.php';
@@ -64,9 +66,9 @@ if ( is_admin() ) {
  * Load WooCommerce compatibility files.
 */
 //if ( is_woocommerce_activated() ) {
-	require get_template_directory() . '/inc/woocommerce/class-storefront-woocommerce.php';
-	require get_template_directory() . '/inc/woocommerce/storefront-woocommerce-template-functions.php';
-	require get_template_directory() . '/inc/woocommerce/storefront-woocommerce-template-hooks.php';
+	//require get_template_directory() . '/inc/woocommerce/class-storefront-woocommerce.php';
+	//require get_template_directory() . '/inc/woocommerce/storefront-woocommerce-template-functions.php';
+	//require get_template_directory() . '/inc/woocommerce/storefront-woocommerce-template-hooks.php';
 	
 	require_once(STYLESHEETPATH . '/inc/woocommerce/functions.php');
 	require_once(STYLESHEETPATH . '/inc/woocommerce/template-tags.php');

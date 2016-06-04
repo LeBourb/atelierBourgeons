@@ -11,7 +11,7 @@
  *
  * @package storefront
  */ 
-    //get_header(); 
+    get_header(); 
 ?>
 <div id="bgimgs">
     <img src ="wp-content/themes/storefront-child/img/homepage.jpg" class="bgimg show" />
@@ -26,7 +26,7 @@
     </div>
 </div>
 </div> 
-<?php //wp_footer(); 
+<?php wp_footer(); 
 ?>
 </body>
 </html>

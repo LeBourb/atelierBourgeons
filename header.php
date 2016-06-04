@@ -4,12 +4,12 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package storefront
+ * @package storefront coucou
  */
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?> <?php storefront_html_tag_schema(); ?>>
+<html <?php language_attributes(); ?> <?php /*storefront_html_tag_schema();*/ ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -64,18 +64,16 @@
 	 * @hooked storefront_header_widget_region - 10
 	 */
 	 $shop_page_url = get_permalink( woocommerce_get_page_id( 'shop' ) );
-	do_action( 'storefront_before_content' ); ?>
+	//do_action( 'storefront_before_content' ); ?>
 
 	
             <div id="cssmenu">                
                 <ul id="menu-large">
                    <li id="sp_close" style="display:none"><a href="#" id="sp_close_button">メニューを閉じる</a></li>
-                   <li><a href="#">Home</a></li>
+                   <li><a href="<?php echo get_home_url(); ?>">Home</a></li>
                    <li class="has-sub"><span class="submenu-button"></span><a href="#">Look book</a>
                       <ul>
-                         <li class=""><span class="submenu-button"></span><a href="#">Automne-Hiver 2016</a>                            
-                         </li>
-                         <li class=""><span class="submenu-button"></span><a href="#">Printemps-Ete 2016</a>                            
+                         <li class=""><span class="submenu-button"></span><a href="<?php echo get_permalink(get_page_by_title( 'Galerie17W' )); ?>">Automne-Hiver 2016</a>                            
                          </li>
                       </ul>
                    </li>
@@ -88,11 +86,7 @@
                 <div id="menu-button"></div>
             </div>         
 
-		<?php
-		/**
-		 * @hooked woocommerce_breadcrumb - 10
-		 */
-		do_action( 'storefront_content_top' ); ?>
+	
                 
 <?php endif;  ?>
 

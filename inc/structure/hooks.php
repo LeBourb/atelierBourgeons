@@ -31,6 +31,9 @@ add_action( 'storefront_header', 'storefront_skip_links', 				0 );
 add_action( 'storefront_header', 'storefront_child_site_branding',			20 );
 remove_action( 'storefront_header', 'storefront_secondary_navigation',		30 );
 remove_action( 'storefront_header', 'storefront_primary_navigation',		50 );
+remove_action( 'storefront_header', 'storefront_primary_navigation_wrapper',		42 );
+remove_action( 'storefront_header', 'storefront_primary_navigation_wrapper_close',		68 );
+
 
 /**
  * Footer
@@ -94,5 +97,5 @@ add_action( 'storefront_page_after', 	'storefront_display_comments',	10 );
  * @see  storefront_body_classes()
  * @see  storefront_page_menu_args()
  */
-add_filter( 'body_class',			'storefront_body_classes' );
+//add_filter( 'body_class',			'storefront_body_classes' );
 //add_filter( 'wp_page_menu_args',	'storefront_page_menu_args' );

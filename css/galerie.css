@@ -1,0 +1,23 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 4 juin 2016, 13:02:27
+    Author     : Romain
+*/
+
+.am-wrapper{
+    position: absolute
+}
+
+.am-wrapper>img {
+    max-width: none;
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+}

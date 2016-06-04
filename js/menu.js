@@ -52,15 +52,15 @@
 
         resizeFix = function() {
           if ($( window ).width() > 768) {
-            cssmenu.find('ul').show();
+            $('#menu-large').show();
           }
 
           if ($(window).width() <= 768) {
-            cssmenu.find('ul').hide().removeClass('open');
+            $('#menu-large').hide().removeClass('open');
           }
         };
-        //resizeFix();
-        //return $(window).on('resize', resizeFix);
+        resizeFix();
+        return $(window).on('resize', resizeFix);
 
       });
   };

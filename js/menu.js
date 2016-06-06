@@ -104,7 +104,7 @@ $("#cssmenu > ul > li").each(function() {
           }
       });
       
-        if($(this).attr('id') === 'menu-about') {
+        /*if($(this).attr('id') === 'menu-about') {
            if($('#about-page').hasClass('show')) {
              $('#about-page').addClass('hide');
              $('#about-page').removeClass('show')
@@ -113,7 +113,17 @@ $("#cssmenu > ul > li").each(function() {
              $('#about-page').addClass('show');
              $('#about-page').removeClass('hide')
            }
-        }
+        }*/
+      $('#menu-17w').on('click', function() {
+            $('html, body').animate({
+                scrollTop: $("#galerie17w").offset().top
+            }, 2000);
+        })
+        $('#menu-about').on('click', function() {
+            $('html, body').animate({
+                scrollTop: $("#about").offset().top
+            }, 2000);
+        })
     
         
     });

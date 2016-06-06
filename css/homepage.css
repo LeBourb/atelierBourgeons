@@ -16,10 +16,60 @@ html {
 }
 */
 
+galerietitre {
+    width: 100%;
+}
+galerietitre > div {
+    width: 20em;
+    margin: auto;
+    text-align: center;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+section {
+    display: inline-block!important;
+    height: auto;
+    width: 100%;
+    overflow : hidden;
+    position: relative;
+}
+
+.board-right{
+    position: relative;
+    width: 50%;
+    display: inline-block;
+    float: right;
+}
+
+.board{
+    position: relative;
+    width: 100%;
+    display: inline-block;
+}
+
+
+.board-left{
+    position: relative;
+    width: 50%;
+    display: inline-block;
+    float: left;
+}
 #page {
     position: relative;
     min-height: 100%;
 }
+
+#bgimgs>img {
+    max-width: none;
+}
+
 img.bgimg {
     position: absolute;
     top: 0px;
@@ -69,8 +119,7 @@ img.bgimg.hide {
     right: 0px;
     margin: auto;
     background-color: #fff;
-    display: none;
-    z-index: 100;
+    //z-index: 100;
     padding: 10px 20px 30px 20px;
 }
 
@@ -112,7 +161,7 @@ img.bgimg.hide {
 #about-txt {
     float: right;
     text-align: center;
-    width: 55%;
+    width: 50%;
 }
 
 #about-close {
@@ -137,7 +186,7 @@ img.bgimg.hide {
 
 
 
-
+/*
 body {
     overflow: hidden;
     margin: 0px;
@@ -146,7 +195,7 @@ body {
     height: 100%;
     position: absolute;
 
-}
+}*/
 
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
     #about-page {
@@ -165,7 +214,7 @@ body {
     #about-page {
         width: 100%;
         height: auto;
-        overflow-y: scroll;
+        //overflow-y: scroll;
     }
 
 
@@ -182,5 +231,95 @@ body {
     }
 
 }
+
+
+
+// Loader
+
+
+#loader.dontshow {
+    display: none;
+}
+
+.overlay-loader {
+    z-index: 1000;
+}
+
+.overlay-loader .loader-background {
+    -webkit-transition: background-color .2s 0s linear,right .2s .3s ease-out;
+    -moz-transition: background-color .2s 0s linear,right .2s .3s ease-out;
+    -ms-transition: background-color .2s 0s linear,right .2s .3s ease-out;
+    -o-transition: background-color .2s 0s linear,right .2s .3s ease-out;
+    transition: background-color .2s 0s linear,right .2s .3s ease-out;
+}
+
+.overlay-loader .loader-icon {
+    z-index: 1001;
+}
+
+.overlay-loader .loader-icon.spinning-cog {
+    -webkit-animation: spinning-cog 1.3s infinite ease;
+    -moz-animation: spinning-cog 1.3s infinite ease;
+    -ms-animation: spinning-cog 1.3s infinite ease;
+    -o-animation: spinning-cog 1.3s infinite ease;
+    animation: spinning-cog 1.3s infinite ease;
+}
+
+@-webkit-keyframes spinning-cog {
+    0% { -webkit-transform: rotate(0deg) }
+    20% { -webkit-transform: rotate(-45deg) }
+    100% { -webkit-transform: rotate(360deg) }
+}
+
+@-moz-keyframes spinning-cog {
+    0% { -moz-transform: rotate(0deg) }
+    20% { -moz-transform: rotate(-45deg) }
+    100% { -moz-transform: rotate(360deg) }
+}
+
+@-o-keyframes spinning-cog {
+    0% { -o-transform: rotate(0deg) }
+    20% { -o-transform: rotate(-45deg) }
+    100% { -o-transform: rotate(360deg) }
+}
+
+@keyframes spinning-cog {
+    0% { transform: rotate(0deg) }
+    20% { transform: rotate(-45deg) }
+    100% { transform: rotate(360deg) }
+}
+
+@-webkit-keyframes shrinking-cog {
+    0% { -webkit-transform: scale(1) }
+    20% { -webkit-transform: scale(1.2) }
+    100% { -webkit-transform: scale(0) }
+}
+
+@-moz-keyframes shrinking-cog {
+    0% { -moz-transform: scale(1) }
+    20% { -moz-transform: scale(1.2) }
+    100% { -moz-transform: scale(0) }
+}
+
+@-o-keyframes shrinking-cog {
+    0% { -o-transform: scale(1) }
+    20% { -o-transform: scale(1.2) }
+    100% { -o-transform: scale(0) }
+}
+
+@keyframes shrinking-cog {
+    0% { transform: scale(1) }
+    20% { transform: scale(1.2) }
+    100% { transform: scale(0) }
+}
+
+.overlay-loader .loader-icon.shrinking-cog {
+    -webkit-animation: shrinking-cog .3s 1 ease forwards;
+    -moz-animation: shrinking-cog .3s 1 ease forwards;
+    -ms-animation: shrinking-cog .3s 1 ease forwards;
+    -o-animation: shrinking-cog .3s 1 ease forwards;
+    animation: shrinking-cog .3s 1 ease forwards;
+}
+
 
 

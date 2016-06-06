@@ -8,8 +8,19 @@ $(document).ready(function() {
     
     
     var onresize = function () {
-    $main = $(window);//$('#am-container');
+    $main = $('#am-container');
     $articles = $('.am-wrapper');
+    
+    // longeur de section == hauteur d'écran.
+    
+    $('#galerie17w').css({
+        height: window.innerHeight
+    })
+    $('.galerieopen').on('click', function () {
+        $(this.parentElement).css({
+            height: 'auto'
+        });
+    });
     
     var col1 = false, col2 = false, col3 = false, middle = 0;
     var padding = 0;
@@ -20,20 +31,26 @@ $(document).ready(function() {
         middle2 =  $main.width()*2/3;
         padding = (0.01 * $main.width())/4; 
         widthimg = ($main.width())/3 - 2 * padding;  
+        lightbox.enable();
     }
     else if($main.width() > 768) {
         col2 = true;
         middle =  $main.width()/2;
         padding = (0.01 * $main.width())/3; 
         widthimg = ($main.width())/2 - 2 * padding;        
+        lightbox.enable();
     }
     else {
         col1 = true;
-            padding = (0.01 * $main.width())/2;         
+        padding = (0.01 * $main.width())/2;         
         widthimg = $main.width() - 2 * padding;
+        // stop lightbox 
+        lightbox.disable();
     }
     var nav_page = $('.navigation.pagination');
-    var bottom_left= 0, bottom_right = 0, bottom_middle = 0;
+    var main_tp = 0; //$main.position().top
+    
+    var bottom_left= main_tp, bottom_right = main_tp, bottom_middle = main_tp;
             //$main.position().top, bottom_right = $main.position().top,bottom_middle = $main.position().top;
     if($($articles[0]))
     var _isleft = true;
@@ -151,7 +168,12 @@ $(document).ready(function() {
         }        
     });
     };
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true
+    })
     
+    //lightbox.build();    
     $(window).resize(onresize);
     onresize();
     
@@ -166,10 +188,5 @@ $(document).ready(function() {
            }) ;
     });
     
-    lightbox.option({
-      'resizeDuration': 200,
-      'wrapAround': true
-    })
-    lightbox.init();
-    lightbox.start();
+    
 });

@@ -8,9 +8,32 @@ and open the template in the editor.
     Author     : Romain
 */
 
-.am-wrapper{
-    position: absolute
+.am-container{
+    position: relative;
+    width: 100%;
 }
+
+.am-wrapper{
+    position: absolute;
+}
+
+.galerieopen {
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    bottom: 0px;
+    z-index: 1000;
+}
+
+.galerietitre {
+    width: 100%;
+}
+.galerietitre > div {
+    width: 20em;
+    margin: auto;
+    text-align: center;
+}
+
 
 .am-wrapper>img {
     max-width: none;
@@ -33,3 +56,9 @@ body {
     width: 100%;
 }
 
+@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+
+    .am-wrapper {
+        pointer-events: none;
+    }
+}

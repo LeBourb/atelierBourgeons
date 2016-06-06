@@ -3,59 +3,56 @@ $(document).ready(function() {
     bgimgs = $( '#bgimgs' ).children();
     position = 0;
     resize = function () {
-        width = $( window ).width() ;
-        height = $( window ).height() ;
+        width = window.innerWidth;//$( window ).width() ;
+        height = window.innerHeight;//$( window ).height() ;
+        
+        $('#home').css ({
+            height : height
+        });
         
         bgimgs.each( function () {
             
-            var x_width = img_width = this.width;
-            var x_height = img_height = this.height;
+            var x_width = this.clientWidth;
+            var x_height = this.clientHeight;
+            var img_width = this.naturalWidth;
+            var img_height = this.naturalHeight;
             
             var img_ratio = img_width / img_height;
             //var win_ration = width / height;
             var width_ratio = x_width / width;
             var height_ratio = x_height / height;
             //var x_width / x_height = img_width/img_height;
-            
+            if(width_ratio < 1 || height_ratio < 1) {
             while(width_ratio < 1 || height_ratio < 1) {
                 if(width_ratio < 1) {
-                    x_width = width + 0.01 * width;
+                    x_width = x_width * 1.1;
                     x_height = x_width / img_ratio;
                 }else {
-                    x_height = height + 0.01 * height;
+                    x_height = x_height * 1.1;
                     x_width = x_height * img_ratio;
                 }                
                 width_ratio = x_width / width;
                 height_ratio = x_height / height;
             }
+        }else {
 
-            while(width_ratio > 1.2 || height_ratio > 1.2) {
+            while( (width_ratio > 1.2 || height_ratio > 1.2) && (height_ratio > 1) ) {
                 if(width_ratio > 1.2) {
-                    x_width = width + 0.1 * width;
+                    x_width = x_width * 0.9;
                     x_height = x_width / img_ratio;
                 }else if (height_ratio > 1.2) {
-                    x_height = height + 0.1 * height;
-                    x_width = x_height * img_ratio;
+                    x_height = x_height * 0.9;
                     x_width = x_height * img_ratio;
                 }
                 width_ratio = x_width / width;
                 height_ratio = x_height / height;
             }
+        }
             
-             while(width_ratio < 1 || height_ratio < 1) {
-                if(width_ratio < 1) {
-                    x_width = width + 0.01 * width;
-                    x_height = x_width / img_ratio;
-                }else {
-                    x_height = height + 0.01 * height;
-                    x_width = x_height * img_ratio;
-                }                
-                width_ratio = x_width / width;
-                height_ratio = x_height / height;
-            }
+             
 
             
-            $(this).css("width",x_width);
+            $(this).css("width",x_height*img_ratio);
             $(this).css("height",x_height);
             
         })
@@ -75,35 +72,42 @@ $(document).ready(function() {
         
     }, 10000);
     
-    $('#about-close').click(function () {
+    /*$('#about-close').click(function () {
         $('#about-page').addClass('hide');
         $('#about-page').removeClass('show');
        
-    })
+    })*/
     
-    var $container 	= $('#am-container'),
-					$imgs		= $container.find('img').hide(),
-					totalImgs	= $imgs.length,
-					cnt			= 0;
+    /*var $container 	= $('#am-container'),
+        $imgs		= $container.find('img').hide(),
+        totalImgs	= $imgs.length,
+        cnt		= 0;
 				
-				$imgs.each(function(i) {
-					var $img	= $(this);
-					$('<img/>').load(function() {
-						++cnt;
-						if( cnt === totalImgs ) {
-							$imgs.show();
-							$container.montage({
-								fillLastRow	: false,
-alternateHeight	: false,
-margin : 5
-							});
-							
-							/* 
-							 * just for this demo:
-							 */
-							$('#overlay').fadeIn(500);
-						}
-					}).attr('src',$img.attr('src'));
-				});	
+    $imgs.each(function(i) {
+            var $img	= $(this);
+            $('<img/>').load(function() {
+                    ++cnt;
+                    if( cnt === totalImgs ) {
+                            $imgs.show();
+                            $container.montage({
+                                    fillLastRow	: false,
+                                    alternateHeight	: false,
+                                    margin : 5
+                            });
+
+                            $('#overlay').fadeIn(500);
+                    }
+            }).attr('src',$img.attr('src'));
+            
+    });	*/
+    
+    
+    
+    $('.loader-icon.spinning-cog').removeClass("spinning-cog");
+    $('.loader-icon.spinning-cog').toggle("shrinking-cog");
+    setTimeout(function(){ 
+    $('#loader').removeClass( "show" );
+    $('#loader').toggle( "dontshow" );}
+    ,2000);
     
 });

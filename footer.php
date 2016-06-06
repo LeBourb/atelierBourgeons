@@ -8,12 +8,11 @@
  */
 ?>
 
- <?php if(is_front_page()) : ?>		
-</body>
-</html>
+ <?php// if(is_front_page())</body></html> : ?>		
 
 
- <?php else : ?>
+
+ <?php //else : ?>
         		</div><!-- .col-full -->
 	</div><!-- #content -->
 
@@ -27,6 +26,8 @@
 			 * @hooked storefront_footer_widgets - 10
 			 * @hooked storefront_credit - 20
 			 */
+                        if(is_front_page)
+                            remove_action( 'storefront_footer',                  'storefront_handheld_footer_bar',         999 );
 			do_action( 'storefront_footer' ); ?>
 
 		</div><!-- .col-full -->
@@ -42,4 +43,4 @@
 </html>
 
         
- <?php endif; ?>
+ <?php //endif; ?>

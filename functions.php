@@ -26,6 +26,17 @@
             wp_enqueue_script('script-homepage');
             
             
+            
+            wp_register_style( 'lightboxcss', get_stylesheet_directory_uri() . '/css/lightbox.css' );
+            wp_register_script( 'lightboxjs', get_stylesheet_directory_uri() . '/js/lightbox.js'); 
+            wp_enqueue_script('lightboxjs');
+            wp_enqueue_style('lightboxcss');
+            
+            wp_enqueue_style( 'child-galeriecss', get_stylesheet_directory_uri() . '/css/galerie.css');
+            wp_register_script('script-galerie', get_stylesheet_directory_uri() . '/js/galerie.js' );
+            wp_enqueue_script('script-galerie');
+            
+            
         } else if ( is_shop() || is_product() || is_product_category()){
             wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
             
@@ -62,7 +73,7 @@
             wp_register_style( 'lightboxcss', get_stylesheet_directory_uri() . '/css/lightbox.css' );
             wp_register_script( 'menu-stylejs', get_stylesheet_directory_uri() . '/js/menu.js' );
             wp_register_style( 'child-sidemenucss', get_stylesheet_directory_uri() . '/css/jquery.sidr.light.css');
-            wp_enqueue_style( 'child-galeriecss', get_stylesheet_directory_uri() . '/css/galerie.css');
+            
             wp_register_script( 'child-sidemenu', get_stylesheet_directory_uri() . '/js/jquery.sidr.min.js'); 
             wp_register_script( 'lightboxjs', get_stylesheet_directory_uri() . '/js/lightbox.js'); 
             wp_enqueue_script('child-sidemenu');
@@ -76,8 +87,9 @@
             //wp_register_script( 'automatic-image-montagejs', get_stylesheet_directory_uri() . '/js/automatic-image-montage.js' );
             //wp_enqueue_script('automatic-image-montagejs');
             //wp_enqueue_style( 'automatic-image-montage', get_stylesheet_directory_uri() . '/css/automatic-image-montage.css' );
-            wp_register_script('script-homepage', get_stylesheet_directory_uri() . '/js/galerie.js' );
-            wp_enqueue_script('script-homepage');
+            wp_enqueue_style( 'child-galeriecss', get_stylesheet_directory_uri() . '/css/galerie.css');
+            wp_register_script('script-galerie', get_stylesheet_directory_uri() . '/js/galerie.js' );
+            wp_enqueue_script('script-galerie');
             
         }
        

@@ -30,6 +30,7 @@
     this.album = [];
     this.currentImageIndex = void 0;
     this.init();
+    this._isenable = false;
 
     // options
     this.options = $.extend({}, this.constructor.defaults);
@@ -69,11 +70,21 @@
   // that contain 'lightbox'. When these are clicked, start lightbox.
   Lightbox.prototype.enable = function() {
     var self = this;
+    // check is already enabled
+    if(this._isenable)  return; 
+    this._isenable = true;
     $('body').on('click', 'a[rel^=lightbox], area[rel^=lightbox], a[data-lightbox], area[data-lightbox]', function(event) {
       self.start($(event.currentTarget));
       return false;
     });
   };
+  
+  Lightbox.prototype.disable = function() {
+    if(!this._isenable)  return; 
+    this._isenable = false;
+    $('body').off('click', 'a[rel^=lightbox], area[rel^=lightbox], a[data-lightbox], area[data-lightbox]');
+  };
+
 
   // Build html for the lightbox and the overlay.
   // Attach event handlers to the new DOM elements. click click click

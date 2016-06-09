@@ -16,6 +16,26 @@ html {
 }
 */
 
+.socialicon {
+    position: absolute;
+    width: 5%;
+    top: 50%;
+    color: white;
+    font: normal normal normal 1em/1 FontAwesome;
+}
+
+.socialicon-f {
+    left: 95%;
+}
+
+.socialicon-t {
+    left: 90%;
+}
+
+.socialicon-i {
+    left: 85%;
+}
+
 galerietitre {
     width: 100%;
 }
@@ -52,8 +72,36 @@ section {
     position: relative;
     width: 100%;
     display: inline-block;
+    height: 100%;
 }
 
+.langue{
+    position: absolute;
+    width: 100%;
+    top: 5%;
+    color: white;
+}
+
+.fr {
+    left: 80%;
+}
+
+.en {
+    left: 85%;
+}
+
+.jp {
+    left: 90%;
+}
+
+.fa-shopping-cart {
+    width: 10%;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    color: white;
+    font: normal normal normal 1em/1 FontAwesome;
+}
 
 .board-left{
     position: relative;

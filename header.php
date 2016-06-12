@@ -56,36 +56,59 @@
 		 * @hooked woocommerce_breadcrumb - 10
 		 */
 		//do_action( 'storefront_content_top' ); ?>
-<?php elseif (is_home() || is_single()) : ?>          
-<?php else: ?>          
-	
-	<?php
-	/**
-	 * @hooked storefront_header_widget_region - 10
-	 */
-	 $shop_page_url = get_permalink( woocommerce_get_page_id( 'shop' ) );
-	//do_action( 'storefront_before_content' ); ?>
-
-	
-            <div id="cssmenu">                
+<?php //elseif (is_home() || is_single()) : 
+else:
+    $cur_lang = pll_current_language(); 
+                
+    if($cur_lang == 'fr') {
+        $close = "fermer le menu";
+        $galerie= "Galerie";
+        $galerie17w= "Automne Hiver 2017";
+        $boutique= "Boutique";
+        $blog= "Blog";
+        $concept= "Concept";
+        $contact= "Contact";
+    } else  {
+        $close = "close menu";
+        $galerie= "Look Book";
+        $galerie17w= "Winter 17";
+        $boutique= "Shop";
+        $blog= "Blog";
+        $concept= "Concept";
+        $contact= "Contact";
+    }
+    global $polylang;
+    $pageids = get_option('page_for_posts' );  
+    $blog_ids = $polylang->model->get_translations('page', $pageids);  
+    $blog_id = $blog_ids[pll_current_language()];
+    
+    $shop_id = woocommerce_get_page_id( 'shop' );
+    $shop_ids = $polylang->model->get_translations('page', $shop_id);  
+    $shop_id = $shop_ids[pll_current_language()];
+    
+                // j'affiche le contenu de la page About dans la langue courrante 
+         //       print_r($blog_ids);
+    
+    ?>
+                    
+    <div id="cssmenu">                
                 <ul id="menu-large">
-                   <li id="sp_close" style="display:none"><a href="#" id="sp_close_button">メニューを閉じる</a></li>
-                   <li><a href="<?php echo get_home_url(); ?>">Home</a></li>
-                   <li class="has-sub"><span class="submenu-button"></span><a href="#">Look book</a>
+                   <li id="sp_close" style="display:none"><a href="#" id="sp_close_button"><?php echo $close ?></a></li>                   
+                   <li class="has-sub"><span class="submenu-button"></span><a href="#"><?php echo $galerie ?></a>
                       <ul>
-                         <li class=""><span class="submenu-button"></span><a href="<?php echo get_permalink(get_page_by_title( 'Galerie17W' )); ?>">Automne-Hiver 2016</a>                            
+                         <li id="menu-17w"><span class="submenu-button"></span><a><?php echo $galerie17w ?></a>                            
                          </li>
                       </ul>
                    </li>
 				   
-                   <li id="menu-boutique"><a href=<?php echo($shop_page_url) ?>>Boutique</a></li>
-                   <li id="menu-boutique"><a href=<?php echo get_permalink( get_option('page_for_posts' ) );?> >Blog</a></li>
-                   <li id="menu-about"><a href="#">Concept</a></li>
-                   <li><a href="#">Contact</a></li>
+                   <li id="menu-boutique"><a href=<?php echo get_permalink( get_page($shop_id) ) ?>><?php echo $boutique ?></a></li>
+                   <li id="menu-blog"><a href=<?php echo get_permalink( get_page($blog_id) );?> ><?php echo $blog ?></a></li>
+                   <li id="menu-about"><a><?php echo $concept ?></a></li>
+                   <li><a href="#"><?php echo $contact ?></a></li>
                 </ul>
                 <div id="menu-button"></div>
-            </div>         
-
+                
+            </div>        
 	
                 
 <?php endif;  ?>

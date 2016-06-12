@@ -12,18 +12,18 @@
  * @package storefront
  */ 
     //get_header(); 
- $lang=get_query_var("lang");
- echo $lang
+
+
 ?>
 
-<html <?php language_attributes();  ?> ><?php echo get_language_code();/*storefront_html_tag_schema();*/ ?>
+<html <?php language_attributes();  ?> ><?php /*storefront_html_tag_schema();*/ ?>
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
-<svg viewBox="70 -100 100 400" enable-background="new 0 0 500 300" width="500px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="612px" xml:space="preserve" style="position: absolute; width: 50%; display: block; z-index: 2000; height: 50%; top: 25%; left: 25%;">
+</head>
+    <svg viewBox="70 -100 100 400" enable-background="new 0 0 500 300" width="500px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="612px" xml:space="preserve" style="position: absolute; width: 50%; display: block; z-index: 2000; height: 50%; top: 25%; left: 25%;">
     <g>
         <path stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M161.928,111.956c-4.484,3.959-9.58,7.938-15.336,11.918   C152.573,119.942,157.647,115.962,161.928,111.956z"></path>
 	<path stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M145.075,126.78c-2.43,1.77-7.25-0.516-11.109-2.906   C137.473,126.188,142.904,129.135,145.075,126.78z"></path>
@@ -57,31 +57,22 @@
     <div class="overlay-loader show" id="loader" style="position: fixed; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%;">
         <div style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-color: rgb(255, 255, 255); display: block;" class="loader-background"></div>
     </div>
-<?php wp_head(); ?>
-</head>
+
+    <?php get_header();//wp_head(); ?>
     <body style="height:100%;width:100%;overflow:hidden;">
-    <div id="cssmenu">                
-                <ul id="menu-large">
-                   <li id="sp_close" style="display:none"><a href="#" id="sp_close_button">メニューを閉じる</a></li>
-                   <li><a href="<?php echo get_home_url(); ?>"> <?php if($lang=="fr") {?> Accueil <?php } else { ?> Home <?php } ?></a></li>
-                   <li class="has-sub"><span class="submenu-button"></span><a href="#">Look book</a>
-                      <ul>
-                         <li id="menu-17w"><span class="submenu-button"></span><a>Automne-Hiver 2016</a>                            
-                         </li>
-                      </ul>
-                   </li>
-				   
-                   <li id="menu-boutique"><a href=<?php echo($shop_page_url) ?>>Boutique</a></li>
-                   <li id="menu-blog"><a href=<?php echo get_permalink( get_option('page_for_posts' ) );?> >Blog</a></li>
-                   <li id="menu-about"><a>Concept</a></li>
-                   <li><a href="#">Contact</a></li>
-                </ul>
-                <div id="menu-button"></div>
-                
-            </div>        
     <section id="home">
         
         <div id="bgimgs" class="board">
+            <?php 
+                $home = get_page_by_title( 'Home' );
+                $images = get_attached_media('image', $home->ID);
+                $index = 0;
+                foreach($images as $image) { 
+                    $index++;
+                   $image_attributes = wp_get_attachment_image_src($image->ID,'full');
+                   ?>
+                    <img class="bgimgs" src="<?php echo $image_attributes[0]?>" />
+            <?php } ?>
             <img class="bgimgs" src ="wp-content/themes/storefront-child/img/homepage.jpg" /> 
             <li id="facebook" class="socialicon socialicon-f">
                 <i class="fa fa-facebook fa-lg"></i>
@@ -93,9 +84,10 @@
                 <i class="fa fa-instagram fa-lg" ></i>
             </li>
             <li class="langue fr">
-                <a href="<?php echo get_permalink()?>?lang=fr" >Fr</a>
+                <a href="<?php echo pll_home_url('fr');?>" >Fr</a>
             </li>
-            <li class="langue en">En
+            <li class="langue en">
+                <a href="<?php echo pll_home_url('en');?>" >En</a>
             </li>
             <li class="langue jp">Jp
             </li>
@@ -130,7 +122,12 @@ foreach($images as $image) {
         <img id='about-img' accesskey=""src ="wp-content/themes/storefront-child/img/concept.jpg" />
     </div>
     <div id='about-txt' class='board-right'>
-          <?php $post = get_page_by_title( 'About' ); echo $post->post_content;  ?>
+          <?php $post = get_page_by_title( 'About' );                
+                global $polylang;
+                $post_ids = $polylang->model->get_translations('page', $post->ID);                
+                // j'affiche le contenu de la page About dans la langue courrante 
+                echo get_post($post_ids[pll_current_language()])->post_content;
+                ?>
     </div>
 </div>
         </section>

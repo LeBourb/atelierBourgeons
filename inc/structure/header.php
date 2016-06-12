@@ -5,6 +5,7 @@
  * @package storefront
  */
 
+
 if ( ! function_exists( 'storefront_header_widget_region' ) ) {
 	/**
 	 * Display header widget region
@@ -30,7 +31,27 @@ if ( ! function_exists( 'storefront_child_site_branding' ) ) {
 	 * @return void
 	 */
 	function storefront_child_site_branding() {
-		if( is_home() || is_singular('post') )
+		$cur_lang = pll_current_language(); 
+                
+                if($cur_lang == 'fr') {
+                    $TOPS = "Hauts";
+                    $DRESSES = "Robes";
+                    $WEARS = "Tricotés";
+                    $JACKETS = "Manteaux";
+                    $SKIRTS = "Jupes";
+                    $PANTS = "Pantallon";
+                    $ACCESSORIES = "Accessoires";
+                }else {
+                    $TOPS = "SHIRT&TOPS";
+                    $DRESSES = "DRESSES";
+                    $WEARS = "KNIT WEARS";
+                    $JACKETS = "JACKETS&COATS";
+                    $SKIRTS = "SKIRTS";
+                    $PANTS = "PANTS&CULOTTES";
+                    $ACCESSORIES = "ACCESSORIES";
+                }
+                
+                if( is_home() || is_singular('post') )
                     return;
                 if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
 			jetpack_the_site_logo();
@@ -56,13 +77,13 @@ if ( ! function_exists( 'storefront_child_site_branding' ) ) {
                             <div id="cssmenu">                
                                 <ul id="menu-large">
                                    <li id="sp_close" style="display:none"><a href="#" id="sp_close_button">メニューを閉じる</a></li>
-                                   <li><a href="#">SHIRT&TOPS</a></li>
-                                   <li><a href="#">DRESSES</a></li>
-                                   <li><a href="#">KNIT WEARS</a></li>
-                                   <li><a href="#">JACKETS&COATS</a></li>
-                                   <li><a href="#">SKIRTS</a></li>
-                                   <li><a href="#">PANTS&CULOTTES</a></li>
-                                   <li><a href="#">ACCESSORIES</a></li>                                  
+                                   <li><a href="#"><?php echo $TOPS; ?></a></li>
+                                   <li><a href="#"><?php echo $DRESSES; ?></a></li>
+                                   <li><a href="#"><?php echo $WEARS; ?></a></li>
+                                   <li><a href="#"><?php echo $JACKETS; ?></a></li>
+                                   <li><a href="#"><?php echo $SKIRTS; ?></a></li>
+                                   <li><a href="#"><?php echo $PANTS; ?></a></li>
+                                   <li><a href="#"><?php echo $ACCESSORIES; ?></a></li>                                  
                                 </ul>
                                 <div id="menu-button"></div>                            
                             </div> 

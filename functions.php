@@ -1,5 +1,27 @@
 <?php
+/*    
+    function custom_query_vars_filter($vars) {
+        $vars[] .= 'langue';
+        return $vars;
+      }
+    add_filter( 'query_vars', 'custom_query_vars_filter' );
     
+function add_rewrite_rules($aRules) {
+$aNewRules = array('/fr' => '');
+$aRules = $aNewRules + $aRules;
+return $aRules;
+}
+ 
+// hook add_rewrite_rules function into rewrite_rules_array
+add_filter('rewrite_rules_array', 'add_rewrite_rules');
+
+function add_query_args()
+{ 
+    add_query_arg( 'langue', 'fr' );
+}
+add_action('init','add_query_args');
+
+*/
     add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );    
 
     
@@ -94,4 +116,36 @@
         }
        
     }
+    
+    function get_pll_page_by_title( $page_title, $output = OBJECT, $post_type = 'page' ) {
+    global $wpdb;
+ 
+    if ( is_array( $post_type ) ) {
+        $post_type = esc_sql( $post_type );
+        $lang = pll_current_language();
+        $post_type_in_string = "'" . implode( "','", $post_type ) . "'";
+        $sql = $wpdb->prepare( "
+            SELECT ID
+            FROM $wpdb->posts
+            WHERE post_title = %s
+            AND post_type IN ($post_type_in_string)                 
+            AND lang = %s
+        ", $page_title , $lang );
+    } else {
+        $lang = pll_current_language();
+        $sql = $wpdb->prepare( "
+            SELECT ID
+            FROM $wpdb->posts
+            WHERE post_title = %s
+            AND post_type = %s
+            AND lang = %s
+        ", $page_title, $post_type, $lang );
+    }
+ 
+    $page = $wpdb->get_var( $sql );
+ 
+    if ( $page ) {
+        return get_post( $page, $output );
+    }
+}
 ?>

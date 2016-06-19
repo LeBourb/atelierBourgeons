@@ -23,7 +23,8 @@ global $product, $woocommerce_loop;
 
 // Store loop count we're currently on
 if ( empty( $woocommerce_loop['loop'] ) ) {
-	$woocommerce_loop['loop'] = 0;
+	
+    $woocommerce_loop['loop'] = 0;
 }
 
 // Store column count for displaying the grid
@@ -32,8 +33,9 @@ if ( empty( $woocommerce_loop['columns'] ) ) {
 }
 
 // Ensure visibility
-if ( ! $product || ! $product->is_visible() ) {
-	return;
+if ( ! $product /*|| ! $product->is_visible()*/ ) {
+?><h1 class="page-title">Not visiblet</h1>		<?php	
+    return;
 }
 
 // Increase loop count

@@ -23,7 +23,7 @@
 	<?php 
         
 	do_action( 'storefront_before_header' ); ?>
-<?php if ( is_shop() || is_product() || is_product_category()) :?>
+<?php if ( is_shop() || is_pll_wc('shop') || is_product() || is_product_category() || is_pll_wc('cart') || is_account_page())  :?>
     	<header id="masthead" class="site-header" role="banner" <?php if ( get_header_image() != '' ) { echo 'style="background-image: url(' . esc_url( get_header_image() ) . ');"'; } ?>>
 		<div class="col-full">
 

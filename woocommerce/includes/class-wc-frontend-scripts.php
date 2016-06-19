@@ -176,7 +176,7 @@ class WC_Frontend_Scripts {
 		if ( $ajax_cart_en ) {
 			self::enqueue_script( 'wc-add-to-cart', $frontend_script_path . 'add-to-cart' . $suffix . '.js' );
 		}
-		if ( is_cart() ) {
+		if ( is_ppl_wc('cart') ) {
 			self::enqueue_script( 'wc-cart', $frontend_script_path . 'cart' . $suffix . '.js', array( 'jquery', 'wc-country-select', 'wc-address-i18n' ) );
 		}
 		if ( is_checkout() || is_account_page() ) {
@@ -256,7 +256,7 @@ class WC_Frontend_Scripts {
 				return array(
 					'wc_ajax_url'  => WC_AJAX::get_endpoint( "%%endpoint%%" ),
 					'home_url'     => home_url(),
-					'is_available' => ! ( is_cart() || is_account_page() || is_checkout() || is_customize_preview() ) ? '1' : '0',
+					'is_available' => ! ( is_ppl_wc('cart') || is_account_page() || is_checkout() || is_customize_preview() ) ? '1' : '0',
 					'hash'         => isset( $_GET['v'] ) ? wc_clean( $_GET['v'] ) : ''
 				);
 			break;
@@ -307,7 +307,7 @@ class WC_Frontend_Scripts {
 					'wc_ajax_url'             => WC_AJAX::get_endpoint( "%%endpoint%%" ),
 					'i18n_view_cart'          => esc_attr__( 'View Cart', 'woocommerce' ),
 					'cart_url'                => apply_filters( 'woocommerce_add_to_cart_redirect', wc_get_cart_url() ),
-					'is_cart'                 => is_cart(),
+					'is_cart'                 => is_ppl_wc('cart'),
 					'cart_redirect_after_add' => get_option( 'woocommerce_cart_redirect_after_add' )
 				);
 			break;

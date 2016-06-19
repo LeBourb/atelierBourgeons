@@ -20,8 +20,42 @@ function add_query_args()
     add_query_arg( 'langue', 'fr' );
 }
 add_action('init','add_query_args');
+ * 
+ * is_pll_cart
 
 */
+function is_pll_wc( $wc_page)
+{ 
+   global $polylang;
+    $cart_ids = $polylang->model->get_translations('page', wc_get_page_id( $wc_page));
+    // j'affiche le contenu de la page About dans la langue courrante        
+    return is_page( $cart_ids[pll_current_language()] ) || defined( 'WOOCOMMERCE_CART' ) ;
+}
+
+function get_pll_wc_url( $wc_page)
+{ 
+   global $polylang;
+    $cart_ids = $polylang->model->get_translations('page', wc_get_page_id( $wc_page));
+    // j'affiche le contenu de la page About dans la langue courrante        
+    return get_permalink( $cart_ids[pll_current_language()] );
+   
+}
+
+
+function get_pll_url($lang)
+{ 
+    //print_r("url: "+$url);
+    global $polylang;
+    $cart_ids = $polylang->model->get_translations('page', get_the_ID());                
+                // j'affiche le contenu de la page About dans la langue courrante     
+     //           print_r($cart_ids);
+    //print_r($cart_ids);
+    if($cart_ids[$lang] == "")  {
+        return "";
+    }
+    return get_permalink( $cart_ids[$lang] );
+}
+
     add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );    
 
     
@@ -59,10 +93,28 @@ add_action('init','add_query_args');
             wp_enqueue_script('script-galerie');
             
             
-        } else if ( is_shop() || is_product() || is_product_category()){
+        } else if ( is_pll_wc('shop') || is_shop() || is_product() || is_product_category() || is_pll_wc('cart')){
             wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
             
             wp_enqueue_style( 'shop-style', get_stylesheet_directory_uri() . '/css/shop.css' );
+            
+            wp_register_script( 'child-jquery', get_stylesheet_directory_uri() . '/js/jquery-1.7.1.js'); 
+            wp_enqueue_script('child-jquery');
+            
+            wp_register_script('shop-rollover', get_stylesheet_directory_uri() . '/js/shop-rollover.js' );
+            wp_enqueue_script('shop-rollover');
+            
+            wp_register_style( 'menu-stylecss', get_stylesheet_directory_uri() . '/css/menu-shop.css' );
+            wp_enqueue_style('menu-stylecss');
+            
+            wp_register_script( 'menu-stylejs', get_stylesheet_directory_uri() . '/js/menu.js' );
+            wp_enqueue_script('menu-stylejs');
+            
+        }
+        else if ( is_account_page() ){
+            wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+            
+            //wp_enqueue_style( 'shop-style', get_stylesheet_directory_uri() . '/css/shop.css' );
             
             wp_register_script( 'child-jquery', get_stylesheet_directory_uri() . '/js/jquery-1.7.1.js'); 
             wp_enqueue_script('child-jquery');

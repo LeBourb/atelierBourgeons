@@ -34,7 +34,32 @@
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php 
+                            if(is_pll_wc('shop')) {
+                                /*wc_get_template('content-product.php', array(
+					'category' => 'NEW'
+				));*/
+                               ?><ul class="products">
+	<?php
+		$args = array(
+			'post_type' => 'product',
+			'posts_per_page' => 12
+			);
+		$loop = new WP_Query( $args );
+		if ( $loop->have_posts() ) {
+			while ( $loop->have_posts() ) : $loop->the_post();
+				wc_get_template_part( 'content', 'product' );
+			endwhile;
+		} else {
+			echo __( 'No products found' );
+		}
+		wp_reset_postdata();
+	?>
+</ul><!--/.products--><?php
+                            }else {
+                                
+                            
+                            while ( have_posts() ) : the_post(); ?>
 
 				<?php
 				do_action( 'storefront_page_before' );
@@ -49,7 +74,7 @@
 				do_action( 'storefront_page_after' );
 				?>
 
-			<?php endwhile; // end of the loop. ?>
+                            <?php endwhile; }// end of the loop. ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

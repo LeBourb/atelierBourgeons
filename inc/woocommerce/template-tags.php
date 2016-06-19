@@ -48,7 +48,7 @@ if ( ! function_exists( 'storefront_product_search' ) ) {
 if ( ! function_exists( 'storefront_header_cart' ) ) {
 	function storefront_header_cart() {
 		if ( is_woocommerce_activated() ) {
-			if ( is_cart() ) {
+			if ( is_ppl_wc('cart') ) {
 				$class = 'current-menu-item';
 			} else {
 				$class = '';

@@ -38,6 +38,10 @@ if ( ! function_exists( 'storefront_child_site_branding' ) ) {
                 $url_fr = get_pll_url('fr');
                 $url_en = get_pll_url('en');
                 $url_jp = get_pll_url('jp');
+            
+                
+                //$url = get_term_link( $product_categories[0]->ID, 'product_cat' );
+                //echo $url;
                 
                 if($cur_lang == 'fr') {
                     $NEW = "Dernier Articles";
@@ -106,14 +110,15 @@ if ( ! function_exists( 'storefront_child_site_branding' ) ) {
                             <div id="cssmenu">                
                                 <ul id="menu-large">
                                    <li id="sp_close" style="display:none"><a href="#" id="sp_close_button">メニューを閉じる</a></li>
-                                   <li><a href="#"><?php echo $NEW; ?></a></li>
-                                   <li><a href="#"><?php echo $TOPS; ?></a></li>
-                                   <li><a href="#"><?php echo $DRESSES; ?></a></li>
-                                   <li><a href="#"><?php echo $WEARS; ?></a></li>
-                                   <li><a href="#"><?php echo $JACKETS; ?></a></li>
-                                   <li><a href="#"><?php echo $SKIRTS; ?></a></li>
-                                   <li><a href="#"><?php echo $PANTS; ?></a></li>
-                                   <li><a href="#"><?php echo $ACCESSORIES; ?></a></li>                                  
+                                   <li><a href="<?php echo get_pll_wc_url('shop'); ?>"> <?php echo $NEW; ?> </a></li>
+                              <?php     $product_categories = get_terms( 'product_cat');
+                foreach ( $product_categories as $woo_cat ) {
+                    $woo_cat_id = $woo_cat->term_id; //category ID
+                    $woo_cat_name = $woo_cat->name; //category name
+                    ?>
+                    <li><a href="<?php echo get_term_link( $woo_cat_id ,'product_cat' ); ?>"> <?php echo $woo_cat_name; ?> </a></li>
+                    <?php } ?>
+                                   
                                 </ul>
                                 <div id="menu-button"></div>                            
                             </div> 

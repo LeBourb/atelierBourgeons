@@ -135,9 +135,13 @@ function get_pll_url($lang)
             wp_enqueue_script('child-jquery');
             wp_register_script( 'blog-stylejs', get_stylesheet_directory_uri() . '/js/blog.js' );
             wp_enqueue_script('blog-stylejs');
+            wp_register_script( 'instafeedjs', get_stylesheet_directory_uri() . '/js/instafeed.js' );
+            wp_enqueue_script('instafeedjs');
+            
         }else if(is_single()) {
             wp_enqueue_style( 'blog-post-style', get_stylesheet_directory_uri() . '/css/blog-post.css' );
             wp_enqueue_style( 'font-awesome-post-style', get_stylesheet_directory_uri() . '/css/font-awesome.min.css' );
+            
         }
         
         if(is_page_template( 'galerie-17w.php' )) {

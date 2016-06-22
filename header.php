@@ -56,9 +56,24 @@
 		 * @hooked woocommerce_breadcrumb - 10
 		 */
 		//do_action( 'storefront_content_top' ); ?>
-<?php //elseif (is_home() || is_single()) : 
-else:
-    $cur_lang = pll_current_language(); 
+<?php elseif (is_home()) ://|| is_single()) : 
+//else:
+    ?><div id="cssmenu">                
+                <ul id="menu-large">
+                   <li id="sp_close" style="display:none"><a href="#" id="sp_close_button">Close</a></li>                   
+                 				   
+                   <li id="menu-boutique"><a>Boutique</a></li>
+                   <li id="menu-blog"><a>Home</a></li>
+                   <li id="menu-about"><a>About Me</a></li>
+                   <li><a href="#">Contact</a></li>
+                </ul>
+                <div id="menu-button"></div>
+                
+            </div>        
+
+                    <div id='instafeed' />
+<?php else: 
+           $cur_lang = pll_current_language(); 
                 
     if($cur_lang == 'fr') {
         $close = "fermer le menu";
@@ -108,9 +123,6 @@ else:
                 </ul>
                 <div id="menu-button"></div>
                 
-            </div>        
-	
-                
-<?php endif;  ?>
+            </div>        <?php endif;  ?>
 
                 

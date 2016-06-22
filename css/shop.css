@@ -18,7 +18,27 @@ body {
     overflow: scroll;
 }
 
+.content-area {
+    width: 100%!important;
+}
+
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+
+    .entry-content {
+        width: 50%;
+        align-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .product-thumbnail > a {
+        display: inline-block;
+    }
+
+    .attachment-shop_thumbnail.size-shop_thumbnail.wp-post-image {
+        width: 10em!important;
+    }
+
 
     .site-logo {
         display :block!important;

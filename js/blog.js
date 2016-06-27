@@ -16,10 +16,10 @@ $(document).ready(function() {
     if(main.clientWidth > 768) {
         col2 = true;
         middle =  main.clientWidth/2;
-        padding = (0.1 * main.clientWidth)/3; 
+        padding = (0.01 * main.clientWidth)/3; 
     }
     else {
-        padding = (0.1 * main.clientWidth)/2; 
+        padding = (0.01 * main.clientWidth)/2; 
     }
     var nav_page = $('.navigation.pagination');
     var bottom_left=$main.position().top, bottom_right = $main.position().top;

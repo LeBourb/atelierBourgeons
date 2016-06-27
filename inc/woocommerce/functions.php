@@ -32,7 +32,7 @@ if ( ! function_exists( 'storefront_before_content' ) ) {
 if ( ! function_exists( 'storefront_after_content' ) ) {
 	function storefront_after_content() {
 		?>
-			</main><!-- #main -->
+			</main><!-- #main2 -->
 		</div><!-- #primary -->
 
                 <?php //do_action( 'storefront_sidebar' );

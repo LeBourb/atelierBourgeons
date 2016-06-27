@@ -27,6 +27,9 @@ get_header(); ?>
 		endif; ?>
 
 		</main><!-- #main -->
+                <div id='col-right'>
+                    <h3 class="widget-right">Instagram</h3><div id="instafeed"/>
+                </div>
 	</div><!-- #primary -->
 
 <?php

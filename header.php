@@ -69,9 +69,7 @@
                 </ul>
                 <div id="menu-button"></div>
                 
-            </div>        
-
-                    <div id='instafeed' />
+            </div>  
 <?php else: 
            $cur_lang = pll_current_language(); 
                 

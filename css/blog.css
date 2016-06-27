@@ -50,8 +50,38 @@ article{
     border-bottom: none;
 }
 
+.widget-right{
+    overflow: hidden;
+    padding-bottom: 6px;
+    position: relative;
+}
+
+#instafeed>a {
+    display: inline-block;
+    width: 20%;
+    margin: 0.2em;
+}
+
+
+
 #primary {
     width : 100%;
+    display: block;
+    position: relative;
+}
+
+#main {
+    display: inline-block;
+    width: 60%;
+    position: relative;
+    float: left;
+}
+
+#col-right {
+    display: inline-block;
+    width: 30%;
+    position: relative;
+    float: right;
 }
 
 .navigation.pagination {
@@ -73,6 +103,41 @@ article{
     padding: 0.1em;
 }
 
+.widget-right::before {
+    border-bottom: 2px solid currentColor;
+    bottom: 0;
+    content: "";
+    height: 20%;
+    left: 0;
+    position: absolute;
+    width: 30%;
+    z-index: 1;
+}
+
+.widget-right::after {
+    border-bottom: 2px solid rgba(0,0,0,.05);
+    bottom: 0;
+    content: "";
+    height: 20%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+
+    #main {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+
+    #col-right {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+
 
 }

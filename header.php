@@ -13,6 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<LINK REL="SHORTCUT ICON" href="<?php echo get_site_url (); ?>/wp-content/themes/storefront-child/ico/logo_seul.ico">
 
 <?php wp_head(); ?>
 </head>
@@ -23,9 +24,14 @@
 	<?php 
         
 	do_action( 'storefront_before_header' ); ?>
-<?php if ( is_shop() || is_pll_wc('shop') || is_product() || is_product_category() || is_pll_wc('cart') || is_account_page())  :?>
-    	<header id="masthead" class="site-header" role="banner" <?php if ( get_header_image() != '' ) { echo 'style="background-image: url(' . esc_url( get_header_image() ) . ');"'; } ?>>
-		<div class="col-full">
+<?php if ( is_shop() || is_pll_wc('shop') || is_product() || is_product_category() || is_pll_wc('cart') || is_account_page())  :
+    if (!is_product()){ ?>
+    
+    <img src="<?php echo get_site_url();?>/wp-content/themes/storefront-child/img/banner_search.jpg" ></img>	
+    <?php } ?>
+       
+    <header id="masthead" class="site-header" role="banner" <?php if ( get_header_image() != '' ) { echo 'style="background-image: url(' . esc_url( get_header_image() ) . ');"'; } ?>>
+		
 
 			<?php
 			/**
@@ -39,7 +45,7 @@
 			 */
 			do_action( 'storefront_header' ); ?>
 
-		</div>
+		
 	</header><!-- #masthead -->
 
 	<?php
@@ -56,6 +62,11 @@
 		 * @hooked woocommerce_breadcrumb - 10
 		 */
 		//do_action( 'storefront_content_top' ); ?>
+<?php elseif (is_checkout()) ://|| is_single()) : 
+?>  
+<div id="checkout-banner">    
+</div>
+
 <?php elseif (is_home()) ://|| is_single()) : 
 //else:
     ?><div id="cssmenu">                
@@ -103,7 +114,7 @@
          //       print_r($blog_ids);
     
     ?>
-                    
+      
     <div id="cssmenu">                
                 <ul id="menu-large">
                    <li id="sp_close" style="display:none"><a href="#" id="sp_close_button"><?php echo $close ?></a></li>                   

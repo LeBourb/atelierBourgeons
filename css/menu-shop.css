@@ -4,15 +4,24 @@
     margin-left: auto;
     margin-right: auto;
     width: 800px;
+    height: inherit;
+    padding-top: 1em !important;
+    padding-bottom: 1em !important;
+}
+
+#cssmenu > div {
+    height: 100%;
 }
 
 #cssmenu,
-#cssmenu > ul {
-    //display: inline-block;
+#cssmenu > div > ul {
+    display: inline-block;
+    float: left;
     border: 0px!important;
     //margin: 0px!important;
-    padding: 0px!important;
-    width: 100%;
+    //padding: 0px!important;
+    margin-left: 0;
+    width: auto;
     z-index: 1;
     list-style: none;
     line-height: 1;
@@ -20,9 +29,11 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    margin: 0!important;
+    height: 100%;
 }
 
-#cssmenu > ul > li {
+#cssmenu > div > ul > li {
     display: inline-block;
     border: 0;
     margin: 0px;
@@ -35,12 +46,24 @@
     box-sizing: border-box;
 }
 
-#cssmenu > ul > li > a,
+#cssmenu > div > ul > i::before{
+    padding: 0!important;
+    font-size: 1em!important;
+}
+
+#cssmenu > div > ul > i > a {
+    padding: 0!important;
+    font-size: 0.6em!important;
+}
+
+#cssmenu > div > ul > li > a,
+#cssmenu > div > ul > i > a,
+#cssmenu > div > ul > i::before,
 #cssmenu #menu-button {
     display: inline-block;
     border: 0;
     margin: 0px;
-    padding: 9px 14px;
+    padding: 0em 0.6em;
     z-index: 1;
     list-style: none;
     line-height: 1;
@@ -48,11 +71,14 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    vertical-align: middle;
+    text-align: center;
+    height: 100%;
 }
 
 
 #cssmenu:after,
-#cssmenu > ul:after {
+#cssmenu > div > ul:after {
     content: ".";
     display: block;
     clear: both;
@@ -64,7 +90,7 @@
     display: none;
 }
 #cssmenu {
-    width: auto;
+    width: 80%;
     font-family: 'Open Sans', sans-serif;
     line-height: 1;
     //background: #ffffff;
@@ -81,42 +107,45 @@
     -o-transition: all 0.25s ease-out;
     transition: all 0.25s ease-out;
 }
-#cssmenu > ul {
+#cssmenu > div > ul {
     position:relative;
 
 }
 
-#cssmenu > ul > li {
+#cssmenu > div > ul > li , i {
     //float: left;
+    height: 100%;
     margin: 1px;
     //background-color: #FFF;
     color: #555;
     opacity: 0.9;
 }
-#cssmenu.align-center > ul {
+#cssmenu.align-center > div > ul {
     font-size: 0;
     text-align: center;
 }
-#cssmenu.align-center > ul > li {
+#cssmenu.align-center > div > ul > li {
     display: inline-block;
     float: none;
 }
 #cssmenu.align-center ul ul {
     text-align: left;
 }
-#cssmenu.align-right > ul > li {
+#cssmenu.align-right > div > ul > li {
     float: right;
 }
-#cssmenu.align-right ul ul {
+#cssmenu.align-right > div > ul ul {
     text-align: right;
 }
-#cssmenu > ul > li > a {
+#cssmenu > div > ul > li > a ,
+#cssmenu > div > ul > i > ::before,
+#cssmenu > div > ul > i > a {
     /*padding-right: 50px;
     padding-bottom: 10px;
     padding-left: 5px;
     padding-top: 10px;*/
-    background-color: #FFF;
-    font-size: 12px;
+    background-color: transparent;
+    font-size: 0.6em;
     text-decoration: none;
     text-transform: uppercase;
     color: #000000;
@@ -127,12 +156,30 @@
     transition: color .2s ease;
 }
 //#cssmenu > ul > li:hover > a,
-#cssmenu > ul > li.active > a {
+#cssmenu > div > ul > li.active > a {
     color: #009ae1;
 }
-#cssmenu > ul > li.has-sub > a {
+#cssmenu > div > ul > li.has-sub > a {
     padding-right: 25px;
 }
+
+.menu-left {
+    float:left;
+}
+
+.menu-right {
+    float:right;
+}
+
+#menu-button-right {
+    display: inline-block;
+    float: right;
+}
+#menu-button-right {
+    display: none;
+    float: right;
+}
+
 #cssmenu > ul > li.has-sub > a::after {
     position: relative;
     top: 21px;
@@ -273,6 +320,9 @@
     }
     #cssmenu {
         width: 100%;
+        height: inherit;
+        padding-top: 0.5em !important;
+        padding-bottom: 0.5em !important;
     }
     #cssmenu ul {
         //width: 100%;
@@ -337,31 +387,34 @@
     #cssmenu ul ul li.has-sub > a::after {
         display: none;
     }
-
-    #cssmenu #menu-button {
+    #menu-button-right {
+        display: inline-block;
+        float: right;
+    }
+    #menu-button {
+        margin-left: 1em;
         display: block;
         width: 100px;
-        float: right;
         color: #000000;
         cursor: pointer;
         font-size: 12px;
         text-transform: uppercase;
     }
-    #cssmenu #menu-button::after {
+    #menu-button::after {
         content: '';
         position: absolute;
         top: 20px;
-        right: 20px;
+        //right: 20px;
         display: block;
         width: 15px;
         height: 2px;
         background: #000000;
     }
-    #cssmenu #menu-button::before {
+    #menu-button::before {
         content: '';
         position: absolute;
         top: 25px;
-        right: 20px;
+        //right: 20px;
         display: block;
         width: 15px;
         height: 3px;

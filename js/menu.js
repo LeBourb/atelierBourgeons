@@ -3,13 +3,16 @@
  var clkmenu = function(){
           //$(this).toggleClass('menu-opened');
           var mainmenu = $('#menu-large');
+          var menuright = $('#menu-right');
           var menubutton = $('#menu-button');
           if (mainmenu.hasClass('open')) { 
             mainmenu.hide().removeClass('open');
+            menuright.hide().removeClass('open');
             menubutton.show();
           }
           else {
             mainmenu.show().addClass('open');
+            mainright.show().addClass('open');
             menubutton.hide();
             /*if (settings.format === "dropdown") {
               mainmenu.find('ul').show();
@@ -53,10 +56,12 @@
         resizeFix = function() {
           if ($( window ).width() > 768) {
             $('#menu-large').show();
+            $('#menu-right').show();
           }
 
           if ($(window).width() <= 768) {
             $('#menu-large').hide().removeClass('open');
+            $('#menu-right').hide().removeClass('open');
           }
         };
         resizeFix();
@@ -74,7 +79,17 @@ $(document).ready(function() {
     title: "Menu",
     format: "multitoggle"
   });
-
+  var is_top = false;
+  $(window).scroll(function(){
+       if ( !is_top && $(window).scrollTop() == 0) {
+          is_top = true; 
+          $($('#masthead')[0]).addClass('header-top');
+       }else if ( is_top && $(window).scrollTop() > 0) {
+           is_top=false;
+           $($('#masthead')[0]).removeClass('header-top');
+       }
+    });
+$(window).scroll();
   /*$("#cssmenu").prepend("<div id='menu-line'></div>");*/
 
 var foundActive = false, activeElement, linePosition = 0, /*menuLine = $("#cssmenu #menu-line"),*/ lineWidth, defaultPosition, defaultWidth;
@@ -124,11 +139,15 @@ $("#cssmenu > ul > li").each(function() {
                 scrollTop: $("#about").offset().top
             }, 2000);
         })
+        
+        
     
         
     });
 
-  
+$('#open-search').on('click', function(){
+                $('#searchform').show();
+         });  
 });
 
 if (foundActive === false) {

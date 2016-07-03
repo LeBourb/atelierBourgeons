@@ -12,9 +12,18 @@
  Text Domain:  storefront-child
 */
 
+#checkout-banner {
+    padding-top: 6em;
+    padding-bottom: 2em;
+    background: #0f2130;
+    color: white;
+    background: url('img/checkout_header_image.jpg') center center;
+    background-size: cover;
+}
+
 
 #page {
-    min-width: 900px;
+    //min-width: 900px;
 }
 
 .woocommerce-main-image.zoom{
@@ -25,8 +34,14 @@
 
 }
 
+.fa-shopping-cart, .fa-shopping-cart-txt {
+    display: inline-block;
+}
 
-
+.menu-search {
+    display: inline-block;
+    float: right;
+}
 
 .woocommerce-main-image.zoom > img {
     position: relative;
@@ -47,17 +62,45 @@
     display: none;
 }
 
+.col-full {
+    max-width : none;
+    margin-left : 0;
+    margin-right : 0;
+}
+
+.itemPhoto > a > img {
+    width: 100%;
+}
+
 .site-header {
     background-color: white;
-    padding-top: 2.618em;
+    padding-top: 0.5em;
     color: #9aa0a7;
     background-position: center center;
     position: relative;
     z-index: 999;
+    width: 100%;
+    height: 4em;
+}
+
+.dummy-menu {
+    background-color: white;
+    display: block;
+    height: 4em;
+}
+
+.header-top {
+    //background-color: transparent!important;
+    transition:padding 0.3s ease-in-out, background 0.3s ease-in, border-color 0.2s ease-in-out;
+    transition:opacity 0.5s ease-in-out 0s;
+    opacity:1
+        //will-change:padding, background, border-color;
 }
 
 .site-branding{
     width: 100%!important;
+    margin-bottom: 0!important;
+    height: inherit!important;
 }
 .menu-large{
     width: 100%!important;
@@ -65,16 +108,27 @@
 }
 
 .site-logo {
-    width: 50%;
+    width: 20%;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    float: left;
+    max-height: 100%;
+    display: inline-block;
 }
+
 .menu-shop {
+    display: inline-block;
+    float: right;
+    width: auto;
+}
+
+.menu-langue {
+    position: relative;
+    display: inline-block;
     float: right;
 }
-.menu-langue {
-    position: absolute;
-}
+
+
 .menu-langue>li {
     display:inline-block;
     margin: 0.17em;
@@ -121,16 +175,17 @@
 }
 
 .itemPhoto {
-    border: 6px solid #eee;
+    //border: 6px solid #eee;
     margin-bottom: 12px;
     text-align: center;
 }
 
 .products > li {
-    width: 10em;
+    width: 33%;
     float: left;
-    margin: 0 24px 24px 0;
+    margin: 0;
     text-align: left;
+    padding-left: 1em;
 }
 
 .itemName{
@@ -177,7 +232,8 @@
         margin-right: 0; }
 
     .site-header {
-        padding-top: 0;}
+        padding-top: 0;
+        height:2em;}
 
     .site-branding{
         background-color: white;
@@ -201,13 +257,22 @@
         display: inline;
     }
     .site-logo {
-        display :none;
+        display :block;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
     }
     .summary.entry-summary {
         width: 95%;
         margin-left: auto;
         margin-right: auto;
     }
+    .dummy-menu {
+        background-color: white;
+        display: block;
+        height: 2em;
+    }
+
 }
 
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
@@ -215,7 +280,9 @@
         margin-left: 0;
         margin-right: 0; }
     .site-header {
-        padding-top: 0;}
+        padding-top: 0;
+        height: 2em;
+    }
     .site-branding{
         background-color: white;
         float: none;
@@ -244,20 +311,36 @@
         display: inline;
         width:100%;
     }
-    .menu-large{
+    .menu-left, .menu-right{
         display:none;
     }
-    #cssmenu {
+
+    /*#cssmenu {
         display: inline;
-        float: right;
-        right: 0em;
-        top: 0.2em;
         position: absolute;
-    }
+        left: 1em;
+        width: 2em;
+        top: 0em;
+    }*/
 }
 .main-navigation ul li a,
 .site-title a,
 ul.menu li a,
 .site-branding h1 a {
     color: black;
+}
+
+@media all and (max-width: 384px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 512px), only screen and (min-resolution: 192dpi) and (max-width: 512px), only screen and (min-resolution: 2dppx) and (max-width: 512px) {
+    .products > li {
+        width: 100%;
+        margin: 0 0 0 0;
+        padding-left: 0;
+    }
+    .site-header {
+        padding-top: 0;
+        height: 2em;
+    }
+    .col-full {
+        margin-top: 2em;
+    }
 }

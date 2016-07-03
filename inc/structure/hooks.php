@@ -30,6 +30,9 @@ add_action( 'storefront_before_content',	'storefront_header_widget_region',	10 )
 add_action( 'storefront_header', 'storefront_skip_links', 				0 );
 add_action( 'storefront_header', 'storefront_child_site_branding',			20 );
 
+remove_action( 'storefront_header', 'storefront_header_cart',                       60 );
+remove_action( 'storefront_header', 'storefront_product_search',                       40 );
+
 remove_action( 'storefront_header', 'storefront_skip_links',                       0 );
 remove_action( 'storefront_header', 'storefront_site_branding',                    20 );
 remove_action( 'storefront_header', 'storefront_secondary_navigation',             30 );
@@ -98,6 +101,17 @@ add_action( 'storefront_single_post_after',	'storefront_post_nav',			30 );
 add_action( 'storefront_page', 			'storefront_page_header',		10 );
 add_action( 'storefront_page', 			'storefront_page_content',		20 );
 add_action( 'storefront_page_after', 	'storefront_display_comments',	10 );
+
+
+remove_action( 'woocommerce_before_shop_loop',        'storefront_sorting_wrapper',             9 );
+remove_action( 'woocommerce_before_shop_loop',        'woocommerce_catalog_ordering',           10 );
+remove_action( 'woocommerce_before_shop_loop',        'woocommerce_result_count',               20 );
+remove_action( 'woocommerce_before_shop_loop',        'storefront_sorting_wrapper_close',       31 );
+
+remove_action( 'woocommerce_after_shop_loop',        'storefront_sorting_wrapper',             9 );
+remove_action( 'woocommerce_after_shop_loop',        'woocommerce_catalog_ordering',           10 );
+remove_action( 'woocommerce_after_shop_loop',        'woocommerce_result_count',               20 );
+remove_action( 'woocommerce_after_shop_loop',        'storefront_sorting_wrapper_close',       31 );
 
 /**
  * Extras

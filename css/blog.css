@@ -20,6 +20,8 @@ and open the template in the editor.
 #page {
     min-width: 100%!important;
 }
+
+
 .col-full {
     max-width: 100%;
     margin-left: 0;

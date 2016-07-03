@@ -170,6 +170,11 @@ function get_pll_url($lang)
             wp_enqueue_script('script-galerie');
             
         }
+        
+        if(is_product()) {
+            wp_register_style( 'content-single-product', get_stylesheet_directory_uri() . '/css/content-single-product.css' );
+            wp_enqueue_style('content-single-product');
+        }
        
     }
     
@@ -204,4 +209,9 @@ function get_pll_url($lang)
         return get_post( $page, $output );
     }
 }
+
+
+
+
+
 ?>

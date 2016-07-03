@@ -62,7 +62,8 @@ add_action( 'woocommerce_after_shop_loop_item_title', 		'woocommerce_show_produc
  * @see  storefront_header_cart()
  */
 add_action( 'storefront_header', 'storefront_product_search', 	40 );
-remove_action( 'storefront_header', 'storefront_header_cart', 		60 );
+remove_action( 'storefront_header', 'storefront_header_cart', 60 );
+remove_action( 'storefront_header', 'storefront_product_search', 40 );
 
 /**
  * Filters

@@ -13,6 +13,21 @@
     height: 100%;
 }
 
+
+.woocommerce-Button {
+    width: 100%!important;
+}
+
+#customer_login {
+    width: 50%!important;
+    float: right;
+    margin-right: 10%;
+}
+
+.wp-social-login-provider {
+    display : inline-block;
+}
+
 #cssmenu,
 #cssmenu > div > ul {
     display: inline-block;
@@ -59,7 +74,7 @@
 #cssmenu > div > ul > li > a,
 #cssmenu > div > ul > i > a,
 #cssmenu > div > ul > i::before,
-#cssmenu #menu-button {
+#cssmenu #menu-button-left {
     display: inline-block;
     border: 0;
     margin: 0px;
@@ -86,7 +101,7 @@
     line-height: 0;
     height: 0;
 }
-#cssmenu #menu-button {
+#cssmenu #menu-button-left {
     display: none;
 }
 #cssmenu {
@@ -163,7 +178,7 @@
     padding-right: 25px;
 }
 
-.menu-left {
+#menu-left {
     float:left;
 }
 
@@ -391,7 +406,7 @@
         display: inline-block;
         float: right;
     }
-    #menu-button {
+    #menu-button-left {
         margin-left: 1em;
         display: block;
         width: 100px;
@@ -400,7 +415,7 @@
         font-size: 12px;
         text-transform: uppercase;
     }
-    #menu-button::after {
+    #menu-button-left::after {
         content: '';
         position: absolute;
         top: 20px;
@@ -410,7 +425,7 @@
         height: 2px;
         background: #000000;
     }
-    #menu-button::before {
+    #menu-button-left::before {
         content: '';
         position: absolute;
         top: 25px;
@@ -456,5 +471,12 @@
     }
     #cssmenu .submenu-button.submenu-opened:after {
         display: none;
+    }
+
+    #customer_login {
+        width: 100%!important;
+    }
+    .site-search{
+        display: block!important;
     }
 }

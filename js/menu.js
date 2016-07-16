@@ -2,7 +2,7 @@
     
  var clkmenu = function(){
           //$(this).toggleClass('menu-opened');
-          var mainmenu = $('#menu-large');
+            var mainmenu = $('#menu-large');
           var menuright = $('#menu-right');
           var menubutton = $('#menu-button');
           if (mainmenu.hasClass('open')) { 
@@ -30,7 +30,7 @@
 
       return this.each(function() {
         //cssmenu.prepend('<div id="menu-button">' + settings.title + '</div>');
-        $(this).find("#menu-button").on('click', clkmenu);
+        $(this).find("#menu-button-left").on('click', clkmenu);
         $("#sp_close").on('click', clkmenu);
 
         cssmenu.find('li ul').parent().addClass('has-sub');
@@ -56,12 +56,14 @@
         resizeFix = function() {
           if ($( window ).width() > 768) {
             $('#menu-large').show();
-            $('#menu-right').show();
+            $($('#menu-left')[0]).hide();
+            //$('#menu-right').show();
           }
 
           if ($(window).width() <= 768) {
-            $('#menu-large').hide().removeClass('open');
-            $('#menu-right').hide().removeClass('open');
+            $('#menu-large').hide().removeClass('open');            
+            $($('#search-box')[0]).hide();
+            //$('#menu-right').hide().removeClass('open');
           }
         };
         resizeFix();
@@ -69,9 +71,7 @@
 
       });
   };
-})(jQuery);
 
-(function($){
 $(document).ready(function(){
 
 $(document).ready(function() {
@@ -79,6 +79,60 @@ $(document).ready(function() {
     title: "Menu",
     format: "multitoggle"
   });
+        if($("#button-signin")) {
+           $("#button-signin").on('click', function () {
+              if($("#signid").hasClass('open')) {
+                  $("#signid").hide();
+                  $("#signid").removeClass('open');
+                  
+              }else {                  
+                  $("#signid").show();
+                  $("#signid").addClass('open');
+              }
+           });
+        }
+    
+    
+        if($("#menu-button-left"))
+            $("#menu-button-left").on('click', function () {
+                if(!$('#page').hasClass('left')) {
+                    $('#page').addClass('left');
+                    $('#menu-left').show();
+                }
+                else {
+                    $('#page').removeClass('left');
+                    $('#menu-left').hide();
+                }
+            });
+        if($("#menu-button"))
+            $("#menu-button").on('click', clkmenu);
+        
+        $("#sp_close").on('click', clkmenu);
+        
+        $('#menu-button-right').on('click', function () {
+            if(!$('#page').hasClass('right')) {
+                $('#page').addClass('right');
+                $('#menu-right').show();
+            }
+            else {
+                $('#page').removeClass('right');
+                $('#menu-right').hide();
+            }
+        });
+        
+        $('#open-search').on('click', function(){
+                var sbox = $($('#search-box')[0]);
+                if ($('#search-box:hidden').length){
+                    sbox.show();
+                    $($('.menu-right')[0]).hide();
+                }else {
+                    sbox.hide();
+                    $($('.menu-right')[0]).show();
+                }
+                
+                
+         });  
+        
   var is_top = false;
   $(window).scroll(function(){
        if ( !is_top && $(window).scrollTop() == 0) {
@@ -138,16 +192,15 @@ $("#cssmenu > ul > li").each(function() {
             $('html, body').animate({
                 scrollTop: $("#about").offset().top
             }, 2000);
-        })
+        });
+        
         
         
     
         
     });
 
-$('#open-search').on('click', function(){
-                $('#searchform').show();
-         });  
+
 });
 
 if (foundActive === false) {
@@ -156,7 +209,7 @@ if (foundActive === false) {
 
 defaultWidth = lineWidth = activeElement.width();
 
-defaultPosition = linePosition = activeElement.position().left;
+defaultPosition = linePosition = activeElement.position().left; // ? activeElement.position().left : null;
 
 //menuLine.css("width", lineWidth);
 //menuLine.css("left", linePosition);

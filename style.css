@@ -34,6 +34,10 @@
 
 }
 
+.content-area {
+    width: 100%!important;
+}
+
 .fa-shopping-cart, .fa-shopping-cart-txt {
     display: inline-block;
 }
@@ -80,7 +84,7 @@
     position: relative;
     z-index: 999;
     width: 100%;
-    height: 4em;
+    height: auto;
 }
 
 .dummy-menu {
@@ -90,11 +94,11 @@
 }
 
 .header-top {
-    //background-color: transparent!important;
+    background-color: transparent!important;
     transition:padding 0.3s ease-in-out, background 0.3s ease-in, border-color 0.2s ease-in-out;
     transition:opacity 0.5s ease-in-out 0s;
-    opacity:1
-        //will-change:padding, background, border-color;
+    opacity:1;
+    //will-change:padding, background, border-color;
 }
 
 .site-branding{
@@ -109,6 +113,7 @@
 
 .site-logo {
     width: 20%;
+    min-width: 10em;
     margin: auto;
     margin-bottom: 0px;
     float: left;
@@ -205,10 +210,27 @@
     width: 1.5em;
 }
 
+body {
+    margin-top: 0px !important;
+}
+
+
+.header-background {
+    margin-top: 0;
+}
+
+.search-box {
+    display :none;
+}
+
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
     body {
         overflow-x: hidden;
         //min-width: 400px;
+    }
+
+    html {
+        margin-top: 0px !important;
     }
 
     .products > li {
@@ -262,6 +284,11 @@
         margin-right: auto;
         float: none;
     }
+
+    .header-background {
+        margin-top: 3em;
+    }
+
     .summary.entry-summary {
         width: 95%;
         margin-left: auto;
@@ -314,6 +341,12 @@
     .menu-left, .menu-right{
         display:none;
     }
+
+    .site-header {
+        position: relative;
+    }
+
+
 
     /*#cssmenu {
         display: inline;

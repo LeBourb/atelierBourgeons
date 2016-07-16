@@ -29,7 +29,8 @@
 }
 
 #cssmenu > ul > li > a,
-#cssmenu #menu-button {
+#cssmenu #menu-button,
+#cssmenu #menu-button-left {
     display: list-item;
     border: 0;
     margin: 0px;

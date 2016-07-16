@@ -11,6 +11,7 @@ and open the template in the editor.
 .content-area {
     //margin: inherit !important;
     width: auto !important;
+    margin-right: 0!important;
 }
 
 .site-header{
@@ -18,7 +19,19 @@ and open the template in the editor.
     top: 0px!important;
 }
 
+.snap-drawer-left {
+    left: 0em;
+}
 
+.snap-drawer-right {
+    float: right;
+}
+
+.snap-drawer {
+    position: relative;
+    width: 263px;
+    right: 0;
+}
 body {
     overflow: scroll;
 }
@@ -31,6 +44,10 @@ body {
     width: 100%;
 }
 
+#page {
+    transform: none;
+}
+
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
 
     .entry-content {
@@ -38,6 +55,10 @@ body {
         align-content: center;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    #signid > div {
+        display:none;
     }
 
     .product-thumbnail > a {
@@ -48,6 +69,10 @@ body {
         width: 10em!important;
     }
 
+    .site-header{
+        position: absolute!important;
+        top: 0;
+    }
 
     .site-logo {
         display :block!important;
@@ -56,5 +81,22 @@ body {
         top: 0px;
     }
 
+    .snap-drawer {
+        position: fixed;
+    }
+
+
+    #page.left {
+        transform: translate3d( 266px, 0px, 0px);
+    }
+
+    #page.right {
+        transform: translate3d(-266px, 0px, 0px);
+    }
+
 
 }
+
+
+
+

@@ -13,20 +13,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<LINK REL="SHORTCUT ICON" href="<?php echo get_site_url (); ?>/wp-content/themes/storefront-child/ico/logo_seul.ico">
+<LINK REL="SHORTCUT ICON" href="<?php echo get_site_url (); ?>/wp-content/themes/atelierbourgeons/ico/logo_seul.ico">
 
 <?php wp_head(); ?>
 </head>
 
 <?php /*if (! is_front_page()) :*/
-global $polylang;
+    global $polylang;
     $pageids = get_option('page_for_posts' );  
     $blog_ids = $polylang->model->get_translations('page', $pageids);  
     $blog_id = $blog_ids[pll_current_language()];
-    
+
     $shop_id = woocommerce_get_page_id( 'shop' );
     $shop_ids = $polylang->model->get_translations('page', $shop_id);  
-    $shop_id = $shop_ids[pll_current_language()];?>
+    $shop_id = $shop_ids[pll_current_language()];    
+    
+    $url_fr = get_pll_url('fr');
+    $url_en = get_pll_url('en');
+    $url_jp = get_pll_url('jp');
+    
+    function get_signin () {
+        wc_get_template( 'myaccount/form-login.php' );
+        if (is_user_logged_in()) {
+          $user_info = get_userdata(1);
+
+          echo '<li><a>' . $user_info->user_login . '</a></li>';
+          echo '<li><a href="'. wp_logout_url(get_permalink( wc_get_page_id( 'myaccount' ) )) .'">Log Out</a></li>';
+        }
+        elseif (!is_user_logged_in()) {
+            //echo '<li><a href="'. site_url('wp-login.php') .'">Log In</a></li>';
+        }
+    }
+    
+    
+?>
 
 
 
@@ -71,29 +91,8 @@ global $polylang;
         <ul>
           <li><a href="<?php echo get_pll_wc_url( 'cart');?>" data-cartquantity="">Cart (<?php echo WC()->cart->get_cart_contents_count(); ?>)</a></li>
       
-      <?php     global $polylang;
-                //echo $get_option('woocommerce_myaccount_page_id');
-                //do_action('woocommerce_account_content');
-                
-                  //$current_user = wp_get_current_user();
-      wc_get_template( 'myaccount/form-login.php' );
-                if (is_user_logged_in()) {
-                  $user_info = get_userdata(1);
-                  
-                  echo '<li><a>' . $user_info->user_login . '</a></li>';
-                  echo '<li><a href="'. wp_logout_url(get_permalink( wc_get_page_id( 'myaccount' ) )) .'">Log Out</a></li>';
-                }
-                elseif (!is_user_logged_in()) {
-                    echo '<li><a href="'. site_url('wp-login.php') .'">Log In</a></li>';
-                }
-                  
-                  //print_r($current_user);
-                  //if($current_user->user_nicename != "")
-                    //echo '<div>' + $current_user->user_nicename + '<div/>';   
-                //$post_ids = $polylang->model->get_translations('page', );                
-                // j'affiche le contenu de la page About dans la langue courrante 
-                //echo get_post($post_ids[pll_current_language()])->post_content;      
-                
+      <?php  
+      get_signin();
         ?>
  </ul>
  </div>
@@ -106,7 +105,7 @@ global $polylang;
 <?php if ( is_shop() || is_pll_wc('shop') || is_product() || is_product_category() || is_pll_wc('cart') || is_account_page())  :
     if (!is_product()){ ?>
     
-    <img class="header-background" src="<?php echo get_site_url();?>/wp-content/themes/storefront-child/img/banner_search.jpg" ></img>	
+    <img class="header-background" src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/banner_search.jpg" ></img>	
     <?php } ?>
        
     <header id="masthead" class="site-header" role="banner" <?php if ( get_header_image() != '' ) { echo 'style="background-image: url(' . esc_url( get_header_image() ) . ');"'; } ?>>
@@ -139,7 +138,7 @@ global $polylang;
                             
                             <div id="menu-button-left"></div>  
                             <div class="site-logo">
-                                   <!--<img src="<?php //echo esc_url( home_url( '/wp-content/themes/storefront-child/icons/atelier_bourgeons.bmp' ) ); ?>"></div> -->
+                                   <!--<img src="<?php //echo esc_url( home_url( '/wp-content/themes/atelierbourgeons/icons/atelier_bourgeons.bmp' ) ); ?>"></div> -->
                                 <svg viewBox="0 70 650 50" height="177" width="650px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xml:space="preserve" style="display: inline; width: 100%; height: 100%; display: inline; float: left;">
                                     <path xmlns="http://www.w3.org/2000/svg" d="M51.784,91.232c-0.36,0.476-0.93,0.822-1.211,1.421c-2.574,5.473-24.436,6.668-27.839,0.563    c-0.393-0.701-1.188,0.996-1.68,1.564c-0.498,0.563-1.103,0.991-1.815,1.274c-0.182,0.287-0.564,0.59-1.146,0.922    s-6.174,4.451-8.812,0.926c-0.646-0.868-0.806-2.036-0.806-3.264c0-16.711,15.693-14.813,16.146-13.768    c0.171,0.096,0.44,0.141,0.799,0.141c0.633,0,1.214-0.234,1.748-0.709c0.54-0.477,1.031-0.711,1.479-0.711    c0.452,0,0.86,0.383,1.216,1.139c-0.268,0.756-0.626,1.396-1.078,1.914c-0.446,0.519-0.67,1.301-0.67,2.34    c0,0.757,5.772,15.197,21.518,6.035c0.761-0.444,1.521-0.83,2.152-1.492c0.363,0,0.537,0.144,0.537,0.425    C52.322,90.329,52.148,90.758,51.784,91.232z M17.351,82.433c-0.356,0-5.575,9.443-2.554,12.631    c0.062,0.064,0.188,0.007,0.268,0.068c2.665,2.076,5.881-6.406,6.058-6.736C22.388,85.993,17.805,82.433,17.351,82.433z"></path>
                                     <path xmlns="http://www.w3.org/2000/svg" d="M105.102,82.577c-0.399,0.188-0.688,0.516-0.868,0.996c-1.524,0.942-3.029,1.911-4.51,2.903    c-1.48,0.998-3.024,1.875-4.644,2.629c-0.354,0-0.711,0.281-1.068,0.849c-0.633,0.192-1.191,0.475-1.683,0.854    c-0.496,0.375-1.012,0.705-1.55,0.992c-1.968,1.135-3.988,2.244-6.051,3.332c-2.064,1.09-4.146,2.088-6.252,2.984    c-2.109,0.897-4.284,1.631-6.525,2.196c-2.238,0.57-4.484,0.854-6.724,0.854c-4.345,0-10.146-2.068-12.907-5.965    c-0.19-0.273-2.167-7.162-2.023-11.351c0.018-0.567-0.144-5.875,0.68-6.248c-0.232,0.107-2.696-0.221-2.696-0.987    c0-1.132,1.588-1.908,2.825-2.275c0.901-0.262,0.673-3.734,0.673-4.109c0-0.475-0.234-4.438,1.479-5.819    c0.2-0.164,0.384-0.287,0.605-0.287c0.229,0,0.431-0.047,0.609-0.142c0.177-0.094,0.353-0.211,0.528-0.352    c0.183-0.145,0.408-0.213,0.679-0.213c0.451,0,2.639,1.943,1.884,3.973c-0.269,0.726-1.075,5.349-1.075,6.104v0.992    c1.968,0.192,3.878,0.252,5.714,0.424c4.279,0.414,14.082,0.248,17.418-0.424l5.786-0.853c0.355,0,0.534,0.142,0.534,0.424    c0,0.281-0.358,0.57-1.077,0.853c-7.477,2.975-24.971,2.834-26.628,2.834h-1.883c-0.176,0.385-0.227,1.184-0.469,2.35    c-0.646,3.084,0.883,8.381,1.004,9.152c0.507,3.19,4.194,6.668,6.125,7.236c1.922,0.567,3.923,0.942,5.981,0.854    c6.721-0.295,13.807-3.551,16.679-4.971c2.869-1.42,5.623-2.937,8.272-4.541c2.641-1.609,5.042-3.123,7.192-4.543    c0.534,0,1.012-0.236,1.41-0.709c0.403-0.476,0.919-0.707,1.551-0.707h0.401c0.18-0.381,0.355-0.572,0.532-0.572    c0.186,0.094,0.316,0.141,0.408,0.141c0.091,0.101,0.226,0.142,0.405,0.142C105.754,82.058,105.51,82.386,105.102,82.577z"></path>
@@ -277,18 +276,30 @@ global $polylang;
 
 <?php elseif (is_home()) ://|| is_single()) : 
 //else:
-    ?><div id="cssmenu">                
+    ?>
+            <div id="header-top">
+                <ul class="contact-info-list list-horizontal">			
+                   <li><a href="<?php echo $url_fr; ?>">Francais</a></li>
+                   <li><a href="<?php echo $url_en; ?>">English</a></li>
+                   <li><a href="<?php echo $url_jp; ?>">Nihongo</a></li>
+                </ul>
+            </div>
+            <?php echo get_search_form( true ); ?>
+            <div id="cssmenu">                
                 <ul id="menu-large">
                    <li id="sp_close" style="display:none"><a href="#" id="sp_close_button">Close</a></li>                   
                  				   
-                   <li id="menu-boutique"><a>Boutique</a></li>
-                   <li id="menu-blog"><a>Home</a></li>
+                   <li id="menu-boutique"><a href="<?php echo get_permalink( get_page($shop_id) ); ?>" >Boutique</a></li>
+                   <li id="menu-blog"><a href="<?php echo get_permalink(get_option( 'page_on_front' ));?>">Home</a></li>
                    <li id="menu-about"><a>About Me</a></li>
                    <li><a href="#">Contact</a></li>
+                   <li><a id="button-signin" href="#">Sign in</a></li>
                 </ul>
+                <?php echo get_signin(); ?>
                 <div id="menu-button"></div>
                 
             </div>  
+            <div id="precontent-widget-cont"></div>
 <?php else: 
            $cur_lang = pll_current_language(); 
                 
@@ -309,14 +320,7 @@ global $polylang;
         $concept= "Concept";
         $contact= "Contact";
     }
-    global $polylang;
-    $pageids = get_option('page_for_posts' );  
-    $blog_ids = $polylang->model->get_translations('page', $pageids);  
-    $blog_id = $blog_ids[pll_current_language()];
     
-    $shop_id = woocommerce_get_page_id( 'shop' );
-    $shop_ids = $polylang->model->get_translations('page', $shop_id);  
-    $shop_id = $shop_ids[pll_current_language()];
     
                 // j'affiche le contenu de la page About dans la langue courrante 
          //       print_r($blog_ids);

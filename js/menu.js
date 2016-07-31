@@ -81,13 +81,18 @@ $(document).ready(function() {
   });
         if($("#button-signin")) {
            $("#button-signin").on('click', function () {
-              if($("#signid").hasClass('open')) {
+              if($("#customer_login:hidden").length)
+                  $($("#customer_login")[0]).css("display", "block");
+              else 
+                  $($("#customer_login")[0]).css("display", "none");
+               if($("#signid").hasClass('open')) {
                   $("#signid").hide();
                   $("#signid").removeClass('open');
                   
               }else {                  
                   $("#signid").show();
                   $("#signid").addClass('open');
+                  $("#masthead").removeClass('header-top');
               }
            });
         }

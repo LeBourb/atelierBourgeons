@@ -137,6 +137,8 @@ function get_pll_url($lang)
             wp_enqueue_script('blog-stylejs');
             wp_register_script( 'instafeedjs', get_stylesheet_directory_uri() . '/js/instafeed.js' );
             wp_enqueue_script('instafeedjs');
+            wp_register_script( 'menu-stylejs', get_stylesheet_directory_uri() . '/js/menu.js' );
+            wp_enqueue_script('menu-stylejs');
             
         }else if(is_single()) {
             wp_enqueue_style( 'blog-post-style', get_stylesheet_directory_uri() . '/css/blog-post.css' );

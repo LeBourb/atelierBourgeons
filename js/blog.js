@@ -16,13 +16,13 @@ $(document).ready(function() {
     if(main.clientWidth > 768) {
         col2 = true;
         middle =  main.clientWidth/2;
-        padding = (0.01 * main.clientWidth)/3; 
+        padding = 0.025 * main.clientWidth; 
     }
     else {
-        padding = (0.01 * main.clientWidth)/2; 
+        padding = 0.05 * main.clientWidth; 
     }
     var nav_page = $('.navigation.pagination');
-    var bottom_left=$main.position().top, bottom_right = $main.position().top;
+    var bottom_left=$main.position().top + 20, bottom_right = $main.position().top + 20;
     if($($articles[0]))
     var _isleft = true;
     $articles.each( function( idx ){

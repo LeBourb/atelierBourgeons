@@ -10,7 +10,7 @@ and open the template in the editor.
 
 @font-awesome {
     font-family: font-awesome;
-    src: url(wp-content/themes/storefront-child/fonts/fontawesome-webfont.ttf);
+    src: url(wp-content/themes/atelierbourgeons/fonts/fontawesome-webfont.ttf);
     font-weight: normal;
 }
 
@@ -30,6 +30,7 @@ and open the template in the editor.
 }
 #primary{
     margin-right: 1em;
+    background-color: #f8f8f8;
 }
 article{
     display: block;
@@ -64,7 +65,10 @@ article{
     margin: 0.2em;
 }
 
-
+#menu-large > li {
+    display: inline-block;
+    margin-left: 1em;
+}
 
 #primary {
     width : 100%;
@@ -74,7 +78,7 @@ article{
 
 #main {
     display: inline-block;
-    width: 60%;
+    width: 70%;
     position: relative;
     float: left;
 }
@@ -126,6 +130,33 @@ article{
     width: 100%;
 }
 
+#precontent-widget-cont {
+    border: none;
+    background-size: cover;
+    background-image: url(../img/homepage.jpg);
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-top: -3px;
+    position: relative;
+    height: 200px;
+}
+
+#header-top > ul > li {
+    display: inline-block;
+    margin-left: 1em;
+}
+
+#customer_login {
+    display: none;
+    z-index: 1;
+    position: relative;
+    background-color: white;
+}
+
+.wp-social-login-provider-list > a {
+    display: inline-block;
+}
 
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
 

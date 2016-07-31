@@ -73,7 +73,7 @@
                    ?>
                     <img class="bgimgs" src="<?php echo $image_attributes[0]?>" />
             <?php } ?>
-            <img class="bgimgs" src ="wp-content/themes/storefront-child/img/homepage.jpg" /> 
+            <img class="bgimgs" src ="wp-content/themes/atelierbourgeons/img/homepage.jpg" /> 
             <li id="facebook" class="socialicon socialicon-f">
                 <i class="fa fa-facebook fa-lg"></i>
             </li>
@@ -91,9 +91,8 @@
             </li>
             <li class="langue jp">Jp
             </li>
-            <li class="fa-shopping-cart">
-            </li>
-            
+            <!--<li class="fa-shopping-cart">
+            </li>-->            
         </div>
     </section>
     <section id="galerie17w">
@@ -114,12 +113,12 @@ foreach($images as $image) {
 				</a>
 <?php } ?>
 </div>
-        <div class="galerieopen">    <img id='about-close' src ="wp-content/themes/storefront-child/img/down-chevron.png" /></div>
+        <div class="galerieopen">    <img id='about-close' src ="<?php echo get_site_url(); ?>/wp-content/themes/atelierbourgeons/img/down-chevron.png" /></div>
             </section>
     <section id="about">
 <div id="about-page">
     <div class='board-left'>
-        <img id='about-img' accesskey=""src ="wp-content/themes/storefront-child/img/concept.jpg" />
+        <img id='about-img' accesskey=""src ="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/concept.jpg" />
     </div>
     <div id='about-txt' class='board-right'>
           <?php $post = get_page_by_title( 'About' );                

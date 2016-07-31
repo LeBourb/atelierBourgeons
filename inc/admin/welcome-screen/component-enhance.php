@@ -13,7 +13,7 @@
  */
 $storefront_admin 	= new Storefront_Admin();
 $extensions 		= $storefront_admin::get_storefront_product_data( 'http://d3t0oesq8995hv.cloudfront.net/storefront-extensions.json', 'storefront_extensions' );
-$child_themes 		= $storefront_admin::get_storefront_product_data( 'http://d3t0oesq8995hv.cloudfront.net/storefront-child-themes.json', 'storefront_child_themes' );
+$child_themes 		= $storefront_admin::get_storefront_product_data( 'http://d3t0oesq8995hv.cloudfront.net/atelierbourgeons-themes.json', 'storefront_child_themes' );
 ?>
 
 	<div class="boxed enhance">
@@ -82,7 +82,7 @@ $child_themes 		= $storefront_admin::get_storefront_product_data( 'http://d3t0oe
 		}
 		?>
 		<div class="more-button">
-			<a href="http://www.woothemes.com/product-category/themes/storefront-child-theme-themes?utm_source=product&utm_medium=upsell&utm_campaign=storefrontaddons" class="button button-primary">
+			<a href="http://www.woothemes.com/product-category/themes/atelierbourgeons-theme-themes?utm_source=product&utm_medium=upsell&utm_campaign=storefrontaddons" class="button button-primary">
 				<?php printf( esc_html__( 'View all %s child themes &rarr;', 'storefront' ), 'Storefront' ); ?>
 			</a>
 		</div>

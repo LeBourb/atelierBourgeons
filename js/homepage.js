@@ -5,21 +5,21 @@ $(document).ready(function() {
     resize = function () {
         width = window.innerWidth;//$( window ).width() ;
         height = window.innerHeight;//$( window ).height() ;
-        
+        return;
         $('#home').css ({
             height : height
         });
-        
-        //bgimgs.each( function (eg) {
+        var that= $('.bgimgs');    
+        that.each( function (eg) {
          
             
-            setTimeout(function(){  
-            var that= $('.bgimgs');    
-            var x_width = $(that).width();
+            //setTimeout(function(){  
+           
+            var x_width = $(eg).width();
                 
-            var x_height = $(that).height();
-            var img_width = that[0].naturalWidth;
-            var img_height = that[0].naturalHeight;
+            var x_height = $(eg).height();
+            var img_width = eg.naturalWidth;
+            var img_height = eg.naturalHeight;
             
             var img_ratio = img_width / img_height;
             //var win_ration = width / height;
@@ -56,13 +56,13 @@ $(document).ready(function() {
              
 
            if(width_ratio > 1 && height_ratio>1) {
-           $(that).css("width",x_height*img_ratio);
-           $(that).css("height",x_height);
+           $(eg).css("width",x_height*img_ratio);
+           $(eg).css("height",x_height);
        }
             
-            },1000);
+           // },1000);
             
-        //})
+       })
     };
     $( window ).resize(resize);
     

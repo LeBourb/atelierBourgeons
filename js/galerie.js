@@ -17,6 +17,10 @@ $(document).ready(function() {
         height: window.innerHeight
     })
     $('.galerieopen').on('click', function () {
+        $('body').css({
+           overflow: hidden
+        });
+        
         $(this.parentElement).css({
             height: 'auto'
         });

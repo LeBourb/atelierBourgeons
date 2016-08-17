@@ -57,13 +57,13 @@
           if ($( window ).width() > 768) {
             $('#menu-large').show();
             $($('#menu-left')[0]).hide();
-            //$('#menu-right').show();
+            $($('#menu-right')[0]).hide();
           }
 
           if ($(window).width() <= 768) {
             $('#menu-large').hide().removeClass('open');            
             $($('#search-box')[0]).hide();
-            //$('#menu-right').hide().removeClass('open');
+            $($('#menu-right')[0]).hide();
           }
         };
         resizeFix();
@@ -96,6 +96,16 @@ $(document).ready(function() {
               }
            });
         }
+        
+           if($(".menu-shop")) {
+           $(".menu-shop").on('click', function () {
+               if($("#cart-widget:hidden").length)
+                  $($("#cart-widget")[0]).css("display", "block");
+              else 
+                  $($("#cart-widget")[0]).css("display", "none");
+                   $("#masthead").removeClass('header-top');
+           });}
+           
     
     
         if($("#menu-button-left"))
@@ -137,6 +147,15 @@ $(document).ready(function() {
                 
                 
          });  
+         
+         $('.close-search').on('click', function(){
+             if($(window).width()> 768) {
+                 var sbox = $($('#search-box')[0]);
+                 sbox.hide();
+                 $($('.menu-right')[0]).show();                
+             }
+             
+         });
         
   var is_top = false;
   $(window).scroll(function(){

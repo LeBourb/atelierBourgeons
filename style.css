@@ -32,7 +32,7 @@ li {
 
 .woocommerce-main-image.zoom{
     cursor: help;
-    overflow: hidden;
+    //overflow: hidden;
     //height: 400px;
 
 
@@ -85,6 +85,7 @@ li {
     padding-top: 0.5em;
     color: #9aa0a7;
     background-position: center center;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
     position: relative;
     z-index: 999;
     width: 100%;
@@ -163,14 +164,7 @@ li {
          box-shadow: 0 0 1px #333;
 }
 
-.widget_shopping_cart {
-    position:absolute;
-    display: none;
-}
 
-.menu-shop:hover > .widget_shopping_cart {
-    display: block;
-}
 .attachment-shop_thumbnail.size-shop_thumbnail.wp-post-image {
     width: 2em;
 }
@@ -227,7 +221,146 @@ body {
     display :none;
 }
 
+#woocommerce-product-search-field{
+    padding: 0px;
+    background-color: transparent;
+    color: rgb(67, 69, 75);
+    outline: 0px none;
+    border: 0px none;
+    -webkit-appearance: none;
+    border-radius: none;
+    box-sizing: border-box;
+    font-weight: 400;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.125) inset;
+}
+
+.footer_level {
+    border-top: 1px dashed #cccbcb;
+    padding: 20px 0;
+    pacity: 1;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline; color: #dbdbdb;
+    opacity: 1;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+.footer_wrap {
+    max-width: 1168px;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+.footer_wrap > div > div {
+    display: inline-block;
+}
+
+.footer_level2 .cols_3 .column {
+    text-align: right;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer_level2 .cols_3 .column:first-child {
+    text-align: left;
+}
+
+.footer_level2 .cols_3 .column.middle {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}
+
+.column {
+    vertical-align: top;
+}
+
+img.bgimgs {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    max-width: none;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+    min-height: 100%;
+}
+
+img.bgimgs.portrait {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+
+.column> img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer_iconSet  {
+    margin-left: auto;
+    margin-right: auto;
+}
+.footer_iconSet > img {
+    display: inline-block;
+}
+
+ul.social_icons > li {
+    display: inline-block;
+}
+
+.cols_3 .column {
+    padding: 0 1%;
+    width: 31%;
+}
+.column_info {
+    text-transform: none;
+}
+
+.title_concept{
+    position: absolute;
+    z-index: 2;
+    top: 40%;
+    left: 30%;
+    font-size: 5em;
+}
+
+.title_showroom{
+    border: medium none antiquewhite;
+    background-color: rgba(153, 142, 146, 0.61);
+    opacity: 1;
+    font-size: 3em;
+    color: white;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    margin-left: auto;
+    font-size: 5em;
+    margin-right: auto;
+    width: 100%;
+    text-align: center;
+}
+// passage au format portrait (téléphone portable)
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+
+
     body {
         overflow-x: hidden;
         //min-width: 400px;
@@ -307,6 +440,17 @@ body {
 }
 
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+
+    img.bgimgs {
+        display: none!important;
+    }
+    img.bgimgs.portrait {
+        width: 100%;
+        height: auto;
+        display: block!important;
+    }
+
+
     .col-full {
         margin-left: 0;
         margin-right: 0; }
@@ -368,6 +512,16 @@ ul.menu li a,
 }
 
 @media all and (max-width: 384px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 512px), only screen and (min-resolution: 192dpi) and (max-width: 512px), only screen and (min-resolution: 2dppx) and (max-width: 512px) {
+
+    img.bgimgs {
+        display: none!important;
+    }
+    img.bgimgs.portrait {
+        width: 100%;
+        height: auto;
+        display: block!important;
+    }
+
     .products > li {
         width: 100%;
         margin: 0 0 0 0;

@@ -8,7 +8,17 @@
  */
 ?>
 
- <?php// if(is_front_page())</body></html> : ?>		
+ <?php if($cur_lang == 'fr') {
+     $Titre_Livraison="Livraison express";
+     $Text_Livraison="en France et à l'internationale";
+     $Fabrication="Fabriqué en france";
+     $Paiement_Titre="Paiement sécurisé";
+ }else {
+     $Titre_Livraison="Express Delivery";
+     $Text_Livraison="in France and abroad";
+     $Fabrication="Made in france";
+     $Paiement_Titre="Paiement sécurisé";
+ } ?>		
 
 
 
@@ -20,15 +30,83 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="col-full">
-
+                    
 			<?php
 			/**
 			 * @hooked storefront_footer_widgets - 10
 			 * @hooked storefront_credit - 20
 			 */
                         //if(is_front_page())
-                            remove_action( 'storefront_footer', 'storefront_handheld_footer_bar', 999 );
-			do_action( 'storefront_footer' ); ?>
+                            //remove_action( 'storefront_footer', 'storefront_handheld_footer_bar', 999 );
+			//do_action( 'storefront_footer' ); ?>
+                    
+                    <div class="footer_level footer_level1">
+                        <div class="footer_wrap">
+                            <div class="cols_3 clearfix">
+                                <div class="column">
+                                    <h5><?php echo $Titre_Livraison; ?></h5> 
+                                        <?php echo $Text_Livraison; ?>
+                                </div>
+                                <div class="column column_flag">
+                                    <img src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/flag.png" alt="France flag">                                     
+                                    <h5><?php echo $Fabrication;?></h5>
+                                </div>
+                                <div class="column">
+                                    <h5><?php echo $Paiement_Titre;?></h5>
+                                    <div class="footer_iconSet"> 
+                                        <img src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/payment_icon1.png" alt="VISA">                                         
+                                        <img src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/payment_icon2.png" alt="MasterCard">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer_level footer_level2">
+                        <div class="footer_wrap">
+                            <div class="cols_3 clearfix">
+                                <div class="column">
+                                    <h4>
+                                        <a href="#">FAQ</a>
+                                    </h4>
+                                    <h4>
+                                        <a href="#">CGV</a>
+                                    </h4>
+                                    <h4>
+                                        <a href="#">CONTACT</a>
+                                    </h4>
+                                    <h4>
+                                        <a href="#">MENTIONS LéGALES</a>
+                                    </h4>
+                                </div>
+                                <div class="column middle">
+                                    <h5>suivez-nous</h5>
+                                    <ul class="social_icons">
+                                        <li id="facebook" href="http://www.facebook.com/share.php?u=<?php echo get_permalink () ?>" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" >
+                                            <i class="fa fa-facebook fa-lg"></i>
+                                        </li>
+                                        <li id="twitter">
+                                            <i class="fa fa-twitter fa-lg" ></i>
+                                        </li>
+                                        <li id="instagram">
+                                            <i class="fa fa-instagram fa-lg" ></i>
+                                        </li>
+                                        <li id="google-plus">
+                                            <i class="fa fa-google-plus fa-lg"  ></i>
+                                        </li>
+                                        <li id="linkedin">
+                                            <i class="fa fa-linkedin fa-lg"  ></i>
+                                        </li>
+                                    </ul>
+                                    <div style="clear:both">                                        
+                                    </div>                                      
+                                </div>
+                                <div class="column column_info">Atelier Bourgeons
+                                    <span>24 rue Traversière, 92100 Boulogne-Billancourt</span><br> 
+                                    <span>contact@atelierbourgeons.com</span><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 		</div><!-- .col-full -->
 	</footer><!-- #colophon -->

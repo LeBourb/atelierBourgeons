@@ -10,9 +10,27 @@
  * Template name: Homepage
  *
  * @package storefront
- */ 
+ 
     //get_header(); 
 
+                $home = get_page_by_title( 'Home' );
+                $images = get_attached_media('image', $home->ID);
+                $index = 0;
+                foreach($images as $image) { 
+                    $index++;
+                   $image_attributes = wp_get_attachment_image_src($image->ID,'full');
+                   ?>
+                    img class="bgimgs" src="echo $image_attributes[0]?>" />
+             }
+*/
+    $cur_lang = pll_current_language(); 
+    if($cur_lang == 'fr') {
+                    $Made_France = "100% Fabrication à Paris";    
+                    $Visit_Showroom_W17 = "Collection Hiver 2017";
+                }else {
+                    $Made_France = "100% Made in Paris";  
+                    $Visit_Showroom_W17 = "Visit Showroom";
+                }
 
 ?>
 
@@ -63,17 +81,10 @@
     <section id="home">
         
         <div id="bgimgs" class="board">
-            <?php 
-                $home = get_page_by_title( 'Home' );
-                $images = get_attached_media('image', $home->ID);
-                $index = 0;
-                foreach($images as $image) { 
-                    $index++;
-                   $image_attributes = wp_get_attachment_image_src($image->ID,'full');
-                   ?>
-                    <img class="bgimgs" src="<?php echo $image_attributes[0]?>" />
-            <?php } ?>
-            <img class="bgimgs" src ="wp-content/themes/atelierbourgeons/img/homepage.jpg" /> 
+            
+            <img class="bgimgs" src ="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/homepage.jpg" /> 
+            <img class="bgimgs portrait" src ="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/homepage-portrait.jpg" /> 
+            <div id="social-media">
             <li id="facebook" class="socialicon socialicon-f">
                 <i class="fa fa-facebook fa-lg"></i>
             </li>
@@ -91,13 +102,22 @@
             </li>
             <li class="langue jp">Jp
             </li>
+            </div>
             <!--<li class="fa-shopping-cart">
             </li>-->            
         </div>
     </section>
     <section id="galerie17w">
+        <canvas id="slider" width="300" height="200" style="border:1px solid #000000; display:none;">
+</canvas> 
         <div class="galerietitre"><div> Hiver 2017</div></div>
+        <div id='galerie17w-txt' class='title_showroom' >
+                <?php echo $Visit_Showroom_W17; ?>
+        </div>  
+        
     <div class="galerie am-container" id="am-container">
+        
+
 <?php 
 $gal17w = get_page_by_title( 'Galerie17W' );
 $images = get_attached_media('image', $gal17w->ID);
@@ -114,6 +134,10 @@ foreach($images as $image) {
 <?php } ?>
 </div>
         <div class="galerieopen">    <img id='about-close' src ="<?php echo get_site_url(); ?>/wp-content/themes/atelierbourgeons/img/down-chevron.png" /></div>
+        <script src="<?php echo get_site_url(); ?>/wp-content/themes/atelierbourgeons/js/pixi.min.js"></script>
+<script src="<?php echo get_site_url(); ?>/wp-content/themes/atelierbourgeons/js/hammer.min.js"></script>
+<script src="<?php echo get_site_url(); ?>/wp-content/themes/atelierbourgeons/js/pixi-carousel.js"></script>
+
             </section>
     <section id="about">
 <div id="about-page">
@@ -130,7 +154,93 @@ foreach($images as $image) {
     </div>
 </div>
         </section>
-</div> 
+        <section id="made_paris">
+                <div id='made_paris-txt' class='title_concept'>
+                <?php echo $Made_France; ?>
+                </div>    
+                <div id="" class="board">
+                <img id='made_paris-img' class="bgimgs" accesskey=""src ="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/paris.jpg" />        
+                <img id='made_paris-img' class="bgimgs portrait" accesskey=""src ="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/paris-portrait.jpg" />        
+                </div>                   
+        </section>
+         <section id="matiere_premiere">
+            <div class="board">
+                <img id='matiere_premiere-img' class="bgimgs" accesskey=""src ="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/organic-cotton-landscape.jpg" />        
+                <img id='matiere_premiere-img' class="bgimgs portrait" accesskey=""src ="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/organic-cotton-portrait.jpg" />        
+            </div>
+         </section>
+        <section id="showroom">
+            <h1>Basic Click Counter Example with JSX</h1>
+                <div id="container">
+                  <p>
+                    To install React, follow the instructions on
+                    <a href="https://github.com/facebook/react/">GitHub</a>.
+                  </p>
+                  <p>
+                    If you can see this, React is <strong>not</strong> working right.
+                    If you checked out the source from GitHub make sure to run <code>grunt</code>.
+                  </p>
+                </div>
+                <h4>Example Details</h4>
+                <p>This is written with JSX and transformed in the browser.</p>
+                <p>This example uses events and state to track clicks and update the rendered output.</p>
+                <script src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/assets/js/react/react-with-addons.js"></script>
+                
+                <script src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/assets/js/react/react-dom.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+                <script type="text/babel">
+                  var CSSTransitionGroup = React.addons.CSSTransitionGroup;
+      var INTERVAL = 2000;
+
+      var AnimateDemo = React.createClass({
+        getInitialState: function() {
+          return {current: 0};
+        },
+
+        componentDidMount: function() {
+          this.interval = setInterval(this.tick, INTERVAL);
+        },
+
+        componentWillUnmount: function() {
+          clearInterval(this.interval);
+        },
+
+        tick: function() {
+          this.setState({current: this.state.current + 1});
+        },
+
+        render: function() {
+          var children = [];
+          var pos = 0;
+          var colors = ['red', 'gray', 'blue'];
+          for (var i = this.state.current; i < this.state.current + colors.length; i++) {
+            var style = {
+              left: pos * 128,
+              background: colors[i % colors.length]
+            };
+            pos++;
+            children.push(<div key={i} className="animateItem" style={style}>{i}</div>);
+          }
+          return (
+            <CSSTransitionGroup
+              className="animateExample"
+              transitionEnterTimeout={250}
+              transitionLeaveTimeout={250}
+              transitionName="example">
+              {children}
+            </CSSTransitionGroup>
+          );
+        }
+      });
+
+      ReactDOM.render(
+        <AnimateDemo />,
+        document.getElementById('container')
+      );
+                </script>
+            
+        </section>
+        
 
 
 <?php 

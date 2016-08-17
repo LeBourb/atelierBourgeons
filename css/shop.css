@@ -48,7 +48,78 @@ body {
     transform: none;
 }
 
+.woocommerce-main-image.zoom{
+    height: initial;
+    width: 100%;
+    overflow: hidden;
+}
+
+.site-search {
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+    height: auto;
+}
+
+input[type="search"] {
+    box-shadow: none!important;
+    border-bottom: 1px solid #000!important;
+}
+
+.widget_product_search form::before {
+    content: none!important;
+}
+
+.site-search .widget_product_search form::before {
+    left: -1.618em!important;
+    top: 0px!important;
+    position: absolute!important;
+}
+
+#woocommerce-product-search-field{
+    width: 10em!important;
+    display: inline-block!important;
+}
+
+.woocommerce-active .site-header .site-search {
+    width: auto !important;
+    margin-bottom: 0px !important;
+}
+form.woocommerce-product-search{
+    height:0px;
+}
+
+#cart-widget {
+    position: relative;
+    width: 40%;
+    float: right;
+
+}
+
+.widget_shopping_cart {
+    position:relative;
+    //display: none;
+}
+
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+
+
+    #woocommerce-product-search-field{
+        width: 250px!important;
+    }
+    .widget_product_search {
+        margin: 0 0 2em!important;
+    }
+
+
+    .close-search{
+        float: right;
+    }
+
+    form.woocommerce-product-search{
+        margin-top: 10px;
+
+    }
 
     .entry-content {
         width: 50%;

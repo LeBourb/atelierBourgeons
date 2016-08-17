@@ -1275,7 +1275,8 @@ form.checkout {
  * My Account
  */
 .woocommerce-MyAccount-navigation {
-	ul {
+	
+        ul {
 		margin-left: 0;
 		border-top: 1px solid $color_border;
 
@@ -2521,7 +2522,8 @@ dl.variation {
 	}
 
 	.woocommerce-MyAccount-navigation {
-		@include span( 2 of 9 );
+		display: inline-block;
+                @include span( 2 of 9 );
 	}
 
 	.woocommerce-MyAccount-content {

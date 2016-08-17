@@ -16,7 +16,6 @@ var top = y * (- img.height() + this.clientHeight);
            //top: - y * img.height()
         });
     });   
-    
     $('.woocommerce-main-image.zoom').mouseleave(function(){
         var img = $($(this).children(['img'])[0]);
         img.css({

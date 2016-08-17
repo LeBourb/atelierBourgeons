@@ -120,10 +120,14 @@ section {
 
 img.bgimg {
     position: absolute;
-    top: 0px;
-    height: auto;
-    max-width: none;
-    display: block;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+    min-height: 100%;
 }
 
 img.bgimg.show {

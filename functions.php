@@ -41,6 +41,16 @@ function get_pll_wc_url( $wc_page)
    
 }
 
+// Logout Redirect
+
+function atelierb_logout_redirect()
+{
+    wp_redirect(get_pll_wc_url('shop'));
+    exit;
+}
+
+add_action('wp_logout', 'atelierb_logout_redirect');
+
 
 function get_pll_url($lang)
 { 
@@ -91,6 +101,9 @@ function get_pll_url($lang)
             wp_enqueue_style( 'child-galeriecss', get_stylesheet_directory_uri() . '/css/galerie.css');
             wp_register_script('script-galerie', get_stylesheet_directory_uri() . '/js/galerie.js' );
             wp_enqueue_script('script-galerie');
+            
+            wp_register_script('script-galerie17w', get_stylesheet_directory_uri() . '/js/galerie17w.js' );
+            wp_enqueue_script('script-galerie17w');
             
             
         } else if ( is_pll_wc('shop') || is_shop() || is_product() || is_product_category() || is_pll_wc('cart')){

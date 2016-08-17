@@ -182,9 +182,15 @@
                                     </div>
                                 <div class="menu-right">
                                 <ul href="" class="">
-                                    <li><a id="button-home">HOME</a></li>
+                                    <li><a id="button-home"  href="<?php echo wp_logout_url(get_permalink( wc_get_page_id( 'home' ) )); ?>">HOME</a></li>
+                                    <li><a id="button-support" href="<?php echo get_permalink(wc_get_page_id( 'support' ));?>">Support</a></li>
                                     <li><a id="button-blog" href="<?php echo get_permalink( $blog_id);?>">BLOG</a></li>
-                                    <li><a id="button-signin">SIGN IN</a></li>
+                                    <?php if (is_user_logged_in()) { ?>
+                                        <li><a id="button-account" href="<?php echo wp_logout_url(get_permalink( wc_get_page_id( 'myaccount' ) )); ?>">Account</a></li>
+                                    <?php } 
+                                        else { ?>
+                                        <li><a id="button-signin">Sign In</a></li>
+                                    <?php } ?>
                                 </ul>
                                 
                                 
@@ -193,7 +199,7 @@
                                     <a>(<?php echo WC()->cart->get_cart_contents_count(); ?>)</a>  
                                 </i>
                                                               
-				<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>                                
+				                         
                                 </ul>
                             
                             
@@ -227,7 +233,10 @@
 			 * @hooked storefront_header_cart - 60
 			 */
 			do_action( 'storefront_header' ); ?>
-                            <div id="signid" style="display:none">
+                            
+                            </div>
+        <div id="signid" style="display:none">
+            
                             <?php     global $polylang;
                 //echo $get_option('woocommerce_myaccount_page_id');
                 //do_action('woocommerce_account_content');
@@ -252,7 +261,10 @@
                 //echo get_post($post_ids[pll_current_language()])->post_content;      
                 
         ?> 
-                            </div>
+        </div>
+            <div id="cart-widget" style="display:none">
+        <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>       
+            </div>
 	</header><!-- #masthead -->
 
 	<?php

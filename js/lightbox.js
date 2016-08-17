@@ -74,14 +74,21 @@
     if(this._isenable)  return; 
     this._isenable = true;
     $('body').on('click', 'a[rel^=lightbox], area[rel^=lightbox], a[data-lightbox], area[data-lightbox]', function(event) {
-      self.start($(event.currentTarget));
+      $('body').css({
+          'overflow-y':'hidden'
+      })
+        self.start($(event.currentTarget));
       return false;
     });
   };
   
   Lightbox.prototype.disable = function() {
-    if(!this._isenable)  return; 
+    $('body').css({
+          'overflow-y':'scroll'
+      });
+      if(!this._isenable)  return; 
     this._isenable = false;
+    
     $('body').off('click', 'a[rel^=lightbox], area[rel^=lightbox], a[data-lightbox], area[data-lightbox]');
   };
 
@@ -449,6 +456,9 @@
   // Closing time. :-(
   Lightbox.prototype.end = function() {
     this.disableKeyboardNav();
+    $('body').css({
+          'overflow-y':'scroll'
+      });
     $(window).off('resize', this.sizeOverlay);
     this.$lightbox.fadeOut(this.options.fadeDuration);
     this.$overlay.fadeOut(this.options.fadeDuration);

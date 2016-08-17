@@ -52,7 +52,7 @@ require_once(STYLESHEETPATH . '/inc/structure/hooks.php');
 /**
  * Load Jetpack compatibility file.
  */
-require get_template_directory() . '/inc/jetpack/class-storefront-jetpack.php';
+require_once(STYLESHEETPATH . '/inc/jetpack/class-storefront-jetpack.php');
 //require get_template_directory() . '/inc/jetpack/functions.php';
 
 /**

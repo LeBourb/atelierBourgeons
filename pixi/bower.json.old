@@ -1,0 +1,24 @@
+{
+  "name": "pixi-carousel",
+  "authors": [
+    "zopelee@gmail.com"
+  ],
+  "description": "A canvas based image slider, with the ability to zoom in/out.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "index.html",
+    "example"
+  ],
+  "main": [
+    "dist/pixi-carousel.js"
+  ],
+  "dependencies": {
+    "pixi": "~3.0.7",
+    "hammerjs": "~2.0.4"
+  }
+}

@@ -2,10 +2,11 @@ $(document).ready(function() {
     
     bgimgs = $( '#bgimgs' ).children();
     position = 0;
-    resize = function () {
+    /*resize = function () {
+        
         width = window.innerWidth;//$( window ).width() ;
         height = window.innerHeight;//$( window ).height() ;
-        return;
+
         $('#home').css ({
             height : height
         });
@@ -61,12 +62,13 @@ $(document).ready(function() {
        }
             
            // },1000);
+        
             
-       })
+       }); 
     };
-    $( window ).resize(resize);
-    
+    $( window ).resize(resize);    
     resize();
+     */
     /*setInterval(function(){
         $(bgimgs[position]).removeClass( 'show' );
         $(bgimgs[position]).addClass(  'hide' );
@@ -119,5 +121,14 @@ $(document).ready(function() {
         $('#loader').toggle( "dontshow" );}
     
     ,2000);
+    
+        var Logo_Top= $('#Logo_Top');    
+                Logo_Top.each( function () {
+                    $(this).addClass('final-logo');
+            });
+            var Logo_Bottom= $('#Logo_Bottom');    
+                Logo_Bottom.each( function () {
+                    $(this).addClass('final-logo');
+            });
     
 });

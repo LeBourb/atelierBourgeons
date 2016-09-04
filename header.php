@@ -32,6 +32,28 @@
     $url_en = get_pll_url('en');
     $url_jp = get_pll_url('jp');
     
+    $cur_lang = pll_current_language(); 
+                
+    if($cur_lang == 'fr') {
+        $close = "fermer le menu";
+        $galerie= "Galerie";
+        $galerie17w= "Automne Hiver 2017";
+        $boutique= "Boutique";
+        $blog= "Journal";
+        $concept= "Concept";
+        $contact= "Contact";
+    } else  {
+        $close = "close menu";
+        $galerie= "Look Book";
+        $galerie17w= "Winter 17";
+        $boutique= "Shop";
+        $blog= "Blog";
+        $concept= "Concept";
+        $contact= "Contact";
+    }
+    
+    
+    
     function get_signin () {
         wc_get_template( 'myaccount/form-login.php' );
         if (is_user_logged_in()) {
@@ -74,7 +96,7 @@
                     $PANTS = "PANTS&CULOTTES";
                     $ACCESSORIES = "ACCESSORIES";
                 }?>
-<li><a href="<?php echo get_pll_wc_url('shop'); ?>"> <?php echo $NEW; ?> </a></li>
+<li><a href="<?php echo get_pll_wc_url('shop', null); ?>"> <?php echo $NEW; ?> </a></li>
                               <?php     $product_categories = get_terms( 'product_cat');
                 foreach ( $product_categories as $woo_cat ) {
                     $woo_cat_id = $woo_cat->term_id; //category ID
@@ -89,11 +111,23 @@
 <div id="menu-right" class="snap-drawer snap-drawer-right" style="display:none;">
       <div>
         <ul>
-          <li><a href="<?php echo get_pll_wc_url( 'cart');?>" data-cartquantity="">Cart (<?php echo WC()->cart->get_cart_contents_count(); ?>)</a></li>
+          <li><a href="<?php echo get_pll_wc_url( 'cart', null);?>" data-cartquantity="">Cart (<?php echo WC()->cart->get_cart_contents_count(); ?>)</a></li>
       
       <?php  
-      get_signin();
-        ?>
+      //get_signin();
+      if (is_user_logged_in()) {
+          $user_info = get_userdata(1);
+
+          echo '<li><a>' . $user_info->user_login . '</a></li>';
+          echo '<li><a href="'. wp_logout_url(get_permalink( wc_get_page_id( 'myaccount' ) )) .'">Log Out</a></li>';
+        }
+        elseif (!is_user_logged_in()) {
+            //echo '<li><a href="'. site_url('wp-login.php') .'">Log In</a></li>';
+        
+        
+          echo '<a href="'. get_pll_wc_url( 'myaccount', null ) .'"> '. esc_attr__( 'My Account', 'storefront' ) .' </a>';
+          
+        }?>
  </ul>
  </div>
  </div>
@@ -103,11 +137,8 @@
         
 	do_action( 'storefront_before_header' ); ?>
 <?php if ( is_shop() || is_pll_wc('shop') || is_product() || is_product_category() || is_pll_wc('cart') || is_account_page())  :
-    if (!is_product()){ ?>
     
-    <img class="header-background" src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/banner_search.jpg" ></img>	
-    <?php } ?>
-       
+       ?>
     <header id="masthead" class="site-header" role="banner" <?php if ( get_header_image() != '' ) { echo 'style="background-image: url(' . esc_url( get_header_image() ) . ');"'; } ?>>
       
 	<?php
@@ -115,9 +146,9 @@
                 global $wp;
                 //$current_url = add_query_arg( $wp->query_string, '', home_url( $wp->request ) );
                 //$current_url = the_permalink();
-                $url_fr = get_pll_url('fr');
-                $url_en = get_pll_url('en');
-                $url_jp = get_pll_url('jp');
+                $url_fr = get_pll_wc_url('shop','fr');
+                $url_en = get_pll_wc_url('shop','en');
+                $url_jp = get_pll_wc_url('shop','jp');
             
                 
                 //$url = get_term_link( $product_categories[0]->ID, 'product_cat' );
@@ -169,7 +200,7 @@
                                 <ul id="menu-large">
                                     
                                    <li id="sp_close" style="display:none"><a href="#" id="sp_close_button">メニューを閉じる</a></li>
-                                   <li><a href="<?php echo get_pll_wc_url('shop'); ?>"> <?php echo $NEW; ?> </a></li>
+                                   <li><a href="<?php echo get_pll_wc_url('shop', null); ?>"> <?php echo $NEW; ?> </a></li>
                               <?php     $product_categories = get_terms( 'product_cat');
                 foreach ( $product_categories as $woo_cat ) {
                     $woo_cat_id = $woo_cat->term_id; //category ID
@@ -182,15 +213,15 @@
                                     </div>
                                 <div class="menu-right">
                                 <ul href="" class="">
-                                    <li><a id="button-home"  href="<?php echo wp_logout_url(get_permalink( wc_get_page_id( 'home' ) )); ?>">HOME</a></li>
+                                    <li><a id="button-home"  href="<?php echo get_home_url(); ?>">HOME</a></li>
                                     <li><a id="button-support" href="<?php echo get_permalink(wc_get_page_id( 'support' ));?>">Support</a></li>
-                                    <li><a id="button-blog" href="<?php echo get_permalink( $blog_id);?>">BLOG</a></li>
-                                    <?php if (is_user_logged_in()) { ?>
-                                        <li><a id="button-account" href="<?php echo wp_logout_url(get_permalink( wc_get_page_id( 'myaccount' ) )); ?>">Account</a></li>
-                                    <?php } 
-                                        else { ?>
-                                        <li><a id="button-signin">Sign In</a></li>
-                                    <?php } ?>
+                                    <li><a id="button-blog" href="<?php echo get_permalink( $blog_id);?>"><?php echo $blog; ?> </a></li>
+                                    <?php if (is_user_logged_in()) { 
+                                        echo '<li><a id="button-account" href="'. get_pll_wc_url( 'myaccount' ,null) .'">Account</a></li>';
+                                    } 
+                                        else { 
+                                        echo '<li><a id="button-signin">Sign In</a></li>';
+                                    } ?>
                                 </ul>
                                 
                                 
@@ -266,6 +297,10 @@
         <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>       
             </div>
 	</header><!-- #masthead -->
+        <?php if (!is_product()){ ?>
+    
+    <img class="header-background" src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/banner_search.jpg" ></img>	
+    <?php } ?>
 
 	<?php
 	/**
@@ -286,7 +321,7 @@
 <div id="checkout-banner">    
 </div>
 
-<?php elseif (is_home()) ://|| is_single()) : 
+<?php elseif (is_home() || is_single()) : 
 //else:
     ?>
             <div id="header-top">
@@ -311,28 +346,18 @@
                 <div id="menu-button"></div>
                 
             </div>  
-            <div id="precontent-widget-cont"></div>
+                    <div id="precontent-widget-cont">
+                        <header class="entry-header">
+		<?php
+		if ( is_single() ) {
+			//storefront_posted_on();
+			the_title( '<h1 class="entry-title" itemprop="name headline">', '</h1>' );
+		} 
+		?>
+		</header><!-- .entry-header -->
+                    </div>
 <?php else: 
-           $cur_lang = pll_current_language(); 
-                
-    if($cur_lang == 'fr') {
-        $close = "fermer le menu";
-        $galerie= "Galerie";
-        $galerie17w= "Automne Hiver 2017";
-        $boutique= "Boutique";
-        $blog= "Blog";
-        $concept= "Concept";
-        $contact= "Contact";
-    } else  {
-        $close = "close menu";
-        $galerie= "Look Book";
-        $galerie17w= "Winter 17";
-        $boutique= "Shop";
-        $blog= "Blog";
-        $concept= "Concept";
-        $contact= "Contact";
-    }
-    
+           
     
                 // j'affiche le contenu de la page About dans la langue courrante 
          //       print_r($blog_ids);

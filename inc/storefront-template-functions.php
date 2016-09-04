@@ -254,7 +254,8 @@ if ( ! function_exists( 'storefront_page_header' ) ) {
 		<header class="entry-header">
 			<?php
 			storefront_post_thumbnail( 'full' );
-			the_title( '<h1 class="entry-title">', '</h1>' );
+			if ( !is_single() ) {the_title( '<h1 class="entry-title">', '</h1>' );
+                        }
 			?>
 		</header><!-- .entry-header -->
 		<?php

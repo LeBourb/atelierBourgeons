@@ -47,9 +47,13 @@ body {
     background-color: #f8f8f8;
 }
 
-article{
+article , aside{
     background-color: white;
     margin: 1em!important;
+}
+
+aside {
+    display: inline-block!important;
 }
 
 .share-product {
@@ -76,6 +80,13 @@ article{
     height: 10em;
     background-color: white;
     margin: 1em;
+}
+
+#precontent-widget-cont > header.entry-header {
+    position: absolute;
+    vertical-align: middle;
+    left: 2em;
+    top: 4em;
 }
 
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {

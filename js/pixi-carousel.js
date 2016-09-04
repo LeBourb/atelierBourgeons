@@ -25,6 +25,12 @@ Director.prototype.animate = function() {
   requestAnimationFrame(this.animate.bind(this));
   this.updateAndRender(this.dt);
   
+  if(this.close_sprite.mouse_over || this.close_sprite.mouse_out ){
+    var msPerFrame = 1000 / this.framesPerSecond;
+    var animationAgeInMs = new Date().getTime();
+    this.close_sprite.gotoAndStop((Math.floor(animationAgeInMs / msPerFrame)  % this.close_sprite.totalFrames));    
+  }
+  
   this.then = this.now;
 };
 
@@ -56,7 +62,7 @@ function Slide(width, height, img_src, img, is_left) {
   this.is_left = is_left ? true : false;
   
 this.cached_width = this.width;
-  this.anchor = {x: 0.5, y: 0.5};
+  this.anchor = {x: 0, y: 0};
   this.position = {x: 0, y: 0};
   this.cached_position = {x: 0, y: 0};
   this.temp_position = {x: 0, y: 0};
@@ -108,8 +114,8 @@ function SlideManagerBase(width, height, options) {
   this.BKG_COLOR = options.bkg_color || 0x000000;
   this.scale = options.scale || this.SCALES.FIT;
   
-  this.animationDuration = 4.5;
-
+  this.animationDuration = 1.5;
+  this.framesPerSecond = 12;
   this.has_indicators = options.has_indicators || true;
   this.speed = this.WIDTH / this.SLIDE_DURATION;
   this.is_accelerated = options.is_accelerated || false;
@@ -185,6 +191,7 @@ SlideManagerBase.prototype.update = function (dt) {
       if (this.is_auto_slide === true && this.state_time > this.interval) {
         this.slideLeft();
       }
+      this.adjustScale();
       break;
     case this.states.zoomming_in:
       if (this.state_time > this.zoom_interval) {
@@ -238,20 +245,18 @@ SlideManagerBase.prototype.update = function (dt) {
           default:
             break;
         }
-        this.adjustPosition();
+        //this.adjustPosition();
+        this.adjustScale();
       //}
       break;
   }
 };
 
-SlideManagerBase.prototype.updateSliding = function (dt) {
-  var sign = this.state === this.states.sliding_left ? -1 : 1;
-  for (var i = 0; i < this.slide_count; i++) {
-    //var delta_s = this.initial_speed * this.state_time - 0.5 * this.acceleration * Math.pow(this.state_time, 2);
+SlideManagerBase.prototype.updateSliding = function () {
+  //var sign = this.state === this.states.sliding_left ? -1 : 1;
   
-    var t = (dt) / ( this.animationDuration*1000 );
-    
-    var Bx = 0.61,
+  var t = (Date.now() - this.animationStart ) / ( this.animationDuration*1000 );
+  var Bx = 0.61,
         By = 0.08,
         Cx = 0.59,
         Cy = 1.01;
@@ -260,23 +265,63 @@ SlideManagerBase.prototype.updateSliding = function (dt) {
     var t1 = curve.solve(t, UnitBezier.prototype.epsilon);
     var s1 = 1.0-t1;
 
-    // Lerp using solved T
-    this.slides[i].position.x = (this.slides[i].startPosition.x * s1) + (this.slides[i].endPosition.x * t1);
+  for (var i = 0; i < this.slide_count; i++) {
+    //var delta_s = this.initial_speed * this.state_time - 0.5 * this.acceleration * Math.pow(this.state_time, 2);
+  
     
-    if(Math.abs(this.slides[i].position.x - this.slides[i].startPosition.x ) 
-            >= Math.abs(this.slides[i].endPosition.x - this.slides[i].startPosition.x )) {
-        // end animation.
+    if(t>1){
         this.slides[i].position.x = this.slides[i].endPosition.x;
-        this.state = this.states.still;
+        if (this.slides[i].to_bigger) {
+            this.slides[i].width = this.WIDTH;
+        }else if (this.slides[i].to_smaller) {
+            this.slides[i].width = this.WIDTH/2;
+        }
+        this.state = this.states.still; 
+        this.slides[i].cache_width();
+    }else {// Lerp using solved T
+        if (this.slides[i].startPosition.x === this.slides[i].endPosition.x) {
+            this.slides[i].position.x = this.slides[i].startPosition.x;            
+        }
+        else
+            this.slides[i].position.x = (this.slides[i].startPosition.x * s1) + (this.slides[i].endPosition.x * t1);
+
+        if (this.slides[i].to_bigger) {
+          this.slides[i].width = (this.slides[i].cached_width * s1) + (this.WIDTH * t1);
+        }else if (this.slides[i].to_smaller) {
+          this.slides[i].width = (this.slides[i].cached_width * s1) + (this.WIDTH/2 * t1);
+        }
+
+        if( (this.slides[i].startPosition.x !== this.slides[i].endPosition.x) &&(
+                Math.abs(this.slides[i].position.x - this.slides[i].startPosition.x ) 
+                >= Math.abs(this.slides[i].endPosition.x - this.slides[i].startPosition.x )
+                ) ) {
+            // end animation.
+            this.slides[i].position.x = this.slides[i].endPosition.x;
+            if (this.slides[i].to_bigger) {
+                this.slides[i].width = this.WIDTH;
+            }else if (this.slides[i].to_smaller) {
+                this.slides[i].width = this.WIDTH/2;
+            }
+
+            this.state = this.states.still;
+        }
     }
+    
+    if(this.state === this.states.still) {
+          for (var i = 0; i < this.slide_count; i++) {
+              this.slides[i].cache_width();
+              this.slides[i].to_bigger = false;
+              this.slides[i].to_smaller = false;
+          }
+    }
+    
+    
+    
     
     //var finalPosition.y = (startPosition.y * s1) + (endPosition.y * t1);
     
     //this.slides[i].position.x = this.slides[i].cached_position.x + sign * delta_s;
     // Active Slide get bigger
-    //if (this.slides[i].to_bigger) {
-      //  this.slides[i].width = this.slides[i].cached_width + delta_s;
-    //}
     // Disactive Slide get smaller
     //if (this.slides[i].to_smaller) {
       //  this.slides[i].width = this.slides[i].cached_width - delta_s;
@@ -341,6 +386,24 @@ SlideManagerBase.prototype.adjustCircles = function () {
   this.indicators[active_index].fillAlpha = this.CIRCLE_FILLALPHA_ACTIVE;
 };
 
+SlideManagerBase.prototype.adjustScale = function () {
+    
+    
+    
+    for(var i = 0, len = this.textures.length; i < len; i++ ) {
+        var aspRatio = this.slides[i].width / this.slides[i].height;
+        // always crop width...
+        
+        // landspace
+        var finalheight = this.textures[i].height;
+        var finalwidth = finalheight * aspRatio;
+        var posx = this.textures[i].width / 2 - finalwidth / 2;
+        this.textures[i].frame.x = posx;
+        this.textures[i].frame.width = finalwidth;
+              //  = new PIXI.Rectangle(posx, 0, finalwidth, finalheight);
+    }
+};
+
 SlideManagerBase.prototype.adjustPosition = function () {
  return;
     if (this.is_position_adjusted) {
@@ -367,29 +430,39 @@ SlideManagerBase.prototype.slideLeft = function () {
       return;
   } 
   var slides = this.getActiveSlides();
-  if(this.position === "neutral") {
-    this.position = "left";
-    slides.left.to_smaller = false; 
-    slides.right.to_bigger = true;
-  }
-  else if  (this.position  === "right") {
-    this.position = "neutral";
-    slides.left.to_smaller = true; 
-    slides.right.to_bigger = false;
-  }
+  
+  
   
   slides.left.startPosition = {
               x : slides.left.position.x
   };
-  slides.left.endPosition = {
-                x: slides.left.position.x - this.WIDTH/2
-  };
+  
   slides.right.startPosition = {
               x: slides.right.position.x
   };
-  slides.right.endPosition = {
+  
+  if(this.position === "neutral") {
+    this.position = "left";
+    slides.left.to_smaller = false; 
+    slides.left.endPosition = {
+            x: slides.left.position.x - this.WIDTH/2
+    };
+    slides.right.to_bigger = true;    
+    slides.right.endPosition = {
       x: slides.right.position.x - this.WIDTH/2
-  } ;
+    } ;
+  }
+  else if  (this.position  === "right") {
+    this.position = "neutral";
+    slides.left.to_smaller = true; 
+    slides.left.endPosition = {
+      x: slides.left.position.x
+    } ;
+    slides.right.to_bigger = false;
+    slides.right.endPosition = {
+      x: slides.right.position.x - this.WIDTH/2
+    } ;
+  }
   
   
   if (this.state !== this.states.still) {
@@ -402,6 +475,7 @@ SlideManagerBase.prototype.slideLeft = function () {
   this.cache_slide_positions();
   this.state = this.states.sliding_left;
   this.state_time = 0;
+  this.animationStart = Date.now();
  
 };
 
@@ -410,28 +484,36 @@ SlideManagerBase.prototype.slideRight = function () {
       return;
   }
   var slides = this.getActiveSlides();
+  slides.left.startPosition = {
+            x: slides.left.position.x
+  };
+  slides.right.startPosition  = { 
+            x: slides.right.position.x
+  }
   if(this.position === "neutral"){
     this.position = "right";
+    
     slides.left.to_bigger = true; 
+    slides.left.endPosition = {
+            x : slides.left.position.x
+    } 
     slides.right.to_smaller = false;
+    slides.right.endPosition = {
+                x: slides.right.position.x + this.WIDTH/2
+    } 
   }
   else if  (this.position  === "left"){
     this.position = "neutral";
     slides.left.to_bigger = false;     
-    slides.right.to_smaller = true;
-    }
-    slides.left.startPosition = {
-            x: slides.left.position.x
-    };
     slides.left.endPosition = {
             x : slides.left.position.x + this.WIDTH/2
     } 
-    slides.right.startPosition  = { 
-            x: slides.right.position.x
-    }
+    slides.right.to_smaller = true;
     slides.right.endPosition = {
-                x: slides.right.position.x + this.WIDTH/2
+            x : slides.right.position.x + this.WIDTH/2
     } 
+  }
+  
 
   if (this.state !== this.states.still) {
     return;
@@ -443,7 +525,7 @@ SlideManagerBase.prototype.slideRight = function () {
   this.cache_slide_positions();
   this.state = this.states.sliding_right;
   this.state_time = 0;
- 
+ this.animationStart = Date.now();
 };
 
 SlideManagerBase.prototype.panTo = function (x, y) {
@@ -491,7 +573,7 @@ SlideManagerBase.prototype.setSlides = function (img_srcs_left , img_srcs_right 
   if(img_srcs_left.length != img_srcs_right.length)
       return;
   this.slide_count = img_srcs_left.length + img_srcs_right.length;
-  for (var i = 0; i < this.slide_count; i++) {
+  for (var i = 0; i < img_srcs_left.length ; i++) {
     if (typeof (img_srcs_left[i]) === 'string') {
       this.slides.push(new Slide(width, height, img_srcs_left[i], null,true));
       this.slides.push(new Slide(width, height, img_srcs_right[i], null,false));
@@ -511,21 +593,21 @@ SlideManagerBase.prototype.init = function () {
 
 //    slide.width = this.WIDTH;
 //    slide.height = this.HEIGHT;
-    slide.anchor.x = 0.5;
-    slide.anchor.y = 0.5;
+    slide.anchor.x = 0;
+    slide.anchor.y = 0;
     if(slide.is_left)
-     slide.position.x = this.WIDTH / 4; // + i * this.WIDTH;
+     slide.position.x = 0; // + i * this.WIDTH;
     else 
-     slide.position.x = this.WIDTH * 3 / 4; // + i * this.WIDTH;
+     slide.position.x = this.WIDTH / 2; // + i * this.WIDTH;
  
  slide.is_active = true;
-    slide.position.y = this.HEIGHT * this.SLIDE_PERCENT_Y;
+    //slide.position.y = this.HEIGHT * this.SLIDE_PERCENT_Y;
 
     switch (this.scale) {
       case this.SCALES.STRETCH:
         slide.width = this.WIDTH;
         slide.height = this.HEIGHT;
-        slide.position.y = this.HEIGHT * 0.5;
+        //slide.position.y = this.HEIGHT * 0.5;
       case this.SCALES.FIT:
         var aspRatio = slide.width / slide.height;
         if (aspRatio > this.WIDTH / this.HEIGHT) {
@@ -550,6 +632,7 @@ SlideManagerBase.prototype.init = function () {
   if (this.onInit) {
     this.onInit();
   }
+  //this.adjustScale();
 };
 
 SlideManagerBase.prototype.SCALES = {
@@ -612,6 +695,7 @@ SlideManager.prototype.init = function () {
     } else {
       var tex = PIXI.Texture.fromImage(sl.img_src);
     }
+    tex.crop = new PIXI.Rectangle(0,0,tex.width, tex.height);
     this.textures.push(tex);
     var sp = new PIXI.Sprite(tex);
     sp.width = sl.width;
@@ -630,6 +714,53 @@ SlideManager.prototype.init = function () {
     }
     this.stage.addChild(this.graphics);
   }
+  
+  // Chargement du close-button
+  var textureArray = [];
+  var img_path = '/wordpress/wp-content/themes/atelierbourgeons/img/sprite_icon_close_white.png';
+  var texture = PIXI.Texture.fromImage(img_path).baseTexture;  
+  for(var i = 0; i < 10 ; i ++ ) {
+      tex = new PIXI.Texture(texture,{x:i*60, y: 0, width:60, height:60});      
+      textureArray.push(tex);
+  }
+  
+  this.close_sprite = new PIXI.extras.MovieClip(textureArray);
+  this.close_sprite.stop();
+  this.close_sprite.hitArea = new PIXI.Circle(0, 0, 100);//new PIXI.Polygon([10,10, 22,22, 32,32, 44 ,44]); 
+  this.close_sprite.interactive = true;
+  
+  this.close_sprite.mouseover = function(){
+   console.log("MOUSE OVER!");   
+   this.gotoAndStop(4);
+   this.mouse_over = true;
+  };
+ 
+  this.close_sprite.mouseout = function(){
+   console.log("MOUSE OUT!");
+   this.mouse_over = false;   
+  };
+  //var that = this.stage
+  this.close_sprite.click = function(){
+   console.log("MOUSE CLICK!");
+   //this.parent.destroy(true);
+   var sliderEl = $('#slider')[0];
+   $(sliderEl).hide();
+   $('body').css({"overflow-y":'scroll'});
+  };
+  
+  //this.close_tex = PIXI.Texture.fromImage('/wordpress/wp-content/themes/atelierbourgeons/img/sprite_icon_close_white.png');
+    //this.close_tex.crop = new PIXI.Rectangle(0,0,600, 60);
+    //this.close_tex.frame = new PIXI.Rectangle(0,0,60, 60);
+  //this.close_sprite = new PIXI.Sprite(this.close_tex);
+  //this.close_tex.crop = new PIXI.Rectangle(0,0,tex.width, tex.height);
+  this.close_sprite.position.x = this.WIDTH - 100;
+  this.close_sprite.position.y = 100;
+ 
+  
+ 
+  this.stage.addChild(this.close_sprite);
+  //SlideManagerBase.prototype.adjustScale.call(this);
+   //this.adjustScale();
   //this.graphics.lineStyle(0, 0x000000, 1);
 };
 

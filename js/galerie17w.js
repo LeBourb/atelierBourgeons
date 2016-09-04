@@ -22,13 +22,13 @@ $(document).ready(function() {
         indicator_fillAlpha: 0.2, indicator_fillAlpha_active: 0.8,
       });
       var imgsleft = [
-        '/wordpress/wp-content/themes/atelierbourgeons/pixi/example/assets/img/drip-871152_640.jpg',
+        '/wordpress/wp-content/themes/atelierbourgeons/img/homepage.jpg',
         //'/wordpress/wp-content/themes/atelierbourgeons/pixi/example/assets/img/blur-21653_640.jpg',
         //'/wordpress/wp-content/themes/atelierbourgeons/pixi/example/assets/img/lotus-854919_640.jpg'
       ];
       var imgsright = [
         //'/wordpress/wp-content/themes/atelierbourgeons/pixi/example/assets/img/drip-871152_640.jpg',
-        '/wordpress/wp-content/themes/atelierbourgeons/pixi/example/assets/img/blur-21653_640.jpg',
+        '/wordpress/wp-content/themes/atelierbourgeons/img/homepage-2.jpg',
         //'/wordpress/wp-content/themes/atelierbourgeons/pixi/example/assets/img/lotus-854919_640.jpg'
       ];
       

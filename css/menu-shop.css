@@ -24,8 +24,8 @@
 
 #customer_login {
     width: 50%!important;
-    float: right;
-    margin-right: 10%;
+    float: right!important;
+    margin-right: 2%!important;
 }
 
 .wp-social-login-provider {
@@ -203,6 +203,10 @@
     float:right;
 }
 
+#menu-right {
+    float:right;
+}
+
 #menu-button-right {
     display: inline-block;
     float: right;
@@ -326,6 +330,12 @@
     margin: 0px;
 }
 
+#cart-widget {
+    display: block;
+    width: 20%;
+    float: right;
+}
+
 /*#cssmenu ul ul li.has-sub:hover > a::after {
     border-color: #ffffff;
 }*/
@@ -333,6 +343,12 @@
     .site-branding {
         display: block!important;
     }
+
+    #masthead{
+        position: relative;
+    }
+
+
 
     #sp_close {
         display: block !important;

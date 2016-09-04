@@ -15,6 +15,8 @@ get_header(); ?>
 			do_action( 'storefront_single_post_before' );
 
 			get_template_part( 'content', 'single' );
+                        
+                        
 
 			/**
 			 * Functions hooked in to storefront_single_post_after action
@@ -27,6 +29,7 @@ get_header(); ?>
 		endwhile; // End of the loop. ?>
 
 		</main><!-- #main -->
+                <?php storefront_post_meta(); ?>
 	</div><!-- #primary -->
 
 <?php

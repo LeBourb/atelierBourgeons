@@ -28,10 +28,7 @@ and open the template in the editor.
     margin-right: 0;
 
 }
-#primary{
-    margin-right: 1em;
-    background-color: #f8f8f8;
-}
+
 article{
     display: block;
     width: 90%;
@@ -68,19 +65,6 @@ article{
 #menu-large > li {
     display: inline-block;
     margin-left: 1em;
-}
-
-#primary {
-    width : 100%;
-    display: block;
-    position: relative;
-}
-
-#main {
-    display: inline-block;
-    width: 70%;
-    position: relative;
-    float: left;
 }
 
 #col-right {
@@ -164,6 +148,8 @@ article{
         display: block;
         width: 100%;
         position: relative;
+        margin-top: 2em;
+        height: auto!important;
     }
 
     #col-right {
@@ -172,5 +158,30 @@ article{
         position: relative;
     }
 
+    article {
+        display: block!important;
+        position: relative!important;
+        margin-left: auto!important;
+        margin-right: auto!important;
+    }
 
+    .widget-right{
+        margin-left: 8%;
+    }
+
+    #instafeed {
+        margin-right: auto;
+        width: auto;
+        margin-left: 16%;
+    }
+
+    #instafeed > a {
+        display: inline-block;
+        width: 20%;
+        margin-right: 1%;
+    }
+
+    footer {
+        margin-top: 1em;
+    }
 }

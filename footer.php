@@ -100,9 +100,12 @@
                                     <div style="clear:both">                                        
                                     </div>                                      
                                 </div>
-                                <div class="column column_info">Atelier Bourgeons
-                                    <span>24 rue Traversière, 92100 Boulogne-Billancourt</span><br> 
-                                    <span>contact@atelierbourgeons.com</span><br>
+                                <div class="column column_info">
+                                    <a>atelier Bourgeons</a><br />
+                                    <a>24 rue Traversière</a><br />
+                                    <a>92100, Boulogne-Billancourt</a><br />
+                                    <a>FRANCE</a><br />
+                                    <a>contact@atelierbourgeons.com</a><br />
                                 </div>
                             </div>
                         </div>

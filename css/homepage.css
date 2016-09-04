@@ -82,6 +82,11 @@ section {
     color: white;
 }
 
+.final-logo {
+    fill: white;
+    stroke: white;
+}
+
 .fr {
     left: 80%;
 }
@@ -163,16 +168,20 @@ img.bgimg.hide {
 #about-page {
 
     position: relative;
-    width: 1000px;
-    height: 75%;
-    min-height: 470px;
+    width: 50%;
+    height: auto;
+    //min-height: 470px;
     bottom: 0px;
     left: 0px;
     right: 0px;
-    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
     background-color: #fff;
     //z-index: 100;
-    padding: 10px 20px 30px 20px;
+    display: block;
+    //padding: 10px 20px 30px 20px;
 }
 
 #about-page.hide {
@@ -184,6 +193,18 @@ img.bgimg.hide {
 #about-page.show {
     animation: moveup 2s 1 normal ease-out;
     display: block;
+}
+
+.title {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 2%;
+}
+
+#original-clothes {
+
 }
 
 @keyframes moveup {
@@ -210,10 +231,18 @@ img.bgimg.hide {
     text-align: left;
 }
 
-#about-txt {
-    float: right;
-    text-align: center;
-    width: 50%;
+#about-txt , #custom-txt {
+    //float: right;
+    text-align: justify;
+    //width: 50%;
+}
+
+#custom-txt{
+    font-size: 1.5em;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 #about-close {
@@ -223,6 +252,39 @@ img.bgimg.hide {
     max-width: inherit;
     margin: auto;
     cursor: pointer;
+}
+
+#about-plus {
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#original-clothes{
+    margin-left: 4%;
+    margin-right:   4%;
+}
+
+.original-clothes-vign , .custom-clothes-vign{
+    display: inline-block;
+    width: 33.33333333333333333%;
+    float: left;
+}
+
+#custom-clothes{
+    height: auto;
+    width: auto;
+    display: inline-block
+}
+
+.original-clothes-img {
+    width: 100%;
+
+}
+
+.original-clothes-txt{
+    font-size: 1.5em;
 }
 
 @keyframes fadein {
@@ -266,6 +328,8 @@ body {
     #about-page {
         width: 100%;
         height: auto;
+        margin-left: 0;
+        margin-right: 0;
         //overflow-y: scroll;
     }
 
@@ -277,10 +341,25 @@ body {
         margin-top: 2em;
     }
 
-    #about-txt {
-        text-align: center;
-        width: 100%;
+    #about-txt, #custom-txt {
+        width: auto;
+        padding-left: 2%;
+        padding-right: 2%;
     }
+    #custom-txt {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .original-clothes-vign {
+        display: block;
+        width: 60%;
+        float: none;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-bottom: 5%;
+    }
+
 
 }
 

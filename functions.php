@@ -32,12 +32,18 @@ function is_pll_wc( $wc_page)
     return is_page( $cart_ids[pll_current_language()] ) || defined( 'WOOCOMMERCE_CART' ) ;
 }
 
-function get_pll_wc_url( $wc_page)
+function get_pll_wc_url( $wc_page, $lang)
 { 
    global $polylang;
     $cart_ids = $polylang->model->get_translations('page', wc_get_page_id( $wc_page));
+    
     // j'affiche le contenu de la page About dans la langue courrante        
-    return get_permalink( $cart_ids[pll_current_language()] );
+    if( $lang == null) {
+        return get_permalink( $cart_ids[pll_current_language()] );
+    }else {
+        return get_permalink( $cart_ids[$lang] );
+    }
+    
    
 }
 
@@ -59,6 +65,7 @@ function get_pll_url($lang)
     $cart_ids = $polylang->model->get_translations('page', get_the_ID());                
                 // j'affiche le contenu de la page About dans la langue courrante     
      //           print_r($cart_ids);
+    //echo get_the_ID(); 
     //print_r($cart_ids);
     if($cart_ids[$lang] == "")  {
         return "";
@@ -70,7 +77,7 @@ function get_pll_url($lang)
 
     
     function theme_enqueue_styles() {
-                
+              
         require (STYLESHEETPATH  . '/inc/init.php');    
         
          if(is_front_page()) {                     
@@ -143,17 +150,25 @@ function get_pll_url($lang)
             
         }
         else if ( is_home() ){
-        wp_enqueue_style( 'blog-style', get_stylesheet_directory_uri() . '/css/blog.css' );
-        wp_register_script( 'child-jquery', get_stylesheet_directory_uri() . '/js/jquery-1.7.1.js'); 
-            wp_enqueue_script('child-jquery');
-            wp_register_script( 'blog-stylejs', get_stylesheet_directory_uri() . '/js/blog.js' );
-            wp_enqueue_script('blog-stylejs');
-            wp_register_script( 'instafeedjs', get_stylesheet_directory_uri() . '/js/instafeed.js' );
-            wp_enqueue_script('instafeedjs');
+            wp_enqueue_style( 'blog-style', get_stylesheet_directory_uri() . '/css/blog.css' );
+            wp_enqueue_style( 'blog-style-common', get_stylesheet_directory_uri() . '/css/blog-common.css' );
             wp_register_script( 'menu-stylejs', get_stylesheet_directory_uri() . '/js/menu.js' );
             wp_enqueue_script('menu-stylejs');
-            
+            wp_register_script( 'instafeedjs', get_stylesheet_directory_uri() . '/js/instafeed.js' );
+            wp_enqueue_script('instafeedjs');
+            wp_register_script( 'child-jquery', get_stylesheet_directory_uri() . '/js/jquery-1.7.1.js'); 
+            wp_enqueue_script('child-jquery');
+            wp_register_script( 'blog-stylejs', get_stylesheet_directory_uri() . '/js/blog.js' );
+            wp_enqueue_script('blog-stylejs');            
+            wp_enqueue_style( 'font-awesome-post-style', get_stylesheet_directory_uri() . '/css/font-awesome.min.css' );
         }else if(is_single()) {
+            wp_enqueue_style( 'blog-style-common', get_stylesheet_directory_uri() . '/css/blog-common.css' );
+            wp_register_script( 'menu-stylejs', get_stylesheet_directory_uri() . '/js/menu.js' );
+            wp_enqueue_script('menu-stylejs');
+            wp_register_script( 'child-jquery', get_stylesheet_directory_uri() . '/js/jquery-1.7.1.js'); 
+            wp_enqueue_script('child-jquery');
+            wp_register_script( 'instafeedjs', get_stylesheet_directory_uri() . '/js/instafeed.js' );
+            wp_enqueue_script('instafeedjs');
             wp_enqueue_style( 'blog-post-style', get_stylesheet_directory_uri() . '/css/blog-post.css' );
             wp_enqueue_style( 'font-awesome-post-style', get_stylesheet_directory_uri() . '/css/font-awesome.min.css' );
             
@@ -223,10 +238,58 @@ function get_pll_url($lang)
     if ( $page ) {
         return get_post( $page, $output );
     }
+    
+    
+
 }
 
+/**
+         * Save subscriber into database (refactor @ 2.0.4)
+         * 
+         * @since 2.0.0
+         * @global object $wpdb
+         * @throws Exception
+         */
+        function add_ab_subscriber() {
+            global $wpdb;
+            
+            
+            try {
+                $_POST = array_map('trim', $_POST);
 
+                // checks
+                if (empty($_POST['email']) || !is_email($_POST['email'])) {
+                    throw new Exception(__('Please enter a valid email address.', $this->plugin_slug));
+                }
+                
+                if (!isset($newsletter)) $newsletter = new Newsletter();
 
+                
+                $subscriber = array();
+                $subscriber['email'] = $newsletter->normalize_email(stripslashes($_POST['email']));
 
+                
+                $options_feed = get_option('newsletter_feed', array());
+                if ($options_feed['add_new'] == 1) $subscriber['feed'] = 1;
 
+                $options_followup = get_option('newsletter_followup', array());
+                if ($options_followup['add_new'] == 1) {
+                  $subscriber['followup'] = 1;
+                  $subscriber['followup_time'] = time() + $options_followup['interval'] * 3600;
+                }
+
+                $subscriber['status'] = 'C';
+
+                // TODO: add control for already subscribed emails
+                
+                NewsletterUsers::instance()->save_user($subscriber);
+                wp_send_json_success('You successfully subscribed. Thanks!');
+
+            } catch (Exception $ex) {
+                wp_send_json_error($ex->getMessage());
+            }
+        }
+        
+add_action('wp_ajax_wpab_add_subscriber', 'add_ab_subscriber');  
+add_action( 'wp_ajax_nopriv_wpab_add_subscriber', 'add_ab_subscriber' );
 ?>

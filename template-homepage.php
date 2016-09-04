@@ -25,13 +25,33 @@
 */
     $cur_lang = pll_current_language(); 
     if($cur_lang == 'fr') {
-                    $Made_France = "100% Fabrication à Paris";    
-                    $Visit_Showroom_W17 = "Collection Hiver 2017";
-                }else {
-                    $Made_France = "100% Made in Paris";  
-                    $Visit_Showroom_W17 = "Visit Showroom";
-                }
-
+        $Made_France = "100% Fabrication à Paris";    
+        $Visit_Showroom_W17 = "Collection Hiver 2017";
+        $concept_title = "Concept";
+        $concept_txt = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu tellus eget sapien scelerisque viverra vel at nulla. Etiam quis lectus elementum, lacinia sapien congue, pellentesque libero. Morbi consectetur fringilla massa nec rhoncus. Sed congue, felis facilisis vulputate feugiat, diam lectus euismod nisl, id placerat odio lorem a erat. Nullam consectetur justo a ipsum semper, at malesuada ante fringilla. Donec vestibulum elementum gravida. Ut facilisis, libero id finibus suscipit, orci magna pulvinar metus, eget rutrum ipsum eros sit amet metus. Duis aliquet vel lacus nec mattis. Nunc commodo magna sit amet scelerisque aliquet. Pellentesque at congue sapien. Fusce at ultricies metus. Vestibulum rutrum nisi sit amet felis sodales ultricies. Nam a sem eu nisl accumsan iaculis. Cras feugiat et metus at condimentum.";
+        $concept_plus = "Découvrir";
+        $original_title = "Des vêtements originaux";
+        $original_txt = array (1 => 'Fournitures & chute de tissus', 'Tissue, Fin de serie & recyclé', 'Fabrication artisanale & manuelle 100% Française');
+        $custom_title = "Vêtements sur mesures";
+        $custom_txt = "Si vous voulez faire une commande particulière sur mesure, n'hésitez pas à nous contacter contact@atelierbourgeons.com";
+        $fipre_title = "Fripe";
+    }else {
+        $Made_France = "100% Made in Paris";  
+        $Visit_Showroom_W17 = "Visit Showroom";
+        $concept_title = "Concept";
+        $concept_txt = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu tellus eget sapien scelerisque viverra vel at nulla. Etiam quis lectus elementum, lacinia sapien congue, pellentesque libero. Morbi consectetur fringilla massa nec rhoncus. Sed congue, felis facilisis vulputate feugiat, diam lectus euismod nisl, id placerat odio lorem a erat. Nullam consectetur justo a ipsum semper, at malesuada ante fringilla. Donec vestibulum elementum gravida. Ut facilisis, libero id finibus suscipit, orci magna pulvinar metus, eget rutrum ipsum eros sit amet metus. Duis aliquet vel lacus nec mattis. Nunc commodo magna sit amet scelerisque aliquet. Pellentesque at congue sapien. Fusce at ultricies metus. Vestibulum rutrum nisi sit amet felis sodales ultricies. Nam a sem eu nisl accumsan iaculis. Cras feugiat et metus at condimentum.";
+        $concept_plus = "discover";
+        $original_title = "Orignial clothes";
+        $original_txt = array (1 => 'Fournitures & chute de tissus', 'Tissue, Fin de serie & recyclé', 'Fabrication artisanale & manuelle 100% Française');
+        $custom_title = "Tailor maded";
+        $custom_txt = "If you want a particular order, feel free to contact us : contact@atelierbourgeons.com";
+        $fipre_title = "Fripe";
+    }
+    $siteurl = get_site_url();
+   
+    $original_img = array ( 1 => "/wp-content/themes/atelierbourgeons/img/square.jpg" ,'/wp-content/themes/atelierbourgeons/img/square.jpg' ,'/wp-content/themes/atelierbourgeons/img/square.jpg');
+    $custom_img = array ( 1 => "/wp-content/themes/atelierbourgeons/img/custom.jpg" ,'/wp-content/themes/atelierbourgeons/img/custom.jpg' ,'/wp-content/themes/atelierbourgeons/img/custom.jpg');
+    
 ?>
 
 <html <?php language_attributes();  ?> ><?php /*storefront_html_tag_schema();*/ ?>
@@ -41,18 +61,18 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 </head>
-    <svg viewBox="70 -100 100 400" enable-background="new 0 0 500 300" width="500px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="612px" xml:space="preserve" style="position: absolute; width: 50%; display: block; z-index: 2000; height: 50%; top: 25%; left: 25%;">
+    <svg viewBox="70 -100 100 400" enable-background="new 0 0 500 300" width="500px" version="1.1" id="Logo_Top" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="612px" xml:space="preserve" style="position: absolute; width: 50%; display: block; z-index: 2000; height: 50%; top: 25%; left: 25%;">
     <g>
         <path stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M161.928,111.956c-4.484,3.959-9.58,7.938-15.336,11.918   C152.573,119.942,157.647,115.962,161.928,111.956z"></path>
 	<path stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M145.075,126.78c-2.43,1.77-7.25-0.516-11.109-2.906   C137.473,126.188,142.904,129.135,145.075,126.78z"></path>
 	<path stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M117.949,110.561c3.481-0.99,9.826-4.26,13.566-9.222   c14.994-19.883-4.957-59.961-43.637-35.624c-0.381-0.296-0.567,0.133-5.089-3.395c-4.521-3.527-13.426-4.579-13.426-4.579   s-2.972,0.03-2.851,0.568c8.392,38.414,5.977,109.354-11.903,134.104c1.809-0.754,16.646-8.809,23.35-18.191   c14.595-23.186,20.995-97.567,12.945-106.157c-0.047-0.05,6.258-5.318,13.638-4.929c18.126,0.954,23.072,24.712,14.569,37.105   c-0.43,0.531-4.268,6.445-5.618,7.687c-1.355,1.239-4.118,3.754-4.526,4.006c-0.637,0.797-0.487,1.635,0.457,2.518   c1.589-0.188,7.632-1.271,13.774,0.445c8.672,3.703,13.012,12.059,12.416,12.889c-0.602,0.83-18.942,12.271-35.323,23.836   c-8.932,6.305-15.569,25.485-1.048,31.985C157.883,205.098,170.94,111.589,117.949,110.561z M111.432,174.984   c-27.859-0.552-16.03-18.133-10.598-22.2c15.953-11.938,35.579-22.188,36.06-22.477c0.516,1.213,0.932,2.463,1.129,3.782   c0.326,1.263,0.565,2.496,0.834,3.681C143.563,158.399,123.938,175.232,111.432,174.984z"></path>
     </g>
-<path d="M164.488,89.524l-26.873-43.073l-0.529,0.299c0,0,22.154,36.692,24.729,44.653c-3.094,2.95-1.346,5.845,1.732,9.905  c3.842,5.076,7.45,10.66,10.521,10.356C177.518,111.325,176.917,96.614,164.488,89.524z M166.193,102.436  c-0.756-0.826-5.994-7.891-3.486-9.792c2.818-2.14,8.271,5.773,8.955,6.661c2.646,3.438,3.849,8.805,1.5,10.498  C172.059,110.597,169.059,105.569,166.193,102.436z"></path>
-<path stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M211.42,121.917c-4.164-1.264-1.494-8.68-7.308-8.733  c-4.486-0.043-12.238,8.653-14.024,13.438c-4.541,12.277-2.117,21.224,4.096,29.766c1.164,1.595,0.402,8.937-7.426,18.563  c0.784-2.654,1.239-5.781,0.637-8.506c-1.861-8.44-3.592-16.969-14.199-28.961c-1.188-1.346-5.27,7.338-6.026,12.994  c1.924,17.258,12.829,14.572,15.879,29.191c-40.456,55.313-166.675,42.945-170.563-57.387  c3.374-175.48,233.561-88.984,149.443-10.324C273.474,13.526,5.075-72.669,5.075,118.733  c-3.477,88.852,113.993,132.941,170.627,71.722c6.537-7.184,21.586-27.727,23.752-30.803c11.744-7.25,13.769-9.512,16.563-17.705  C222.29,123.575,220.454,124.645,211.42,121.917z M185.952,175.994c-0.51,0.66-1.024,1.32-1.555,1.996  c-3.408-10.156-15.924-15.621-15.242-27.454c0.142-2.432,3.14-7.553,4.183-10.68C180.69,144.069,189.391,167.346,185.952,175.994z   M202.497,116.171c0.414-0.17,5.968,4.064,7.588,7.076c-5.002,0.267-10.403,4.281-13.377,6.791  c-1.239-1.063-2.446-2.182-3.588-3.391C194.585,122.104,197.172,118.358,202.497,116.171z M199.107,155.553  c0.051-0.209-1.449-0.371-2.057-0.703c-12.984-7.028-5.806-23.987-5.32-26.372c5.52,4.934,14.258,12.059,16.91,22.854  C208.906,152.417,203.805,156.368,199.107,155.553z M210.118,146.864c-0.045-0.441-7.442-12.887-12.297-16.016  c3.31-3.414,5.988-5.072,12.797-6.578C213.879,132.024,214.357,139.487,210.118,146.864z"></path>
-</svg>
+    <path d="M164.488,89.524l-26.873-43.073l-0.529,0.299c0,0,22.154,36.692,24.729,44.653c-3.094,2.95-1.346,5.845,1.732,9.905  c3.842,5.076,7.45,10.66,10.521,10.356C177.518,111.325,176.917,96.614,164.488,89.524z M166.193,102.436  c-0.756-0.826-5.994-7.891-3.486-9.792c2.818-2.14,8.271,5.773,8.955,6.661c2.646,3.438,3.849,8.805,1.5,10.498  C172.059,110.597,169.059,105.569,166.193,102.436z"></path>
+    <path stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M211.42,121.917c-4.164-1.264-1.494-8.68-7.308-8.733  c-4.486-0.043-12.238,8.653-14.024,13.438c-4.541,12.277-2.117,21.224,4.096,29.766c1.164,1.595,0.402,8.937-7.426,18.563  c0.784-2.654,1.239-5.781,0.637-8.506c-1.861-8.44-3.592-16.969-14.199-28.961c-1.188-1.346-5.27,7.338-6.026,12.994  c1.924,17.258,12.829,14.572,15.879,29.191c-40.456,55.313-166.675,42.945-170.563-57.387  c3.374-175.48,233.561-88.984,149.443-10.324C273.474,13.526,5.075-72.669,5.075,118.733  c-3.477,88.852,113.993,132.941,170.627,71.722c6.537-7.184,21.586-27.727,23.752-30.803c11.744-7.25,13.769-9.512,16.563-17.705  C222.29,123.575,220.454,124.645,211.42,121.917z M185.952,175.994c-0.51,0.66-1.024,1.32-1.555,1.996  c-3.408-10.156-15.924-15.621-15.242-27.454c0.142-2.432,3.14-7.553,4.183-10.68C180.69,144.069,189.391,167.346,185.952,175.994z   M202.497,116.171c0.414-0.17,5.968,4.064,7.588,7.076c-5.002,0.267-10.403,4.281-13.377,6.791  c-1.239-1.063-2.446-2.182-3.588-3.391C194.585,122.104,197.172,118.358,202.497,116.171z M199.107,155.553  c0.051-0.209-1.449-0.371-2.057-0.703c-12.984-7.028-5.806-23.987-5.32-26.372c5.52,4.934,14.258,12.059,16.91,22.854  C208.906,152.417,203.805,156.368,199.107,155.553z M210.118,146.864c-0.045-0.441-7.442-12.887-12.297-16.016  c3.31-3.414,5.988-5.072,12.797-6.578C213.879,132.024,214.357,139.487,210.118,146.864z"></path>
+    </svg>
 
     
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="792px" height="612px" viewBox="0 0 792 612" enable-background="new 0 0 792 612" xml:space="preserve" style="position: absolute; width: 50%; display: block; z-index: 2000; height: 50%; top: 70%; left: 28%;">
+    <svg version="1.1" id="Logo_Bottom" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="792px" height="612px" viewBox="0 0 792 612" enable-background="new 0 0 792 612" xml:space="preserve" style="position: absolute; width: 50%; display: block; z-index: 2000; height: 50%; top: 70%; left: 28%;">
              <path xmlns="http://www.w3.org/2000/svg" d="M51.784,91.232c-0.36,0.476-0.93,0.822-1.211,1.421c-2.574,5.473-24.436,6.668-27.839,0.563    c-0.393-0.701-1.188,0.996-1.68,1.564c-0.498,0.563-1.103,0.991-1.815,1.274c-0.182,0.287-0.564,0.59-1.146,0.922    s-6.174,4.451-8.812,0.926c-0.646-0.868-0.806-2.036-0.806-3.264c0-16.711,15.693-14.813,16.146-13.768    c0.171,0.096,0.44,0.141,0.799,0.141c0.633,0,1.214-0.234,1.748-0.709c0.54-0.477,1.031-0.711,1.479-0.711    c0.452,0,0.86,0.383,1.216,1.139c-0.268,0.756-0.626,1.396-1.078,1.914c-0.446,0.519-0.67,1.301-0.67,2.34    c0,0.757,5.772,15.197,21.518,6.035c0.761-0.444,1.521-0.83,2.152-1.492c0.363,0,0.537,0.144,0.537,0.425    C52.322,90.329,52.148,90.758,51.784,91.232z M17.351,82.433c-0.356,0-5.575,9.443-2.554,12.631    c0.062,0.064,0.188,0.007,0.268,0.068c2.665,2.076,5.881-6.406,6.058-6.736C22.388,85.993,17.805,82.433,17.351,82.433z"/>
              <path xmlns="http://www.w3.org/2000/svg" d="M105.102,82.577c-0.399,0.188-0.688,0.516-0.868,0.996c-1.524,0.942-3.029,1.911-4.51,2.903    c-1.48,0.998-3.024,1.875-4.644,2.629c-0.354,0-0.711,0.281-1.068,0.849c-0.633,0.192-1.191,0.475-1.683,0.854    c-0.496,0.375-1.012,0.705-1.55,0.992c-1.968,1.135-3.988,2.244-6.051,3.332c-2.064,1.09-4.146,2.088-6.252,2.984    c-2.109,0.897-4.284,1.631-6.525,2.196c-2.238,0.57-4.484,0.854-6.724,0.854c-4.345,0-10.146-2.068-12.907-5.965    c-0.19-0.273-2.167-7.162-2.023-11.351c0.018-0.567-0.144-5.875,0.68-6.248c-0.232,0.107-2.696-0.221-2.696-0.987    c0-1.132,1.588-1.908,2.825-2.275c0.901-0.262,0.673-3.734,0.673-4.109c0-0.475-0.234-4.438,1.479-5.819    c0.2-0.164,0.384-0.287,0.605-0.287c0.229,0,0.431-0.047,0.609-0.142c0.177-0.094,0.353-0.211,0.528-0.352    c0.183-0.145,0.408-0.213,0.679-0.213c0.451,0,2.639,1.943,1.884,3.973c-0.269,0.726-1.075,5.349-1.075,6.104v0.992    c1.968,0.192,3.878,0.252,5.714,0.424c4.279,0.414,14.082,0.248,17.418-0.424l5.786-0.853c0.355,0,0.534,0.142,0.534,0.424    c0,0.281-0.358,0.57-1.077,0.853c-7.477,2.975-24.971,2.834-26.628,2.834h-1.883c-0.176,0.385-0.227,1.184-0.469,2.35    c-0.646,3.084,0.883,8.381,1.004,9.152c0.507,3.19,4.194,6.668,6.125,7.236c1.922,0.567,3.923,0.942,5.981,0.854    c6.721-0.295,13.807-3.551,16.679-4.971c2.869-1.42,5.623-2.937,8.272-4.541c2.641-1.609,5.042-3.123,7.192-4.543    c0.534,0,1.012-0.236,1.41-0.709c0.403-0.476,0.919-0.707,1.551-0.707h0.401c0.18-0.381,0.355-0.572,0.532-0.572    c0.186,0.094,0.316,0.141,0.408,0.141c0.091,0.101,0.226,0.142,0.405,0.142C105.754,82.058,105.51,82.386,105.102,82.577z"/>
              <path xmlns="http://www.w3.org/2000/svg" d="M120.634,93.217c-2.239,0.949-4.482,2.063-6.729,3.336c-2.235,1.279-4.582,1.939-6.988,2.346    c-3.581,0.603-11.864-0.116-15.2-2.627c-2.016-1.516-1.524-6.221-1.615-6.317c0.309-1.457,1.602-5.904,2.964-7.806    c0.968-1.348,4.673-5.813,9.282-5.813c0.067,0,0.143,0,0.217,0.002c0.635,0.021,1.205,0.139,1.73,0.35    c0.579,0.234,2.084,3.617,2.084,4.187c0,0.664-0.401,1.44-1.213,2.338c-0.802,0.904-1.747,1.775-2.818,2.627    c-1.075,0.855-2.159,1.613-3.229,2.271c-1.081,0.663-1.883,1.045-2.426,1.139c-0.177,0.186-0.265,0.424-0.265,0.705    c0,0.854,2.325,3.836,3.229,4.399c0.888,0.564,1.784,1.127,2.751,1.42c5.715,1.707,14.509-1.971,15.265-2.696    c0.812-0.771,4.142-3.181,5.789-2.695C124.259,90.616,121.079,92.652,120.634,93.217z M99.918,80.446    c-0.711,0.381-1.345,1.043-1.883,1.987c-0.534,0.945-0.802,3.404-0.802,3.404s2.663-2.029,3.153-2.406    C100.887,83.05,100.099,80.544,99.918,80.446z"/>
@@ -133,26 +153,80 @@ foreach($images as $image) {
 				</a>
 <?php } ?>
 </div>
-        <div class="galerieopen">    <img id='about-close' src ="<?php echo get_site_url(); ?>/wp-content/themes/atelierbourgeons/img/down-chevron.png" /></div>
+       <!-- <div class="galerieopen">    <img id='about-close' src ="<?php //echo get_site_url(); ?>/wp-content/themes/atelierbourgeons/img/down-chevron.png" /></div> -->
         <script src="<?php echo get_site_url(); ?>/wp-content/themes/atelierbourgeons/js/pixi.min.js"></script>
 <script src="<?php echo get_site_url(); ?>/wp-content/themes/atelierbourgeons/js/hammer.min.js"></script>
 <script src="<?php echo get_site_url(); ?>/wp-content/themes/atelierbourgeons/js/pixi-carousel.js"></script>
 
             </section>
     <section id="about">
-<div id="about-page">
-    <div class='board-left'>
-        <img id='about-img' accesskey=""src ="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/concept.jpg" />
-    </div>
-    <div id='about-txt' class='board-right'>
-          <?php $post = get_page_by_title( 'About' );                
+    <div id="about-page">
+        <div class='title'>
+            <?php echo $concept_title;?>
+        </div> 
+    <!--<div class='board-left'>
+        <img id='about-img' accesskey=""src ="<?php //echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/concept.jpg" />
+    </div>       -->
+        <div id='about-txt' class=''>
+          <?php echo $concept_txt;
+                /*$post = get_page_by_title( 'About' );                
                 global $polylang;
                 $post_ids = $polylang->model->get_translations('page', $post->ID);                
                 // j'affiche le contenu de la page About dans la langue courrante 
                 echo get_post($post_ids[pll_current_language()])->post_content;
+                * 
+                */
                 ?>
-    </div>
-</div>
+            </div>
+            <button id='about-plus' class=''>
+                <?php echo $concept_plus; ?>
+            </button>
+        </div>
+        <div id='original-clothes-title' class='title'>
+                <?php echo $original_title; ?>
+        </div>
+             
+        <div id='original-clothes' class=''>            
+            <div class="original-clothes-vign">
+                <img class="original-clothes-img" accesskey=""src ="<?php echo get_site_url(); echo $original_img[1];?>" />        
+                <div class="original-clothes-txt title">
+                    <?php echo $original_txt[1]; ?>
+                </div>
+            </div>
+            <div class="original-clothes-vign">
+                <img class="original-clothes-img" accesskey=""src ="<?php echo get_site_url(); echo $original_img[2];?>" />        
+                <div class="original-clothes-txt title">
+                    <?php echo $original_txt[2]; ?>
+                </div>
+            </div>
+            <div class="original-clothes-vign">
+                <img class="original-clothes-img" accesskey=""src ="<?php echo get_site_url(); echo $original_img[3];?>" />        
+                <div class="original-clothes-txt title">
+                    <?php echo $original_txt[3]; ?>
+                </div>
+            </div>
+        </div>
+        <div id='custom-clothes-title' class='title'>
+                <?php echo $custom_title; ?>
+        </div>
+        <div id='custom-clothes' class=''>            
+            <div class="custom-clothes-vign">
+                <img class="original-clothes-img" accesskey=""src ="<?php echo get_site_url(); echo $custom_img[1];?>" />                        
+            </div>
+            <div class="custom-clothes-vign">
+                <img class="original-clothes-img" accesskey=""src ="<?php echo get_site_url(); echo $custom_img[2];?>" />  
+            </div>
+            <div class="custom-clothes-vign">
+                <img class="original-clothes-img" accesskey=""src ="<?php echo get_site_url(); echo $custom_img[3];?>" /> 
+            </div>
+        </div>   
+        <div id='custom-txt' class=''>
+                <?php echo $custom_txt; ?>
+        </div>
+        <div id='' class='title'>
+                <?php echo $fipre_title; ?>
+        </div>
+
         </section>
         <section id="made_paris">
                 <div id='made_paris-txt' class='title_concept'>
@@ -169,77 +243,7 @@ foreach($images as $image) {
                 <img id='matiere_premiere-img' class="bgimgs portrait" accesskey=""src ="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/organic-cotton-portrait.jpg" />        
             </div>
          </section>
-        <section id="showroom">
-            <h1>Basic Click Counter Example with JSX</h1>
-                <div id="container">
-                  <p>
-                    To install React, follow the instructions on
-                    <a href="https://github.com/facebook/react/">GitHub</a>.
-                  </p>
-                  <p>
-                    If you can see this, React is <strong>not</strong> working right.
-                    If you checked out the source from GitHub make sure to run <code>grunt</code>.
-                  </p>
-                </div>
-                <h4>Example Details</h4>
-                <p>This is written with JSX and transformed in the browser.</p>
-                <p>This example uses events and state to track clicks and update the rendered output.</p>
-                <script src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/assets/js/react/react-with-addons.js"></script>
-                
-                <script src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/assets/js/react/react-dom.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
-                <script type="text/babel">
-                  var CSSTransitionGroup = React.addons.CSSTransitionGroup;
-      var INTERVAL = 2000;
-
-      var AnimateDemo = React.createClass({
-        getInitialState: function() {
-          return {current: 0};
-        },
-
-        componentDidMount: function() {
-          this.interval = setInterval(this.tick, INTERVAL);
-        },
-
-        componentWillUnmount: function() {
-          clearInterval(this.interval);
-        },
-
-        tick: function() {
-          this.setState({current: this.state.current + 1});
-        },
-
-        render: function() {
-          var children = [];
-          var pos = 0;
-          var colors = ['red', 'gray', 'blue'];
-          for (var i = this.state.current; i < this.state.current + colors.length; i++) {
-            var style = {
-              left: pos * 128,
-              background: colors[i % colors.length]
-            };
-            pos++;
-            children.push(<div key={i} className="animateItem" style={style}>{i}</div>);
-          }
-          return (
-            <CSSTransitionGroup
-              className="animateExample"
-              transitionEnterTimeout={250}
-              transitionLeaveTimeout={250}
-              transitionName="example">
-              {children}
-            </CSSTransitionGroup>
-          );
-        }
-      });
-
-      ReactDOM.render(
-        <AnimateDemo />,
-        document.getElementById('container')
-      );
-                </script>
-            
-        </section>
+        
         
 
 

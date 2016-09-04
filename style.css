@@ -16,6 +16,10 @@ li {
     list-style-type: none;
 }
 
+a {
+    color: #000000;
+}
+
 #checkout-banner {
     padding-top: 6em;
     padding-bottom: 2em;
@@ -456,15 +460,13 @@ ul.social_icons > li {
         margin-right: 0; }
     .site-header {
         padding-top: 0;
-        height: 2em;
+        //height: 2em;
     }
     .site-branding{
         background-color: white;
         float: none;
         width: 100%!important;
         height: 30px;
-        margin-bottom: 0.818em!important;
-        margin-top: 0.818em!important;
     }
     .site-title {
         display: inline-block;

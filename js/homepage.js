@@ -1,7 +1,22 @@
 $(document).ready(function() {
     
-    bgimgs = $( '#bgimgs' ).children();
+    //bgimgs = $( '#bgimgs' ).children();
     position = 0;
+    resize = function () {
+      /*var width = window.innerWidth;//$( window ).width() ;
+      var height = window.innerHeight;//$( window ).height() ;
+      
+      if(width >= height) {
+          document.body.style.backgroundImage = "url(" + window.location.origin + "/wordpress/wp-content/themes/atelierbourgeons/img/coming-soon.jpg)"; 
+      }else {
+          document.body.style.backgroundImage = "url(" + window.location.origin + "/wordpress/wp-content/themes/atelierbourgeons/img/coming-soon-portrait.jpg)"; 
+      }*/
+      
+     
+  
+    };
+    $( window ).resize(resize);    
+    resize();
     /*resize = function () {
         
         width = window.innerWidth;//$( window ).width() ;

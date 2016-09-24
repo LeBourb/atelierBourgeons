@@ -310,6 +310,7 @@ img.bgimgs.portrait {
     width: 100%;
     height: auto;
     display: none;
+    min-height: 0;
 }
 
 

@@ -20,13 +20,14 @@
                         return false;
                     }
                     
-                    $('.ab_subscribe_wrapper').html(response.data);
+                    $('.ab_subscribe_wrapper').html('<h2>' + response.data + '</h2>');
                 }, 'json');
-
+                $('form.ab_subscribe_form').remove();
+                $('#spinner_gif').show();
                 return false;
             }
         });}
-    console.log("prout!!!!");
+        
             $('#ab_submit')[0].onclick =  function () { 
                 $('.ab_subscribe_form').submit();        
             };

@@ -54,6 +54,7 @@ body {
 }
 
 section {
+    margin-top: 2%;
     display: inline-block!important;
     height: auto;
     width: 100%;
@@ -152,6 +153,12 @@ img.bgimg.hide {
     display: none;
 }
 
+.made_to_order_fleche{
+    width: 2em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #cart-icon{
     position: absolute;
     top: 10px;
@@ -174,8 +181,8 @@ img.bgimg.hide {
     bottom: 0px;
     left: 0px;
     right: 0px;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 9%;
+    margin-bottom: 15%;
     margin-left: 25%;
     margin-right: 25%;
     background-color: #fff;
@@ -205,6 +212,40 @@ img.bgimg.hide {
 
 #original-clothes {
 
+}
+
+#about-mannequin {
+    position: absolute;
+    left: 7%;
+    width: 10%;
+    top: 20%;
+}
+
+#about-ciseaux{
+    width: 20%;
+    position: absolute;
+    right: 2%;
+    top: 25%;
+}
+
+#about-feuillehaut{
+    width: 20%;
+    position: absolute;
+    top: 2%;
+    left: 20%;
+}
+
+#about-feuillebas{
+    position: absolute;
+    bottom: 2%;
+    width: 20%;
+    right: 20%;
+    position: absolute;
+}
+
+img.separator {
+    display: inline-block;
+    width: 50%;
 }
 
 @keyframes moveup {
@@ -285,6 +326,11 @@ img.bgimg.hide {
 
 .original-clothes-txt{
     font-size: 1.5em;
+    position: absolute;
+    top: 34%;
+    width: 30.7%;
+    background-color: white;
+    opacity: 0.7;
 }
 
 @keyframes fadein {
@@ -297,8 +343,42 @@ img.bgimg.hide {
     to   { opacity: 0; }
 }
 
+#made_to_order_step1, #made_to_order_step2 {
+    display: inline-block;
+}
+#made_to_order_step1 > img{
+    width:20%;
+    float: left;
+}
 
+#made_to_order_step2 > img{
+    width:20%;
+    float: right;
+}
 
+#made_to_order_step3 {
+    display: inline-block;
+}
+
+#made_to_order_step3  > img {
+    float: left;
+}
+
+#made_to_order_step4 {
+    display: inline-block;
+}
+
+#made_to_order_step4  > img {
+    float: right;
+}
+
+#made_to_order_step5 {
+    display: inline-block;
+}
+
+#made_to_order_step5  > img {
+    float: right;
+}
 
 /*
 body {
@@ -320,6 +400,10 @@ body {
 
     #about-img {
         display: block;
+    }
+
+    #about-mannequin , #about-ciseaux{
+        display:none;
     }
 }
 

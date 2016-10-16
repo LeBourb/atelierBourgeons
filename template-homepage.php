@@ -27,31 +27,124 @@
     if($cur_lang == 'fr') {
         $Made_France = "100% Fabrication à Paris";    
         $Visit_Showroom_W17 = "Collection Hiver 2017";
-        $concept_title = "Concept";
-        $concept_txt = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu tellus eget sapien scelerisque viverra vel at nulla. Etiam quis lectus elementum, lacinia sapien congue, pellentesque libero. Morbi consectetur fringilla massa nec rhoncus. Sed congue, felis facilisis vulputate feugiat, diam lectus euismod nisl, id placerat odio lorem a erat. Nullam consectetur justo a ipsum semper, at malesuada ante fringilla. Donec vestibulum elementum gravida. Ut facilisis, libero id finibus suscipit, orci magna pulvinar metus, eget rutrum ipsum eros sit amet metus. Duis aliquet vel lacus nec mattis. Nunc commodo magna sit amet scelerisque aliquet. Pellentesque at congue sapien. Fusce at ultricies metus. Vestibulum rutrum nisi sit amet felis sodales ultricies. Nam a sem eu nisl accumsan iaculis. Cras feugiat et metus at condimentum.";
-        $concept_plus = "Découvrir";
+        $about_title="About";
+        $about_txt="Atelier Bourgeons fait une création des vêtements avec des tissus de fins de séries, des chutes, des tissus d’occasion ainsi une vente de vêtements vintages et de seconde main. Des pièces originaux sont 100% fabriqués en région parisienne à la façon artisanale  à partir de conception à la conféction. Une nouvelle façon de mode ; s’habiller éthique et durable avec plein l’amour vous attend maintenant. Nous vous souhaitons une agréable visite !";
+        $concept_title = "Concept";        
+        $concept_txt = "Quand je trouve des bourgeons dans la rue,  j'ai le souffle coupé. Parce que je ressens tellement d’énergie dans ces petites formes qui continuent à grandir discretement mais sans arrêt jusqu’ils fleurissent. leurs charmes mignons et délicats, mais aissi courageux et vaillant m’attire chaque fois. Pour créer quelque shose,il y a forcément des processus. Et dans ces processus, il y a toujour plein d’histoires avec des gens, des matières, des  lieux qui concerne jusqu’à la fin de fabrication. En pensant à ces histoires, shoisir ce qu’on utilise pour créer des nouvelles pièces avec soin,  Et après, des gens qui les portent relie des histoires comme ajouter la valeur des choses. Je voudrais être un morceau d’une série de processus adorable, pour passer un petit bonheur à quelqu’un. Comme si je vous passe des bourgeons et vous les faire fleurir";
         $original_title = "Des vêtements originaux";
-        $original_txt = array (1 => 'Fournitures & chute de tissus', 'Tissue, Fin de serie & recyclé', 'Fabrication artisanale & manuelle 100% Française');
+        $original_txt = array (1 => 'Fournitures & chute de tissus', 'Creation & Fabrication', 'Carte, Griffe, Emballage');
+        $tissus_txt="Dans ce monde d’excès de consommation,  beaucoup de matières charmantes sont jetées ou abbandonées dans des entrepôts. Pour les mettre la valeur  à nouveau, nous utilisons des tissus qui ont quitté la scène, fin de série, tissu d’occasion, etc. Nous utilisons aussi des petits chutes dans les détails de vêtements comme s’amuser avec des puzzles. Profiter maximum des matières, jeter moin, et voila des vêtements uniques  sont fait ! Des boutons et des ruban vintages aide également pour ajouter une originalité  de pièces.";
+        $creation_txt="‘‘La charme intemporelle avec une belle harmonie entre rétro et moderne’’- C’est un concept principal de style d’atelier. Nous essayons de créer des vêtements qui aident vous exprimer votre personnalité et ce que vous  ’’ aimez’’ sans se laisser influencer juste par la « tendance» qui change trop souvent. Créer la forme sur un mannequin avec une toile, relever la sur des papiers puis couper des  vrais tissus à la forme de patronnage. Après la répétition d’une couture et modification, voila une pièce est faite! Avec beaucoup de travail manuel comme la maison de couture, nous vous offront des pièces unique qui ont tant d’amour et tient dans le temps.";
+        $packaging_txt="Nous  recyclons la toile qui ont été utilisées lors la création de patronnage pour fabriquer des étiquettes de compositions et de tailles. Les griffes sont fabriquées de coton organique en Italie. Produits d’ emballage sont tous fabriqué dans la matière recyclée, et ils sont recyclable (sauf le papier kraft imperméable et du ruban adhésif pour le livraison). Nous proposons des ruban et des cartes de message pour l’emballage cadeau. Voici les plus de détails.";
         $custom_title = "Vêtements sur mesures";
-        $custom_txt = "Si vous voulez faire une commande particulière sur mesure, n'hésitez pas à nous contacter contact@atelierbourgeons.com";
+        $custom_txt = "atelier Bourgeons offre également des vêtements et des accessoires de seconde mains et de vintage qui vients de puce, magasins de recyclage, boutiques solidaires, entrepôts pour le pros, etc.Nous custamisons, retaillons, et faire la reprise  également des pièces selon les besoins. Pour les détails des informations, consultez-vous aux pages de chaques articles sur notre E-boutique.";
+        $creator_title="Creator";
+        $creator_txt="Mie MANABE, Née à Gifu (JAPON). Pendant  ses études à l’université départemental d’Aichi, elle s’intéresse à la mode éthique・ durable et commencé  à faire la rédaction pour un site spéciqlisé à la mode éthique. En même temps, elle apprend des conseils habillage et la décoration de mode puis fait des expériences  en tant qu’assistant styliste. Après être dîplomé, elle s’installe en France et apprend le modélisme chez AICP en alternance avec une marque prêt-à-porter femme . Dîplomé en tant que modéliste femme international qualifié par l’état à 2015. Elle commance à créer des vêtements avec des chutes, la fin de série, des tissus d’occasion qu’elle avait collectionné à 2016. Elle fait une rédaction irregulièrement pour  « Fragment magazine  (http://www.fragmentsmag.com/)»";
         $fipre_title = "Fripe";
-    }else {
+        $vetement_sur_mesure_title="Vetement-sur-merure";        
+        $vetement_sur_mesure_txt="Ce n’est pas facile de trouver un vêtement que vous aimez à votre taille,  surtout des tenues pour une journée spéciale comme mariage, anniversaire, fête etc…Alors  créeons donc une pièce  ensemble à votre gôut qui va parfaitement à votre taille !!Renseignez-vous d’abord par téléphone ou e-mail, des devis et des croquis sont gratuit pour vous !!";
+        $vetement_sur_mesure_Step1_title="Step 1：";
+        $vetement_sur_mesure_Step1_txt="renseignement・discussion sur un design  et un devis";
+        $vetement_sur_mesure_Step1_txt_2="Indiquez-nous des  iformations de designs que vous désirez( catégorie d’article comme ‘’robe’’ ,‘’jupe’’ etc, des détails de design, matière de tissu, etc. Si vous aurez des images ou  découpage de magazine, ça nous aide beaucoup lors de création de croquis et un devis. N’hesitez pas à nous consulter également sur un buget ou la délais de remise d’article. Plus tard, nous vous enverons un croquis ainsi un devis dans les meilleurs délais.";
+        $vetement_sur_mesure_Step2_title="Step 2：";
+        $vetement_sur_mesure_Step2_txt_1="Modification/ determination de design & selection de tissu / prise de mesure";
+        $vetement_sur_mesure_Step2_txt_2="Nous modifions des croquis autant que vous voulez gratuitement avant commencer la fabrication.Dans le cas qu’on a reçu votre demande finale avec un croquis définitif, Vous payerez 30% de devis et nous commançons à decider le tissu et prendre vos mesure ensemble.Pour le tissu, vous pourrez acheter vous même ou choisir dans le stock à l’atelier à prix intéressant. Si vous souhaitez, nous pouvons aller shoisir du tissu ensemble dans un magasin. Il est possible aussi que nous choisissons et achetons du tissu à votre place( dans ce cas là, Nous vous demanderons de payer le tissu.Donnez-nous à peu-près le prix de votre buget avant. Avant la fabrication, nous vous demandons de venir à l’atelier afin de prise de mesure.";
+        $vetement_sur_mesure_Step2_ex="Imade de cette  pièce est une robe rétro 50’s comme Grqce kelly . Un haut décolleté en point sur le devant et le dos avec une jupe évasé mi-logue avec un jupon. Nous somme allées choisir le tissu ensemble  à Paris 18ème .";
+        $vetement_sur_mesure_Step3_title="Step 3：";
+        $vetement_sur_mesure_Step3_txt="Création de la base de vêtement";
+        $vetement_sur_mesure_Step3_txt="En ajustant un mannequin à votre taille, nous créeons la forme de vêtement avec de la toile. Nous pourrons vous contacter par fois pour verifier des détails.";
+        $vetement_sur_mesure_Step4_title="Step 4：";
+        $vetement_sur_mesure_Step4_title2="essayage/ modification";
+        $vetement_sur_mesure_Step4_txt="Une fois que la base de vêtement  sera faite, vous  viendrez  l’essayer à l’atelier. Dans le cas ou il y a  une modification importante, vous viendrez une fois après lpour vérifier , et puis nous commanços la fabrication avec le vrai tissu. Nous respectrons au maximum pour la date d’essayage par rapport à votre disponibilité  et la date de remise  d’artjcle ou vous désirez.";
+        $vetement_sur_mesure_Step5_title="Après la fabrication, vous viendrez la dernière fois pour l’essayage finale. S’il n’y a pas de problème, vous payerez le rest de devis et le vêtement viendra chez vous!!!!";
+        $vetement_sur_mesure_Step5_txt="Après la fabrication, vous viendrez la dernière fois pour l’essayage finale. S’il n’y a pas de problème, vous payerez le rest de devis et le vêtement viendra chez vous!!!!";
+        $retouche_title="Retouche";
+        $retouche_txt="atelierBourgeons fait également la retouche de nos articles.Ourlets, reprise de la partie éffiloché, chagement de la doublure, etc. N’hesitez pas à nous consulter par téléphone ou e-mail.";
+        $emballage_title="Emballage cadeau";
+        $emballage_txt="Pour  emballage cadeaux, nous offerons un service de ruban et une petite carte .Si vous le souhaitez, veuillez mettre la page de commande de l’emballage cadeau  dans votre panier lors de la commande avec des articles que vous voulez emballer.";
+    }else if ($cur_lang == 'en'){
         $Made_France = "100% Made in Paris";  
         $Visit_Showroom_W17 = "Visit Showroom";
         $concept_title = "Concept";
         $concept_txt = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu tellus eget sapien scelerisque viverra vel at nulla. Etiam quis lectus elementum, lacinia sapien congue, pellentesque libero. Morbi consectetur fringilla massa nec rhoncus. Sed congue, felis facilisis vulputate feugiat, diam lectus euismod nisl, id placerat odio lorem a erat. Nullam consectetur justo a ipsum semper, at malesuada ante fringilla. Donec vestibulum elementum gravida. Ut facilisis, libero id finibus suscipit, orci magna pulvinar metus, eget rutrum ipsum eros sit amet metus. Duis aliquet vel lacus nec mattis. Nunc commodo magna sit amet scelerisque aliquet. Pellentesque at congue sapien. Fusce at ultricies metus. Vestibulum rutrum nisi sit amet felis sodales ultricies. Nam a sem eu nisl accumsan iaculis. Cras feugiat et metus at condimentum.";
         $concept_plus = "discover";
         $original_title = "Orignial clothes";
-        $original_txt = array (1 => 'Fournitures & chute de tissus', 'Tissue, Fin de serie & recyclé', 'Fabrication artisanale & manuelle 100% Française');
+        $original_txt = array (1 => 'Fabric & Accessoires', 'Creation & Fabrication', 'Fabrication artisanale & manuelle 100% Française');
         $custom_title = "Tailor maded";
         $custom_txt = "If you want a particular order, feel free to contact us : contact@atelierbourgeons.com";
         $fipre_title = "Fripe";
+    } else {
+        $about_txt="atelier Bourgeons (アトリエブルジョン)は、クチュールメゾンで役目を終えたデッドストック生地・工場で廃棄されるハギレ・中古布・ヴィンテージ素材などで創るオリジナル服と、主にヨーロッパでセレクトした古着＆中古服のお店です。オリジナル服は、型紙制作から縫製までをパリ郊外のアトリエで行い、ご紹介する作品のほぼ全てが一点ものです。時の流れとともに生まれた、その布・素材だけの味や個性をお楽しみください。このアトリエを通じて、どうかあなたがお気に入りの一着と出会えますように。";
+        $concept_txt="― Bourgeons ぶるじょん【仏】：蕾 つぼみ  ―\n普段歩く道すがら、今にも咲きそうな蕾を見るといつもハッとする。\n花になるまでの間、人知れずせっせと成長し続けるその小さなフォルムは\n繊細でちょっとお茶目。でも実は健気で相当たくましい\nそういうところを全部ひっくるめて、なんだかとても愛おしくなるから。\n何かができるまでには、必ず過程があって、その中には関わる色んな人・モノの感情やストーリーが詰まっている。\nその全てに想いを馳せながら、大事にものを選んで、創って今度はそれを着る人が、新しいストーリーを繋げていく。\nそういう愛おしい“過程の連続”の一片になりたい\n            私が渡す蕾を、あなたが花にして育てていくように。";
+        $tissus_txt="モノが溢れている今の世の中には、まだ使えても倉庫に埋もれていたり、捨てられていく魅力的な素材が沢山あります。\nそんな彼らの良さをもっと伝えたくて、服の素材には一度表舞台から降りてしまったものを選んで使用しています。小さな布切れも、パズルのピースをはめ込むようにさりげなく服の中へ取り入れて、遊び心をプラス。
+            \n
+            アクセントにあしらうフランスらしいヴィンテージボタンやリボンも、ちょっとしたこだわりです。";
+        $creation_txt="レトロな雰囲気と新しさが微妙にマッチしたときの、独特な面白さ。次々と入れ替わる「トレンド」だけに縛られず、あなたの“好き”や個性を素直に表せるような服創りを目指して。
+            \n
+            仮縫い用布をトルソーに沿わせながら形を作り、型紙(パターン)に起こしたら生地を裁断。その後縫いと修正を繰り返し、一枚の服が完成します。
+            \n
+            クチュールメゾンのように多くの工程を手作業で行い、細やかさと温もりのある服を皆さまへ。";
+        $packaging_txt="洗濯表示のラベル&サイズタグは、使用済みの仮縫い用布(シーチング)を再利用して作っています。
+            \n
+            ブランドネームタグは、オーガニックコットン100％のイタリア製です。
+            \n
+            包装類はすべてエコ・再利用資源から出来ており、使用後もリサイクル可能です（防水加工済みの配達用クラフト紙および粘着テープを除く）。
+            \n
+            ギフト用にリボンとメッセージカードをお付けできます。詳しくはこちら";
+        $vintage_txt="atelier Bourgeonsでは、主にヨーロッパの蚤の市、リサイクルショップ、業者用の倉庫から仕入れる古着・中古服・小物
+            も取り扱っています。より着やすく可愛い服を楽しんでいただけるよう、必要に応じてリサイズ・リメイクも行っています。各商品の詳細については、E-shopの商品紹介ページをご覧ください。";
+        $creator_txt="Mie MANABE
+            \n
+            岐阜県生まれ。愛知県立大学仏語学科在学中、サステイナブルなものづくりに興味をもち、某サイトにてインタビューやブランド紹介記事の寄稿を開始。週末はバンタンキャリアスクールにてスタイリングを勉強し、その後アシスタントとして実践的なノウハウを学ぶ。
+            大学卒業後、渡仏。デザイナーズブランドで働きながら服飾学校でパターンカッティングを学び、
+            仏政府公認のレディースパタンナー資格を取得。
+            \n
+            2016年、以前か集めていたデッドストック生地や布切れを使った服創りを開始。
+            Fragments magazine (http://www.fragmentsmag.com/)にて執筆活動も行う(不定期)。";
+        $made_order_1="自分が本当に気に入るデザインで、サイズがピッタリな服を見つけるのはなかなか難しいもの。
+            ちょっと特別な日に着るあなただけの一着を、一緒に創ってみませんか？
+            デザインのご相談とお見積りは無料です、どうぞお気軽にお問合せください。";
+        $made_order_step1_title="Step 1：デザインとお見積りのお問合せ・ご相談";
+        $made_order_step1_txt="アトリエにお越しの際、またはメールにてご希望のイメージをお伝えください。
+           （トップス、ワンピースなどのアイテム名、デザインのポイント、素材など。雑誌の切り抜き・イラスト等の参考資料や具体的なご要望があれば、より詳細なデザイン画・お見積り作成が可能です。）
+            予算や納期についても、お気軽にご相談ください。
+            \n
+            後日、デザイン画とお見積りをメールにてお送りいたします。";
+        $made_order_step2_title="Step2 :  デザインの修正・決定後、生地選びと採寸";
+        $made_order_step2_txt="デザイン画は何度でも無料で修正いたします。
+            \n
+            最終的に決定した内容でご依頼を承った場合、前金としてお見積り金額の30％をお支払い頂き、
+            生地選びと採寸に進みます。
+            \n
+            生地は、ご自身が事前に購入されたものをお持ち頂いても、アトリエのストック生地から選んで購入していただいても結構です。ご希望に応じて、一緒にお店へ足を運んだり、こちらが代理で購入することも可能です(生地代はご負担いただきます、予め大体の予算をお伝えください)。
+            制作に入る前に、採寸のため一度アトリエにお越し頂きます。";
+        $made_order_step2_ex_title="ex:　親族の結婚式に着ていくミニドレスをご注文されたお客様の場合。";
+        $made_order_step2_ex_txt="イメージは、Grace Kelly が着ているような50年代のレトロ風ワンピース。デコルテと背中は深くあけて、スカートは裾が大きく広がる膝丈のAライン。生地はパリ18区の生地屋街で一緒に選びながら購入しました。";
+        $made_order_step3_title="Step 3：トワル制作";
+        $made_order_step3_txt="採寸したサイズにわせてトルソーを調節し、まずは仮縫い用の生地で服の原型(トワル)の製作に入ります。
+        制作途中、デザイン等の確認でご連絡をさせて頂くことがございます。";
+        $made_order_step4_title="Step 4：試着・修正";
+        $made_order_step4_txt="出来上がったトワルを、アトリエにて試着して頂きます。
+        ここでデザイン・サイズ等の大きな修正がある場合、本縫い前に二度目の試着をして頂き、
+        問題なければいよいよ本縫いへ。
+        アトリエにお越し頂くお日にちは、納期やご都合に合わせて柔軟に対応いたします。";
+        $made_order_step5_title="Step 5：完成！！";
+        $made_order_step5_txt="完成後、最終チェックの試着をして頂きます。問題なければ、残額のご精算いただき、
+        服があなたの元へお嫁に参ります。";
+        $made_order_step6_title="atelierBourgeonsでは、商品のお直しも行っております。裾直し、ほつれ修理、裏地の交換など、
+        メールまたはお電話にてお気軽にお問い合わせください。";
+        $made_order_gift="プレゼント用に、リボンとメッセージカードをお付けできます(別料金)。ご希望の方は、E-shopで商品をご注文の際に
+        ギフトラッピング注文ページをカートに入れて頂きますようお願いたします。";
+
     }
     $siteurl = get_site_url();
-   
-    $original_img = array ( 1 => "/wp-content/themes/atelierbourgeons/img/square.jpg" ,'/wp-content/themes/atelierbourgeons/img/square.jpg' ,'/wp-content/themes/atelierbourgeons/img/square.jpg');
+    $about_img = array ( 1 => "/wp-content/themes/atelierbourgeons/img/about/mannequin.jpg" ,'/wp-content/themes/atelierbourgeons/img/about/ciseaux.jpg' ,'/wp-content/themes/atelierbourgeons/img/about/feuillebas.jpg','/wp-content/themes/atelierbourgeons/img/about/feuillehaut.jpg');
+    //$original_img = array ( 1 => "/wp-content/themes/atelierbourgeons/img/square.jpg" ,'/wp-content/themes/atelierbourgeons/img/square.jpg' ,'/wp-content/themes/atelierbourgeons/img/square.jpg');
     $custom_img = array ( 1 => "/wp-content/themes/atelierbourgeons/img/custom.jpg" ,'/wp-content/themes/atelierbourgeons/img/custom.jpg' ,'/wp-content/themes/atelierbourgeons/img/custom.jpg');
-    
+    $separator_img = array ( 1 => "/wp-content/themes/atelierbourgeons/img/separator.png" );
+    $original_img = array ( 1 => "/wp-content/themes/atelierbourgeons/img/original/Fabric.jpg","/wp-content/themes/atelierbourgeons/img/original/Creation.jpg","/wp-content/themes/atelierbourgeons/img/original/Carte.jpg");
+    $vintage_img = array ( 1 => "/wp-content/themes/atelierbourgeons/img/vintage/frip_all.png", "/wp-content/themes/atelierbourgeons/img/vintage/frip_ensemble.png", "/wp-content/themes/atelierbourgeons/img/vintage/robe_all.png");
+    $made_to_order_img = array ( 1 => "/wp-content/themes/atelierbourgeons/img/made-to-order/fleche.png", "/wp-content/themes/atelierbourgeons/img/made-to-order/recherche.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/illustration.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/illustration.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/mannequin.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/devant.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/dos.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/fini.jpg");
 ?>
 
 <html <?php language_attributes();  ?> ><?php /*storefront_html_tag_schema();*/ ?>
@@ -160,14 +253,44 @@ foreach($images as $image) {
 
             </section>
     <section id="about">
-    <div id="about-page">
+        <img id="about-mannequin" src ="<?php echo get_site_url(); echo $about_img[1];?>"/>
+        <img id="about-ciseaux" src ="<?php echo get_site_url(); echo $about_img[2];?>"/>
+        <img id="about-feuillebas" src ="<?php echo get_site_url(); echo $about_img[3];?>"/>
+        <img id="about-feuillehaut" src ="<?php echo get_site_url(); echo $about_img[4];?>"/>
+        <div id="about-page">
+        <div class='title'>
+            <?php echo $about_title;?>
+        </div> 
+    <!--<div class='board-left'>
+        <img id='about-img' accesskey=""src ="<?php //echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/concept.jpg" />
+    </div>       -->
+        
+        <div id='about-txt' class=''>
+          <?php echo $about_txt;
+                /*$post = get_page_by_title( 'About' );                
+                global $polylang;
+                $post_ids = $polylang->model->get_translations('page', $post->ID);                
+                // j'affiche le contenu de la page About dans la langue courrante 
+                echo get_post($post_ids[pll_current_language()])->post_content;
+                * 
+                */
+                ?>
+        </div>            
+        
+            
+        </div>    
+        </section>
+        <section id="concept">
+            <img id="separator" class="separator" src ="<?php echo get_site_url(); echo $separator_img[1]?>" /><img class="separator" id="separator" src ="<?php echo get_site_url(); echo $separator_img[1]?>" />
+    <div id="concept-page">
         <div class='title'>
             <?php echo $concept_title;?>
         </div> 
     <!--<div class='board-left'>
         <img id='about-img' accesskey=""src ="<?php //echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/concept.jpg" />
     </div>       -->
-        <div id='about-txt' class=''>
+        
+        <div id='concept-txt' class=''>
           <?php echo $concept_txt;
                 /*$post = get_page_by_title( 'About' );                
                 global $polylang;
@@ -178,55 +301,145 @@ foreach($images as $image) {
                 */
                 ?>
             </div>
-            <button id='about-plus' class=''>
-                <?php echo $concept_plus; ?>
-            </button>
         </div>
+            <img id="separator" class="separator" src ="<?php echo get_site_url(); echo $separator_img[1]?>" /><img class="separator" id="separator" src ="<?php echo get_site_url(); echo $separator_img[1]?>" />
+        </section>
+        <section id="collections-original">
         <div id='original-clothes-title' class='title'>
                 <?php echo $original_title; ?>
         </div>
              
         <div id='original-clothes' class=''>            
             <div class="original-clothes-vign">
-                <img class="original-clothes-img" accesskey=""src ="<?php echo get_site_url(); echo $original_img[1];?>" />        
-                <div class="original-clothes-txt title">
-                    <?php echo $original_txt[1]; ?>
+                <div class="original-clothes-tile">
+                    <img class="original-clothes-img" accesskey=""src ="<?php echo get_site_url(); echo $original_img[1];?>" />        
+                    <div class="original-clothes-txt title">
+                        <?php echo $original_txt[1]; ?>
+                    </div>
                 </div>
+                <div><?php echo $tissus_txt; ?></div>
             </div>
             <div class="original-clothes-vign">
-                <img class="original-clothes-img" accesskey=""src ="<?php echo get_site_url(); echo $original_img[2];?>" />        
-                <div class="original-clothes-txt title">
-                    <?php echo $original_txt[2]; ?>
+                <div class="original-clothes-tile">
+                    <img class="original-clothes-img" accesskey=""src ="<?php echo get_site_url(); echo $original_img[2];?>" />        
+                    <div class="original-clothes-txt title">
+                        <?php echo $original_txt[2]; ?>
+                    </div>
                 </div>
+                <div><?php echo $creation_txt; ?></div>
             </div>
             <div class="original-clothes-vign">
-                <img class="original-clothes-img" accesskey=""src ="<?php echo get_site_url(); echo $original_img[3];?>" />        
-                <div class="original-clothes-txt title">
-                    <?php echo $original_txt[3]; ?>
+                <div class="original-clothes-tile">
+                    <img class="original-clothes-img" accesskey="" src ="<?php echo get_site_url(); echo $original_img[3];?>" />        
+                    <div class="original-clothes-txt title">
+                        <?php echo $original_txt[3]; ?>
+                    </div>
+                </div>
+                <div><?php echo $packaging_txt; ?></div>
+            </div>
+        </div>
+        <img id="separator" class="separator" src ="<?php echo get_site_url(); echo $separator_img[1]?>" /><img class="separator" id="separator" src ="<?php echo get_site_url(); echo $separator_img[1]?>" />
+        </section>
+        <section id="custom">
+        
+            <div id='custom-clothes-title' class='title'>
+                    <?php echo $custom_title; ?>
+            </div>
+                <div class='custom-clothes-img' id=''>
+                    <img echo get_site_url(); echo $frip_img;>
+                </div>
+                <div class='custom-clothes-img' id=''></div>
+                <div class='custom-clothes-img' id=''></div>
+            <div id='custom-clothes' class=''>            
+                <div class="custom-clothes-vign">
+                    <img class="original-clothes-img" accesskey=""src ="<?php echo get_site_url(); echo $vintage_img[2];?>" />                        
+                </div>
+                <div class="custom-clothes-vign">
+                    <img class="original-clothes-img" accesskey=""src ="<?php echo get_site_url(); echo $vintage_img[1];?>" />  
+                </div>
+                <div class="custom-clothes-vign">
+                    <img class="original-clothes-img" accesskey=""src ="<?php echo get_site_url(); echo $vintage_img[3];?>" /> 
+                </div>
+            </div>   
+            <div id='custom-txt' class=''>
+                    <?php echo $custom_txt; ?>
+            </div>
+            <div id='' class='title'>
+                    <?php echo $fipre_title; ?>
+            </div>
+        </section>
+        <section id="creator">
+            <img id="separator" class="separator" src ="<?php echo get_site_url(); echo $separator_img[1]?>" /><img class="separator" id="separator" src ="<?php echo get_site_url(); echo $separator_img[1]?>" />
+            <div id='creator-title' class='title'>
+                <?php echo $creator_title; ?>
+            </div>        
+            <div id='creator-txt' class='txt'>
+                <?php echo $creator_txt; ?>
+            </div>
+            <img id="separator" class="separator" src ="<?php echo get_site_url(); echo $separator_img[1]?>" /><img class="separator" id="separator" src ="<?php echo get_site_url(); echo $separator_img[1]?>" />
+        </section>
+        <section id="vetement-sur-mesure">
+            <img id="separator" class="separator" src ="<?php echo get_site_url(); echo $separator_img[1]?>" /><img class="separator" id="separator" src ="<?php echo get_site_url(); echo $separator_img[1]?>" />
+            <div id='creator-title' class='title'>
+                <?php echo $vetement_sur_mesure_title; ?>
+            </div>        
+            <div id='creator-txt' class='txt'>
+                <?php echo $vetement_sur_mesure_txt; ?>
+            </div>
+            
+            <img class="made_to_order_fleche" accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[1];?>" />
+            <div id="made_to_order_step1">
+                <img accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[2];?>" /> 
+                <div>
+                    <b><?php echo $vetement_sur_mesure_Step1_title; ?></b><?php echo $vetement_sur_mesure_Step1_txt; ?>
+                </div>
+                <div>
+                    <?php echo $vetement_sur_mesure_Step1_txt_2; ?>
                 </div>
             </div>
-        </div>
-        <div id='custom-clothes-title' class='title'>
-                <?php echo $custom_title; ?>
-        </div>
-        <div id='custom-clothes' class=''>            
-            <div class="custom-clothes-vign">
-                <img class="original-clothes-img" accesskey=""src ="<?php echo get_site_url(); echo $custom_img[1];?>" />                        
+            <img class="made_to_order_fleche" accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[1];?>" />
+            <div id="made_to_order_step2">
+                <img accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[3];?>" /> 
+                <div>
+                    <b><?php echo $vetement_sur_mesure_Step2_title; ?></b><?php echo $vetement_sur_mesure_Step2_txt; ?>
+                </div>
+                <div>
+                    <?php echo $vetement_sur_mesure_Step1_txt_2; ?>
+                </div>
             </div>
-            <div class="custom-clothes-vign">
-                <img class="original-clothes-img" accesskey=""src ="<?php echo get_site_url(); echo $custom_img[2];?>" />  
+            <img class="made_to_order_fleche" accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[1];?>" />
+            <div id="made_to_order_step3">
+                <img accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[5];?>" /> 
+                <div>
+                    <b><?php echo $vetement_sur_mesure_Step3_title; ?></b><?php echo $vetement_sur_mesure_Step3_txt; ?>
+                </div>
+                <div>
+                    <?php echo $vetement_sur_mesure_Step3_txt_2; ?>
+                </div>
             </div>
-            <div class="custom-clothes-vign">
-                <img class="original-clothes-img" accesskey=""src ="<?php echo get_site_url(); echo $custom_img[3];?>" /> 
+            <img class="made_to_order_fleche" accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[1];?>" />
+            <div id="made_to_order_step4">
+                <img accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[7];?>" /> 
+                <img accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[6];?>" /> 
+                <div>
+                    <b><?php echo $vetement_sur_mesure_Step4_title; ?></b><?php echo $vetement_sur_mesure_Step4_txt; ?>
+                </div>
+                <div>
+                    <?php echo $vetement_sur_mesure_Step4_txt_2; ?>
+                </div>
             </div>
-        </div>   
-        <div id='custom-txt' class=''>
-                <?php echo $custom_txt; ?>
-        </div>
-        <div id='' class='title'>
-                <?php echo $fipre_title; ?>
-        </div>
-
+            <img class="made_to_order_fleche" accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[1];?>" />
+            <div id="made_to_order_step5">
+                <img accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[8];?>" /> 
+                <div>
+                    <b><?php echo $vetement_sur_mesure_Step5_title; ?></b><?php echo $vetement_sur_mesure_Step5_txt; ?>
+                </div>
+                <div>
+                    <?php echo $vetement_sur_mesure_Step5_txt_2; ?>
+                </div>
+            </div>
+ 
+            <img id="separator" class="separator" src ="<?php echo get_site_url(); echo $separator_img[1]?>" /><img class="separator" id="separator" src ="<?php echo get_site_url(); echo $separator_img[1]?>" />            
         </section>
         <section id="made_paris">
                 <div id='made_paris-txt' class='title_concept'>
@@ -237,13 +450,35 @@ foreach($images as $image) {
                 <img id='made_paris-img' class="bgimgs portrait" accesskey=""src ="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/paris-portrait.jpg" />        
                 </div>                   
         </section>
-         <section id="matiere_premiere">
+        <section id="emballage_title">
+            <img id="separator" class="separator" src ="<?php echo get_site_url(); echo $separator_img[1]?>" /><img class="separator" id="separator" src ="<?php echo get_site_url(); echo $separator_img[1]?>" />
+            <div id='emballage-title' class='title'>
+                <?php echo $emballage_title; ?>
+            </div>        
+            <div id='emballage-txt' class='txt'>
+                <?php echo $emballage_txt; ?>
+            </div>
+            <img id="separator" class="separator" src ="<?php echo get_site_url(); echo $separator_img[1]?>" /><img class="separator" id="separator" src ="<?php echo get_site_url(); echo $separator_img[1]?>" />
+        </section>
+        <section id="vetement-sur-mesure">
+        </section>
+        <section id="retouche_premiere">
+            <div id='retouche-title' class='title'>
+                <?php echo $retouche_title; ?>
+            </div>        
+            <div id='retouche-txt' class='txt'>
+                <?php echo $retouche_txt; ?>
+            </div>
+        </section>
+        <section id="matiere_premiere">
             <div class="board">
                 <img id='matiere_premiere-img' class="bgimgs" accesskey=""src ="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/organic-cotton-landscape.jpg" />        
                 <img id='matiere_premiere-img' class="bgimgs portrait" accesskey=""src ="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/organic-cotton-portrait.jpg" />        
             </div>
-         </section>
-        
+        </section>
+        <section id="about_page">
+            
+        </section>
         
 
 

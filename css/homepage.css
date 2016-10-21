@@ -344,17 +344,49 @@ img.separator {
 }
 
 #made_to_order_step1, #made_to_order_step2 {
-    display: inline-block;
+    position: relative;
+
+    padding: 0 6em 6em 6em;
 }
 #made_to_order_step1 > img{
-    width:20%;
-    float: left;
+    margin-right: 4em;
+    width: 12em;
+    float:left;
+
+}
+
+#made_to_order_step1 > div{
+    /*width:20%;
+    vertical-align: middle;
+    display: inline-block;*/
+    margin-top: 5em;
+
 }
 
 #made_to_order_step2 > img{
-    width:20%;
+    width: 40%;
     float: right;
+    display: inline-block;
 }
+
+#made_to_order_step2_description {
+    width: 60%;
+    float: left;
+    margin-top: 2em;
+}
+
+#made_to_order_step2_subtitle {
+    position: absolute;
+    bottom: 15em;
+}
+#made_to_order_step2_description > img{
+    width: 4em;
+    transform: rotate(-60deg);
+    position: absolute;
+    right: 0;
+
+}
+
 
 #made_to_order_step3 {
     display: inline-block;
@@ -362,6 +394,7 @@ img.separator {
 
 #made_to_order_step3  > img {
     float: left;
+    width: 20%;
 }
 
 #made_to_order_step4 {
@@ -370,6 +403,14 @@ img.separator {
 
 #made_to_order_step4  > img {
     float: right;
+    width: 40%;
+}
+#made_to_order_step4  > div {
+    display: inline-block;
+    float: left;
+    width: 60%;
+    margin-top: 4em;
+    padding-left: 1em;
 }
 
 #made_to_order_step5 {
@@ -380,6 +421,26 @@ img.separator {
     float: right;
 }
 
+#made_to_order_step5  > div {
+    margin-top: 20%;
+    padding-left: 1em;
+}
+
+#vintage-clothes-cadre {
+    width: 30%;
+    position: absolute;
+    right: 20%;
+    top: 35%;
+    transform: rotate(-10deg);
+}
+
+#vintage-clothes-cadre > div {
+    top: 1em;
+    position: absolute;
+    font-size: 1.8em;
+    width: 7em;
+    left: 1.2em;
+}
 /*
 body {
     overflow: hidden;
@@ -404,6 +465,25 @@ body {
 
     #about-mannequin , #about-ciseaux{
         display:none;
+    }
+
+    #made_to_order_step2 > img {
+        width: 80%;
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #made_to_order_step2_description {
+        width: 100%;
+        float: none;
+        margin-top: 2em;
+    }
+
+    #creator-txt {
+        padding-left: 2em;
+        padding-right: 2em;
     }
 }
 

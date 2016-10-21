@@ -37,26 +37,28 @@
         $creation_txt="‘‘La charme intemporelle avec une belle harmonie entre rétro et moderne’’- C’est un concept principal de style d’atelier. Nous essayons de créer des vêtements qui aident vous exprimer votre personnalité et ce que vous  ’’ aimez’’ sans se laisser influencer juste par la « tendance» qui change trop souvent. Créer la forme sur un mannequin avec une toile, relever la sur des papiers puis couper des  vrais tissus à la forme de patronnage. Après la répétition d’une couture et modification, voila une pièce est faite! Avec beaucoup de travail manuel comme la maison de couture, nous vous offront des pièces unique qui ont tant d’amour et tient dans le temps.";
         $packaging_txt="Nous  recyclons la toile qui ont été utilisées lors la création de patronnage pour fabriquer des étiquettes de compositions et de tailles. Les griffes sont fabriquées de coton organique en Italie. Produits d’ emballage sont tous fabriqué dans la matière recyclée, et ils sont recyclable (sauf le papier kraft imperméable et du ruban adhésif pour le livraison). Nous proposons des ruban et des cartes de message pour l’emballage cadeau. Voici les plus de détails.";
         $custom_title = "Vêtements sur mesures";
+        $custom_cadre = "Exemple de relooking";
         $custom_txt = "atelier Bourgeons offre également des vêtements et des accessoires de seconde mains et de vintage qui vients de puce, magasins de recyclage, boutiques solidaires, entrepôts pour le pros, etc.Nous custamisons, retaillons, et faire la reprise  également des pièces selon les besoins. Pour les détails des informations, consultez-vous aux pages de chaques articles sur notre E-boutique.";
         $creator_title="Creator";
         $creator_txt="Mie MANABE, Née à Gifu (JAPON). Pendant  ses études à l’université départemental d’Aichi, elle s’intéresse à la mode éthique・ durable et commencé  à faire la rédaction pour un site spéciqlisé à la mode éthique. En même temps, elle apprend des conseils habillage et la décoration de mode puis fait des expériences  en tant qu’assistant styliste. Après être dîplomé, elle s’installe en France et apprend le modélisme chez AICP en alternance avec une marque prêt-à-porter femme . Dîplomé en tant que modéliste femme international qualifié par l’état à 2015. Elle commance à créer des vêtements avec des chutes, la fin de série, des tissus d’occasion qu’elle avait collectionné à 2016. Elle fait une rédaction irregulièrement pour  « Fragment magazine  (http://www.fragmentsmag.com/)»";
         $fipre_title = "Fripe";
         $vetement_sur_mesure_title="Vetement-sur-merure";        
         $vetement_sur_mesure_txt="Ce n’est pas facile de trouver un vêtement que vous aimez à votre taille,  surtout des tenues pour une journée spéciale comme mariage, anniversaire, fête etc…Alors  créeons donc une pièce  ensemble à votre gôut qui va parfaitement à votre taille !!Renseignez-vous d’abord par téléphone ou e-mail, des devis et des croquis sont gratuit pour vous !!";
-        $vetement_sur_mesure_Step1_title="Step 1：";
-        $vetement_sur_mesure_Step1_txt="renseignement・discussion sur un design  et un devis";
-        $vetement_sur_mesure_Step1_txt_2="Indiquez-nous des  iformations de designs que vous désirez( catégorie d’article comme ‘’robe’’ ,‘’jupe’’ etc, des détails de design, matière de tissu, etc. Si vous aurez des images ou  découpage de magazine, ça nous aide beaucoup lors de création de croquis et un devis. N’hesitez pas à nous consulter également sur un buget ou la délais de remise d’article. Plus tard, nous vous enverons un croquis ainsi un devis dans les meilleurs délais.";
+        $vetement_sur_mesure_Step1_title="Step 1：";        
+        $vetement_sur_mesure_Step1_txt="Indiquez-nous des  iformations de designs que vous désirez( catégorie d’article comme ‘’robe’’ ,‘’jupe’’ etc, des détails de design, matière de tissu, etc. Si vous aurez des images ou  découpage de magazine, ça nous aide beaucoup lors de création de croquis et un devis. N’hesitez pas à nous consulter également sur un buget ou la délais de remise d’article. Plus tard, nous vous enverons un croquis ainsi un devis dans les meilleurs délais.";
         $vetement_sur_mesure_Step2_title="Step 2：";
         $vetement_sur_mesure_Step2_txt_1="Modification/ determination de design & selection de tissu / prise de mesure";
         $vetement_sur_mesure_Step2_txt_2="Nous modifions des croquis autant que vous voulez gratuitement avant commencer la fabrication.Dans le cas qu’on a reçu votre demande finale avec un croquis définitif, Vous payerez 30% de devis et nous commançons à decider le tissu et prendre vos mesure ensemble.Pour le tissu, vous pourrez acheter vous même ou choisir dans le stock à l’atelier à prix intéressant. Si vous souhaitez, nous pouvons aller shoisir du tissu ensemble dans un magasin. Il est possible aussi que nous choisissons et achetons du tissu à votre place( dans ce cas là, Nous vous demanderons de payer le tissu.Donnez-nous à peu-près le prix de votre buget avant. Avant la fabrication, nous vous demandons de venir à l’atelier afin de prise de mesure.";
+        $vetement_sur_mesure_Step2_txt_3="Imade de cette  pièce est une robe rétro 50’s comme Grqce kelly . Un haut décolleté en point sur le devant et le dos avec une jupe évasé mi-logue avec un jupon. Nous somme allées choisir le tissu ensemble  à Paris 18ème .";
         $vetement_sur_mesure_Step2_ex="Imade de cette  pièce est une robe rétro 50’s comme Grqce kelly . Un haut décolleté en point sur le devant et le dos avec une jupe évasé mi-logue avec un jupon. Nous somme allées choisir le tissu ensemble  à Paris 18ème .";
         $vetement_sur_mesure_Step3_title="Step 3：";
-        $vetement_sur_mesure_Step3_txt="Création de la base de vêtement";
-        $vetement_sur_mesure_Step3_txt="En ajustant un mannequin à votre taille, nous créeons la forme de vêtement avec de la toile. Nous pourrons vous contacter par fois pour verifier des détails.";
+        $vetement_sur_mesure_Step3_txt_1="Création de la base de vêtement";
+        $vetement_sur_mesure_Step3_txt_2="En ajustant un mannequin à votre taille, nous créeons la forme de vêtement avec de la toile. Nous pourrons vous contacter par fois pour verifier des détails.";
         $vetement_sur_mesure_Step4_title="Step 4：";
         $vetement_sur_mesure_Step4_title2="essayage/ modification";
         $vetement_sur_mesure_Step4_txt="Une fois que la base de vêtement  sera faite, vous  viendrez  l’essayer à l’atelier. Dans le cas ou il y a  une modification importante, vous viendrez une fois après lpour vérifier , et puis nous commanços la fabrication avec le vrai tissu. Nous respectrons au maximum pour la date d’essayage par rapport à votre disponibilité  et la date de remise  d’artjcle ou vous désirez.";
-        $vetement_sur_mesure_Step5_title="Après la fabrication, vous viendrez la dernière fois pour l’essayage finale. S’il n’y a pas de problème, vous payerez le rest de devis et le vêtement viendra chez vous!!!!";
+        $vetement_sur_mesure_Step5_title="Step 5:";
+        $vetement_sur_mesure_Step5_title2="fini！！";
         $vetement_sur_mesure_Step5_txt="Après la fabrication, vous viendrez la dernière fois pour l’essayage finale. S’il n’y a pas de problème, vous payerez le rest de devis et le vêtement viendra chez vous!!!!";
         $retouche_title="Retouche";
         $retouche_txt="atelierBourgeons fait également la retouche de nos articles.Ourlets, reprise de la partie éffiloché, chagement de la doublure, etc. N’hesitez pas à nous consulter par téléphone ou e-mail.";
@@ -142,9 +144,9 @@
     //$original_img = array ( 1 => "/wp-content/themes/atelierbourgeons/img/square.jpg" ,'/wp-content/themes/atelierbourgeons/img/square.jpg' ,'/wp-content/themes/atelierbourgeons/img/square.jpg');
     $custom_img = array ( 1 => "/wp-content/themes/atelierbourgeons/img/custom.jpg" ,'/wp-content/themes/atelierbourgeons/img/custom.jpg' ,'/wp-content/themes/atelierbourgeons/img/custom.jpg');
     $separator_img = array ( 1 => "/wp-content/themes/atelierbourgeons/img/separator.png" );
-    $original_img = array ( 1 => "/wp-content/themes/atelierbourgeons/img/original/Fabric.jpg","/wp-content/themes/atelierbourgeons/img/original/Creation.jpg","/wp-content/themes/atelierbourgeons/img/original/Carte.jpg");
-    $vintage_img = array ( 1 => "/wp-content/themes/atelierbourgeons/img/vintage/frip_all.png", "/wp-content/themes/atelierbourgeons/img/vintage/frip_ensemble.png", "/wp-content/themes/atelierbourgeons/img/vintage/robe_all.png");
-    $made_to_order_img = array ( 1 => "/wp-content/themes/atelierbourgeons/img/made-to-order/fleche.png", "/wp-content/themes/atelierbourgeons/img/made-to-order/recherche.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/illustration.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/illustration.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/mannequin.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/devant.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/dos.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/fini.jpg");
+    $original_img = array ( 1 => "/wp-content/themes/atelierbourgeons/img/original/Fabric.jpg","/wp-content/themes/atelierbourgeons/img/original/Carte.jpg","/wp-content/themes/atelierbourgeons/img/original/Creation.jpg");
+    $vintage_img = array ( 1 => "/wp-content/themes/atelierbourgeons/img/vintage/frip_all.png", "/wp-content/themes/atelierbourgeons/img/vintage/frip_ensemble.png", "/wp-content/themes/atelierbourgeons/img/vintage/robe_all.png", "/wp-content/themes/atelierbourgeons/img/vintage/cadre.png" );
+    $made_to_order_img = array ( 1 => "/wp-content/themes/atelierbourgeons/img/made-to-order/fleche.png", "/wp-content/themes/atelierbourgeons/img/made-to-order/recherche.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/illustration.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/illustration.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/mannequin.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/devant.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/dos.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/fini.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/direction.png");
 ?>
 
 <html <?php language_attributes();  ?> ><?php /*storefront_html_tag_schema();*/ ?>
@@ -344,12 +346,7 @@ foreach($images as $image) {
         
             <div id='custom-clothes-title' class='title'>
                     <?php echo $custom_title; ?>
-            </div>
-                <div class='custom-clothes-img' id=''>
-                    <img echo get_site_url(); echo $frip_img;>
-                </div>
-                <div class='custom-clothes-img' id=''></div>
-                <div class='custom-clothes-img' id=''></div>
+            </div>                
             <div id='custom-clothes' class=''>            
                 <div class="custom-clothes-vign">
                     <img class="original-clothes-img" accesskey=""src ="<?php echo get_site_url(); echo $vintage_img[2];?>" />                        
@@ -359,6 +356,10 @@ foreach($images as $image) {
                 </div>
                 <div class="custom-clothes-vign">
                     <img class="original-clothes-img" accesskey=""src ="<?php echo get_site_url(); echo $vintage_img[3];?>" /> 
+                </div>
+                <div id="vintage-clothes-cadre">
+                    <div><?php echo $custom_cadre; ?> </div>
+                    <img accesskey=""src ="<?php echo get_site_url(); echo $vintage_img[4];?>" /> 
                 </div>
             </div>   
             <div id='custom-txt' class=''>
@@ -387,56 +388,52 @@ foreach($images as $image) {
                 <?php echo $vetement_sur_mesure_txt; ?>
             </div>
             
-            <img class="made_to_order_fleche" accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[1];?>" />
+            
             <div id="made_to_order_step1">
                 <img accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[2];?>" /> 
-                <div>
-                    <b><?php echo $vetement_sur_mesure_Step1_title; ?></b><?php echo $vetement_sur_mesure_Step1_txt; ?>
-                </div>
-                <div>
-                    <?php echo $vetement_sur_mesure_Step1_txt_2; ?>
+                <div><b><?php echo $vetement_sur_mesure_Step1_title; ?></b>                    
+                    <?php echo $vetement_sur_mesure_Step1_txt; ?>
                 </div>
             </div>
-            <img class="made_to_order_fleche" accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[1];?>" />
+            
             <div id="made_to_order_step2">
-                <img accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[3];?>" /> 
-                <div>
-                    <b><?php echo $vetement_sur_mesure_Step2_title; ?></b><?php echo $vetement_sur_mesure_Step2_txt; ?>
+                <img accesskey="" src ="<?php echo get_site_url(); echo $made_to_order_img[3];?>" /> 
+                <div id="made_to_order_step2_description">
+                    <b><?php echo $vetement_sur_mesure_Step2_title; ?></b>
+                    <?php echo $vetement_sur_mesure_Step2_txt; ?>
+                    <?php echo $vetement_sur_mesure_Step2_txt_2; ?>
                 </div>
-                <div>
-                    <?php echo $vetement_sur_mesure_Step1_txt_2; ?>
+                
+                    
+                <div id="made_to_order_step2_subtitle">
+                    <?php echo $vetement_sur_mesure_Step2_txt_3; ?>
+                    <img accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[9];?>" />   
                 </div>
+                
             </div>
-            <img class="made_to_order_fleche" accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[1];?>" />
+            
             <div id="made_to_order_step3">
                 <img accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[5];?>" /> 
                 <div>
-                    <b><?php echo $vetement_sur_mesure_Step3_title; ?></b><?php echo $vetement_sur_mesure_Step3_txt; ?>
-                </div>
-                <div>
-                    <?php echo $vetement_sur_mesure_Step3_txt_2; ?>
+                    <b><?php echo $vetement_sur_mesure_Step3_title; ?></b><a><?php echo $vetement_sur_mesure_Step3_txt_1; ?></a>
+                            <li><?php echo $vetement_sur_mesure_Step3_txt_2; ?></li>
                 </div>
             </div>
-            <img class="made_to_order_fleche" accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[1];?>" />
+            
             <div id="made_to_order_step4">
-                <img accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[7];?>" /> 
-                <img accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[6];?>" /> 
+                <img accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[7];?>" />                 
                 <div>
-                    <b><?php echo $vetement_sur_mesure_Step4_title; ?></b><?php echo $vetement_sur_mesure_Step4_txt; ?>
-                </div>
-                <div>
-                    <?php echo $vetement_sur_mesure_Step4_txt_2; ?>
+                    <b><?php echo $vetement_sur_mesure_Step4_title; ?></b><a><?php echo $vetement_sur_mesure_Step4_title2; ?></a>
+                    <li><?php echo $vetement_sur_mesure_Step4_txt; ?></li>
                 </div>
             </div>
-            <img class="made_to_order_fleche" accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[1];?>" />
+            
             <div id="made_to_order_step5">
                 <img accesskey=""src ="<?php echo get_site_url(); echo $made_to_order_img[8];?>" /> 
                 <div>
-                    <b><?php echo $vetement_sur_mesure_Step5_title; ?></b><?php echo $vetement_sur_mesure_Step5_txt; ?>
-                </div>
-                <div>
-                    <?php echo $vetement_sur_mesure_Step5_txt_2; ?>
-                </div>
+                    <b><?php echo $vetement_sur_mesure_Step5_title; ?></b><a><?php echo $vetement_sur_mesure_Step5_title2; ?></a>
+                    <li><?php echo $vetement_sur_mesure_Step5_txt; ?></li>
+                </div>                
             </div>
  
             <img id="separator" class="separator" src ="<?php echo get_site_url(); echo $separator_img[1]?>" /><img class="separator" id="separator" src ="<?php echo get_site_url(); echo $separator_img[1]?>" />            

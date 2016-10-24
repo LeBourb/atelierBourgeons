@@ -136,10 +136,10 @@
 	<?php 
         
 	do_action( 'storefront_before_header' ); ?>
-<?php if ( is_shop() || is_pll_wc('shop') || is_product() || is_product_category() || is_pll_wc('cart') || is_account_page())  :
+<?php  if ( 1 ) /*is_shop() || is_pll_wc('shop') || is_product() || is_product_category() || is_pll_wc('cart') || is_account_page())*/  :
     
        ?>
-    <header id="masthead" class="site-header" role="banner" <?php if ( get_header_image() != '' ) { echo 'style="background-image: url(' . esc_url( get_header_image() ) . ');"'; } ?>>
+    <header id="masthead" class="site-header-menu <?php if ( is_product() ) echo "product"; ?>" role="banner" <?php if ( get_header_image() != '' ) { echo 'style="background-image: url(' . esc_url( get_header_image() ) . ');"'; } ?>>
       
 	<?php
         $cur_lang = pll_current_language(); 
@@ -160,8 +160,8 @@
                     $NEW = "New";
                 }
                 
-                if( is_home() || is_singular('post') )
-                    return;
+              /*  if( is_home() || is_singular('post') )
+                    return;*/
                 if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
 			jetpack_the_site_logo();
 		} else { ?>                        
@@ -297,7 +297,7 @@
         <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>       
             </div>
 	</header><!-- #masthead -->
-        <?php if (!is_product()){ ?>
+        <?php if (!is_product() && !is_front_page()){ ?>
     
     <img class="header-background" src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/banner_search.jpg" ></img>	
     <?php } ?>

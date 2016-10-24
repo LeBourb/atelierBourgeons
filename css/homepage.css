@@ -17,9 +17,9 @@ html {
 */
 
 .socialicon {
-    position: absolute;
-    width: 5%;
-    top: 50%;
+    position: relative;
+    display: inline-block;
+    margin-right: 2em;
     color: white;
     font: normal normal normal 1em/1 FontAwesome;
 }
@@ -54,7 +54,6 @@ body {
 }
 
 section {
-    margin-top: 2%;
     display: inline-block!important;
     height: auto;
     width: 100%;
@@ -100,14 +99,21 @@ section {
     left: 90%;
 }
 
-.fa-shopping-cart {
+#social-media {
+    width: auto;
+    position: absolute;
+    right: 0em;
+    bottom: 5em;
+}
+
+/*.fa-shopping-cart {
     width: 10%;
     position: absolute;
     left: 10%;
     top: 10%;
     color: white;
     font: normal normal normal 1em/1 FontAwesome;
-}
+}*/
 
 .board-left{
     position: relative;
@@ -546,6 +552,10 @@ body {
     -ms-transition: background-color .2s 0s linear,right .2s .3s ease-out;
     -o-transition: background-color .2s 0s linear,right .2s .3s ease-out;
     transition: background-color .2s 0s linear,right .2s .3s ease-out;
+}
+
+.col-full {
+    padding: 0!important;
 }
 
 .overlay-loader .loader-icon {

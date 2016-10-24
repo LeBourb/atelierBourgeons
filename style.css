@@ -84,17 +84,7 @@ a {
     width: 100%;
 }
 
-.site-header {
-    background-color: white;
-    padding-top: 0.5em;
-    color: #9aa0a7;
-    background-position: center center;
-    border-bottom: 1px solid rgba(0,0,0,0.07);
-    position: relative;
-    z-index: 999;
-    width: 100%;
-    height: auto;
-}
+
 
 .dummy-menu {
     background-color: white;
@@ -102,13 +92,7 @@ a {
     height: 4em;
 }
 
-.header-top {
-    background-color: transparent!important;
-    transition:padding 0.3s ease-in-out, background 0.3s ease-in, border-color 0.2s ease-in-out;
-    transition:opacity 0.5s ease-in-out 0s;
-    opacity:1;
-    //will-change:padding, background, border-color;
-}
+
 
 .site-branding{
     width: 100%!important;
@@ -225,18 +209,6 @@ body {
     display :none;
 }
 
-#woocommerce-product-search-field{
-    padding: 0px;
-    background-color: transparent;
-    color: rgb(67, 69, 75);
-    outline: 0px none;
-    border: 0px none;
-    -webkit-appearance: none;
-    border-radius: none;
-    box-sizing: border-box;
-    font-weight: 400;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.125) inset;
-}
 
 .footer_level {
     border-top: 1px dashed #cccbcb;
@@ -347,6 +319,10 @@ ul.social_icons > li {
     font-size: 5em;
 }
 
+a:focus {
+    outline:none!important;
+}
+
 .title_showroom{
     border: medium none antiquewhite;
     background-color: rgba(153, 142, 146, 0.61);
@@ -395,9 +371,7 @@ ul.social_icons > li {
         margin-left: 0;
         margin-right: 0; }
 
-    .site-header {
-        padding-top: 0;
-        height:2em;}
+
 
     .site-branding{
         background-color: white;
@@ -448,6 +422,7 @@ ul.social_icons > li {
 
     img.bgimgs {
         display: none!important;
+        top:47%;
     }
     img.bgimgs.portrait {
         width: 100%;
@@ -455,14 +430,19 @@ ul.social_icons > li {
         display: block!important;
     }
 
+    #page.left {
+        transform: translate(15em);
+    }
+
+    #page.right {
+        transform: translate(-15em);
+    }
+
 
     .col-full {
         margin-left: 0;
         margin-right: 0; }
-    .site-header {
-        padding-top: 0;
-        //height: 2em;
-    }
+
     .site-branding{
         background-color: white;
         float: none;
@@ -492,11 +472,6 @@ ul.social_icons > li {
     .menu-left, .menu-right{
         display:none;
     }
-
-    .site-header {
-        position: relative;
-    }
-
 
 
     /*#cssmenu {
@@ -529,10 +504,6 @@ ul.menu li a,
         width: 100%;
         margin: 0 0 0 0;
         padding-left: 0;
-    }
-    .site-header {
-        padding-top: 0;
-        height: 2em;
     }
     .col-full {
         margin-top: 2em;

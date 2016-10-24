@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 $(function(){
-   $('.woocommerce-main-image.zoom').mousemove(function(e){
+   /*$('.woocommerce-main-image.zoom').mousemove(function(e){
         var x = (e.pageX - $(this).offset().left) / this.clientWidth;//e.pageX;// - this.offsetLeft;
         var y = (e.pageY - $(this).offset().top) / this.clientHeight; //e.pageY;// - this.offsetTop;
         console.log("x: " + x + " y: " + y );
@@ -22,7 +22,9 @@ var top = y * (- img.height() + this.clientHeight);
             transform: 'translate3d(' + 0 + 'px, ' + 0 + 'px, ' + 0 + 'px)'
            //top: - y * img.height()
         });
-    });
+    });*/
+    
+    $('.easyzoom').easyZoom();
     
     $("[data-rel='prettyPhoto[product-gallery]']").click(function(event){
          
@@ -32,6 +34,15 @@ var top = y * (- img.height() + this.clientHeight);
          
     });
     
+    
+
+    // Instantiate EasyZoom instances
+    //var $easyzoom = $('.easyzoom').easyZoom();
+
+    // Get an instance API
+    //var api = $easyzoom.data('easyZoom');
+
+
     
     
 });

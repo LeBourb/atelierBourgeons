@@ -208,15 +208,7 @@
             </li>
             <li id="instagram" class="socialicon socialicon-i">
                 <i class="fa fa-instagram fa-lg" ></i>
-            </li>
-            <li class="langue fr">
-                <a href="<?php echo pll_home_url('fr');?>" >Fr</a>
-            </li>
-            <li class="langue en">
-                <a href="<?php echo pll_home_url('en');?>" >En</a>
-            </li>
-            <li class="langue jp">Jp
-            </li>
+            </li>            
             </div>
             <!--<li class="fa-shopping-cart">
             </li>-->            

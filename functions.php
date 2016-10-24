@@ -85,14 +85,14 @@ function get_pll_url($lang)
             wp_register_script( 'child-jquery', get_stylesheet_directory_uri() . '/js/jquery-1.7.1.js'); 
             wp_enqueue_script('child-jquery');
             wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );  
-            wp_register_style( 'menu-stylecss', get_stylesheet_directory_uri() . '/css/menu.css' );
-            wp_register_script( 'menu-stylejs', get_stylesheet_directory_uri() . '/js/menu.js' );
+           // wp_register_style( 'menu-stylecss', get_stylesheet_directory_uri() . '/css/menu.css' );
+           // wp_register_script( 'menu-stylejs', get_stylesheet_directory_uri() . '/js/menu.js' );
             wp_register_style( 'child-sidemenucss', get_stylesheet_directory_uri() . '/css/jquery.sidr.light.css');
             wp_register_script( 'child-sidemenu', get_stylesheet_directory_uri() . '/js/jquery.sidr.min.js');  
-            wp_enqueue_script('child-sidemenu');
-            wp_enqueue_style('child-sidemenucss');
-            wp_enqueue_script('menu-stylejs');
-            wp_enqueue_style('menu-stylecss');
+            //wp_enqueue_script('child-sidemenu');
+            //wp_enqueue_style('child-sidemenucss');
+            //wp_enqueue_script('menu-stylejs');
+            //wp_enqueue_style('menu-stylecss');
             wp_register_style('style-homepage', get_stylesheet_directory_uri() . '/css/homepage.css' );
             wp_enqueue_style('style-homepage');
             wp_register_script('script-homepage', get_stylesheet_directory_uri() . '/js/homepage.js' );
@@ -112,11 +112,19 @@ function get_pll_url($lang)
             wp_register_script('script-galerie17w', get_stylesheet_directory_uri() . '/js/galerie17w.js' );
             wp_enqueue_script('script-galerie17w');
             
+            wp_register_style( 'menu-stylecss', get_stylesheet_directory_uri() . '/css/menu-shop.css' );
+            wp_enqueue_style('menu-stylecss');
+            
+            wp_register_script( 'menu-stylejs', get_stylesheet_directory_uri() . '/js/menu.js' );
+            wp_enqueue_script('menu-stylejs');
+            
             
         } else if ( is_pll_wc('shop') || is_shop() || is_product() || is_product_category() || is_pll_wc('cart')){
             wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
             
             wp_enqueue_style( 'shop-style', get_stylesheet_directory_uri() . '/css/shop.css' );
+            
+            wp_enqueue_style( 'easyzoom-style', get_stylesheet_directory_uri() . '/css/easyzoom.css' );
             
             wp_register_script( 'child-jquery', get_stylesheet_directory_uri() . '/js/jquery-1.7.1.js'); 
             wp_enqueue_script('child-jquery');
@@ -129,6 +137,9 @@ function get_pll_url($lang)
             
             wp_register_script( 'menu-stylejs', get_stylesheet_directory_uri() . '/js/menu.js' );
             wp_enqueue_script('menu-stylejs');
+            
+            wp_register_script( 'zoom-imgjs', get_stylesheet_directory_uri() . '/js/easyzoom.js' );
+            wp_enqueue_script('zoom-imgjs');
             
         }
         else if ( is_account_page() ){
@@ -161,6 +172,14 @@ function get_pll_url($lang)
             wp_register_script( 'blog-stylejs', get_stylesheet_directory_uri() . '/js/blog.js' );
             wp_enqueue_script('blog-stylejs');            
             wp_enqueue_style( 'font-awesome-post-style', get_stylesheet_directory_uri() . '/css/font-awesome.min.css' );
+            
+            /*wp_register_style( 'menu-stylecss', get_stylesheet_directory_uri() . '/css/menu-shop.css' );
+            wp_enqueue_style('menu-stylecss');
+            
+            wp_register_script( 'menu-stylejs', get_stylesheet_directory_uri() . '/js/menu.js' );
+            wp_enqueue_script('menu-stylejs');
+            */
+            
         }else if(is_single()) {
             wp_enqueue_style( 'blog-style-common', get_stylesheet_directory_uri() . '/css/blog-common.css' );
             wp_register_script( 'menu-stylejs', get_stylesheet_directory_uri() . '/js/menu.js' );

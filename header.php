@@ -76,7 +76,7 @@
 <body <?php body_class(); ?>>
     <div id="menu-left" class="snap-drawer snap-drawer-left" style="display:none;">
         <?php storefront_product_search(); ?>
-<ul>
+
     <?php if($cur_lang == 'fr') {
                     $NEW = "Dernier Articles";
                     $TOPS = "Hauts";
@@ -96,21 +96,21 @@
                     $PANTS = "PANTS&CULOTTES";
                     $ACCESSORIES = "ACCESSORIES";
                 }?>
-<li><a href="<?php echo get_pll_wc_url('shop', null); ?>"> <?php echo $NEW; ?> </a></li>
+        <div></div>
+<li class="menu-item"><a href="<?php echo get_pll_wc_url('shop', null); ?>"> <?php echo $NEW; ?> </a></li>
                               <?php     $product_categories = get_terms( 'product_cat');
                 foreach ( $product_categories as $woo_cat ) {
                     $woo_cat_id = $woo_cat->term_id; //category ID
                     $woo_cat_name = $woo_cat->name; //category name
                     ?>
-                    <li><a href="<?php echo get_term_link( $woo_cat_id ,'product_cat' ); ?>"> <?php echo $woo_cat_name; ?> </a></li>
+                    <li class="menu-item"><a href="<?php echo get_term_link( $woo_cat_id ,'product_cat' ); ?>"> <?php echo $woo_cat_name; ?> </a></li>
                     <?php } ?>
-</ul>
+
 </div>
 
 
 <div id="menu-right" class="snap-drawer snap-drawer-right" style="display:none;">
-      <div>
-        <ul>
+     
           <li><a href="<?php echo get_pll_wc_url( 'cart', null);?>" data-cartquantity="">Cart (<?php echo WC()->cart->get_cart_contents_count(); ?>)</a></li>
       
       <?php  
@@ -128,8 +128,7 @@
           echo '<a href="'. get_pll_wc_url( 'myaccount', null ) .'"> '. esc_attr__( 'My Account', 'storefront' ) .' </a>';
           
         }?>
- </ul>
- </div>
+ 
  </div>
     
 <div id="page" class="hfeed site">
@@ -297,10 +296,12 @@
         <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>       
             </div>
 	</header><!-- #masthead -->
-        <?php if (!is_product() && !is_front_page()){ ?>
-    
-    <img class="header-background" src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/banner_search.jpg" ></img>	
-    <?php } ?>
+        <?php if (!is_product() && !is_front_page()){ ?>    
+            <div class="header-shop">
+                <img class="header-background" src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/banner_search.jpg" ></img>	
+                <h1 class="header-title"><?php woocommerce_page_title(); ?></h1>
+            </div>
+        <?php } ?>
 
 	<?php
 	/**

@@ -451,6 +451,44 @@ form.woocommerce-product-search{
         display: block!important;
     }
 
+    .site-search{
+        width: 100%;
+    }
+
+    .woocommerce.widget_product_search {
+        margin: 0px !important;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    form.woocommerce-product-search {
+        margin-bottom: 0;
+        width: 100%;
+        display: inline-flex;
+        height: auto;
+    }
+
+    #woocommerce-product-search-field {
+        flex: 1;
+    }
+
+    .site-logo {
+        display: inline-block!important;
+        float: none;
+        width: 10em!important;
+        fill: black;
+        margin-left: 5em!important;
+    }
+
+    #menu-left,#menu-right{
+        background-color: #f2f2f2;
+    }
+
+    #menu-left > ul {
+        margin: 0;
+        padding: 0;
+    }
+
     #masthead{
         position: relative;
     }
@@ -491,6 +529,7 @@ form.woocommerce-product-search{
         height: inherit;
         padding-top: 0.5em !important;
         padding-bottom: 0.5em !important;
+        display: none;
     }
     #cssmenu ul {
         //width: 100%;
@@ -565,9 +604,10 @@ form.woocommerce-product-search{
     }
     #menu-button-left {
         margin-left: 1em;
-        display: block;
+        display: inline-block;
         width: 2em;
         height: 2em;
+        float: left;
         color: #000000;
         cursor: pointer;
         font-size: 12px;

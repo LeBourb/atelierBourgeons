@@ -19,6 +19,21 @@ and open the template in the editor.
     top: 0px!important;
 }
 
+.header-shop {
+    height: auto;
+    position: relative;
+}
+
+.header-background {
+    margin-top: 0;
+    min-width: 100%;
+}
+
+.header-title {
+    position: absolute;
+    top:4em;
+}
+
 .snap-drawer-left {
     left: 0em;
 }
@@ -49,14 +64,81 @@ body {
 }
 
 .woocommerce-main-image.zoom{
-    height: initial;
+    //height: initial;
     width: 100%;
+    position: relative;
     overflow: hidden;
 }
 
-.easyzoom {
+.woocommerce-main-image.zoom > div.zoom-content {
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
     width: 100%;
-    heigh: 100%;
+    /*max-width : 100%;
+    max-height: 100%;
+    width: 100%;*/
+
+}
+.woocommerce-main-image.zoom > div.zoom-content >img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.woocommerce-main-image.zoom:hover > div.zoom-content >img {
+    max-width : none !important;
+    max-height : none !important;
+    width: 200%;
+    height: 200%;
+}
+
+.woocommerce-main-image {
+    margin-bottom: 0!important;
+    display: block;
+}
+
+.thumbnails , .summary.entry-summary {
+    background-color: white;
+}
+.thumbnails {
+    margin: 2em;
+}
+
+.thumb_img {
+    display: inline-block;
+    float: left;
+    width: 20%;
+    margin-right: 5%;
+}
+
+.thumb_img:hover {
+    cursor: pointer;
+}
+
+
+.woocommerce-main-image.zoom:before {
+    content: "";
+    display: block;
+    padding-top: 100%; 	/* initial ratio of 1:1*/
+}
+
+.single-product .images {
+    margin-right: 0!important;
+    margin-bottom: 0!important;
+}
+.single-product .product {
+    width: 100%;
+}
+
+.single-product .summary {
+    float: right;
+    margin-right: 0;
+    display: block;
 }
 
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
@@ -69,6 +151,14 @@ body {
         margin: 0 0 2em!important;
     }
 
+    img.attachment-shop_single.size-shop_single.wp-post-image {
+        width:100%;
+    }
+
+    .header-title {
+
+        top:2em;
+    }
 
     .close-search{
         float: right;

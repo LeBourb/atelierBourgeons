@@ -214,18 +214,18 @@
             </li>-->            
         </div>
     </section>
-    <section id="galerie17w">
+    <!--<section id="galerie17w">
         <canvas id="slider" width="300" height="200" style="border:1px solid #000000; display:none;">
 </canvas> 
         <div class="galerietitre"><div> Hiver 2017</div></div>
         <div id='galerie17w-txt' class='title_showroom' >
-                <?php echo $Visit_Showroom_W17; ?>
+                <?php //echo $Visit_Showroom_W17; ?>
         </div>  
         
     <div class="galerie am-container" id="am-container">
         
 
-<?php 
+<?php /*
 $gal17w = get_page_by_title( 'Galerie17W' );
 $images = get_attached_media('image', $gal17w->ID);
 $index = 0;
@@ -238,14 +238,14 @@ foreach($images as $image) {
 					<div class="overlay" style="opacity: 0.9; display:none;"></div>
 				 
 				</a>
-<?php } ?>
+<?php } */?>
 </div>
-       <!-- <div class="galerieopen">    <img id='about-close' src ="<?php //echo get_site_url(); ?>/wp-content/themes/atelierbourgeons/img/down-chevron.png" /></div> -->
-        <script src="<?php echo get_site_url(); ?>/wp-content/themes/atelierbourgeons/js/pixi.min.js"></script>
-<script src="<?php echo get_site_url(); ?>/wp-content/themes/atelierbourgeons/js/hammer.min.js"></script>
-<script src="<?php echo get_site_url(); ?>/wp-content/themes/atelierbourgeons/js/pixi-carousel.js"></script>
+       
+        <script src="<?php// echo get_site_url(); ?>/wp-content/themes/atelierbourgeons/js/pixi.min.js"></script>
+<script src="<?php //echo get_site_url(); ?>/wp-content/themes/atelierbourgeons/js/hammer.min.js"></script>
+<script src="<?php //echo get_site_url(); ?>/wp-content/themes/atelierbourgeons/js/pixi-carousel.js"></script>
 
-            </section>
+            </section> -->
     <section id="about">
         <img id="about-mannequin" src ="<?php echo get_site_url(); echo $about_img[1];?>"/>
         <img id="about-ciseaux" src ="<?php echo get_site_url(); echo $about_img[2];?>"/>

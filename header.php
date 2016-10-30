@@ -96,22 +96,31 @@
                     $PANTS = "PANTS&CULOTTES";
                     $ACCESSORIES = "ACCESSORIES";
                 }?>
-        <div></div>
-<li class="menu-item"><a href="<?php echo get_pll_wc_url('shop', null); ?>"> <?php echo $NEW; ?> </a></li>
-                              <?php     $product_categories = get_terms( 'product_cat');
-                foreach ( $product_categories as $woo_cat ) {
+       
+            <li class="menu-item list"><a> Shop </a><i class="fa fa-chevron-down"></i></li>
+            <div style="display:none" class="menu-item">
+            <li class="menu-item"><a href="<?php echo get_pll_wc_url('shop', null); ?>"> <?php echo $NEW; ?> </a></li>
+
+            <?php
+            $product_categories = get_terms( 'product_cat');
+            foreach ( $product_categories as $woo_cat ) {
                     $woo_cat_id = $woo_cat->term_id; //category ID
                     $woo_cat_name = $woo_cat->name; //category name
-                    ?>
-                    <li class="menu-item"><a href="<?php echo get_term_link( $woo_cat_id ,'product_cat' ); ?>"> <?php echo $woo_cat_name; ?> </a></li>
-                    <?php } ?>
-
+            ?>
+            <li class="menu-item"><a href="<?php echo get_term_link( $woo_cat_id ,'product_cat' ); ?>"> <?php echo $woo_cat_name; ?> </a></li>
+            
+            
+            <?php } ?>
+       </div>
+    <li class="menu-item" ><a href="<?php echo get_home_url(); ?>"> Home </a></li>
+    <li class="menu-item" ><a href="<?php echo get_permalink( $blog_id);?>"> <?php echo $blog; ?> </a></li>
+    <li class="menu-item" ><a href="<?php echo get_pll_page_by_title("Galerie17W");?>"><?php echo $galerie17w; ?></a></li>
 </div>
 
 
 <div id="menu-right" class="snap-drawer snap-drawer-right" style="display:none;">
      
-          <li><a href="<?php echo get_pll_wc_url( 'cart', null);?>" data-cartquantity="">Cart (<?php echo WC()->cart->get_cart_contents_count(); ?>)</a></li>
+          <li class="menu-item"><a href="<?php echo get_pll_wc_url( 'cart', null);?>" data-cartquantity="">Cart (<?php echo WC()->cart->get_cart_contents_count(); ?>)</a></li>
       
       <?php  
       //get_signin();
@@ -122,13 +131,24 @@
           echo '<li><a href="'. wp_logout_url(get_permalink( wc_get_page_id( 'myaccount' ) )) .'">Log Out</a></li>';
         }
         elseif (!is_user_logged_in()) {
-            //echo '<li><a href="'. site_url('wp-login.php') .'">Log In</a></li>';
+          echo '<li class="menu-item"><a href="'. get_pll_wc_url( 'myaccount', null ) .'">Log In</a></li>';
         
         
-          echo '<a href="'. get_pll_wc_url( 'myaccount', null ) .'"> '. esc_attr__( 'My Account', 'storefront' ) .' </a>';
+          //echo '<a href="'. get_pll_wc_url( 'myaccount', null ) .'"> '. esc_attr__( 'My Account', 'storefront' ) .' </a>';
           
-        }?>
- 
+        }
+        echo '<div class="langue-menu">';
+        if( $cur_lang != 'fr') {
+              echo '<li><a href="'. $url_fr .'">Français</a></li>';
+        }
+        if($cur_lang != 'en') {
+             echo '<li><a href="'. $url_en .'">English</a></li>';
+        }
+        if($cur_lang != 'jp') {
+              echo '<li><a href="'. $url_jp .'">日本語</a></li>';
+        }
+        echo '</div>';
+                ?>
  </div>
     
 <div id="page" class="hfeed site">
@@ -233,11 +253,22 @@
                                 </ul>
                             
                             
-                                <ul href="" class="menu-langue">
-                                    <li>
-                                    <a href="<?php echo $url_fr; ?>">Fr</a>
-                                    <a href="<?php echo $url_jp; ?>">Jp</a>
-                                    <a href="<?php echo $url_en; ?>" class="langCurrent">En</a>
+                                <ul id="menu-langue">
+                                    <li>                                        
+                                        <?php 
+                                        $prefix = "";
+                                        $url = "";
+                                        if (pll_current_language() == "fr") {
+                                            $prefix = "Fr";
+                                            $url = $url_fr;
+                                        } else if (pll_current_language() == "en") {
+                                            $prefix = "En";
+                                            $url = $url_en;
+                                        } else if (pll_current_language() == "jp") {
+                                            $prefix = "jp";
+                                            $url = $url_fr;
+                                        }
+                                        echo '<a href="#">'. $prefix  .'</a>'; ?>                                    
                                     </li>
                                 </ul>
                                     
@@ -295,12 +326,39 @@
             <div id="cart-widget" style="display:none">
         <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>       
             </div>
+            <div id="langue-widget" style="display:none">
+   
+                <?php              
+                 
+                if( $cur_lang != 'fr') {
+                    echo '<li><a href="'. $url_fr .'">Français</a></li>';
+                }
+                if($cur_lang != 'en') {
+                    echo '<li><a href="'. $url_en .'">English</a></li>';
+                }
+                if($cur_lang != 'jp') {
+                    echo '<li><a href="'. $url_jp .'">日本語</a></li>';
+                }
+                ?>                                    
+   
+            </div>
 	</header><!-- #masthead -->
-        <?php if (!is_product() && !is_front_page()){ ?>    
+       <?php  if (!is_product() && !is_front_page() && !is_page()){ ?>
             <div class="header-shop">
                 <img class="header-background" src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/banner_search.jpg" ></img>	
-                <h1 class="header-title"><?php woocommerce_page_title(); ?></h1>
+                <h1 class="header-title"> <?php 
+                    if (!is_product() && !is_front_page()){
+                        if(is_home()) {
+                            echo "Blog";
+                        }
+                        else {
+                            echo woocommerce_page_title();
+                        }
+                    }
+                ?>
+                </h1>
             </div>
+        
         <?php } ?>
 
 	<?php

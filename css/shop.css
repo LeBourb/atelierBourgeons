@@ -14,25 +14,6 @@ and open the template in the editor.
     margin-right: 0!important;
 }
 
-.site-header{
-    position: fixed!important;
-    top: 0px!important;
-}
-
-.header-shop {
-    height: auto;
-    position: relative;
-}
-
-.header-background {
-    margin-top: 0;
-    min-width: 100%;
-}
-
-.header-title {
-    position: absolute;
-    top:4em;
-}
 
 .snap-drawer-left {
     left: 0em;

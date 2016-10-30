@@ -18,6 +18,26 @@
 }
 
 
+.site-header{
+    position: fixed!important;
+    top: 0px!important;
+}
+
+.header-shop {
+    height: auto;
+    position: relative;
+}
+
+.header-background {
+    margin-top: 0;
+    min-width: 100%;
+}
+
+.header-title {
+    position: absolute;
+    top:4em;
+}
+
 .woocommerce-Button {
     width: 100%!important;
 }
@@ -81,6 +101,11 @@
     border-bottom: none!important;
 }
 
+.menu-shop , #button-signin , #open-search , .fa {
+    cursor: pointer;
+}
+
+
 .woocommerce-MyAccount-navigation-link {
     display: inline-block;
 }
@@ -97,6 +122,14 @@
 #cssmenu > div > ul > i > a {
     padding: 0!important;
     font-size: 0.6em!important;
+}
+
+.langue-menu > li > a {
+    color: #4573a7;
+    display: block;
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 1em;
 }
 
 #cssmenu > div > ul > li > a,
@@ -157,7 +190,7 @@
 
 #cssmenu > div > ul > li , i {
     //float: left;
-    height: 100%;
+    //height: 100%;
     margin: 1px;
     //background-color: #FFF;
     color: inherit;
@@ -227,6 +260,11 @@
     width: 15em;
 }
 
+#langue-widget > li {
+    padding-right: 2em;
+    width: 100%;
+    text-align: right;
+}
 
 .site-search {
     margin: 0px;
@@ -443,6 +481,8 @@ form.woocommerce-product-search{
     height: auto;
 }
 
+
+
 /*#cssmenu ul ul li.has-sub:hover > a::after {
     border-color: #ffffff;
 }*/
@@ -453,6 +493,23 @@ form.woocommerce-product-search{
 
     .site-search{
         width: 100%;
+    }
+
+    .menu-item {
+        cursor:pointer;
+        min-height: 2em;
+        margin-top: 1em;
+        vertical-align: middle;
+        padding-left: 1em;
+    }
+
+    .snap-drawer ul li a {
+        color: #fff;
+        display: block;
+        font-size: 11px;
+        font-size: 1.1rem;
+        padding: 14.5px;
+        text-decoration: none;
     }
 
     .woocommerce.widget_product_search {

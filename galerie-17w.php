@@ -22,7 +22,7 @@ foreach($images as $image) {
     $index++;
    $image_attributes = wp_get_attachment_image_src($image->ID,'full');
    ?>
-    <a href="<?php echo $image_attributes[0]?>" data-lightbox="roadtrip" class="am-wrapper" style="display:none" data-title="Optional caption."><img src="<?php echo $image_attributes[0]?>" />
+    <a href="<?php echo $image_attributes[0]?>" data-lightbox="roadtrip" class="am-wrapper" style="" data-title="Optional caption."><img src="<?php echo $image_attributes[0]?>" />
     
 					<div class="overlay" style="opacity: 0.9; display:none;"></div>
 				 

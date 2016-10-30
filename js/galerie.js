@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 
-$(document).ready(function() {
+//$(document).ready(function() {
+$(window).on("load", function() {
     
     
     var onresize = function () {
@@ -169,7 +170,7 @@ $(document).ready(function() {
                 });
                 $main.height(bottom_right);
             }
-        }        
+        }                
     });
     };
     lightbox.option({

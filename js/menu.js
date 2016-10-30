@@ -97,14 +97,27 @@ $(document).ready(function() {
            });
         }
         
-           if($(".menu-shop")) {
+        if($("#menu-langue")) {
+            $("#menu-langue").on('click', function () {
+              if($("#langue-widget:hidden").length){
+                  $($("#langue-widget")[0]).css("display", "block");
+                  $("#masthead").removeClass('header-top');
+              }
+              else 
+                  $($("#langue-widget")[0]).css("display", "none");
+               
+           });
+        }
+        
+        if($(".menu-shop")) {
            $(".menu-shop").on('click', function () {
                if($("#cart-widget:hidden").length)
                   $($("#cart-widget")[0]).css("display", "block");
               else 
                   $($("#cart-widget")[0]).css("display", "none");
                    $("#masthead").removeClass('header-top');
-           });}
+           });
+       }
            
     
     
@@ -154,6 +167,21 @@ $(document).ready(function() {
                  sbox.hide();
                  $($('.menu-right')[0]).show();                
              }
+             
+         });
+         
+         $(".menu-item.list").each(function(index) {
+            $(this).on('click', function() {
+                
+                var div = $(this).next('div:hidden');
+                if(div.length) {
+                    $(div).show();
+                }else {
+                    div = $(this).next('div');
+                    $(div).hide();
+                }
+                
+            });
              
          });
         
@@ -231,9 +259,10 @@ if (foundActive === false) {
   activeElement = $("#cssmenu > ul > li").first();
 }
 
+
 defaultWidth = lineWidth = activeElement.width();
 
-defaultPosition = linePosition = activeElement.position().left; // ? activeElement.position().left : null;
+//defaultPosition = linePosition = activeElement.position().left; // ? activeElement.position().left : null;
 
 //menuLine.css("width", lineWidth);
 //menuLine.css("left", linePosition);

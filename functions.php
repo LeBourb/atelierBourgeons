@@ -32,7 +32,7 @@ function is_pll_wc( $wc_page)
     return is_page( $cart_ids[pll_current_language()] ) || defined( 'WOOCOMMERCE_CART' ) ;
 }
 
-function get_pll_wc_url( $wc_page, $lang)
+function get_pll_wc_url( $wc_page, $lang = null)
 { 
    global $polylang;
     $cart_ids = $polylang->model->get_translations('page', wc_get_page_id( $wc_page));
@@ -190,6 +190,8 @@ function get_pll_url($lang)
         //$post_slug = pll_get_post($page_l->ID, 'en');
         global $polylang;
         $cart_ids = $polylang->model->get_translations('page', $page_l->ID);
+        
+        
     
         // j'affiche le contenu de la page About dans la langue courrante        
         if( $lang == null) {
@@ -250,4 +252,23 @@ function get_pll_url($lang)
 add_action('wp_ajax_wpab_add_subscriber', 'add_ab_subscriber');  
 add_action( 'wp_ajax_nopriv_wpab_add_subscriber', 'add_ab_subscriber' );
 add_filter( 'woocommerce_show_page_title', '__return_false' );
+
+//R14: redirect to pll page ! 
+add_filter('woocommerce_get_checkout_url', 'pll_woocommerce_get_page_id');
+add_filter('woocommerce_get_checkout_page_id', 'pll_woocommerce_get_page_id');
+add_filter('woocommerce_get_cart_page_id', 'pll_woocommerce_get_page_id');
+add_filter('woocommerce_get_myaccount_page_id', 'pll_woocommerce_get_page_id');
+add_filter('woocommerce_get_edit_address_page_id', 'pll_woocommerce_get_page_id');
+add_filter('woocommerce_get_view_order_page_id', 'pll_woocommerce_get_page_id');
+add_filter('woocommerce_get_change_password_page_id', 'pll_woocommerce_get_page_id');
+add_filter('woocommerce_get_thanks_page_id', 'pll_woocommerce_get_page_id');
+add_filter('woocommerce_get_shop_page_id', 'pll_woocommerce_get_page_id');
+add_filter('woocommerce_get_terms_page_id', 'pll_woocommerce_get_page_id');
+add_filter('woocommerce_get_pay_page_id', 'pll_woocommerce_get_page_id');
+
+function pll_woocommerce_get_page_id($id) 
+{
+        return pll_get_post($id); // translate the page to current language
+}
+
 ?>

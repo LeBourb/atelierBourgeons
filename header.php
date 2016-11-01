@@ -165,9 +165,9 @@
                 global $wp;
                 //$current_url = add_query_arg( $wp->query_string, '', home_url( $wp->request ) );
                 //$current_url = the_permalink();
-                $url_fr = get_pll_wc_url('shop','fr');
-                $url_en = get_pll_wc_url('shop','en');
-                $url_jp = get_pll_wc_url('shop','jp');
+                $url_fr = get_permalink(pll_get_post(get_the_ID() , 'fr'));//get_pll_wc_url('shop','fr');
+                $url_en = get_permalink(pll_get_post(get_the_ID() , 'en')); //get_pll_wc_url(esc_attr( the_title_attribute() ) ,'en'); ////
+                $url_jp = get_permalink(pll_get_post(get_the_ID() , 'jp'));//get_pll_wc_url('shop','jp');
             
                 
                 //$url = get_term_link( $product_categories[0]->ID, 'product_cat' );
@@ -233,7 +233,7 @@
                                 <div class="menu-right">
                                 <ul href="" class="">
                                     <li><a id="button-home"  href="<?php echo get_home_url(); ?>">HOME</a></li>
-                                    <li><a id="button-support" href="<?php echo get_permalink(wc_get_page_id( 'support' ));?>">Support</a></li>
+                                    <li><a id="button-galerie17w" href="<?php echo get_pll_page_by_title("Galerie17W")?>">17W</a></li>
                                     <li><a id="button-blog" href="<?php echo get_permalink( $blog_id);?>"><?php echo $blog; ?> </a></li>
                                     <?php if (is_user_logged_in()) { 
                                         echo '<li><a id="button-account" href="'. get_pll_wc_url( 'myaccount' ,null) .'">Account</a></li>';

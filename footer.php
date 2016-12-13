@@ -118,7 +118,14 @@
 
 </div><!-- #page -->
 
-<?php wp_footer(); ?>
+<?php 
+    //remove_action();
+    global $cookie_notice;
+    if(pll_current_language() == 'en' && $cookie_notice) {                
+        $cookie_notice->options['general']['message_text'] = "We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, you consent to our cookies on this device in accordance with our cookie policy.";
+    }
+    //remove_action( 'wp_footer', array( $cookie_notice, 'add_cookie_notice' ), 1000 );
+    wp_footer(); ?>
 
 </body>
 </html>

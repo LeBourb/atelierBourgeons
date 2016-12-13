@@ -72,6 +72,7 @@ a {
     max-width : none;
     margin-left : 0;
     margin-right : 0;
+    padding: 0;
 }
 
 .itemPhoto > a > img {
@@ -98,14 +99,7 @@ a {
 
 }
 
-.site-logo {
-    width: 14em;
-    margin: auto;
-    margin-bottom: 0px;
-    float: left;
-    max-height: 100%;
-    display: inline-block;
-}
+
 
 .menu-shop {
     display: inline-block;

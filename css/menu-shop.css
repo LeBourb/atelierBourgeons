@@ -13,6 +13,10 @@
     padding-bottom: 1em !important;
 }
 
+.admin {
+    top: 2em;
+}
+
 #cssmenu > div {
     height: 100%;
 }
@@ -87,7 +91,6 @@
 
 #masthead{
     position: fixed;
-    top: 0px;
 }
 
 .header-top {
@@ -107,7 +110,7 @@
 
 
 .woocommerce-MyAccount-navigation-link {
-    display: inline-block;
+    //display: inline-block;
 }
 
 .menu-langue > li > a {
@@ -469,6 +472,16 @@ form.woocommerce-product-search{
     float: right;
 }
 
+.site-logo {
+    width: 14em;
+    margin: auto;
+    margin-bottom: 0px;
+    float: left;
+    max-height: 100%;
+    display: inline-block;
+    margin-left: 1em;
+}
+
 .site-header-menu{
     background-color: white;
     padding-top: 0em!important;
@@ -501,6 +514,10 @@ form.woocommerce-product-search{
         margin-top: 1em;
         vertical-align: middle;
         padding-left: 1em;
+    }
+
+    .admin {
+        top: 0em;
     }
 
     .snap-drawer ul li a {

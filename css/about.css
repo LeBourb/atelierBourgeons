@@ -1,0 +1,260 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 19 nov. 2016, 18:12:08
+    Author     : Romain
+*/
+
+
+.container {
+    width:100%;
+    //height: 100%;
+    display: flex;
+    margin-top: 2%;
+}
+/*
+.about-right img{
+    float: right;
+}
+
+.about-left img{
+    float: left;
+}
+
+.about-left div{
+    float: right;
+}
+*/
+.container img {
+
+    height : 100%;
+}
+
+
+.container div {
+    //  width: 50%;
+    height: 100%;
+    width: calc(100% - attr(height));
+    padding: 4%;
+}
+
+.title {
+    font-family: Modesty;
+    font-size: 5em;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 0.5em;
+}
+
+.text {
+    font-family: ""Avenir Next;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.text-right{
+    position: relative;
+    text-align: left;
+    padding-top: 1%;
+}
+
+.text-right > img {
+    width: 40%;
+    position: absolute;
+    left: -20%;
+    top: -5%;
+}
+
+.separator {
+    border-bottom: 2px solid black;
+    margin-left: 30%;
+    margin-right: 25%;
+}
+
+
+
+.text-right > div {
+    width: 100%;
+    padding-left: 25%;
+    padding-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 10%;
+}
+
+.text-right > div > p , .text-left > div > p {
+    font-size : 1.5em;
+}
+
+.text-left {
+    position: relative;
+    text-align: right;
+}
+
+.text-left > div {
+    width:100%;
+    padding-right: 25%;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 10%;
+}
+
+.text-left > img{
+    width: 40%;
+    position: absolute;
+    right: -20%;
+    top: -5%;
+}
+
+.original {
+    background-image: url(../img/about/OriginalBackground.jpg);
+    background-size: cover;
+    padding-bottom: 10%;
+}
+
+.original .title {
+    color: white;
+}
+
+.original > div {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: whitesmoke;
+
+}
+
+#page {
+    overflow: hidden;
+}
+
+#inline-menu {
+    font-size: 1rem;
+    text-align: center;
+    background: #fff;
+    border-bottom: 1px solid #f2f2f2;
+    width: 100%;
+    padding: 2em 0;
+    margin: 2em 0 0 0;
+}
+
+#inline-menu  li {
+    margin: 0 25px;
+    display: inline-block;
+    font-family: ""Avenir Next;
+
+    cursor: pointer;
+}
+
+#inline-menu  a {
+    font-weight: 500;
+}
+
+#inline-menu  li.current {
+    text-decoration: underline;
+    text-decoration-color: #c2c2c2;
+}
+
+
+@media all and (max-width: 1000px){
+
+    .original > div {
+        width: 70%;
+    }
+
+    .container img {
+        max-width : 50%;
+        height: auto;
+    }
+
+    .title {
+        font-size: 3em;
+        margin: 0;
+        margin-bottom: 0.5em;
+    }
+
+    .text {
+        font-size: 0.9em;
+    }
+}
+
+.fee {
+    text-align: left;
+    margin-left: 10%;
+    justify-content: left!important;
+}
+
+
+.price {
+    display: inline-block;
+    margin: 2% 10% 2% 10% ;
+    vertical-align: top;
+}
+
+.help-txt {
+    margin-left: 33.9527%;
+    text-align: left;
+    padding-bottom: 5em;
+}
+
+.help-nav {
+    float:left;
+    top: 0;
+    left: 0;
+    width: 23.60642%;
+}
+
+.help-nav > div > ul > li {
+    padding: 2.5em 0;
+}
+
+@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+
+    .original > div{
+        width: 90%;
+    }
+
+    .text-right > img,  .text-left > img{
+        width: 40%;
+        position: relative;
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 4%;
+    }
+
+    .separator {
+        margin-left: 25%;
+    }
+
+    .text-right > div,  .text-left > div{
+        padding: 8%;
+        text-align: center;
+
+    }
+
+    .container  {
+        height: auto;
+        width: auto;
+        display : block;
+    }
+
+    .container img {
+        width : 100%;
+        max-width: none;
+        height: auto;
+    }
+
+    .container div {
+        width: 100%;
+        height: auto;
+        padding: 4%;
+    }
+
+    .fee {
+        margin-left: 2%;
+    }
+
+}

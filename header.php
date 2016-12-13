@@ -74,6 +74,7 @@
 
 
 <body <?php body_class(); ?>>
+    <?php if(!is_pll_wc('cart')) { ?>
     <div id="menu-left" class="snap-drawer snap-drawer-left" style="display:none;">
         <?php storefront_product_search(); ?>
 
@@ -113,6 +114,7 @@
             <?php } ?>
        </div>
     <li class="menu-item" ><a href="<?php echo get_home_url(); ?>"> Home </a></li>
+    <li class="menu-item" ><a href="<?php echo get_pll_page_by_title("About"); ?>"> About </a></li>
     <li class="menu-item" ><a href="<?php echo get_permalink( $blog_id);?>"> <?php echo $blog; ?> </a></li>
     <li class="menu-item" ><a href="<?php echo get_pll_page_by_title("Galerie17W");?>"><?php echo $galerie17w; ?></a></li>
 </div>
@@ -150,15 +152,17 @@
         echo '</div>';
                 ?>
  </div>
-    
+    <?php } ?>
 <div id="page" class="hfeed site">
 	<?php 
         
 	do_action( 'storefront_before_header' ); ?>
-<?php  if ( 1 ) /*is_shop() || is_pll_wc('shop') || is_product() || is_product_category() || is_pll_wc('cart') || is_account_page())*/  :
+<?php  if ( !is_pll_wc('checkout')) /*is_shop() || is_pll_wc('shop') || is_product() || is_product_category() || is_pll_wc('cart') || is_account_page())*/  :
     
        ?>
-    <header id="masthead" class="site-header-menu <?php if ( is_product() ) echo "product"; ?>" role="banner" <?php if ( get_header_image() != '' ) { echo 'style="background-image: url(' . esc_url( get_header_image() ) . ');"'; } ?>>
+    <header id="masthead" class="site-header-menu <?php if ( is_product() ) echo "product"; if ( current_user_can('administrator') ) echo 'admin';?> " role="banner" <?php if ( get_header_image() != '' ) { echo 'style="background-image: url(' . esc_url( get_header_image() ) . ');'; } ?>>
+
+
       
 	<?php
         $cur_lang = pll_current_language(); 
@@ -343,7 +347,12 @@
    
             </div>
 	</header><!-- #masthead -->
-       <?php  if (!is_product() && !is_front_page() && !is_page()){ ?>
+       <?php  
+       
+       if ( (!is_product() && !is_front_page() && !is_page()) 
+               || is_pll_wc('cart')
+               || is_pll_wc('checkout')
+               || is_pll_wc('myaccount')){ ?>
             <div class="header-shop">
                 <img class="header-background" src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/banner_search.jpg" ></img>	
                 <h1 class="header-title"> <?php 
@@ -365,7 +374,7 @@
 	/**
 	 * @hooked storefront_header_widget_region - 10
 	 */
-	do_action( 'storefront_before_content' ); ?>
+	//do_action( 'storefront_before_content' ); ?>
 
 	<div id="content" class="site-content" tabindex="-1">
 		<div class="col-full">
@@ -380,66 +389,7 @@
 <div id="checkout-banner">    
 </div>
 
-<?php elseif (is_home() || is_single()) : 
-//else:
-    ?>
-            <div id="header-top">
-                <ul class="contact-info-list list-horizontal">			
-                   <li><a href="<?php echo $url_fr; ?>">Francais</a></li>
-                   <li><a href="<?php echo $url_en; ?>">English</a></li>
-                   <li><a href="<?php echo $url_jp; ?>">Nihongo</a></li>
-                </ul>
-            </div>
-            <?php echo get_search_form( true ); ?>
-            <div id="cssmenu">                
-                <ul id="menu-large">
-                   <li id="sp_close" style="display:none"><a href="#" id="sp_close_button">Close</a></li>                   
-                 				   
-                   <li id="menu-boutique"><a href="<?php echo get_permalink( get_page($shop_id) ); ?>" >Boutique</a></li>
-                   <li id="menu-blog"><a href="<?php echo get_permalink(get_option( 'page_on_front' ));?>">Home</a></li>
-                   <li id="menu-about"><a>About Me</a></li>
-                   <li><a href="#">Contact</a></li>
-                   <li><a id="button-signin" href="#">Sign in</a></li>
-                </ul>
-                <?php echo get_signin(); ?>
-                <div id="menu-button"></div>
-                
-            </div>  
-                    <div id="precontent-widget-cont">
-                        <header class="entry-header">
-		<?php
-		if ( is_single() ) {
-			//storefront_posted_on();
-			the_title( '<h1 class="entry-title" itemprop="name headline">', '</h1>' );
-		} 
-		?>
-		</header><!-- .entry-header -->
-                    </div>
-<?php else: 
-           
-    
-                // j'affiche le contenu de la page About dans la langue courrante 
-         //       print_r($blog_ids);
-    
-    ?>
       
-    <div id="cssmenu">                
-                <ul id="menu-large">
-                   <li id="sp_close" style="display:none"><a href="#" id="sp_close_button"><?php echo $close ?></a></li>                   
-                   <li class="has-sub"><span class="submenu-button"></span><a href="#"><?php echo $galerie ?></a>
-                      <ul>
-                         <li id="menu-17w"><span class="submenu-button"></span><a><?php echo $galerie17w ?></a>                            
-                         </li>
-                      </ul>
-                   </li>
-				   
-                   <li id="menu-boutique"><a href=<?php echo get_permalink( get_page($shop_id) ) ?>><?php echo $boutique ?></a></li>
-                   <li id="menu-blog"><a href=<?php echo get_permalink( get_page($blog_id) );?> ><?php echo $blog ?></a></li>
-                   <li id="menu-about"><a><?php echo $concept ?></a></li>
-                   <li><a href="#"><?php echo $contact ?></a></li>
-                </ul>
-                <div id="menu-button"></div>
-                
-            </div>        <?php endif;  ?>
+<?php endif;  ?>
 
                 

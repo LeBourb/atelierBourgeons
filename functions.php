@@ -173,6 +173,16 @@ function get_pll_url($lang)
             wp_enqueue_style('content-single-product');
         }
         
+        if(is_page("About") || is_page("Products")) {
+            wp_register_style( 'about-stylecss', get_stylesheet_directory_uri() . '/css/about.css' );
+            wp_enqueue_style('about-stylecss');
+        }
+        
+        if(is_page("Products")) {
+            wp_register_style( 'cards-stylecss', get_stylesheet_directory_uri() . '/css/cards.css' );
+            wp_enqueue_style('cards-stylecss');
+        }
+        
         //wp_register_script( 'child-jquery', get_stylesheet_directory_uri() . '/js/jquery-1.7.1.js'); 
         //wp_enqueue_script('child-jquery');
             
@@ -254,7 +264,7 @@ add_action( 'wp_ajax_nopriv_wpab_add_subscriber', 'add_ab_subscriber' );
 add_filter( 'woocommerce_show_page_title', '__return_false' );
 
 //R14: redirect to pll page ! 
-add_filter('woocommerce_get_checkout_url', 'pll_woocommerce_get_page_id');
+//add_filter('woocommerce_get_checkout_url', 'pll_woocommerce_get_page_id');
 add_filter('woocommerce_get_checkout_page_id', 'pll_woocommerce_get_page_id');
 add_filter('woocommerce_get_cart_page_id', 'pll_woocommerce_get_page_id');
 add_filter('woocommerce_get_myaccount_page_id', 'pll_woocommerce_get_page_id');

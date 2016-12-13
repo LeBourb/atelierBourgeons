@@ -11,13 +11,26 @@
  *
  * @package storefront
  */ 
-    get_header(); 
+   
     
 ?>
+<html <?php language_attributes();  ?> ><?php /*storefront_html_tag_schema();*/ ?>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+</head>
+<body style="height:100%;width:100%;overflow:hidden;">
+    <?php 
+ get_header(); 
+ ?>
 <div class="galerie am-container" id="am-container">
 <?php 
+ 
 $images = get_attached_media('image', $post->ID);
 $index = 0;
+
 foreach($images as $image) { 
     $index++;
    $image_attributes = wp_get_attachment_image_src($image->ID,'full');
@@ -27,5 +40,10 @@ foreach($images as $image) {
 					<div class="overlay" style="opacity: 0.9; display:none;"></div>
 				 
 				</a>
-<?php } ?>
+<?php }
+//wp_footer(); 
+get_footer();
+?>
 </div>
+    </body>
+    </html>

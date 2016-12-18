@@ -1,0 +1,37 @@
+# Copyright (C) 2016 WooThemes
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Storefront 2.1.5\n"
+"Report-Msgid-Bugs-To: https://github.com/woothemes/storefront/issues\n"
+"POT-Creation-Date: 2016-12-17 15:51+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-12-17 23:15+0100\n"
+"Language-Team: EMAIL@ADDRESS\n"
+"X-Generator: Poedit 1.8.11\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr_FR\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: 404.php:19
+msgid "News"
+msgstr "Derniers Articles"
+
+msgid "About"
+msgstr "A propos"
+
+msgid "about"
+msgstr "a propos"
+
+msgid "about bourgeons"
+msgstr "atelier Bourgeons est une entreprise de création de vêtements artisanale et vente de vêtements customisés de seconde main. <br><br>Chaque pièce originale est unique, depuis sa conception jusqu’à sa confection dans un atelier de la région parisienne. Elles sont réalisées à partir de tissus de fins de séries achetés auprès de grandes maisons. L’entreprise s’inscrit dans un mouvement pour promouvoir auprès du public une mode originale, durable et éthique pour tous.<br><br>Nous vous souhaitons une agréable visite !"
+
+msgid "Our Products"
+msgstr "Nos Produits"
+
+msgid "Help"
+msgstr "Aide"
+

@@ -15,6 +15,12 @@ and open the template in the editor.
     display: flex;
     margin-top: 2%;
 }
+
+section {
+    position: relative;
+}
+
+
 /*
 .about-right img{
     float: right;
@@ -157,6 +163,17 @@ and open the template in the editor.
     text-decoration-color: #c2c2c2;
 }
 
+.nav-item-sub {
+    padding: 0.5em 0;
+}
+
+.nav-item-sub > a {
+    color: #c2c2c2;
+}
+
+.nav-item-sub > a.active {
+
+}
 
 @media all and (max-width: 1000px){
 
@@ -204,6 +221,7 @@ and open the template in the editor.
     top: 0;
     left: 0;
     width: 23.60642%;
+    position: absolute;
 }
 
 .help-nav > div > ul > li {

@@ -9,43 +9,38 @@
  * @package AtelierBourgeons
  */ 
    
-    
+ require 'header-about.php';
 ?>
-
-<html <?php language_attributes();  ?> ><?php /*storefront_html_tag_schema();*/ ?>
-<head>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<style>                    
-                    @font-face {
-                        font-family: Modesty;
-                        src: url(<?php echo get_site_url ()?>/wp-content/themes/atelierbourgeons/fonts/ModestyFreshStyle.ttf);
-                    }
-</style>
-</head>
-<body style="height:100%;width:100%;">
-    <?php 
-    get_header(); 
- ?>
-    <ul id="inline-menu">
-        <li class="<?php if(is_page("About")) echo "current"; ?>"><a href="<?php echo get_pll_page_by_title("About");  ?>">A Propos</a></li>
-        <li class="<?php if(is_page("Products")) echo "current"; ?>"><a href="<?php echo get_pll_page_by_title("Products");  ?>">Nos Produits</a></li>
-        <li class="<?php if(is_page("Aide")) echo "current"; ?>"><a href="<?php echo get_pll_page_by_title("Aide");  ?>">Aide</a></li>
-    </ul>
     <section>
         <nav class="help-nav">
             <div>
                 <ul>
-                    <li id="nav-item-frequent-questions"><a>Frequent Questions</a></li>
+                    <li id="nav-item-frequent-questions"><a><?php _e( 'Frequent Questions', 'atelierbourgeons' );?></a>
+                        <ul class="level2">
+                            <li class="nav-item-sub">
+                                <a>Garments</a>
+                            </li>
+                            <li class="nav-item-sub">
+                                <a class="active">Garments</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
                     <li id="nav-item-frequent-returns"><a>Returns</a></li>
                     <li id="nav-item-frequent-shipping"><a>Shipping</a></li>
                 </ul>
             </div>
         </nav>
         <article id="item-frequent-questions" class="help-txt">
-            
+            <h1 id="garments-questions">Garments Questions</h1>
+            <h2>Why do things sell out so fast?</h2>
+            <p>We regularly use deadstock fabrics and rare materials, which restricts our manufacturing runs. We have a collection of <a href="/essentials">Essentials</a> that we try to always keep in stock. The best way to make sure you are in the know about our releases is to sign up for our newsletter.</p>
+            <h2>Do you restock sold out items?</h2>
+            <p>We try to always keep garments from our <a href="/essentials">Essentials collection</a> in stock.</p>
+            <p>When demand is strong enough for a <a href="/limited">Limited product</a> that sells out, we will likely remake it. The best way to let us know that you want to bring a product back is to click into the sold out product, select your size, click the “Notify Me” button, and enter your email. You will then be alerted the moment the product is available to purchase.</p>
+            <h2>How much stretch can I expect from raw denim? Should I order the same size in pants and denim?</h2>
+            <p>Raw denim is stiff because it has not been washed. While it won't flatter your hips and butt&nbsp;at first, it will mold to your body over time.</p>
+            <p>Out of the box, your denim should fit snugly at the waist because it will stretch-out up to 1" over the first month of consistent wear. That said, we recommend you purchase one waist size smaller than you typically wear.</p>
         </article>
         <article id="item-frequent-returns" class="help-txt">
             
@@ -55,11 +50,6 @@
         </article>
     </section>
         
-<?php  
-    
-//wp_footer(); 
-get_footer();
+<?php
+    require 'footer-about.php';
 ?>
-</div>
-    </body>
-    </html>

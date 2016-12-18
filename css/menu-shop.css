@@ -480,6 +480,7 @@ form.woocommerce-product-search{
     max-height: 100%;
     display: inline-block;
     margin-left: 1em;
+    cursor: pointer;
 }
 
 .site-header-menu{

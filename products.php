@@ -9,31 +9,10 @@
  * @package AtelierBourgeons
  */ 
    
-    
+    require 'header-about.php';
 ?>
 
-<html <?php language_attributes();  ?> ><?php /*storefront_html_tag_schema();*/ ?>
-<head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<style>                    
-                    @font-face {
-                        font-family: Modesty;
-                        src: url(<?php echo get_site_url ()?>/wp-content/themes/atelierbourgeons/fonts/ModestyFreshStyle.ttf);
-                    }
-</style>
-</head>
-<body style="height:100%;width:100%;">
-    <?php 
-    get_header(); 
- ?>
-    <ul id="inline-menu">
-        <li class="<?php if(is_page("About")) echo "current"; ?>"><a href="<?php echo get_pll_page_by_title("About");  ?>">A Propos</a></li>
-        <li class="<?php if(is_page("Products")) echo "current"; ?>"><a href="<?php echo get_pll_page_by_title("Products");  ?>">Nos Produits</a></li>
-        <li class="<?php if(is_page("Help")) echo "current"; ?>"><a href="<?php echo get_pll_page_by_title("Help");  ?>">Aide</a></li>
-    </ul>
 <div class="original">
     <p class="title">Collections Originales</p> 
     <div>        
@@ -217,12 +196,9 @@ Cette démarche en 5 étapes est un exemple d’une création sur mesure, des aj
         <li class="concept text">Pour  l’emballage de vos cadeaux, nous vous offrons un service de ruban et de petite carte. 
 Vous pouvez les ajouter à votre panier lors de votre commande.</li>
     </div>
+    </div>
 </div>
-<?php  
-    
-//wp_footer(); 
-get_footer();
+
+<?php
+require 'footer-about.php';
 ?>
-</div>
-    </body>
-    </html>

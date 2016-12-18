@@ -173,7 +173,7 @@ function get_pll_url($lang)
             wp_enqueue_style('content-single-product');
         }
         
-        if(is_page("About") || is_page("Products")) {
+        if(is_page("About") || is_page("Products") || is_page("Aide")) {
             wp_register_style( 'about-stylecss', get_stylesheet_directory_uri() . '/css/about.css' );
             wp_enqueue_style('about-stylecss');
         }
@@ -279,6 +279,14 @@ add_filter('woocommerce_get_pay_page_id', 'pll_woocommerce_get_page_id');
 function pll_woocommerce_get_page_id($id) 
 {
         return pll_get_post($id); // translate the page to current language
+}
+
+add_action( 'after_setup_theme', 'my_theme_setup' );
+function my_theme_setup(){
+    // Chargement des traductions... 
+    //print(get_stylesheet_directory_uri());
+    load_child_theme_textdomain( 'atelierbourgeons', get_stylesheet_directory() . '/languages' );
+    //load_theme_textdomain( 'atelierbourgeons', get_stylesheet_directory_uri() . '/languages' );
 }
 
 ?>

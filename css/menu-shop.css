@@ -39,7 +39,7 @@
 
 .header-title {
     position: absolute;
-    top:4em;
+    top: 40%;
 }
 
 .woocommerce-Button {
@@ -247,6 +247,7 @@
     height: 100%;
     position: absolute;
     width: 15em;
+    margin: 0;
 }
 
 .menu-right {
@@ -512,9 +513,23 @@ form.woocommerce-product-search{
     .menu-item {
         cursor:pointer;
         min-height: 2em;
-        margin-top: 1em;
         vertical-align: middle;
-        padding-left: 1em;
+        line-height: 1;
+    }
+
+    .menu-item.first {
+        margin-top: 1em;
+    }
+
+    .menu-item a {
+        padding: 14.5px;
+        width: 100%;
+        display: block;
+    }
+
+    .menu-item i {
+        float: right;
+        font-size: 0.7em;
     }
 
     .admin {

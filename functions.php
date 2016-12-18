@@ -173,7 +173,7 @@ function get_pll_url($lang)
             wp_enqueue_style('content-single-product');
         }
         
-        if(is_page("About") || is_page("Products") || is_page("Aide")) {
+        if(is_page("About") || is_page("Products") || is_page("Help")) {
             wp_register_style( 'about-stylecss', get_stylesheet_directory_uri() . '/css/about.css' );
             wp_enqueue_style('about-stylecss');
         }

@@ -44,15 +44,15 @@
                         <div class="footer_wrap">
                             <div class="cols_3 clearfix">
                                 <div class="column">
-                                    <h5><?php echo $Titre_Livraison; ?></h5> 
-                                        <?php echo $Text_Livraison; ?>
+                                    <?php _e('Express Delivery','atelierbourgeons'); ?>
                                 </div>
                                 <div class="column column_flag">
                                     <img src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/flag.png" alt="France flag">                                     
-                                    <h5><?php echo $Fabrication;?></h5>
+                                    <h5><?php _e('Made in France','atelierbourgeons'); ?></h5>
+                                    
                                 </div>
                                 <div class="column">
-                                    <h5><?php echo $Paiement_Titre;?></h5>
+                                    <h5><?php _e('Secure payment','atelierbourgeons');?></h5>
                                     <div class="footer_iconSet"> 
                                         <img src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/payment_icon1.png" alt="VISA">                                         
                                         <img src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/payment_icon2.png" alt="MasterCard">
@@ -65,21 +65,24 @@
                         <div class="footer_wrap">
                             <div class="cols_3 clearfix">
                                 <div class="column">
-                                    <h4>
-                                        <a href="#">FAQ</a>
-                                    </h4>
-                                    <h4>
-                                        <a href="#">CGV</a>
-                                    </h4>
-                                    <h4>
-                                        <a href="#">CONTACT</a>
-                                    </h4>
-                                    <h4>
-                                        <a href="#">MENTIONS LéGALES</a>
-                                    </h4>
+                                    <h5>
+                                        <a href="<?php echo get_pll_page_by_title("Help") . "/#frequent-questions"  ;  ?>"><?php _e('FAQ','atelierbourgeons');?></a>
+                                    </h5>
+                                    <h5>
+                                        <a href="<?php echo get_pll_page_by_title("Help") . "/#legal"  ;  ?>"><?php _e('Legal Notices','atelierbourgeons');?></a>
+                                    </h5>
+                                    <h5>
+                                        <a href="<?php echo get_pll_page_by_title("Help") . "/#shipping"  ;  ?>"><?php _e('Shipping','atelierbourgeons');?></a>
+                                    </h5>
+                                    <h5>
+                                        <a href="<?php echo get_pll_page_by_title("Help") . "/#cookies"  ;  ?>"><?php _e('Cookies','atelierbourgeons');?></a>
+                                    </h5>
+                                    <h5>
+                                        <a href="<?php echo get_pll_page_by_title("Help") . "/#payment"  ;  ?>"><?php _e('Secure payment','atelierbourgeons');?></a>
+                                    </h5>
                                 </div>
                                 <div class="column middle">
-                                    <h5>suivez-nous</h5>
+                                    <h5><?php _e('Follow us','atelierbourgeons');?></h5>
                                     <ul class="social_icons">
                                         <li id="facebook" href="http://www.facebook.com/share.php?u=<?php echo get_permalink () ?>" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" >
                                             <i class="fa fa-facebook fa-lg"></i>
@@ -101,11 +104,7 @@
                                     </div>                                      
                                 </div>
                                 <div class="column column_info">
-                                    <a>atelier Bourgeons</a><br />
-                                    <a>24 rue Traversière</a><br />
-                                    <a>92100, Boulogne-Billancourt</a><br />
-                                    <a>FRANCE</a><br />
-                                    <a>contact@atelierbourgeons.com</a><br />
+                                    <?php _e('Contact address mail','atelierbourgeons');?>                                    
                                 </div>
                             </div>
                         </div>
@@ -122,7 +121,7 @@
     //remove_action();
     global $cookie_notice;
     if(pll_current_language() == 'en' && $cookie_notice) {                
-        $cookie_notice->options['general']['message_text'] = "We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, you consent to our cookies on this device in accordance with our cookie policy.";
+        $cookie_notice->options['general']['message_text'] = __('Cookie Notice','atelierbourgeons');
     }
     //remove_action( 'wp_footer', array( $cookie_notice, 'add_cookie_notice' ), 1000 );
     wp_footer(); ?>

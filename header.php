@@ -59,61 +59,10 @@
 
 
 <body <?php body_class(); ?>>
-    <?php if(!is_pll_wc('cart')) { ?>
-    <div id="menu-left" class="snap-drawer snap-drawer-left" style="display:none;">
-        <?php storefront_product_search(); ?>
-       
-            <li class="menu-item list"><a> <?php _e('Shop','atelierbourgeons'); ?> </a><i class="fa fa-chevron-down"></i></li>
-            <div style="display:none" class="menu-item">
-            <li class="menu-item"><a href="<?php echo get_pll_wc_url('shop', null); ?>"> <?php _e('News','atelierbourgeons'); ?> </a></li>
-
-            <?php
-            $product_categories = get_terms( 'product_cat');
-            foreach ( $product_categories as $woo_cat ) {
-                    $woo_cat_id = $woo_cat->term_id; //category ID
-                    $woo_cat_name = $woo_cat->name; //category name
-            ?>
-            <li class="menu-item"><a href="<?php echo get_term_link( $woo_cat_id ,'product_cat' ); ?>"> <?php echo $woo_cat_name; ?> </a></li>
-            
-            
-            <?php } ?>
-       </div>
-    <li class="menu-item" ><a href="<?php echo get_home_url(); ?>"><?php _e('Home','atelierbourgeons') ?></a></li>
-    <li class="menu-item" ><a href="<?php echo get_pll_page_by_title("About"); ?>"><?php _e('About','atelierbourgeons') ?></a></li>
-    <li class="menu-item" ><a href="<?php echo get_permalink( $blog_id);?>"> <?php _e('Blog','atelierbourgeons'); ?> </a></li>
-    <li class="menu-item" ><a href="<?php echo get_pll_page_by_title("Galerie17W");?>"><?php _e('17W','atelierbourgeons') ?></a></li>
-</div>
-
-
-<div id="menu-right" class="snap-drawer snap-drawer-right" style="display:none;">
-     
-          <li class="menu-item"><a href="<?php echo get_pll_wc_url( 'cart', null);?>" data-cartquantity=""><?php _e('Cart','atelierbourgeons');?> (<?php echo WC()->cart->get_cart_contents_count(); ?>)</a></li>
-      
-      <?php  
-      //get_signin();
-      if (is_user_logged_in()) {
-          $user_info = get_userdata(1);
-
-          echo '<li><a>' . $user_info->user_login . '</a></li>';
-          echo '<li><a href="'. wp_logout_url(get_permalink( wc_get_page_id( 'myaccount' ) )) .'">' . _e('Log Out','atelierbourgeons') . '</a></li>';
-        }
-        elseif (!is_user_logged_in()) {
-          echo '<li class="menu-item"><a href="'. get_pll_wc_url( 'myaccount', null ) .'">' . _e('Log In','atelierbourgeons') . '</a></li>';        
-        }
-        echo '<div class="langue-menu">';
-        if( $cur_lang != 'fr') {
-              echo '<li><a href="'. $url_fr .'">Français</a></li>';
-        }
-        if($cur_lang != 'en') {
-             echo '<li><a href="'. $url_en .'">English</a></li>';
-        }
-        if($cur_lang != 'jp') {
-              echo '<li><a href="'. $url_jp .'">日本語</a></li>';
-        }
-        echo '</div>';
-                ?>
- </div>
-    <?php } ?>
+    <?php
+    require 'menu-left.php';
+    require 'menu-right.php';
+    ?>
 <div id="page" class="hfeed site">
 	<?php 
         

@@ -15,23 +15,26 @@
         <nav class="help-nav">
             <div>
                 <ul>
-                    <li id="nav-item-frequent-questions"><a><?php _e( 'Frequent Questions', 'atelierbourgeons' );?></a>
-                        <ul class="level2">
+                    <li id="nav-item-frequent-questions">
+                        <a href="#frequent-questions"><?php _e( 'Frequent Questions', 'atelierbourgeons' );?></a>
+                        <!--<ul class="level2">
                             <li class="nav-item-sub">
                                 <a>Garments</a>
                             </li>
                             <li class="nav-item-sub">
                                 <a class="active">Garments</a>
                             </li>
-                        </ul>
+                        </ul>-->
                     </li>
                     
-                    <li id="nav-item-frequent-returns"><a>Returns</a></li>
-                    <li id="nav-item-frequent-shipping"><a>Shipping</a></li>
+                    <li id="nav-item-returns"><a href="#returns"><?php _e( 'Returns', 'atelierbourgeons' );?></a></li>
+                    <li id="nav-item-shipping"><a href="#shipping"><?php _e( 'Shipping', 'atelierbourgeons' );?></a></li>
+                    <li id="nav-item-legal"><a href="#legal"><?php _e( 'Legal Notices', 'atelierbourgeons' );?></a></li>
+                    <li id="nav-item-cookie"><a href="#cookie"><?php _e( 'Cookies', 'atelierbourgeons' );?></a></li>
                 </ul>
             </div>
         </nav>
-        <article id="item-frequent-questions" class="help-txt">
+        <article id="frequent-questions" class="help-txt">
             <h1 id="garments-questions">Garments Questions</h1>
             <h2>Why do things sell out so fast?</h2>
             <p>We regularly use deadstock fabrics and rare materials, which restricts our manufacturing runs. We have a collection of <a href="/essentials">Essentials</a> that we try to always keep in stock. The best way to make sure you are in the know about our releases is to sign up for our newsletter.</p>
@@ -42,10 +45,10 @@
             <p>Raw denim is stiff because it has not been washed. While it won't flatter your hips and butt&nbsp;at first, it will mold to your body over time.</p>
             <p>Out of the box, your denim should fit snugly at the waist because it will stretch-out up to 1" over the first month of consistent wear. That said, we recommend you purchase one waist size smaller than you typically wear.</p>
         </article>
-        <article id="item-frequent-returns" class="help-txt">
+        <article id="returns" class="help-txt">
             
         </article>
-        <article id="item-frequent-shipping" class="help-txt">
+        <article id="shipping" class="help-txt">
             
         </article>
     </section>

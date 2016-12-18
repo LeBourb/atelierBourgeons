@@ -194,7 +194,10 @@ body {
         transform: translate3d(-266px, 0px, 0px);
     }
 
-
+    .single-product .summary {
+        float:none;
+        padding: 1em;
+    }
 }
 
 

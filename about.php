@@ -29,9 +29,6 @@
     </div>
 </div>    
 <div class="about-right container">
-    
-    
-
     <div>
         <p class="title"><?php _e( 'Creatrice', 'atelierbourgeons' );?></p>
         <li class="text"><?php _e( 'Creatrice bourgeons', 'atelierbourgeons' );?></li>

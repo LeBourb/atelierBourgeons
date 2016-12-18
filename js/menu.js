@@ -173,11 +173,11 @@ $(document).ready(function() {
          $(".menu-item.list").each(function(index) {
             $(this).on('click', function() {
                 
-                var div = $(this).next('div:hidden');
+                var div = $(this).next('li:hidden');
                 if(div.length) {
                     $(div).show();
                 }else {
-                    div = $(this).next('div');
+                    div = $(this).next('li');
                     $(div).hide();
                 }
                 

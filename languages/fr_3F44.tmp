@@ -1,0 +1,115 @@
+# Copyright (C) 2016 WooThemes
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Storefront 2.1.5\n"
+"Report-Msgid-Bugs-To: https://github.com/woothemes/storefront/issues\n"
+"POT-Creation-Date: 2016-12-17 15:51+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-12-18 15:08+0100\n"
+"Language-Team: EMAIL@ADDRESS\n"
+"X-Generator: Poedit 1.8.11\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr_FR\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: 404.php:19
+msgid "News"
+msgstr "Derniers Articles"
+
+msgid "About"
+msgstr "A propos"
+
+msgid "about"
+msgstr "a propos"
+
+msgid "about bourgeons"
+msgstr "atelier Bourgeons est une entreprise de création de vêtements artisanale et vente de vêtements customisés de seconde main. <br><br>Chaque pièce originale est unique, depuis sa conception jusqu’à sa confection dans un atelier de la région parisienne. Elles sont réalisées à partir de tissus de fins de séries achetés auprès de grandes maisons. L’entreprise s’inscrit dans un mouvement pour promouvoir auprès du public une mode originale, durable et éthique pour tous.<br><br>Nous vous souhaitons une agréable visite !"
+
+msgid "Our Products"
+msgstr "Nos Produits"
+
+msgid "Help"
+msgstr "Aide"
+
+msgid "Concept"
+msgstr "Concept"
+
+msgid "Concept bourgeons"
+msgstr "― Bourgeons ―   <br> Les bourgeons symbolisent la nature en devenir, ils grandissent discrètement et un jour donnent naissance à une diversité d’arbres et de fleurs. Rien n’est aussi riche et autant source d’inspiration artistique que la nature.  C’est pour la promouvoir que nous créons une marque, qui la respecte et respectent ceux qui en sont proches.<br>― Création de vêtements ―<br>La création de vêtements passent par une multitudes de processus, ces processus font parti de l’histoire d’être vivants, et c’est en pensant à chaque histoire que nous sélectionnons les matières avec lesquelles nous travaillons. Chaque matière ou tissu recyclé est ensuite appliqué sur un modèle de la collection pour créer une pièce unique par la créatrice dans son atelier. Le projet s’inscrit dans une démarche éthique et écologique de créations originales pour femme s’étendant jusqu’aux choix d’emballages éco conçus."
+
+msgid "Creatrice"
+msgstr "Creatrice"
+
+msgid "Creatrice bourgeons"
+msgstr "Née à Gifu au JAPON, est passionnée de mode depuis petite. C’est pendant  ses études à l’université que son intérêt pour la mode éthique et durable a débuté lorsqu’elle intégra une équipe de rédacteurs d’un site spécialisé. C’est à cette période qu’elle fit ses premières expériences dans la mode en temps qu’assistante styliste.<br> Elle s’installa en France 2013 pour y apprendre le modélisme à l’Académie Internationale de la Coupe de Paris et réalisa pendant deux ans avec une marque de prêt-à-porter femme une formation en alternance. Elle en sortit diplômée en tant que modéliste femme internationale. <br> Elle avait depuis longtemps comme projet de créer sa propre marque de créations artisanales et c’est tout naturellement qu’elle débuta fin 2015 la création de son entreprise et la réalisation de sa première collection de prêt-à-porter femmes.<br> Actuellement, elle est toujours rédactrice d’un site japonais de mode éthique《Fragment Magazine 》(http://www.fragmentsmag.com/)"
+
+msgid "Frequent Questions"
+msgstr "Question Fréquentes"
+
+msgid "Account"
+msgstr "Mon compte"
+
+msgid "Sign In"
+msgstr "Connexion"
+
+msgid "Blog"
+msgstr "Journal"
+
+msgid "17W"
+msgstr "17W"
+
+msgid "Log Out"
+msgstr "Deconnexion"
+
+msgid "Log In"
+msgstr "Connexion"
+
+msgid "Cart"
+msgstr "Panier"
+
+msgid "Home"
+msgstr "Accueil"
+
+msgid "Shop"
+msgstr "Boutique"
+
+# footer.php
+msgid "Express Delivery"
+msgstr "<h5>Livraison Express </br> En France et à l'étranger</h5>"
+
+msgid "Made in France"
+msgstr "Fabriqué en France"
+
+msgid "Secure payment"
+msgstr "Paiement sécurisé"
+
+msgid "FAQ"
+msgstr "FAQ"
+
+msgid "Legal Notices"
+msgstr "Mentions légales"
+
+msgid "Follow us"
+msgstr "Nous suivre"
+
+msgid "Contact address mail"
+msgstr "<h5>atelier Bourgeons</h5><h5>24 rue Traversière</h5><h5>92100, Boulogne-Billancourt</h5><h5>contact@atelierbourgeons.com</h5>"
+
+# English : "We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, you consent to our cookies on this device in accordance with our cookie policy."
+msgid "Cookie Notice"
+msgstr "Nous utilisons des cookies afin de vous donner une meilleure expérience en ligne. En utilisant notre site, vous acceptez notre utilisation des cookies."
+
+# help.php
+msgid "Returns"
+msgstr "Retourner un article"
+
+msgid "Shipping"
+msgstr "Livraison"
+
+msgid "Cookies"
+msgstr "Politique des Cookies"
+

@@ -3,6 +3,14 @@ $(document).ready(function() {
     //bgimgs = $( '#bgimgs' ).children();
     position = 0;
     resize = function () {
+        //console.log('resize');
+        var width = window.innerWidth;//$( window ).width() ;
+        var height = window.innerHeight;//$( window ).height() ;
+        console.log($('.bgimgs.portrait'));
+        $('.bgimgs.portrait').each(function () {
+            console.log('resize');
+        });
+      
       /*var width = window.innerWidth;//$( window ).width() ;
       var height = window.innerHeight;//$( window ).height() ;
       
@@ -133,17 +141,22 @@ $(document).ready(function() {
         $('body').css( 'overflow-y', 'scroll' );
         
         $('#loader').removeClass( "show" );
-        $('#loader').toggle( "dontshow" );}
+        $('#loader').toggle( "dontshow" );
+         $('#Logo_Top').each( function () {
+                $(this).hide();
+        });
+        $('#Logo_Bottom').each( function () {
+                $(this).hide();
+        });
+    },2000);
     
-    ,2000);
-    
-        var Logo_Top= $('#Logo_Top');    
-                Logo_Top.each( function () {
-                    $(this).addClass('final-logo');
-            });
-            var Logo_Bottom= $('#Logo_Bottom');    
-                Logo_Bottom.each( function () {
-                    $(this).addClass('final-logo');
-            });
+    var Logo_Top= $('#Logo_Top');    
+            Logo_Top.each( function () {
+                $(this).addClass('final-logo');
+        });
+        var Logo_Bottom= $('#Logo_Bottom');    
+            Logo_Bottom.each( function () {
+                $(this).addClass('final-logo');
+        });
     
 });

@@ -255,22 +255,31 @@ footer {
 
 img.bgimgs {
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: 0;
+    top: 0;
+    bottom:0;
+    right: 0;
     height: 100%;
     width: auto;
     max-width: none;
-    -webkit-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    transform: translate(-50%, -50%);
     min-height: 100%;
 }
+
+#bgimgs::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+}
+
 
 img.bgimgs.portrait {
     width: 100%;
     height: auto;
     display: none;
     min-height: 0;
+    transform: none;
+    top: 0px;
+    left:0px;
 }
 
 
@@ -287,8 +296,13 @@ img.bgimgs.portrait {
     display: inline-block;
 }
 
+.social_icons {
+    margin: 0;
+}
+
 ul.social_icons > li {
     display: inline-block;
+    margin-left: 1em;
 }
 
 .cols_3 .column {
@@ -326,6 +340,8 @@ a:focus {
     width: 100%;
     text-align: center;
 }
+
+
 // passage au format portrait (téléphone portable)
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
 
@@ -404,6 +420,7 @@ a:focus {
         height: 2em;
     }
 
+
 }
 
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
@@ -424,6 +441,10 @@ a:focus {
 
     #page.right {
         transform: translate(-15em);
+    }
+
+    #bgimgs::before {
+        padding-top: 136.46%;
     }
 
 
@@ -494,6 +515,6 @@ ul.menu li a,
         padding-left: 0;
     }
     .col-full {
-        margin-top: 2em;
+
     }
 }

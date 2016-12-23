@@ -474,7 +474,7 @@ form.woocommerce-product-search{
 }
 
 .site-logo {
-    width: 14em;
+    //width: 14em;
     margin: auto;
     margin-bottom: 0px;
     float: left;
@@ -482,6 +482,8 @@ form.woocommerce-product-search{
     display: inline-block;
     margin-left: 1em;
     cursor: pointer;
+    height: 3.5em;
+    padding: 0.2em;
 }
 
 .site-header-menu{

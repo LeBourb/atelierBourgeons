@@ -87,17 +87,8 @@
                                         <li id="facebook" href="http://www.facebook.com/share.php?u=<?php echo get_permalink () ?>" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" >
                                             <i class="fa fa-facebook fa-lg"></i>
                                         </li>
-                                        <li id="twitter">
-                                            <i class="fa fa-twitter fa-lg" ></i>
-                                        </li>
                                         <li id="instagram">
                                             <i class="fa fa-instagram fa-lg" ></i>
-                                        </li>
-                                        <li id="google-plus">
-                                            <i class="fa fa-google-plus fa-lg"  ></i>
-                                        </li>
-                                        <li id="linkedin">
-                                            <i class="fa fa-linkedin fa-lg"  ></i>
                                         </li>
                                     </ul>
                                     <div style="clear:both">                                        

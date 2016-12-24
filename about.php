@@ -21,9 +21,9 @@
 </div>
 <div class="about-left container">
     
-    <img src ="<?php echo get_site_url(); echo "/wp-content/themes/atelierbourgeons/img/about/Concept.jpg"; ?>" />
+    <img id="Concept_img" src ="<?php echo get_site_url(); echo "/wp-content/themes/atelierbourgeons/img/about/Concept.jpg"; ?>" />
 
-    <div>
+    <div id="Concept_div">
         <p class="title"><?php _e( 'Concept', 'atelierbourgeons' );?></p>
         <li class="text"><?php _e( 'Concept bourgeons', 'atelierbourgeons' );?></li>
     </div>

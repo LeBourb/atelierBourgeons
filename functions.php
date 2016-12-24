@@ -80,7 +80,7 @@ function get_pll_url($lang)
               
         require (STYLESHEETPATH  . '/inc/init.php');    
         
-        wp_register_script( 'child-jquery', get_stylesheet_directory_uri() . '/js/jquery-1.7.1.js'); 
+        wp_register_script( 'child-jquery', get_stylesheet_directory_uri() . '/js/jquery-3.1.1.min.js'); 
         wp_enqueue_script('child-jquery');
          if(is_front_page()) {                     
           
@@ -176,6 +176,8 @@ function get_pll_url($lang)
         if(is_page("About") || is_page("Products") || is_page("Help")) {
             wp_register_style( 'about-stylecss', get_stylesheet_directory_uri() . '/css/about.css' );
             wp_enqueue_style('about-stylecss');
+            wp_register_script('script-about', get_stylesheet_directory_uri() . '/js/about.js' );
+            wp_enqueue_script('script-about');
         }
         
         if(is_page("Products")) {

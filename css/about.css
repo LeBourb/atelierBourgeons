@@ -41,9 +41,9 @@ section {
 
 
 .container div {
-    //  width: 50%;
+    width: 75%;
     height: 100%;
-    width: calc(100% - attr(height));
+    //width: calc(100% - attr(height));
     padding: 4%;
 }
 

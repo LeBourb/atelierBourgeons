@@ -93,6 +93,8 @@ a {
     width: 100%!important;
     margin-bottom: 0!important;
     height: inherit!important;
+    padding-left: 2em;
+    padding-right: 2em;
 }
 .menu-large{
     width: 100%!important;

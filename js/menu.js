@@ -185,17 +185,22 @@ $(document).ready(function() {
              
          });
         
-  var is_top = false;
-  $(window).scroll(function(){
-       if ( !is_top && $(window).scrollTop() == 0) {
-          is_top = true; 
-          $($('#masthead')[0]).addClass('header-top');
-       }else if ( is_top && $(window).scrollTop() > 0) {
-           is_top=false;
-           $($('#masthead')[0]).removeClass('header-top');
-       }
-    });
+    var is_top = false;
+    var scroll_listerner = function(){
+        if ( !is_top && $(window).scrollTop() == 0) {
+              is_top = true; 
+              $($('#masthead')[0]).removeClass('header-down');
+              $($('#masthead')[0]).addClass('header-top');
+        }else if ( is_top && $(window).scrollTop() > 0) {
+            is_top=false;
+            $($('#masthead')[0]).removeClass('header-top');
+            $($('#masthead')[0]).addClass('header-down');
+        }
+    };
+    $(window).scroll(scroll_listerner);
+    
 $(window).scroll();
+scroll_listerner();
   /*$("#cssmenu").prepend("<div id='menu-line'></div>");*/
 
 var foundActive = false, activeElement, linePosition = 0, /*menuLine = $("#cssmenu #menu-line"),*/ lineWidth, defaultPosition, defaultWidth;

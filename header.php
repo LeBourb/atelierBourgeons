@@ -6,6 +6,20 @@
  *
  * @package storefront coucou
  */
+function has_banner() {
+    if ( (!is_product() && !is_front_page() && !is_page()) 
+               || is_pll_wc('cart')
+               || is_pll_wc('checkout')
+               || is_pll_wc('myaccount')
+               || is_page("About")
+       ) {
+        return true;
+    }
+    else { 
+        return false;
+    }
+}
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> <?php /*storefront_html_tag_schema();*/ ?>>
 <head>
@@ -70,7 +84,7 @@
 <?php  if ( !is_pll_wc('checkout')) /*is_shop() || is_pll_wc('shop') || is_product() || is_product_category() || is_pll_wc('cart') || is_account_page())*/  :
     
        ?>
-    <header id="masthead" class="site-header-menu <?php if ( is_product() ) echo "product"; if ( current_user_can('administrator') ) echo 'admin';?> " role="banner" <?php if ( get_header_image() != '' ) { echo 'style="background-image: url(' . esc_url( get_header_image() ) . ');'; } ?>>
+    <header id="masthead" class="site-header-menu  <?php if(has_banner() || is_front_page() || is_page_template( 'galerie-17w.php' )) echo "banner "; if ( is_product() ) echo "product"; if ( current_user_can('administrator') ) echo 'admin';?> " role="banner" <?php if ( get_header_image() != '' ) { echo 'style="background-image: url(' . esc_url( get_header_image() ) . ');'; } ?>>
 
 
       
@@ -240,10 +254,7 @@
 	</header><!-- #masthead -->
        <?php  
        
-       if ( (!is_product() && !is_front_page() && !is_page()) 
-               || is_pll_wc('cart')
-               || is_pll_wc('checkout')
-               || is_pll_wc('myaccount')){ ?>
+       if ( has_banner() ){ ?>
             <div class="header-shop">
                 <img class="header-background" src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/banner_search.jpg" ></img>	
                 <h1 class="header-title"> <?php 

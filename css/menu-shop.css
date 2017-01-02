@@ -1,16 +1,27 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
-.site-branding {
+header.header-top > .site-branding {
     display: flex!important;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    transition: padding 0.3s ease-in-out, background 0.1s ease-out;
 }
+
+header > .site-branding , header.header-down > .site-branding {
+    display: flex!important;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    transition: padding 0.3s ease-in-out, background 0.1s ease-out;
+}
+
 
 #cssmenu{
     flex: 1 1 auto;
     margin-left: auto;
     margin-right: auto;
     height: inherit;
-    padding-top: 1em !important;
-    padding-bottom: 1em !important;
+    //padding-top: 1em !important;
+    //padding-bottom: 1em !important;
 }
 
 .admin {
@@ -21,9 +32,22 @@
     height: 100%;
 }
 
+header.site-header-menu.header-top {
+    position: relative;
+}
 
-.site-header{
-    position: fixed!important;
+
+header.site-header-menu.header-top.banner {
+    position: fixed;
+}
+
+header.site-header-menu {
+    position: fixed;
+    top: 0px!important;
+}
+
+header.site-header-menu.header-down {
+    position: fixed;
     top: 0px!important;
 }
 
@@ -34,6 +58,7 @@
 
 .header-background {
     margin-top: 0;
+    font-size: 12px !important;
     min-width: 100%;
 }
 
@@ -76,6 +101,11 @@
     height: 100%;
 }
 
+#cssmenu {
+    padding-top: 0.5em;
+}
+
+
 #cssmenu > div > ul > li {
     display: inline-block;
     border: 0;
@@ -89,20 +119,28 @@
     box-sizing: border-box;
 }
 
-#masthead{
-    position: fixed;
+
+
+.site-header-menu {
+    will-change: top;
+    transition: top 0.3s ease-in-out;
 }
 
-.header-top {
+.site-header-menu.header-top.banner {
     background-color: transparent!important;
-    transition: padding 0.3s ease-in-out, background 0.3s ease-in, border-color 0.2s ease-in-out;
-    transition: opacity 0.5s ease-in-out 0s;
+    //transition: padding 0.3s ease-in-out, background 0.3s ease-in, border-color 0.2s ease-in-out;
+    //transition: opacity 0.5s ease-in-out 0s;
     opacity: 1;
     fill: white;
-    color: white!important;
+    color: white;
     //will-change:padding, background, border-color;
     border-bottom: none!important;
 }
+
+header.header-top {
+    transition: padding 1s ease-in-out, background 0.1s ease-out;
+}
+
 
 .menu-shop , #button-signin , #open-search , .fa {
     cursor: pointer;
@@ -119,7 +157,7 @@
 
 #cssmenu > div > ul > i::before{
     padding: 0!important;
-    font-size: 1em!important;
+    font-size: 17px!important;
 }
 
 #cssmenu > div > ul > i > a {
@@ -156,7 +194,7 @@
 }
 
 
-#cssmenu:after,
+/*#cssmenu:after,
 #cssmenu > div > ul:after {
     content: ".";
     display: block;
@@ -165,6 +203,7 @@
     line-height: 0;
     height: 0;
 }
+*/
 #cssmenu #menu-button-left {
     display: none;
 }
@@ -216,24 +255,29 @@
 #cssmenu.align-right > div > ul ul {
     text-align: right;
 }
-#cssmenu > div > ul > li > a ,
-#cssmenu > div > ul > i > ::before,
-#cssmenu > div > ul > i > a {
+
+#cssmenu ::before,
+#cssmenu a {
     /*padding-right: 50px;
     padding-bottom: 10px;
     padding-left: 5px;
     padding-top: 10px;*/
     background-color: transparent;
-    font-size: 0.6em;
+    font-size: 10px;
     text-decoration: none;
     text-transform: uppercase;
     color: inherit;
-    -webkit-transition: color .2s ease;
+    /*-webkit-transition: color .2s ease;
     -moz-transition: color .2s ease;
     -ms-transition: color .2s ease;
     -o-transition: color .2s ease;
-    transition: color .2s ease;
+    transition: color .2s ease;*/
 }
+
+.menu-search ::before {
+    font-size: 15px!important;
+}
+
 //#cssmenu > ul > li:hover > a,
 #cssmenu > div > ul > li.active > a {
     color: #009ae1;
@@ -480,9 +524,9 @@ form.woocommerce-product-search{
     float: left;
     max-height: 100%;
     display: inline-block;
-    margin-left: 1em;
+    //margin-left: 1em;
     cursor: pointer;
-    height: 3.5em;
+    height: 2.5em;
     padding: 0.2em;
 }
 
@@ -496,6 +540,7 @@ form.woocommerce-product-search{
     z-index: 999;
     width: 100%;
     height: auto;
+
 }
 
 

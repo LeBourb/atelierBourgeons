@@ -26,8 +26,11 @@ add_action('init','add_query_args');
 */
 function is_pll_wc( $wc_page)
 { 
-   global $polylang;
+    global $polylang;
     $cart_ids = $polylang->model->get_translations('page', wc_get_page_id( $wc_page));
+    if(count($cart_ids)==0) {
+	return false;
+    }
     // j'affiche le contenu de la page About dans la langue courrante        
     return is_page( $cart_ids[pll_current_language()] ) || defined( 'WOOCOMMERCE_CART' ) ;
 }

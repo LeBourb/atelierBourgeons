@@ -8,14 +8,161 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-12-17 21:25+0100\n"
+"PO-Revision-Date: 2017-01-10 17:31+0900\n"
 "Language-Team: EMAIL@ADDRESS\n"
 "X-Generator: Poedit 1.8.11\n"
 "Last-Translator: \n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: fr_FR\n"
+"Language: en_US\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #: 404.php:19
 msgid "News"
-msgstr ""
+msgstr "Last Items"
+
+msgid "About"
+msgstr "A propos"
+
+msgid "about"
+msgstr "a propos"
+
+msgid "about bourgeons"
+msgstr "atelier Bourgeons is a company of creation of handicraft clothes and sale of customized clothes of second hand. <br> <br> Each original piece is unique, from its conception to its making in a workshop in Paris's area. They are made from fine fabrics purchased from large houses. The company is part of a movement to promote to the public an original, sustainable and ethical fashion for all. <br> <br> We wish you a pleasant visit!"
+
+msgid "Our Products"
+msgstr "Our Products"
+
+msgid "Help"
+msgstr "Help"
+
+msgid "Concept"
+msgstr "Concept"
+
+msgid "Concept bourgeons"
+msgstr "― Bourgeons ―   <br> Bourgeons in French, Buds in English, symbolize the nature in becoming, they grow discreetly and one day give birth to a diversity of trees and flowers. Nothing is as rich and as much a source of artistic inspiration as nature. It is to promote it that we create a brand, which respects it and respect those who are close to it. <br> - Creation of clothes - <br> Creating clothes passes through a multitude of processes, these processes are part of The history of living beings, and it is by thinking of each story that we select the subjects with which we work. Each recycled material or fabric is then applied to a model of the collection to create a unique piece by the designer in her workshop. The project is part of an ethical and ecological approach of original creations for women extending to the choices of eco-designed packaging."
+
+msgid "Creatrice"
+msgstr "Creatrice"
+
+msgid "Creatrice bourgeons"
+msgstr "Mié Manabe was born in Gifu, JAPAN. Passionate about fashion since childhood, her interest in ethical fashion began during her university studies when she joined a team of editors of a website specializing in the promotion of sustainable products. It was during this period that she made her first experiments in fashion as an assistant stylist. She moved to France 2013 to learn modeling at the renowed \"Académie Internationale de Coupe de Paris\" AICP and realized for two years with a women's ready-to-wear brand a work and training program. She graduated as an international modelist for women. <br> She had long been planning to create her own brand of handcrafted creations and it is quite naturally that she began the creation of her own company and the realization of a first collection of women's ready-to-wear at the end of 2015. < Currently she is still editor of a Japanese ethical fashion site \"Fragment Magazine\" (http://www.fragmentsmag.com/)"
+
+msgid "Frequent Questions"
+msgstr "Frequent Asked Questions"
+
+msgid "Account"
+msgstr "My account"
+
+msgid "Sign In"
+msgstr "Sign in"
+
+msgid "Blog"
+msgstr "News"
+
+msgid "17W"
+msgstr "17W"
+
+msgid "Log Out"
+msgstr "Log out"
+
+msgid "Log In"
+msgstr "Log in"
+
+msgid "Cart"
+msgstr "My Cart"
+
+msgid "Home"
+msgstr "Home"
+
+msgid "Shop"
+msgstr "Online Shop"
+
+# footer.php
+msgid "Express Delivery"
+msgstr "<h5>Express Delivery </br> In France and abroad</h5>"
+
+msgid "Made in France"
+msgstr "Made in France"
+
+msgid "Secure payment"
+msgstr "Secure payment"
+
+msgid "FAQ"
+msgstr "FAQ"
+
+msgid "Legal Notices"
+msgstr "Legal Notices"
+
+msgid "Follow us"
+msgstr "Follow us"
+
+msgid "Contact address mail"
+msgstr "<h5>atelier Bourgeons</h5><h5>24 rue Traversière</h5><h5>92100, Boulogne-Billancourt, FRANCE</h5><h5>contact@atelierbourgeons.com</h5>"
+
+msgid "Cookie Notice"
+msgstr "We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, you consent to our cookies on this device in accordance with our cookie policy."
+
+# help.php
+msgid "Returns"
+msgstr "Return a purchase"
+
+msgid "Shipping"
+msgstr "Shipping"
+
+msgid "Cookies"
+msgstr "Cookie Policy"
+
+# product.php
+msgid "Original Collection"
+msgstr "Original Collection"
+
+msgid "Fabrics and Accessories"
+msgstr "<p>Fabrics & Accessories</p>In a world of standard consumerism, we can find plenty of high-quality raw materials in warehouses. They are called scraps because they are not profitable enough if used in standard manufacturing processes. Atelier Bourgeons brings to life these unused materials: we buy them at ready-to-wear fashion house and we transform them. Each new material is then integrated into a model of the collection and, combined with vintage accessories, becomes an original creation and a unique piece."
+
+msgid "Design and Production"
+msgstr "<p>Design & Production</p>What guides the process of creating our collections is the idea of ​​offering each woman \"a timeless charm in perfect harmony with retro and modern\" to allow them to express their individuality, far from the trends which strandardize them. Each piece is made entirely in the workshop in the style of a french fashion couture house."
+
+msgid "Card, Label, Packaging"
+msgstr "<p>Card, Label, Packaging</p>The claws are made of organic cotton in Italy. The fabric used in the creation of the patronage is then recycled to make labels of compositions and sizes. The products used for packaging are all made from recycled materials. All shipping boxes are recyclable, except waterproof kraft paper and tape used to protect products during transport. We offer ribbons and cards for your gift packaging. You will find more information here."
+
+msgid "Vintage and Second Hand"
+msgstr "<p class=\"title\">Vintage & Seconde Hand Customized Clothes</p><li class=\"text\">atelier Bourgeons offers in parallel of its original collections second-hand clothes and accessories coming from second-hand stores and solidarity shops. <br> In a back to design and creation process, each piece is examined in the workshop and can be retouched or customized as required by the fashion designer. <br> Details and information are available on the page of each article of our online shop.</li>"
+
+msgid "Tailor-made clothes"
+msgstr "<p class=\"concept title\">Tailor-made clothes</p><li class=\"concept text\">It is not always easy to find the garment you love at your body size, especially when you plan to weir it for an important event such as a wedding ceremony. We offer our customers to create together in our workshop a unique piece according to your taste and perfectly adjusted to your body size in only 5 steps.</li>"
+
+msgid "Tailor-made steps"
+msgstr "<p class=\"title\">Tailor-made steps</p>"
+
+msgid "Tailor-made design"
+msgstr "<h3>DESIGN</h3><span class=\"card-summary\">You describe us the desired garment using images for the style, information regarding the desired materials and finally indicate us the formula* selected for fabrics. We send you within the next two weeks a sketch that can be modified twice without fees, followed by a quote.</span>"
+
+msgid "Tailor-made measure"
+msgstr "<h3>MEASURE</h3><span class=\"card-summary\">We take your body measurements in our workshop. During this first appointment we will ask you to pay 50% of the total charge.</span>"
+
+msgid "Tailor-made first fitting"
+msgstr "<h3>FIRST FITTING</h3><span class=\"card-summary\">We make you try a prototype to check together garment's volumes and details. At this stage, we will be able to make important adjustments.</span>"
+
+msgid "Tailor-made second fitting"
+msgstr "<h3>SECOND FITTING</h3><span class=\"card-summary\">We make you try your outfits with almost its final form and fabrics. This will allow us to make the last adjustments before manufacture.</span>"
+
+msgid "Tailor-made presentation"
+msgstr "<h3>FINAL FITTING & DELIVERY</h3><span class=\"card-summary\">This final fitting will allow us to check your garment before leaving and we will ask you to pay the full settlement before leaving with your customized product.</span>"
+
+msgid "Tailor-made details"
+msgstr "* Regarding selection of fabrics, you can either bring your own fabrics or buy it with us, or whether, let us select it for you. <br> These steps are an example of a custom creation, adjustments may be made as required by customer. From the first consultation to the delivery, it will take at least 1 month."
+
+msgid "Rate - Tailor-made"
+msgstr "Tarifs - Creation sur mesure"
+
+msgid "Rate - Tailor-made details"
+msgstr "Prices include: <ul> <li> Sketches, </li> <li> creating the garment patronage and prototype, </li> <li> making the final garment </li> </ul> However, cost of fabrics is not included in below estimate prices."
+
+msgid "Rate - Tailor-made price 1"
+msgstr "<li>Wedding dress</li><li> Short: from 800 € </li><li> Long: from 1000 €</li><li><ul><li><ul> Cocktail or evening dress </ u> </ li> <li> Short: from 400€ </ li> <li> Long: from 600 € < / Li> </ ul> <ul> <li> <u> Top </ u> </ li> <li> Sleeveless: from 150 € </ li> <li> With sleeves: from 250 </ Li> </ ul> <ul> <li> <u> Skirt </ u> </ li> <li> Short: from 200 € </ li> <li> Long: from 300 Pants </ul></li><li> Short: from 250 € </li><li> Long: from 350 € </li> </ul> € </li> </ul>"
+
+msgid "Rate - Tailor-made price 2"
+msgstr "<ul><li><u>Skirt</u></li><li>Short : from 200€</li><li>Long : from 300€</li></ul><ul><li><u>Pants</u></li><li>Short : from 250€</li><li>Long : from 350€</li></ul>"
+
+msgid "Gift Wrapping"
+msgstr "<p class=\"concept title\">Gift wrapping</p><li class=\"concept text\">We offer a service of ribbon and small card. You can request it by adding it to your cart with your selected item.</li>"

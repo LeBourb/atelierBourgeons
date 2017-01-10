@@ -16,8 +16,8 @@ if(!is_pll_wc('cart')) {
       if (is_user_logged_in()) {
           $user_info = get_userdata(1);
 
-          echo '<li><a>' . $user_info->user_login . '</a></li>';
-          echo '<li><a href="'. wp_logout_url(get_permalink( wc_get_page_id( 'myaccount' ) )) .'">' . __('Log Out','atelierbourgeons') . '</a></li>';
+          echo '<li class="menu-item"><a>' . $user_info->user_login . '</a></li>';
+          echo '<li class="menu-item"><a href="'. wp_logout_url(get_permalink( wc_get_page_id( 'myaccount' ) )) .'">' . __('Log Out','atelierbourgeons') . '</a></li>';
         }
         elseif (!is_user_logged_in()) {
           echo '<li class="menu-item"><a href="'. get_pll_wc_url( 'myaccount', null ) .'">' . __('Log In','atelierbourgeons') . '</a></li>';        

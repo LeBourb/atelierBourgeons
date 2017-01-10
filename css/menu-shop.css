@@ -1,9 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+//@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 header.header-top > .site-branding {
     display: flex!important;
-    padding-top: 30px;
-    padding-bottom: 15px;
+    padding-top: 1em;
+    padding-bottom: 1em;
     transition: padding 0.3s ease-in-out, background 0.1s ease-out;
 }
 
@@ -25,11 +25,12 @@ header > .site-branding , header.header-down > .site-branding {
 }
 
 .admin {
-    top: 2em;
+    margin-top: 2em;
 }
 
 #cssmenu > div {
     height: 100%;
+    display: inline-flex;
 }
 
 header.site-header-menu.header-top {
@@ -104,6 +105,25 @@ header.site-header-menu.header-down {
 #cssmenu {
     padding-top: 0.5em;
 }
+
+
+.menu-shop {
+    display: inline-block;
+    float: right;
+    width: auto;
+    top: -0.3em;
+}
+
+.menu-shop a {
+    top: 0.2em;
+}
+
+.menu-search {
+    display: inline-block;
+    float: right;
+    top: -0.2em;
+}
+
 
 
 #cssmenu > div > ul > li {
@@ -256,22 +276,28 @@ header.header-top {
     text-align: right;
 }
 
-#cssmenu ::before,
 #cssmenu a {
-    /*padding-right: 50px;
-    padding-bottom: 10px;
-    padding-left: 5px;
-    padding-top: 10px;*/
     background-color: transparent;
     font-size: 10px;
     text-decoration: none;
     text-transform: uppercase;
     color: inherit;
-    /*-webkit-transition: color .2s ease;
-    -moz-transition: color .2s ease;
-    -ms-transition: color .2s ease;
-    -o-transition: color .2s ease;
-    transition: color .2s ease;*/
+}
+
+.site-branding{
+    width: 100%!important;
+    margin-bottom: 0!important;
+    height: inherit!important;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+#cssmenu ::before {
+    background-color: transparent;
+    font-size: 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: inherit;
 }
 
 .menu-search ::before {
@@ -389,12 +415,10 @@ form.woocommerce-product-search{
 
 
 #menu-button-right {
-    display: inline-block;
-    float: right;
-}
-#menu-button-right {
     display: none;
     float: right;
+    position: absolute;
+    right: 0px;
 }
 
 #cssmenu > ul > li.has-sub > a::after {
@@ -518,16 +542,12 @@ form.woocommerce-product-search{
 }
 
 .site-logo {
-    //width: 14em;
-    margin: auto;
-    margin-bottom: 0px;
-    float: left;
-    max-height: 100%;
-    display: inline-block;
-    //margin-left: 1em;
     cursor: pointer;
-    height: 2.5em;
-    padding: 0.2em;
+    width: 7em;
+}
+
+#search-box {
+    float: right;
 }
 
 .site-header-menu{
@@ -539,7 +559,7 @@ form.woocommerce-product-search{
     position: relative;
     z-index: 999;
     width: 100%;
-    height: auto;
+    height: 4em;
 
 }
 
@@ -551,6 +571,8 @@ form.woocommerce-product-search{
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
     .site-branding {
         display: block!important;
+        padding: 0!important;
+        border-bottom: 1px solid #dddddd;
     }
 
     .site-search{
@@ -614,7 +636,8 @@ form.woocommerce-product-search{
         float: none;
         width: 10em!important;
         fill: black;
-        margin-left: 5em!important;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #menu-left,#menu-right{

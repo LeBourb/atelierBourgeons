@@ -56,6 +56,7 @@
                                     <div class="footer_iconSet"> 
                                         <img src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/payment_icon1.png" alt="VISA">                                         
                                         <img src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/payment_icon2.png" alt="MasterCard">
+                                        <img src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/payment_icon3.png" alt="American Express">
                                     </div>
                                 </div>
                             </div>

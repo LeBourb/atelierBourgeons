@@ -93,7 +93,7 @@
     <img src ="<?php echo get_site_url(); echo "/wp-content/themes/atelierbourgeons/img/about/Gift.jpg"; ?>" />
 
     <div>
-        <?php _e('Gift Wrapping','atelierbourgeons')?>                
+        <?php _e('Gift Wrapping text','atelierbourgeons')?>                
     </div>
     </div>
 </div>

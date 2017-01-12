@@ -24,6 +24,9 @@ add_action('init','add_query_args');
  * is_pll_cart
 
 */
+
+require (STYLESHEETPATH  . '/plugin.php');    
+        
 function is_pll_wc( $wc_page)
 { 
     global $polylang;
@@ -116,6 +119,11 @@ function get_pll_url($lang)
             
             wp_register_script('shop-rollover', get_stylesheet_directory_uri() . '/js/shop-rollover.js' );
             wp_enqueue_script('shop-rollover');
+            
+            wp_register_script('custom-options', get_stylesheet_directory_uri() . '/js/custom-options.js' );
+            wp_enqueue_script('custom-options');
+            
+            
                         
         }
         else if ( is_account_page() ){

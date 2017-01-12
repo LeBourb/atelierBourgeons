@@ -4,7 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/css/menu-shop.css</file>
+            <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/plugin.php</file>
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/woocommerce/myaccount/form-login.php</file>
+            <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/js/custom-options.js</file>
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/css/menu-blog.css</file>
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/footer.php</file>
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/search.php</file>
@@ -12,12 +14,18 @@
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/woocommerce/single-product/product-image.php</file>
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/menu-left.php</file>
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/footer-about.php</file>
+            <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/templates/custom_fields.php</file>
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/about.php</file>
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/galerie-17w.php</file>
+            <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/languages/fr_FR.po</file>
+            <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/classes/class-product-page-options.php</file>
+            <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/templates/custom_textareas.php</file>
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/svg-logo.php</file>
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/menu-right.php</file>
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/products.php</file>
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/style-rtl.css</file>
+            <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/classes/class-product-add-to-cart.php</file>
+            <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/languages/en_US.po</file>
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/css/homepage.css</file>
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/css/shop.css</file>
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/header.php</file>
@@ -31,8 +39,10 @@
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/style.css</file>
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/js/about.js</file>
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/woocommerce/single-product.php</file>
+            <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/custom_options_html.php</file>
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/template-homepage.php</file>
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/js/jquery-3.1.1.min.js</file>
+            <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/languages/ja_JP.po</file>
             <file>file:/C:/Users/Romain/InstantWP/InstantWP_4.5/iwpserver/htdocs/wordpress/wp-content/themes/atelierbourgeons/header-about.php</file>
         </group>
     </open-files>

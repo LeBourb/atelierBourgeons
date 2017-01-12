@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-01-10 17:31+0900\n"
+"PO-Revision-Date: 2017-01-12 10:42+0900\n"
 "Language-Team: EMAIL@ADDRESS\n"
 "X-Generator: Poedit 1.8.11\n"
 "Last-Translator: \n"
@@ -164,5 +164,81 @@ msgstr "<li>Wedding dress</li><li> Short: from 800 € </li><li> Long: from 1000
 msgid "Rate - Tailor-made price 2"
 msgstr "<ul><li><u>Skirt</u></li><li>Short : from 200€</li><li>Long : from 300€</li></ul><ul><li><u>Pants</u></li><li>Short : from 250€</li><li>Long : from 350€</li></ul>"
 
-msgid "Gift Wrapping"
+msgid "Gift Wrapping text"
 msgstr "<p class=\"concept title\">Gift wrapping</p><li class=\"concept text\">We offer a service of ribbon and small card. You can request it by adding it to your cart with your selected item.</li>"
+
+# Custom-options.php
+msgid "\"%s\" is a required field."
+msgstr ""
+
+msgid "The maximum allowed length for \"%s\" is %s letters."
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Click to toggle"
+msgstr ""
+
+msgid "Custom input (text field)"
+msgstr ""
+
+msgid "Custom input (text area)"
+msgstr ""
+
+msgid "Option Name"
+msgstr ""
+
+msgid "Required fields?"
+msgstr ""
+
+msgid "Option Label"
+msgstr ""
+
+msgid "Option Price"
+msgstr ""
+
+msgid "Label"
+msgstr ""
+
+msgid "Woocommerce custom options could not detect an active Woocommerce plugin. Make sure you have activated it. | <a href=\"%1$s\">Hide Notice</a>"
+msgstr ""
+
+msgid "Custom Options"
+msgstr ""
+
+msgid "New Custom Option"
+msgstr ""
+
+msgid "Are you sure you want remove this option?"
+msgstr ""
+
+msgid "General Options"
+msgstr ""
+
+msgid "Enable Custom Options"
+msgstr ""
+
+msgid "Show Options Total"
+msgstr ""
+
+msgid "Show Final Total"
+msgstr ""
+
+msgid "Options Total"
+msgstr ""
+
+msgid "Final Total"
+msgstr ""
+
+msgid "Max"
+msgstr ""
+
+msgid "Option"
+msgstr ""
+
+msgid "Gift Wrapping"
+msgstr ""
+
+msgid "Please enter your message here..."
+msgstr "Saisissez votre texte ici"

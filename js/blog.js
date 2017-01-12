@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-//$(document).ready(function() {
-$(window).load(function() {
-    
+$(document).ready(function() {
+//$(window).load(function() {
+  
     
     var onresize = function () {
         

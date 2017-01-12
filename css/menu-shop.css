@@ -537,8 +537,13 @@ form.woocommerce-product-search{
 
 #cart-widget {
     display: block;
-    width: 20%;
+    width: auto;
     float: right;
+}
+
+.widget_shopping_cart_content > * {
+    display: inline-block;
+    margin-right: 1em!important;
 }
 
 .site-logo {
@@ -559,8 +564,8 @@ form.woocommerce-product-search{
     position: relative;
     z-index: 999;
     width: 100%;
-    height: 4em;
-
+    height: auto;
+    min-height: 4em;
 }
 
 

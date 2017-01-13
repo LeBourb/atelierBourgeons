@@ -7,23 +7,7 @@
  * @package storefront
  */
 ?>
-
- <?php if($cur_lang == 'fr') {
-     $Titre_Livraison="Livraison express";
-     $Text_Livraison="en France et à l'internationale";
-     $Fabrication="Fabriqué en france";
-     $Paiement_Titre="Paiement sécurisé";
- }else {
-     $Titre_Livraison="Express Delivery";
-     $Text_Livraison="in France and abroad";
-     $Fabrication="Made in france";
-     $Paiement_Titre="Paiement sécurisé";
- } ?>		
-
-
-
- <?php //else : ?>
-        		</div><!-- .col-full -->
+       		</div><!-- .col-full -->
 	</div><!-- #content -->
 
 	<?php do_action( 'storefront_before_footer' ); ?>
@@ -44,7 +28,10 @@
                         <div class="footer_wrap">
                             <div class="cols_3 clearfix">
                                 <div class="column">
-                                    <?php _e('Express Delivery','atelierbourgeons'); ?>
+                                    <h5><?php _e('Express Delivery','atelierbourgeons'); ?></h5>
+                                    <a class="footer_iconSet" href="http://www.boxtale.com/"> 
+                                        <img src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/shipping_icon_0.png" alt="Boxtal icon">                                     
+                                    </a>
                                 </div>
                                 <div class="column column_flag">
                                     <img src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/flag.png" alt="France flag">                                     

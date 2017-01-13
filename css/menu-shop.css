@@ -24,7 +24,7 @@ header > .site-branding , header.header-down > .site-branding {
     //padding-bottom: 1em !important;
 }
 
-.admin {
+header.admin.header-top {
     margin-top: 2em;
 }
 

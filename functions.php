@@ -135,8 +135,7 @@ function get_pll_url($lang)
         else if ( is_home() ){
             wp_enqueue_style( 'blog-style', get_stylesheet_directory_uri() . '/css/blog.css' );
             wp_enqueue_style( 'blog-style-common', get_stylesheet_directory_uri() . '/css/blog-common.css' );
-            wp_register_script( 'instafeedjs', get_stylesheet_directory_uri() . '/js/instafeed.js' );
-            wp_enqueue_script('instafeedjs');
+            
             wp_register_script( 'blog-stylejs', get_stylesheet_directory_uri() . '/js/blog.js' );
             wp_enqueue_script('blog-stylejs');            
             wp_enqueue_style( 'font-awesome-post-style', get_stylesheet_directory_uri() . '/css/font-awesome.min.css' );
@@ -150,10 +149,7 @@ function get_pll_url($lang)
             wp_enqueue_style( 'blog-style-common', get_stylesheet_directory_uri() . '/css/blog-common.css' );
             wp_register_script( 'menu-stylejs', get_stylesheet_directory_uri() . '/js/menu.js' );
             wp_enqueue_script('menu-stylejs');
-            //wp_register_script( 'child-jquery', get_stylesheet_directory_uri() . '/js/jquery-1.7.1.js'); 
-            //wp_enqueue_script('child-jquery');
-            wp_register_script( 'instafeedjs', get_stylesheet_directory_uri() . '/js/instafeed.js' );
-            wp_enqueue_script('instafeedjs');
+            
             wp_enqueue_style( 'blog-post-style', get_stylesheet_directory_uri() . '/css/blog-post.css' );
             wp_enqueue_style( 'font-awesome-post-style', get_stylesheet_directory_uri() . '/css/font-awesome.min.css' );
             

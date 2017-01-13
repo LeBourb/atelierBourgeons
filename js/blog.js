@@ -4,10 +4,8 @@
  * and open the template in the editor.
  */
 
-$(document).ready(function() {
-//$(window).load(function() {
-  
-    
+//$(document).ready(function() {
+window.onload = function() {    
     var onresize = function () {
         
         if($(window).width() < 768) {
@@ -73,14 +71,5 @@ $(document).ready(function() {
     
     $(window).resize(onresize);
     onresize();
-    
-    var feed = new Instafeed({
-        get: 'user',
-        userId: '18808100',
-        clientId: '3444230514',
-        accessToken: '3444230514.3a81a9f.f3df0da0ac5949ee90e384ffc38ea58c'
-    });
-    feed.run();
-    
-});
+};
 

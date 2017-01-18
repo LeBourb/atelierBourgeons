@@ -86,20 +86,25 @@
 
      $('#loader').removeClass( "show" );
         $('#loader').addClass( "dontshow" );
+        setTimeout(function(){
+            $('#loader').hide();
+        },1500)
+        
     var bgimgs  = new Array();
     var bgFocusX = new Array();
     
                 <?php 
  
-$images = get_attached_media('image', $post->ID);
+//$images = get_attached_media('image', $post->ID);
 $index = 0;
-
+$gallery = get_post_gallery( get_the_ID(), false );
+$images = explode ( ',',$gallery['ids']);
 foreach($images as $image) { 
     
     
         $index++;
-   $image_attributes = wp_get_attachment_image_src($image->ID,'large');
-   $image_metas = get_post_meta( $image->ID, 'focus_position_x', true );//( $image->ID ); 
+   $image_attributes = wp_get_attachment_image_src($image,'large');
+   $image_metas = get_post_meta( $image, 'focus_position_x', true );//( $image->ID ); 
    
    $value = "bgimgs.push(\"$image_attributes[0]\");";
    if($image_metas != "") {
@@ -136,7 +141,7 @@ foreach($images as $image) {
     
 </script>
         
-        <div id="bgimgs" class="board" style="background-image: url(<?php echo the_post_thumbnail_url( 'full' ); ?>);">
+        <div id="bgimgs" class="board" style="background-image: url(<?php echo the_post_thumbnail_url( 'large' ); ?>);">
             
             
             <?php 

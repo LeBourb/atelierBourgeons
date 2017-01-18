@@ -81,11 +81,11 @@ function has_banner() {
 <div id="page" class="hfeed site">
 	<?php 
         
-	do_action( 'storefront_before_header' ); ?>
+	//do_action( 'storefront_before_header' ); ?>
 <?php  if ( !is_pll_wc('checkout')) /*is_shop() || is_pll_wc('shop') || is_product() || is_product_category() || is_pll_wc('cart') || is_account_page())*/  :
     
        ?>
-    <header id="masthead" class="site-header-menu  <?php if(has_banner() || is_front_page() || is_page_template( 'galerie-17w.php' )) echo "banner "; if ( is_product() ) echo "product"; if ( current_user_can('administrator') ) echo 'admin';?> " role="banner" <?php if ( get_header_image() != '' ) { echo 'style="background-image: url(' . esc_url( get_header_image() ) . ');'; } ?>>
+    <header id="masthead" class="site-header-menu  <?php if(has_banner() || is_front_page() || is_page_template( 'galerie-17w.php' )) echo "banner "; if ( is_product() ) echo "product"; if ( current_user_can('administrator') ) echo 'admin';?> " role="banner" >
 
 
       
@@ -256,14 +256,28 @@ function has_banner() {
        <?php  
        
        if ( has_banner() ){ ?>
-            <div class="header-shop" style="background: url(<?php echo the_post_thumbnail_url( 'full' ); //get_site_url();?>) no-repeat top center;">                
+            <div class="header-shop" style="background: url('<?php 
+                if(is_shop()){
+                    $image_meta = wp_get_attachment_image_src( get_post_thumbnail_id( woocommerce_get_page_id('shop') ), 'large' );
+                }                    
+                else {
+                    $image_meta = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
+                }
+                echo $image_meta[0];
+                //esc_url(the_post_thumbnail_url( 'large' )) //get_site_url();
+                ?>') no-repeat top center; background-size:cover;">                
                 <h1 class="header-title"> <?php 
                     if (!is_product() && !is_front_page()){
                         if(is_home()) {
                             echo "Blog";
                         }
+                        else if (is_shop()) {
+                            _e('Shop','atelierbourgeons');
+                        }
                         else if (is_woocommerce()) {
-                            echo woocommerce_page_title();
+                            
+                            //_e(preg_replace('/\s+/', '', woocommerce_page_title()),'atelierbourgeons');
+                            _e(woocommerce_page_title(),'atelierbourgeons');
                         }else {
                             _e(get_the_title(),'atelierbourgeons');
                         }
@@ -282,7 +296,7 @@ function has_banner() {
         if(!is_front_page()) {
         ?>
 
-	<div id="content" class="site-content" tabindex="-1">
+	<div id="content" class="site-content " tabindex="-1">
 		<div class="col-full">
 
 		<?php

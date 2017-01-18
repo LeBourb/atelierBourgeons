@@ -34,8 +34,10 @@ $index = 0;
 foreach($images as $image) { 
     $index++;
    $image_attributes = wp_get_attachment_image_src($image->ID,'large');
+   
+   $ratio = round(($image_attributes[2]/$image_attributes[1])*100);
    ?>
-    <a  href="<?php echo $image_attributes[0]?>" data-lightbox="roadtrip" class="am-wrapper" style="display:none;" data-title="Optional caption."><img src="<?php echo $image_attributes[0]?>" />
+    <a  href="<?php echo $image_attributes[0]?>" data-lightbox="roadtrip" class="am-wrapper <?php echo "ratio_$ratio" ?>" style="" data-title="Optional caption." ><img src="<?php echo $image_attributes[0];?>" />
     
 					<div class="overlay" style="opacity: 0.9; display:none;"></div>
 				 

@@ -188,9 +188,9 @@ if ( ! class_exists( 'Storefront' ) ) :
 				'subset' => urlencode( 'latin,latin-ext' ),
 			);
 
-			$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+			//$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 
-			wp_enqueue_style( 'storefront-fonts', $fonts_url, array(), null );
+			//wp_enqueue_style( 'storefront-fonts', $fonts_url, array(), null );
 
 			/**
 			 * Scripts

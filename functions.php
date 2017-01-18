@@ -96,8 +96,7 @@ function get_pll_url($lang)
             wp_enqueue_style('child-sidemenucss');
             wp_register_style('style-homepage', get_stylesheet_directory_uri() . '/css/homepage.css' );
             wp_enqueue_style('style-homepage');
-            wp_register_script('script-homepage', get_stylesheet_directory_uri() . '/js/homepage.js' );
-            wp_enqueue_script('script-homepage');
+ 
             
             
             
@@ -297,5 +296,24 @@ function my_theme_setup(){
     load_child_theme_textdomain( 'atelierbourgeons', get_stylesheet_directory() . '/languages' );
     //load_theme_textdomain( 'atelierbourgeons', get_stylesheet_directory_uri() . '/languages' );
 }
+
+function add_attachment_field_position_x( $form_fields, $post ) {
+    $form_fields['focus_position_x'] = array(
+        'label' => 'Focus Position X (%)',
+        'input' => 'text',
+        'value' => get_post_meta( $post->ID, 'focus_position_x', true ),
+        'helps' => '% of image on x axis'
+    );
+    return $form_fields;
+}
+add_filter( 'attachment_fields_to_edit', 'add_attachment_field_position_x', 10, 2 );
+
+function add_attachment_field_position_x_save( $post, $attachment ) {
+    if( isset( $attachment['focus_position_x'] ) )
+    update_post_meta( $post['ID'], 'focus_position_x', $attachment['focus_position_x'] );
+
+    return $post;
+}
+add_filter( 'attachment_fields_to_save', 'add_attachment_field_position_x_save', 10, 2 );
 
 ?>

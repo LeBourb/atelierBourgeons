@@ -12,6 +12,26 @@
  Text Domain:  atelierbourgeons
 */
 
+@font-face {
+    font-family: Mincho;
+    src: url('fonts/02UtsukushiMincho.ttf');
+}
+@font-face {
+    font-family: Modesty;
+    src: url('fonts/ModestyFreshStyle.ttf');
+}
+@font-face {
+    font-family: Cinecaption;
+    src: url('fonts/cinecaption2.28.ttf');
+}
+@font-face {
+    font-family: OldNewspaper;
+    src: url('fonts/OldNewspaperTypes.ttf');
+}
+@font-face{
+    font-family: Bell_MT;
+    src: url('fonts/BELL.ttf');
+}
 li {
     list-style-type: none;
 }
@@ -256,10 +276,22 @@ img.bgimgs {
     min-height: 100%;
 }
 
+#bgimgs {
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-position-x: right;
+    background-position-y: top;
+    background-size: cover;
+    transition: background-image 0.2s ease-in-out;
+}
+
 #bgimgs::before {
     content: "";
     display: block;
-    padding-top: 56.25%;
+    //padding-top: 56.25%;
+    height: 100%;
 }
 
 
@@ -332,6 +364,13 @@ a:focus {
     text-align: center;
 }
 
+.legal_mentions {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4em;
+    margin-bottom: 4em;
+}
 
 // passage au format portrait (téléphone portable)
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
@@ -340,6 +379,10 @@ a:focus {
     body {
         overflow-x: hidden;
         //min-width: 400px;
+    }
+
+    .legal_mentions {
+        width: 80%;
     }
 
     html {
@@ -416,10 +459,19 @@ a:focus {
 
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
 
+    .legal_mentions {
+        width: 80%;
+    }
+
     img.bgimgs {
         display: none!important;
         top:47%;
     }
+
+    #bgimgs{
+        background-position-x: right;
+    }
+
     img.bgimgs.portrait {
         width: 100%;
         height: auto;
@@ -435,7 +487,7 @@ a:focus {
     }
 
     #bgimgs::before {
-        padding-top: 136.46%;
+        //padding-top: 136.46%;
     }
 
 

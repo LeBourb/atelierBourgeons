@@ -246,3 +246,6 @@ msgstr "Saisissez votre texte ici"
 # blog, index.php
 msgid "Follow me on Instagram"
 msgstr "Follow us"
+
+msgid "Legal Mentions"
+msgstr ""

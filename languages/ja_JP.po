@@ -314,3 +314,6 @@ msgstr ""
 # blog, index.php
 msgid "Follow me on Instagram"
 msgstr ""
+
+msgid "Legal Mentions"
+msgstr ""

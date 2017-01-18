@@ -55,6 +55,10 @@ header.site-header-menu.header-down {
 .header-shop {
     height: auto;
     position: relative;
+    height: 395px;
+    background-align: top center;
+    background-repeat: no-repeat;
+    margin-bottom: 40px;
 }
 
 .header-background {
@@ -66,6 +70,11 @@ header.site-header-menu.header-down {
 .header-title {
     position: absolute;
     top: 40%;
+    font-family: Modesty;
+    color: white;
+    font-size: 3em;
+    width: 90%;
+    text-align: right;
 }
 
 .woocommerce-Button {
@@ -104,6 +113,7 @@ header.site-header-menu.header-down {
 
 #cssmenu {
     padding-top: 0.5em;
+    padding-bottom: 0.5em;
 }
 
 
@@ -549,6 +559,7 @@ form.woocommerce-product-search{
 .site-logo {
     cursor: pointer;
     width: 7em;
+    height: 2em;
 }
 
 #search-box {
@@ -564,7 +575,7 @@ form.woocommerce-product-search{
     position: relative;
     z-index: 999;
     width: 100%;
-    height: auto;
+    height: 4em;
     min-height: 4em;
 }
 
@@ -578,6 +589,10 @@ form.woocommerce-product-search{
         display: block!important;
         padding: 0!important;
         border-bottom: 1px solid #dddddd;
+    }
+
+    header.admin.header-top {
+        margin-top: 0;
     }
 
     .site-search{
@@ -661,6 +676,7 @@ form.woocommerce-product-search{
     .site-header-menu {
         padding-top: 0;
         height:2em;
+        min-height: 2em;
         padding-top: 0;
         position: relative;
     }

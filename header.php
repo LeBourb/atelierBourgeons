@@ -12,6 +12,7 @@ function has_banner() {
                || is_pll_wc('checkout')
                || is_pll_wc('myaccount')
                || is_page("About")
+               || is_page("Legal Mentions")
        ) {
         return true;
     }
@@ -255,33 +256,38 @@ function has_banner() {
        <?php  
        
        if ( has_banner() ){ ?>
-            <div class="header-shop">
-                <img class="header-background" src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/banner_search.jpg" ></img>	
+            <div class="header-shop" style="background: url(<?php echo the_post_thumbnail_url( 'full' ); //get_site_url();?>) no-repeat top center;">                
                 <h1 class="header-title"> <?php 
                     if (!is_product() && !is_front_page()){
                         if(is_home()) {
                             echo "Blog";
                         }
-                        else {
+                        else if (is_woocommerce()) {
                             echo woocommerce_page_title();
+                        }else {
+                            _e(get_the_title(),'atelierbourgeons');
                         }
                     }
                 ?>
                 </h1>
             </div>
         
-        <?php } ?>
+        
 
 	<?php
 	/**
 	 * @hooked storefront_header_widget_region - 10
 	 */
-	//do_action( 'storefront_before_content' ); ?>
+	//do_action( 'storefront_before_content' ); 
+        if(!is_front_page()) {
+        ?>
 
 	<div id="content" class="site-content" tabindex="-1">
 		<div class="col-full">
 
 		<?php
+        }
+      } 
 		/**
 		 * @hooked woocommerce_breadcrumb - 10
 		 */

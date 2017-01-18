@@ -6,6 +6,7 @@
  *
  * @package storefront
  */
+
 ?>
        		</div><!-- .col-full -->
 	</div><!-- #content -->
@@ -57,7 +58,7 @@
                                         <a href="<?php echo get_pll_page_by_title("Help") . "/#frequent-questions"  ;  ?>"><?php _e('FAQ','atelierbourgeons');?></a>
                                     </h5>
                                     <h5>
-                                        <a href="<?php echo get_pll_page_by_title("Help") . "/#legal"  ;  ?>"><?php _e('Legal Notices','atelierbourgeons');?></a>
+                                        <a href="<?php echo get_pll_page_by_title("Legal Mentions") ;  ?>"><?php _e('Legal Notices','atelierbourgeons');?></a>
                                     </h5>
                                     <h5>
                                         <a href="<?php echo get_pll_page_by_title("Help") . "/#shipping"  ;  ?>"><?php _e('Shipping','atelierbourgeons');?></a>

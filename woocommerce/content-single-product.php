@@ -107,6 +107,7 @@ global $post, $product;
 			 * @hooked woocommerce_template_single_meta - 40
 			 * @hooked woocommerce_template_single_sharing - 50
 			 */
+                         remove_filter('woocommerce_single_product_summary','woocommerce_template_single_title',5);
 			do_action( 'woocommerce_single_product_summary' );     
                 
                        

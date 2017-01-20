@@ -122,7 +122,6 @@ function get_pll_url($lang)
             wp_register_script('custom-options', get_stylesheet_directory_uri() . '/js/custom-options.js' );
             wp_enqueue_script('custom-options');
             
-            
                         
         }
         else if ( is_account_page() ){

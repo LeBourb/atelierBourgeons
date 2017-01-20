@@ -92,7 +92,6 @@ body {
 
 .thumb_img {
     display: inline-block;
-    float: left;
     width: 20%;
     margin-right: 5%;
 }
@@ -108,13 +107,22 @@ body {
     padding-top: 100%; 	/* initial ratio of 1:1*/
 }
 
-.single-product .images {
+main.site-main > div.product.type-product > div.images {
     margin-right: 0!important;
     margin-bottom: 0!important;
+    width: 50%;
 }
+
+main.site-main > div.product.type-product > .summary.entry-summary {
+    width:50%;
+    padding: 2%;
+}
+
 .single-product .product {
     width: 100%;
+
 }
+
 
 .single-product .summary {
     float: right;
@@ -198,6 +206,15 @@ body {
         float:none;
         padding: 1em;
     }
+
+    .site-main > .product.type-product > div.images {
+        width: 100%;
+    }
+
+    .site-main > .product.type-product > .summary.entry-summary {
+        width: 100%;
+    }
+
 }
 
 

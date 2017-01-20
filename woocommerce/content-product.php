@@ -55,7 +55,7 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 	
         
         <div style="height: 20px;" class="itemCopy"><span class="new">NEW</span></div>
-        <div class="itemPhoto"><a href="<?php echo get_the_permalink()?>"><?php echo woocommerce_get_product_thumbnail();?></a></div>
+        <div class="itemPhoto"><a href="<?php echo get_the_permalink()?>"><?php echo woocommerce_get_product_thumbnail('medium');?></a></div>
         <a href="<?php echo get_the_permalink()?>">        
         <div class="itemName"><?php echo get_the_title()?></div>
         <div class="itemPrice"><?php echo woocommerce_template_single_price()?>

@@ -53,6 +53,26 @@ function get_pll_wc_url( $wc_page, $lang = null)
    
 }
 
+
+function is_sub_account_menu() {
+    global $wp;
+    if(is_account_page()  
+            && ( (strpos($wp->request, '/orders') !== false)
+            || (strpos($wp->request, '/download') !== false)
+            || (strpos($wp->request, '/edit-address') !== false)
+            || (strpos($wp->request, '/edit-account') !== false)
+            || (strpos($wp->request, '/logout') !== false)            
+            )
+            ) {
+        return true;
+    }        
+    else {
+        return false;
+    }
+};
+
+
+
 // Logout Redirect
 
 function atelierb_logout_redirect()
@@ -127,7 +147,8 @@ function get_pll_url($lang)
         else if ( is_account_page() ){
             wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
             
-            wp_enqueue_style( 'shop-style', get_stylesheet_directory_uri() . '/css/shop.css' );           
+            //wp_enqueue_style( 'shop-style', get_stylesheet_directory_uri() . '/css/shop.css' );           
+            wp_enqueue_style( 'account-style', get_stylesheet_directory_uri() . '/css/account.css' );           
             
         }
         else if ( is_home() ){

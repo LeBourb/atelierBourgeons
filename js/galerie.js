@@ -66,7 +66,7 @@ $(document).ready(function() {
     
         var article = $($articles[idx]);
         
-        article.show();
+        
         if(col2)
             article.addClass('col-2');
         else
@@ -76,6 +76,9 @@ $(document).ready(function() {
         article.css( {
             width: widthimg
         });
+        
+        article.attr('width',widthimg);
+        article.show();
         
         // On doit remplir équitable les colonnes... 
         if(col3) {

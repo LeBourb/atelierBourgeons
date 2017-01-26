@@ -29,6 +29,7 @@ var top = y * (- img.height() + this.clientHeight);
          var srcZoom = $(".woocommerce-main-image.zoom>div>img").attr("src");
          var src = $(event.target).attr("srcset");
          $(".woocommerce-main-image.zoom>div>img").attr("srcset",src);       
+         $(".woocommerce-main-image.zoom>div>img").attr("src",$(event.target).attr("src"));       
          
     });
     /*

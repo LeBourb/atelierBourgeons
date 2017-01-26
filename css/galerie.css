@@ -23,6 +23,10 @@ and open the template in the editor.
 
 }
 
+.am-wrapper.ratio_56::before {
+    padding-top: 56%;
+}
+
 .am-wrapper.ratio_63::before {
     padding-top: 62.5714285714%;
 }
@@ -35,6 +39,10 @@ and open the template in the editor.
 }
 .am-wrapper.ratio_150::before {
     padding-top: 150%;
+}
+
+.am-wrapper.ratio_60::before {
+    padding-top: 60%;
 }
 
 

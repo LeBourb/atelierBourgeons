@@ -13,6 +13,7 @@ function has_banner() {
                || is_pll_wc('myaccount')
                || is_page("About")
                || is_page("Legal Mentions")
+               || is_home()               
        ) {
         return true;
     }

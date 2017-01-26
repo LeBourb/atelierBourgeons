@@ -52,12 +52,13 @@ global $post, $product;
 	?>
     
         
-        <?php echo $product->get_tags( ', ', '<span class="onsale">' . _n( '', '', $tag_count, 'woocommerce' ) . ' ', '</span>' ); ?>
+        
            
 	
         <div class="summary entry-summary">
 
             <ul class="share-product" >
+                <?php echo $product->get_tags( ' ', '<span class="product-tags">' . _n( '', '', $tag_count, 'woocommerce' ) . ' ', '</span>' ); ?>
                 <li id="facebook" href="http://www.facebook.com/share.php?u=<?php echo get_permalink () ?>" onclick="window.open(this.getAttribute('href'), 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" >
                      <img src="<?php echo get_site_url ( )?>/wp-content/themes/atelierbourgeons/icons/facebook.png"  />
                 </li>
@@ -71,6 +72,9 @@ global $post, $product;
                         /**
                          * Le but est de mettre Titre du produit > Prix > Description > Achat
                          */
+                        add_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+                        remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+                        remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
                         do_action( 'woocommerce_after_single_product_summary' );
                         
                         // Là on va afficher les attributes/
@@ -79,19 +83,40 @@ global $post, $product;
             
 <table class="lisTable" border="0" cellpadding="0" cellspacing="0">
   <colgroup><col class="lisTableItems">
-  <col class="lisTableText">
-  </colgroup><tbody><tr>
-    <th>material</th>
-    <td><span><?php echo $product->get_attribute('material'); ?></span></td>
-  </tr>
-  <tr>
-    <th>colour</th>
-    <td><?php echo $product->get_attribute('colour'); ?></td>
-  </tr>
-  <tr>
-    <th>SIZE (cm)</th>
-    <td><?php echo $product->get_attribute('size'); ?></td>
-  </tr>
+  <col class="liswTableText">
+  </colgroup><tbody class="shop-attribute">
+      <?php
+      global $product;
+$attributes = $product->get_attributes();
+
+foreach ( $attributes as $attribute ) :
+		if ( empty( $attribute['is_visible'] ) || ( $attribute['is_taxonomy'] && ! taxonomy_exists( $attribute['name'] ) ) ) {
+			continue;
+		} else {
+			$has_row = true;
+		}
+                
+		?>
+        
+		<tr>
+			<th><?php echo wc_attribute_label( $attribute['name'] ); ?></th>
+			<td><span><?php
+				if ( $attribute['is_taxonomy'] ) {
+
+					$values = wc_get_product_terms( $product->id, $attribute['name'], array( 'fields' => 'names' ) );
+					echo apply_filters( 'woocommerce_attribute', wpautop( wptexturize( implode( ', ', $values ) ) ), $attribute, $values );
+
+				} else {
+
+					// Convert pipes to commas and display values
+					$values = array_map( 'trim', explode( WC_DELIMITER, $attribute['value'] ) );
+					echo apply_filters( 'woocommerce_attribute', wpautop( wptexturize( implode( ', ', $values ) ) ), $attribute, $values );
+
+				}
+			?></span></td>
+		</tr>
+	<?php endforeach; ?>
+  
 </tbody></table>
             
             <?php

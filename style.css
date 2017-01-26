@@ -175,6 +175,7 @@ a {
     margin: 0;
     text-align: left;
     padding-left: 1em;
+    vertical-align: top;
 }
 
 .itemName{
@@ -372,90 +373,7 @@ a:focus {
     margin-bottom: 4em;
 }
 
-// passage au format portrait (téléphone portable)
-@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
 
-
-    body {
-        overflow-x: hidden;
-        //min-width: 400px;
-    }
-
-    .legal_mentions {
-        width: 80%;
-    }
-
-    html {
-        margin-top: 0px !important;
-    }
-
-    .products > li {
-        width: 45%;
-        margin: 0 2.5% 0 2.5%;
-    }
-
-    .woocommerce-main-image.zoom > img {
-        width: 100%;
-    }
-
-    #page {
-        min-width: 100%;
-    }
-
-    .menu-langue {
-        display: none;
-    }
-    .col-full {
-        margin-left: 0;
-        margin-right: 0; }
-
-
-
-    .site-branding{
-        background-color: white;
-        float: none;
-        margin-bottom: 0;
-        width: 100%;
-
-    }
-    .site-title {
-        display: none;
-    }
-    .menu-shop {
-        display: inline;
-        position: absolute;
-    }
-    .menu-shop>img {
-        display: inline;
-        width: 20px;
-    }
-    #cssmenu {
-        display: inline;
-    }
-    .site-logo {
-        display :block;
-        margin-left: auto;
-        margin-right: auto;
-        float: none;
-    }
-
-    .header-background {
-        margin-top: 3em;
-    }
-
-    .summary.entry-summary {
-        width: 95%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .dummy-menu {
-        background-color: white;
-        display: block;
-        height: 2em;
-    }
-
-
-}
 
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
 
@@ -525,6 +443,9 @@ a:focus {
         display:none;
     }
 
+    .products > li {
+        width: 49%;
+    }
 
     /*#cssmenu {
         display: inline;

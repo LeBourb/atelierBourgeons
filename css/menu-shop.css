@@ -143,6 +143,7 @@ header.site-header-menu.header-down {
     z-index: 1;
     list-style: none;
     line-height: 1;
+    cursor: pointer;
     position: relative;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -194,6 +195,12 @@ header.header-top {
     padding: 0!important;
     font-size: 0.6em!important;
 }
+
+#cssmenu .focus {
+    border-bottom: 1px solid #0f2130;
+    padding-bottom : 4px !important;
+}
+
 
 .langue-menu > li > a {
     color: #4573a7;
@@ -254,7 +261,23 @@ header.header-top {
     //background-color: #FFF;
     color: inherit;
     opacity: 0.9;
+    padding-bottom: 5px;
 }
+
+header#masthead .sub-header-menu {
+    padding: 2em;
+}
+
+header#masthead .sub-category-section ul{
+    padding: 0;
+    margin: 0;
+}
+
+header#masthead #sub-menu-collection a {
+    margin-left: 80%;
+    display: block;
+}
+
 #cssmenu.align-center > div > ul {
     font-size: 0;
     text-align: center;
@@ -591,6 +614,10 @@ form.woocommerce-product-search{
         min-height: 2em;
         vertical-align: middle;
         line-height: 1;
+    }
+
+    #menu-left div .menu-item {
+        padding-left: 1em;
     }
 
     .menu-item.first {

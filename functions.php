@@ -223,22 +223,23 @@ function get_pll_url($lang)
        
     }
     
-    function get_pll_page_by_title( $page_title, $lang = null) {
+    function get_pll_page_id_by_title( $page_title, $lang = null) {
         $page_l = get_page_by_title( $page_title );        
         //$post_slug = pll_get_post($page_l->ID, 'en');
         global $polylang;
-        $cart_ids = $polylang->model->get_translations('page', $page_l->ID);
-        
-        
-    
-        // j'affiche le contenu de la page About dans la langue courrante        
+        $cart_ids =  $polylang->model->get_translations('page', $page_l->ID);
         if( $lang == null) {
-            return get_permalink( $cart_ids[pll_current_language()] );
+            return $cart_ids[pll_current_language()];
         }else {
-            return get_permalink( $cart_ids[$lang] );
+            return $cart_ids[$lang];
         }
-        //return get_permalink( $post_slug->ID );
     }
+        
+    function get_pll_page_by_title( $page_title, $lang = null) {        
+        return get_permalink( get_pll_page_id_by_title( $page_title) , $lang);
+    }
+    
+    
 
 /**
          * Save subscriber into database (refactor @ 2.0.4)

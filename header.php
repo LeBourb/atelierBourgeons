@@ -129,22 +129,36 @@ function has_banner() {
                                 <div class="menu-left">
                                 <ul id="menu-large">
                                     
-                                   <li id="sp_close" style="display:none"><a href="#" id="sp_close_button">メニューを閉じる</a></li>
-                                   <li><a href="<?php echo get_pll_wc_url('shop', null); ?>"> <?php _e('News','atelierbourgeons'); ?> </a></li>
-                              <?php     $product_categories = get_terms( 'product_cat');
-                foreach ( $product_categories as $woo_cat ) {
-                    $woo_cat_id = $woo_cat->term_id; //category ID
-                    $woo_cat_name = $woo_cat->name; //category name
-                    ?>
-                    <li><a href="<?php echo get_term_link( $woo_cat_id ,'product_cat' ); ?>"> <?php echo $woo_cat_name; ?> </a></li>
-                    <?php } ?>
+                                   <li id="sp_close" style="display:none"><a id="sp_close_button">メニューを閉じる</a></li>
+                      <?php     $product_categories = get_terms( 'product_cat');
+    $parent_cats = array();
+    foreach ( $product_categories as $woo_cat ) {
+        $woo_cat_id = $woo_cat->term_id; //category ID
+        $woo_cat_name = $woo_cat->name; //category name
+        
+        // gets an array of all parent category levels
+        $product_parent_categories_all_hierachy = get_ancestors( $woo_cat_id , 'product_cat' );  
+
+        // This cuts the array and extracts the last set in the array
+        $last_parent_cat = array_slice($product_parent_categories_all_hierachy, -1, 1, true);        
+        foreach($last_parent_cat as $last_parent_cat_value){
+            // $last_parent_cat_value is the id of the most top level category, can be use whichever one like                        
+            if (!in_array($last_parent_cat_value, $parent_cats)) {               
+               array_push($parent_cats, $last_parent_cat_value);
+               $parent_cat_name = get_term( $last_parent_cat_value, 'product_cat' )->name;
+               echo '<li class="menu-parent-category" id="' . $parent_cat_name . '"><a>' . $parent_cat_name . '</a></li>';
+               // display the parent category
+            }
+        }       
+    } 
+ ?>
                                     
                                 </ul>
                                     </div>
                                 <div class="menu-right">
                                 <ul href="" class="">
                                     <li><a id="button-home"  href="<?php echo get_pll_page_by_title("About"); ?>"><?php _e('About','atelierbourgeons'); ?></a></li>
-                                    <li><a id="button-galerie17w" href="<?php echo get_pll_page_by_title("Galerie17W")?>"><?php _e('17W','atelierbourgeons'); ?></a></li>
+                                    <li id="button-collection" ><a><?php _e('Collection','atelierbourgeons'); ?></a></li>
                                     <li><a id="button-blog" href="<?php echo get_permalink( $blog_id);?>"><?php _e('Blog','atelierbourgeons'); ?> </a></li>
                                     <?php if (is_user_logged_in()) { 
                                         echo '<li><a id="button-account" href="'. get_pll_wc_url( 'myaccount' ,null) .'">' . __('Account','atelierbourgeons') . '</a></li>';
@@ -179,12 +193,12 @@ function has_banner() {
                                             $prefix = "jp";
                                             $url = $url_fr;
                                         }
-                                        echo '<a href="#">'. $prefix  .'</a>'; ?>                                    
+                                        echo '<a>'. $prefix  .'</a>'; ?>                                    
                                     </li>
                                 </ul>
                                     
                                 <ul class="menu-search">
-                                   <span id="open-search" class="fa fa-search" href="#"></span>
+                                   <span id="open-search" class="fa fa-search"></span>
                                 </ul>
                                 
                                 </div>
@@ -234,10 +248,10 @@ function has_banner() {
                 
         ?> 
         </div>
-            <div id="cart-widget" style="display:none">
+            <div id="cart-widget" class="sub-header-menu" style="display:none">
         <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>       
             </div>
-            <div id="langue-widget" style="display:none">
+            <div id="langue-widget" class="sub-header-menu" style="display:none">
    
                 <?php              
                  
@@ -253,13 +267,59 @@ function has_banner() {
                 ?>                                    
    
             </div>
+        <?php 
+            // Sub-Categories widget !
+            // 
+            function display_subcats_from_parentcat_by_ID($parent_cat_ID) {
+                $args = array(
+                   'hierarchical' => 1,
+                   'show_option_none' => '',
+                   'hide_empty' => 0,
+                   'parent' => $parent_cat_ID,
+                   'taxonomy' => 'product_cat'
+                );
+                $subcats = get_categories($args);
+                
+                foreach ($subcats as $sc) {
+                  $link = get_term_link( $sc->slug, $sc->taxonomy );
+                    echo '<li><a href="'. $link .'">'.$sc->name.'</a></li>';
+                }
+                
+            }
+        
+            foreach ( $parent_cats as $parent_cat ) {
+                get_term($parent_cat);
+                
+                echo '<div id="sub-menu-' . get_term( $parent_cat, 'product_cat' )->name . '" style="display:none" class="sub-category-section sub-header-menu">';
+                echo '<h4>' . __('Categories','atelierbourgeons') . '</h4>';
+                echo '<ul>';
+                display_subcats_from_parentcat_by_ID($parent_cat);
+                echo '</ul>';
+                echo '</div>';
+            }
+            
+            echo '<div id="sub-menu-collection" style="display:none" class="sub-menu-section sub-header-menu">';
+            
+            echo '<a href="' . get_pll_page_by_title("Galerie17W") . '">';
+            echo wp_get_attachment_image( get_post_thumbnail_id ( get_pll_page_id_by_title("Galerie17W") ) , 'thumbnail' );
+            echo '<h4>' . __('17W','atelierbourgeons') . '</h4>';
+            echo'</a>';
+            
+            echo '</div>';
+        ?>
+            
 	</header><!-- #masthead -->
        <?php  
        
        if ( has_banner() ){ ?>
             <div class="header-shop" style="background: url('<?php 
-                if(is_shop()){
-                    $image_meta = wp_get_attachment_image_src( get_post_thumbnail_id( woocommerce_get_page_id('shop') ), 'large' );
+                if(is_product_category()){
+                    $categories = get_the_category();
+                    //print_r(get_term($wp_query->get_queried_object()->term_id,'product_cat'));
+                    $thumb_id = get_woocommerce_term_meta( $wp_query->get_queried_object()->term_id, 'thumbnail_id', true );
+                    //$term_img = wp_get_attachment_url(  $thumb_id );
+                    $image_meta = wp_get_attachment_image_src( $thumb_id, 'large' );
+                    //$image_meta = wp_get_attachment_image_src( get_post_thumbnail_id( woocommerce_get_page_id('shop') ), 'large' );
                 }                    
                 else {
                     $image_meta = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );

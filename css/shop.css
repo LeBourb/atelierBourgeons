@@ -130,13 +130,15 @@ main.site-main > div.product.type-product > .summary.entry-summary {
 }
 
 .shop-attribute {
-    display: inline-flex;
+    display: block;
 }
 
 .shop-attribute th {
-    min-width: 150px;
+    min-width: 7em;
 }
-
+.shop-attribute td {
+    background-color: #fdfdfd !important;
+}
 .single-product div.product .price {
     font-size: 1.5em;
 }

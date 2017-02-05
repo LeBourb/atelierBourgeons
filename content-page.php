@@ -17,7 +17,7 @@
 	 * @hooked storefront_init_structured_data - 30
          * Pas de header storefront pour les pages woocommerce (Account)
 	 */
-        if(is_pll_wc('myaccount'))
+        if(is_pll_wc('myaccount') || is_pll_wc('cart'))
             remove_action('storefront_page', 'storefront_page_header', 10 );
         
 	do_action( 'storefront_page' );

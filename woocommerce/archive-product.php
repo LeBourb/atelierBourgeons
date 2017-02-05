@@ -18,7 +18,11 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-
+// DISABLE SHOP PAGE !!! 
+if(is_shop()) {
+    wp_redirect( get_home_url() );
+    exit;
+}
 get_header( 'shop' ); ?>
 
 	<?php

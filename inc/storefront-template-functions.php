@@ -305,18 +305,19 @@ if ( ! function_exists( 'storefront_post_header' ) ) {
 	}
 }
 
-if ( ! function_exists( 'storefront_post_content' ) ) {
+if ( ! function_exists( 'atelierbourgeons_post_content' ) ) {
 	/**
 	 * Display the post content with a link to the single post
 	 *
 	 * @since 1.0.0
 	 */
-	function storefront_post_content() {
+	function atelierbourgeons_post_content() {
 		?>
 		<div class="entry-content">
 		<?php
-		storefront_post_thumbnail( 'full' );
+		//storefront_post_thumbnail( 'large' );
 
+                echo '<h2>' . single_post_title('Article en cours : ') . '</h2>';
 		the_content(
 			sprintf(
 				__( 'Continue reading %s', 'storefront' ),

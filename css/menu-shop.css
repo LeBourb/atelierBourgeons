@@ -14,7 +14,6 @@ header > .site-branding , header.header-down > .site-branding {
     transition: padding 0.3s ease-in-out, background 0.1s ease-out;
 }
 
-
 #cssmenu{
     flex: 1 1 auto;
     margin-left: auto;
@@ -72,7 +71,8 @@ header.site-header-menu.header-down {
     top: 40%;
     font-family: Modesty;
     color: white;
-    font-size: 3em;
+    font-size: 4em;
+    font-weight: 400;
     width: 90%;
     text-align: right;
 }
@@ -133,8 +133,6 @@ header.site-header-menu.header-down {
     float: right;
     top: -0.2em;
 }
-
-
 
 #cssmenu > div > ul > li {
     display: inline-block;
@@ -610,7 +608,6 @@ form.woocommerce-product-search{
     }
 
     .menu-item {
-        cursor:pointer;
         min-height: 2em;
         vertical-align: middle;
         line-height: 1;
@@ -873,6 +870,14 @@ form.woocommerce-product-search{
     .site-search{
         display: block!important;
     }
+
+
+    .woocommerce nav.woocommerce-MyAccount-navigation {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }
 
 @media all and (max-width: 384px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 512px), only screen and (min-resolution: 192dpi) and (max-width: 512px), only screen and (min-resolution: 2dppx) and (max-width: 512px) {

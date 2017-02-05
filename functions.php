@@ -77,7 +77,7 @@ function is_sub_account_menu() {
 
 function atelierb_logout_redirect()
 {
-    wp_redirect(get_pll_wc_url('shop'));
+    wp_redirect(get_home_url());
     exit;
 }
 
@@ -172,6 +172,10 @@ function get_pll_url($lang)
             wp_enqueue_style( 'blog-post-style', get_stylesheet_directory_uri() . '/css/blog-post.css' );
             wp_enqueue_style( 'font-awesome-post-style', get_stylesheet_directory_uri() . '/css/font-awesome.min.css' );
             
+        }
+        
+        if(is_product()) {
+            wp_enqueue_style( 'shop-product-page-style', get_stylesheet_directory_uri() . '/css/shop-product-page.css' );
         }
         
         if(is_page_template( 'galerie-17w.php' )) {

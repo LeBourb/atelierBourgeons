@@ -145,8 +145,9 @@ function has_banner() {
             // $last_parent_cat_value is the id of the most top level category, can be use whichever one like                        
             if (!in_array($last_parent_cat_value, $parent_cats)) {               
                array_push($parent_cats, $last_parent_cat_value);
-               $parent_cat_name = get_term( $last_parent_cat_value, 'product_cat' )->name;
-               echo '<li class="menu-parent-category" id="' . $parent_cat_name . '"><a>' . $parent_cat_name . '</a></li>';
+               $parent_cat_name = get_term( $last_parent_cat_value, 'product_cat' )->name;            
+               $parent_cat_slug = get_term( $last_parent_cat_value, 'product_cat' )->slug;
+               echo '<li class="menu-parent-category" id="' . $parent_cat_slug . '"><a>' . $parent_cat_name . '</a></li>';
                // display the parent category
             }
         }       
@@ -158,7 +159,7 @@ function has_banner() {
                                 <div class="menu-right">
                                 <ul href="" class="">
                                     <li><a id="button-home"  href="<?php echo get_pll_page_by_title("About"); ?>"><?php _e('About','atelierbourgeons'); ?></a></li>
-                                    <li id="button-collection" ><a><?php _e('Collection','atelierbourgeons'); ?></a></li>
+                                    <li id="button-collection" ><a><?php _e('Galleries','atelierbourgeons'); ?></a></li>
                                     <li><a id="button-blog" href="<?php echo get_permalink( $blog_id);?>"><?php _e('Blog','atelierbourgeons'); ?> </a></li>
                                     <?php if (is_user_logged_in()) { 
                                         echo '<li><a id="button-account" href="'. get_pll_wc_url( 'myaccount' ,null) .'">' . __('Account','atelierbourgeons') . '</a></li>';
@@ -290,7 +291,7 @@ function has_banner() {
             foreach ( $parent_cats as $parent_cat ) {
                 get_term($parent_cat);
                 
-                echo '<div id="sub-menu-' . get_term( $parent_cat, 'product_cat' )->name . '" style="display:none" class="sub-category-section sub-header-menu">';
+                echo '<div id="sub-menu-' . get_term( $parent_cat, 'product_cat' )->slug . '" style="display:none" class="sub-category-section sub-header-menu">';
                 echo '<h4>' . __('Categories','atelierbourgeons') . '</h4>';
                 echo '<ul>';
                 display_subcats_from_parentcat_by_ID($parent_cat);
@@ -320,7 +321,10 @@ function has_banner() {
                     //$term_img = wp_get_attachment_url(  $thumb_id );
                     $image_meta = wp_get_attachment_image_src( $thumb_id, 'large' );
                     //$image_meta = wp_get_attachment_image_src( get_post_thumbnail_id( woocommerce_get_page_id('shop') ), 'large' );
-                }                    
+                }
+                else if (is_home()) {
+                    $image_meta = wp_get_attachment_image_src( get_post_thumbnail_id(get_pll_page_id_by_title('Blog') ), 'large' );
+                }
                 else {
                     $image_meta = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
                 }
@@ -330,7 +334,7 @@ function has_banner() {
                 <h1 class="header-title"> <?php 
                     if (!is_product() && !is_front_page()){
                         if(is_home()) {
-                            echo "Blog";
+                            _e('Blog','atelierbourgeons');
                         }
                         else if (is_shop()) {
                             _e('Shop','atelierbourgeons');

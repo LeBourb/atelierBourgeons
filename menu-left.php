@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-    if(!is_pll_wc('cart')) { ?>
+    //if(!is_pll_wc('cart')) { ?>
     <ul id="menu-left" class="snap-drawer snap-drawer-left" style="display:none;">
         <?php storefront_product_search(); ?>
        
@@ -76,4 +76,4 @@
     </div>
     
 </ul>
-    <?php }?>
+    <?php //}?>

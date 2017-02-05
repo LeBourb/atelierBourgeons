@@ -23,7 +23,7 @@
         </div>
         <div class="separator"></div>
         <div class="text-left">
-            <img src ="<?php echo get_site_url(); echo "/wp-content/themes/atelierbourgeons/img/about/Packaging.jpg"; ?>" />
+            <img src ="<?php echo get_site_url(); echo "/wp-content/themes/atelierbourgeons/img/about/packaging.jpg"; ?>" />
             <div><?php _e('Design and Production','atelierbourgeons')?>
             </div>
         </div>

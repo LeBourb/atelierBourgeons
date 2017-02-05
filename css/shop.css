@@ -143,11 +143,6 @@ main.site-main > div.product.type-product > .summary.entry-summary {
     font-size: 1.5em;
 }
 
-div[itemprop="offers"] {
-    margin-top: 2em;
-    margin-bottom: 2em;
-}
-
 .share-product{
     margin: 0;
 }
@@ -163,6 +158,16 @@ div[itemprop="offers"] {
     margin-bottom: 1em;
     border-radius: 3px;
 }
+
+.itemPhoto.out-of-stock {
+    background: #000 url(../img/rupture.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.itemPhoto.out-of-stock img {
+    opacity: .55;
+}
+
 
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
 

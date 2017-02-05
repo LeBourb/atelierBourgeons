@@ -35,6 +35,7 @@ if ( ! function_exists( 'author_header' ) ) {
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
 	function author_header() {
+            return;
             ?><div class="author-header">
             <?php
 		$time_string = '<time class="entry-date published updated" datetime="%1$s" itemprop="datePublished">%2$s</time>';

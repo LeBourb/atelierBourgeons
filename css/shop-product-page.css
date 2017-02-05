@@ -1,0 +1,21 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 4 févr. 2017, 17:33:46
+    Author     : Romain
+*/
+
+
+div[itemprop="offers"] {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+
+.itemPrice {
+    color: #666;
+    padding-left: 6px;
+}

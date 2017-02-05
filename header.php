@@ -322,6 +322,20 @@ function has_banner() {
                     $image_meta = wp_get_attachment_image_src( $thumb_id, 'large' );
                     //$image_meta = wp_get_attachment_image_src( get_post_thumbnail_id( woocommerce_get_page_id('shop') ), 'large' );
                 }
+                else if(is_product_tag()){
+                   // $categories = get_the_category();
+                    //print_r(get_term($wp_query->get_queried_object()->term_id,'product_tag'));
+                    $taxonomy = get_term($wp_query->get_queried_object()->term_id,'product_tag');
+                    $thumbnail_id = absint( get_woocommerce_term_meta( $taxonomy->term_id, 'thumbnail_id', true ) );
+
+                    if ( $thumbnail_id ) {
+                            $image_meta = wp_get_attachment_image_src( $thumbnail_id , 'large' );
+                    }
+                    //$thumb_id = get_woocommerce_term_meta( $wp_query->get_queried_object()->term_id, 'thumbnail_id', true );
+                    //$term_img = wp_get_attachment_url(  $thumb_id );
+                    //$image_meta = wp_get_attachment_image_src( $thumb_id, 'large' );
+                    //$image_meta = wp_get_attachment_image_src( get_post_thumbnail_id( woocommerce_get_page_id('shop') ), 'large' );
+                }
                 else if (is_home()) {
                     $image_meta = wp_get_attachment_image_src( get_post_thumbnail_id(get_pll_page_id_by_title('Blog') ), 'large' );
                 }
@@ -331,7 +345,9 @@ function has_banner() {
                 echo $image_meta[0];
                 //esc_url(the_post_thumbnail_url( 'large' )) //get_site_url();
                 ?>') no-repeat top center; background-size:cover;">                
+                
                 <h1 class="header-title"> <?php 
+                
                     if (!is_product() && !is_front_page()){
                         if(is_home()) {
                             _e('Blog','atelierbourgeons');

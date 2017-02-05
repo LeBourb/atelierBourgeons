@@ -25,7 +25,11 @@ add_action('init','add_query_args');
 
 */
 
+// custom options
 require (STYLESHEETPATH  . '/plugin.php');    
+
+// product tag image 
+require (STYLESHEETPATH  . '/wp-custom-taxonomy-image.php');
         
 function is_pll_wc( $wc_page)
 { 

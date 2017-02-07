@@ -23,13 +23,13 @@
         </div>
         <div class="separator"></div>
         <div class="text-left">
-            <img src ="<?php echo get_site_url(); echo "/wp-content/themes/atelierbourgeons/img/about/packaging.jpg"; ?>" />
+            <img src ="<?php echo get_site_url(); echo "/wp-content/themes/atelierbourgeons/img/about/Sewing.jpg"; ?>" />
             <div><?php _e('Design and Production','atelierbourgeons')?>
             </div>
         </div>
         <div class="separator"></div>
-        <div class="text-right">
-            <img src ="<?php echo get_site_url(); echo "/wp-content/themes/atelierbourgeons/img/about/Sewing.jpg"; ?>" />
+        <div class="text-right">            
+            <img src ="<?php echo get_site_url(); echo "/wp-content/themes/atelierbourgeons/img/about/packaging.jpg"; ?>" />
             <div><?php _e('Card, Label, Packaging','atelierbourgeons')?>                
             </div>
         </div>

@@ -138,9 +138,9 @@ $(document).ready(function() {
         if($("#menu-langue")) {
             $("#menu-langue").on('click', function () {              
               if($("#langue-widget:hidden").length){                
-                $("#menu-langue").addClass('focus');
+                /*$("#menu-langue").addClass('focus');
                 $($("#langue-widget")[0]).css("display", "block");
-                $("#masthead").removeClass('header-top');
+                $("#masthead").removeClass('header-top');*/
               }
               else  {
                 close_sub_headers(); 

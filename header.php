@@ -180,7 +180,7 @@ function has_banner() {
                             
                             
                                 <ul id="menu-langue">
-                                    <li>                                        
+                                    <li style="cursor: unset;">                                        
                                         <?php 
                                         $prefix = "";
                                         $url = "";

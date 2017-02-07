@@ -27,10 +27,8 @@
                         </ul>-->
                     </li>
                     
-                    <li id="nav-item-returns"><a href="#returns"><?php _e( 'Returns', 'atelierbourgeons' );?></a></li>
-                    <li id="nav-item-shipping"><a href="#shipping"><?php _e( 'Shipping', 'atelierbourgeons' );?></a></li>
-                    <li id="nav-item-standard-form-contract"><a href="#contract"><?php _e( 'Standard form contract', 'atelierbourgeons' );?></a></li>
                     <li id="nav-item-cookie"><a href="#cookie"><?php _e( 'Cookies', 'atelierbourgeons' );?></a></li>
+                    <li id="nav-item-standard-form-contract"><a href="#contract"><?php _e( 'Standard form contract', 'atelierbourgeons' );?></a></li>               
                 </ul>
             </div>
         </nav>

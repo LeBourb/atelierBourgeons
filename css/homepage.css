@@ -71,6 +71,25 @@ section {
     display: inline-block;
 }
 
+.background-img {
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-position-x: right;
+    background-position-y: top;
+    background-size: cover;
+    //transition: background-image 0.2s ease-in-out;
+}
+
+.background-img::before {
+    content: "";
+    display: block;
+    //padding-top: 56.25%;
+    height: 100%;
+    opacity: 0;
+}
+
 .langue{
     position: absolute;
     width: 100%;
@@ -148,14 +167,14 @@ img.bgimg.show {
     animation: fadein 3s;
     display : inline;
 }
-
+/*
 img.bgimg.hide {
     -webkit-transition: fadeout 3s;
     -moz-transition: fadeout 3s;
     -ms-transition: fadeout 3s;
     -o-transition: fadeout 3s;
     display: none;
-}
+}*/
 
 .made_to_order_fleche{
     width: 2em;

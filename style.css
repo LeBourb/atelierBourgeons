@@ -273,25 +273,6 @@ img.bgimgs {
     min-height: 100%;
 }
 
-#bgimgs {
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-clip: border-box;
-    background-origin: padding-box;
-    background-position-x: right;
-    background-position-y: top;
-    background-size: cover;
-    transition: background-image 0.2s ease-in-out;
-}
-
-#bgimgs::before {
-    content: "";
-    display: block;
-    //padding-top: 56.25%;
-    height: 100%;
-}
-
-
 img.bgimgs.portrait {
     width: 100%;
     height: auto;

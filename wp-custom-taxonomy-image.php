@@ -104,7 +104,7 @@ function addcategoryimage($taxonomy){ ?>
 
 			</script>
 			<div class="clear"></div>
-
+</div>
 <?php }//aft_script_css(); }
 
 

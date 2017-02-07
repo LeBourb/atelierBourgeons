@@ -92,7 +92,7 @@
         
     var bgimgs  = new Array();
     var bgFocusX = new Array();
-    
+   var bgFocusY = new Array();
                 <?php 
  
 //$images = get_attached_media('image', $post->ID);
@@ -104,18 +104,27 @@ foreach($images as $image) {
     
         $index++;
    $image_attributes = wp_get_attachment_image_src($image,'large');
-   $image_metas = get_post_meta( $image, 'focus_position_x', true );//( $image->ID ); 
+   $image_metas_x = get_post_meta( $image, 'focus_position_x', true );//( $image->ID ); 
    
    $value = "bgimgs.push(\"$image_attributes[0]\");";
-   if($image_metas != "") {
-    $focus_x = "$image_metas%";
+   if($image_metas_x != "") {
+    $focus_x = "$image_metas_x%";
    }
    else {
     $focus_x = 'right';
    }
    
+   $image_metas_y = get_post_meta( $image, 'focus_position_y', true );
+   if($image_metas_y != "") {
+    $focus_y = "$image_metas_y%";
+   }
+   else {
+    $focus_y = 'center';
+   }
+   
    echo ($value);
-   echo "bgFocusX.push(\"$focus_x\")";
+   echo "bgFocusX.push(\"$focus_x\");";
+   echo "bgFocusY.push(\"$focus_y\");";
    ?>
             
             
@@ -126,23 +135,58 @@ foreach($images as $image) {
     
         
         var changeimage = function () {            
-            i++;
-            if(i >= bgimgs.length)
-                i = 0;
-            $('#bgimgs').css('background-image','url(' + bgimgs[i] + ')');         
-            $('#bgimgs').css('background-position-x',bgFocusX[i]);
+            
+            $("#wrapper_bottom").css("opacity", 0);
+            $('#wrapper_bottom').css('background-image','url(' + bgimgs[i] + ')');         
+            $('#wrapper_bottom').css('background-position-x',bgFocusX[i]);
+            $('#wrapper_bottom').css('background-position-y',bgFocusY[i]);
+    
+    // Your function
+    // TODO: you should declare this outside of this scope
+        
+            $('#wrapper_bottom')
+                .animate({"opacity": 1}, 2000, function(){
+              //changeImage('#wrapper_top', images[i], 1);
+                //$('#wrapper_top').css('opacity',0);         
+                $('#wrapper_top').css('background-image','url(' + bgimgs[i] + ')');         
+                $('#wrapper_top').css('background-position-x',bgFocusX[i]);
+                $('#wrapper_top').css('background-position-y',bgFocusY[i]);
+                $('#wrapper_top')
+                //.animate({"opacity": 1}, 500, function(){                    
+                    if (++i >= bgimgs.length) { i = 0; } 
+                    $("#wrapper_bottom").css("opacity", 0);
+                    $('#wrapper_bottom').css('background-image','url(' + bgimgs[i] + ')');         
+                    $('#wrapper_bottom').css('background-position-x',bgFocusX[i]);
+                    $('#wrapper_bottom').css('background-position-y',bgFocusY[i]);
+               // });
+              
+              //changeImage('#wrapper_bottom', images[i]);
+              
+              
+              
+          });
+        
+  
             
         };
-        window.setInterval(changeimage, 4000);
-    
+        window.setInterval(changeimage, 6000);
+    changeimage();
 
 });    
 
     
 </script>
         
-        <div id="bgimgs" class="board" style="background-image: url(<?php echo the_post_thumbnail_url( 'large' ); ?>);">
-            
+        <div id="wrapper_top" class="background-img" style=" 
+            position: relative;
+            z-index: 0">            
+            <div id='wrapper_bottom'  class="background-img" style=" z-index: -1;
+            top: 0;
+            height: 100%;
+            position: absolute;
+            width: 100%;"></div>
+        </div>        
+</div>
             
             <?php 
  

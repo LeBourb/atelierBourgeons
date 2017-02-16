@@ -82,9 +82,26 @@ $(document).ready(function() {
         
         // On doit remplir équitable les colonnes... 
         if(col3) {
-            var del_left_right = bottom_left  - bottom_right;
+            /*var del_left_right = bottom_left  - bottom_right;
             var del_right_middle = bottom_right  - bottom_middle;
-            var del_middle_left = bottom_middle  - bottom_left;
+            var del_middle_left = bottom_middle  - bottom_left;*/
+            //_isleft = false, _isright = false, _ismiddle = false;
+            if (bottom_left < bottom_right && bottom_left < bottom_middle){
+                _isleft = true;
+                _ismiddle = false;
+                _isright = false;
+            }
+            else if (bottom_right < bottom_left && bottom_right < bottom_middle){
+                _isright = true;
+                _isleft = false;
+                _ismiddle = false;                
+            }
+            else if (bottom_middle < bottom_left && bottom_middle < bottom_right){
+                _ismiddle = true;
+                _isleft = false;
+                _isright = false;
+            }
+                /*
             if( Math.abs( del_left_right ) > article.height())  {
                 if(del_left_right > 0) {
                     _isleft = false;
@@ -117,7 +134,7 @@ $(document).ready(function() {
                     _isright = false;
                     _ismiddle = true;
                 }
-            }
+            }*/
         }
         
         

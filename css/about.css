@@ -45,6 +45,8 @@ section {
     height: 100%;
     //width: calc(100% - attr(height));
     padding: 4%;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .title {
@@ -118,10 +120,6 @@ section {
     background-image: url(../img/about/OriginalBackground.jpg);
     background-size: cover;
     padding-bottom: 10%;
-}
-
-.original .title {
-    color: white;
 }
 
 .original > div {

@@ -6,6 +6,12 @@
  *
  * @package storefront coucou
  */
+
+if( (pll_current_language() != 'fr') && !current_user_can('administrator') ) {
+    wp_redirect( get_permalink(pll_get_post(get_the_ID() , 'fr')) );
+    exit;
+}
+
 function has_banner() {
     if ( (!is_product() && !is_front_page() && !is_page()) 
                || is_pll_wc('cart')

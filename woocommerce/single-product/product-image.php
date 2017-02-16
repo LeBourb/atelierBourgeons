@@ -31,7 +31,10 @@ global $post, $product;
 			$image            = get_the_post_thumbnail( $post->ID, 'large', array(
 				'title'	 => $props['title'],
 				'alt'    => $props['alt'],
+                                'sizes'  => '(max-width: 500px) 500w,(max-width: 600px) 600w, (max-width: 768px) 768w, (max-width: 1080px) 1080w, 1920w'
 			) );
+                        
+                         
                        
 			echo apply_filters(
 				'woocommerce_single_product_image_html',

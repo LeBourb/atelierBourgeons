@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 // DISABLE SHOP PAGE !!! 
-if(is_shop()) {
+if(is_shop() && ( get_search_query() == "" ) ) {
     wp_redirect( get_home_url() );
     exit;
 }

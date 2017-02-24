@@ -73,7 +73,7 @@
                                 <div class="column middle">
                                     <h5><?php _e('Follow us','atelierbourgeons');?></h5>
                                     <ul class="social_icons">
-                                        <li id="facebook" href="http://www.facebook.com/share.php?u=<?php echo get_permalink () ?>" onclick="window.open(this.getAttribute('href'), 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" >
+                                        <li id="facebook" href="https://www.facebook.com/atelierbourgeons/" onclick="window.open(this.getAttribute('href'), 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" >
                                             <a class="fa fa-facebook fa-lg"></a>
                                         </li>
                                         <li id="instagram">

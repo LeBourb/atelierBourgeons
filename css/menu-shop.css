@@ -233,6 +233,8 @@ header.header-top {
     width: 80%;
     font-family: 'Open Sans', sans-serif;
     line-height: 1;
+    max-height: 2em;
+    height: auto;
     //background: #ffffff;
 }
 #menu-line {

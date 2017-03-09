@@ -245,6 +245,15 @@ $(document).ready(function() {
             });
              
          });
+         
+         $(".sub-category-elem").each(function(){
+             $(this).on('mouseover', function(elem) {
+                 $('#eshop-categories-image').attr('src',$(this).attr('thumbnail-url'));
+             });
+             $(this).on('mouseout', function(elem) {
+                 $('#eshop-categories-image').attr('src','');
+             });
+         });
         
     var is_top = false;
     var scroll_listerner = function(force){

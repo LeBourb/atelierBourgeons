@@ -5,12 +5,6 @@
  * @package storefront
  */
 
-/**
- * Query WooCommerce activation
- */
-function is_woocommerce_activated() {
-	return class_exists( 'woocommerce' ) ? true : false;
-}
 
 /**
  * Call a shortcode function by tag name.
@@ -23,6 +17,7 @@ function is_woocommerce_activated() {
  *
  * @return string|bool False on failure, the result of the shortcode on success.
  */
+if ( ! function_exists( 'storefront_do_shortcode' ) ) {
 function storefront_do_shortcode( $tag, array $atts = array(), $content = null ) {
 	global $shortcode_tags;
 
@@ -32,6 +27,7 @@ function storefront_do_shortcode( $tag, array $atts = array(), $content = null )
 
 	return call_user_func( $shortcode_tags[ $tag ], $atts, $content, $tag );
 }
+}
 
 /**
  * Get the content background color
@@ -40,6 +36,7 @@ function storefront_do_shortcode( $tag, array $atts = array(), $content = null )
  * @since  1.6.0
  * @return string the background color
  */
+if ( ! function_exists( 'storefront_get_content_background_color' ) ) {
 function storefront_get_content_background_color() {
 	// Set the bg color var based on whether the Storefront designer has set a content bg color or not.
 	$content_bg_color = get_theme_mod( 'sd_content_background_color' );
@@ -55,6 +52,7 @@ function storefront_get_content_background_color() {
 
 	return '#' . $bg_color;
 }
+}
 
 /**
  * Apply inline style to the Storefront header.
@@ -62,6 +60,7 @@ function storefront_get_content_background_color() {
  * @uses  get_header_image()
  * @since  2.0.0
  */
+if ( ! function_exists( 'storefront_header_styles' ) ) {
 function storefront_header_styles() {
 	$is_header_image = get_header_image();
 
@@ -79,6 +78,7 @@ function storefront_header_styles() {
 		echo esc_attr( $style . ': ' . $value . '; ' );
 	}
 }
+}
 
 /**
  * Adjust a hex color brightness
@@ -89,6 +89,7 @@ function storefront_header_styles() {
  * @return string        brightened/darkened hex color
  * @since  1.0.0
  */
+if ( ! function_exists( 'storefront_adjust_color_brightness' ) ) {
 function storefront_adjust_color_brightness( $hex, $steps ) {
 	// Steps should be between -255 and 255. Negative = darker, positive = lighter.
 	$steps  = max( -255, min( 255, $steps ) );
@@ -116,6 +117,7 @@ function storefront_adjust_color_brightness( $hex, $steps ) {
 
 	return '#' . $r_hex . $g_hex . $b_hex;
 }
+}
 
 /**
  * Sanitizes choices (selects / radios)
@@ -125,6 +127,7 @@ function storefront_adjust_color_brightness( $hex, $steps ) {
  * @param array $setting the setting object.
  * @since  1.3.0
  */
+if ( ! function_exists( 'storefront_sanitize_choices' ) ) {
 function storefront_sanitize_choices( $input, $setting ) {
 	// Ensure input is a slug.
 	$input = sanitize_key( $input );
@@ -135,7 +138,7 @@ function storefront_sanitize_choices( $input, $setting ) {
 	// If the input is a valid key, return it; otherwise, return the default.
 	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }
-
+}
 /**
  * Checkbox sanitization callback.
  *
@@ -146,15 +149,18 @@ function storefront_sanitize_choices( $input, $setting ) {
  * @return bool Whether the checkbox is checked.
  * @since  1.5.0
  */
+if ( ! function_exists( 'storefront_sanitize_checkbox' ) ) {
+
 function storefront_sanitize_checkbox( $checked ) {
 	return ( ( isset( $checked ) && true == $checked ) ? true : false );
 }
-
+}
 /**
  * Schema type
  *
  * @return void
  */
+if ( ! function_exists( 'storefront_html_tag_schema' ) ) {
 function storefront_html_tag_schema() {
 	_deprecated_function( 'storefront_html_tag_schema', '2.0.2' );
 
@@ -171,6 +177,7 @@ function storefront_html_tag_schema() {
 
 	echo 'itemscope="itemscope" itemtype="' . esc_attr( $schema ) . esc_attr( $type ) . '"';
 }
+}
 
 /**
  * Sanitizes the layout setting
@@ -180,6 +187,7 @@ function storefront_html_tag_schema() {
  * @param array $input the layout options.
  * @since 1.0.3
  */
+if ( ! function_exists( 'storefront_sanitize_layout' ) ) {
 function storefront_sanitize_layout( $input ) {
 	_deprecated_function( 'storefront_sanitize_layout', '2.0', 'storefront_sanitize_choices' );
 
@@ -194,6 +202,7 @@ function storefront_sanitize_layout( $input ) {
 		return '';
 	}
 }
+}
 
 /**
  * Storefront Sanitize Hex Color
@@ -201,6 +210,7 @@ function storefront_sanitize_layout( $input ) {
  * @param string $color The color as a hex.
  * @todo remove in 2.1.
  */
+if ( ! function_exists( 'storefront_sanitize_hex_color' ) ) {
 function storefront_sanitize_hex_color( $color ) {
 	_deprecated_function( 'storefront_sanitize_hex_color', '2.0', 'sanitize_hex_color' );
 
@@ -215,6 +225,7 @@ function storefront_sanitize_hex_color( $color ) {
 
 	return null;
 }
+}
 
 /**
  * Returns true if a blog has more than 1 category.
@@ -222,6 +233,7 @@ function storefront_sanitize_hex_color( $color ) {
  * @return bool
  * @todo remove in 2.1.
  */
+if ( ! function_exists( 'storefront_categorized_blog' ) ) {
 function storefront_categorized_blog() {
 	_deprecated_function( 'storefront_categorized_blog', '2.0' );
 
@@ -245,5 +257,18 @@ function storefront_categorized_blog() {
 	} else {
 		// This blog has only 1 category so storefront_categorized_blog should return false.
 		return false;
+	}
+}
+}
+
+
+
+
+if ( ! function_exists( 'is_woocommerce_activated' ) ) {
+	/**
+	 * Query WooCommerce activation
+	 */
+	function is_woocommerce_activated() {
+		return class_exists( 'woocommerce' ) ? true : false;
 	}
 }

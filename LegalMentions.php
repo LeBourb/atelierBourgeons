@@ -22,7 +22,7 @@
                     }
 </style>
 </head>
-<body style="height:100%;width:100%;">
+<body style="overflow-y: hidden;width:100%;">
     <?php 
     get_header(); 
  ?>

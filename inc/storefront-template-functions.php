@@ -835,3 +835,40 @@ if ( ! function_exists( 'storefront_init_structured_data' ) ) {
 		}
 	}
 }
+
+if ( ! function_exists( 'storefront_post_content' ) ) {
+	/**
+	 * Display the post content with a link to the single post
+	 *
+	 * @since 1.0.0
+	 */
+	function storefront_post_content() {
+		?>
+		<div class="entry-content">
+		<?php
+
+		/**
+		 * Functions hooked in to storefront_post_content_before action.
+		 *
+		 * @hooked storefront_post_thumbnail - 10
+		 */
+		do_action( 'storefront_post_content_before' );
+
+		the_content(
+			sprintf(
+				__( 'Continue reading %s', 'storefront' ),
+				'<span class="screen-reader-text">' . get_the_title() . '</span>'
+			)
+		);
+
+		do_action( 'storefront_post_content_after' );
+
+		wp_link_pages( array(
+			'before' => '<div class="page-links">' . __( 'Pages:', 'storefront' ),
+			'after'  => '</div>',
+		) );
+		?>
+		</div><!-- .entry-content -->
+		<?php
+	}
+}

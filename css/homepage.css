@@ -12,6 +12,11 @@
     padding: 0!important;
 }
 
+html {
+    overflow-y: hidden;
+    max-height: 100%;    
+}
+
 .socialicon {
     position: relative;
     display: inline-block;
@@ -79,13 +84,11 @@ section {
     background-position-x: right;
     background-position-y: top;
     background-size: cover;
-    //transition: background-image 0.2s ease-in-out;
 }
 
 .background-img::before {
     content: "";
     display: block;
-    //padding-top: 56.25%;
     height: 100%;
     opacity: 0;
 }
@@ -159,23 +162,6 @@ img.bgimg {
     min-height: 100%;
 }
 
-img.bgimg.show {
-    -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 3s; /* Firefox < 16 */
-    -ms-animation: fadein 3s; /* Internet Explorer */
-    -o-animation: fadein 3s; /* Opera < 12.1 */
-    animation: fadein 3s;
-    display : inline;
-}
-/*
-img.bgimg.hide {
-    -webkit-transition: fadeout 3s;
-    -moz-transition: fadeout 3s;
-    -ms-transition: fadeout 3s;
-    -o-transition: fadeout 3s;
-    display: none;
-}*/
-
 .made_to_order_fleche{
     width: 2em;
     margin-left: auto;
@@ -200,7 +186,6 @@ img.bgimg.hide {
     position: relative;
     width: 50%;
     height: auto;
-    //min-height: 470px;
     bottom: 0px;
     left: 0px;
     right: 0px;
@@ -209,9 +194,7 @@ img.bgimg.hide {
     margin-left: 25%;
     margin-right: 25%;
     background-color: #fff;
-    //z-index: 100;
     display: block;
-    //padding: 10px 20px 30px 20px;
 }
 
 #about-page.hide {
@@ -296,9 +279,7 @@ img.separator {
 }
 
 #about-txt , #custom-txt {
-    //float: right;
     text-align: justify;
-    //width: 50%;
 }
 
 #custom-txt{
@@ -517,7 +498,6 @@ body {
         height: auto;
         margin-left: 0;
         margin-right: 0;
-        //overflow-y: scroll;
     }
 
 

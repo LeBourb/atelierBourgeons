@@ -32,7 +32,7 @@ get_header( 'shop' ); ?>
 		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
 		 * @hooked woocommerce_breadcrumb - 20
 		 */
-		do_action( 'woocommerce_before_main_content' );
+		//do_action( 'woocommerce_before_main_content' );
 	?>
 
 		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
@@ -60,6 +60,7 @@ get_header( 'shop' ); ?>
 				 * @hooked woocommerce_result_count - 20
 				 * @hooked woocommerce_catalog_ordering - 30
 				 */
+                                remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 				do_action( 'woocommerce_before_shop_loop' );
 			?>
 
@@ -86,7 +87,8 @@ get_header( 'shop' ); ?>
 
 		<?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
 
-			<?php wc_get_template( 'loop/no-products-found.php' ); ?>
+			<?php 
+                        wc_get_template( 'loop/no-products-found.php' ); ?>
 
 		<?php endif; ?>
 

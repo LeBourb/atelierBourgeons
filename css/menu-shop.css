@@ -1,4 +1,4 @@
-//@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
 
 header.header-top > .site-branding {
     display: flex!important;
@@ -19,18 +19,12 @@ header > .site-branding , header.header-down > .site-branding {
     margin-left: auto;
     margin-right: auto;
     height: inherit;
-    //padding-top: 1em !important;
-    //padding-bottom: 1em !important;
 }
 
 header.admin.header-top {
     margin-top: 2em;
 }
 
-#cssmenu > div {
-    height: 100%;
-    display: inline-flex;
-}
 
 header.site-header-menu.header-top {
     position: relative;
@@ -93,11 +87,9 @@ header.site-header-menu.header-down {
 
 #cssmenu,
 #cssmenu > div > ul {
-    display: inline-block;
+    display: inline-flex;
     float: left;
     border: 0px!important;
-    //margin: 0px!important;
-    //padding: 0px!important;
     margin-left: 0;
     width: auto;
     z-index: 1;
@@ -157,12 +149,9 @@ header.site-header-menu.header-down {
 
 .site-header-menu.header-top.banner {
     background-color: transparent!important;
-    //transition: padding 0.3s ease-in-out, background 0.3s ease-in, border-color 0.2s ease-in-out;
-    //transition: opacity 0.5s ease-in-out 0s;
     opacity: 1;
     fill: white;
     color: white;
-    //will-change:padding, background, border-color;
     border-bottom: none!important;
 }
 
@@ -173,11 +162,6 @@ header.header-top {
 
 .menu-shop , #button-signin , #open-search , .fa {
     cursor: pointer;
-}
-
-
-.woocommerce-MyAccount-navigation-link {
-    //display: inline-block;
 }
 
 .menu-langue > li > a {
@@ -235,7 +219,6 @@ header.header-top {
     line-height: 1;
     max-height: 2em;
     height: auto;
-    //background: #ffffff;
 }
 #menu-line {
     position: relative;
@@ -252,13 +235,11 @@ header.header-top {
 #cssmenu > div > ul {
     position:relative;
     margin-left: 0.5em!important;
+    padding-left: 0;
 }
 
 #cssmenu > div > ul > li , i {
-    //float: left;
-    //height: 100%;
     margin: 1px;
-    //background-color: #FFF;
     color: inherit;
     opacity: 0.9;
     padding-bottom: 5px;
@@ -273,9 +254,27 @@ header#masthead .sub-category-section ul{
     margin: 0;
 }
 
+.sub-category-section {
+    margin-right: 2em;
+}
+
 header#masthead #sub-menu-collection a {
     margin-left: 80%;
     display: block;
+}
+
+#eshop-categories-container {
+    display: inline-flex;
+}
+
+#eshop-categories-container a {
+    font-weight: 200;
+    font-size: 0.8em;
+}
+
+#eshop-categories-meta {
+    float: right;
+    width: 40%;
 }
 
 #cssmenu.align-center > div > ul {
@@ -305,7 +304,6 @@ header#masthead #sub-menu-collection a {
 }
 
 .site-branding{
-    width: 100%!important;
     margin-bottom: 0!important;
     height: inherit!important;
     padding-left: 2em;
@@ -324,7 +322,6 @@ header#masthead #sub-menu-collection a {
     font-size: 15px!important;
 }
 
-//#cssmenu > ul > li:hover > a,
 #cssmenu > div > ul > li.active > a {
     color: #009ae1;
 }
@@ -341,7 +338,7 @@ header#masthead #sub-menu-collection a {
 }
 
 .menu-right {
-    float: right;
+    margin-left: auto;
 }
 
 #menu-right {
@@ -430,7 +427,6 @@ form.woocommerce-product-search{
 
 .widget_shopping_cart {
     position:relative;
-    //display: none;
 }
 
 
@@ -573,7 +569,7 @@ form.woocommerce-product-search{
 }
 
 #search-box {
-    float: right;
+    margin-left: auto;
 }
 
 .site-header-menu{
@@ -613,9 +609,14 @@ form.woocommerce-product-search{
         min-height: 2em;
         vertical-align: middle;
         line-height: 1;
+        cursor:pointer;
     }
 
-    #menu-left div .menu-item {
+    #menu-left div .menu-item.level-2{
+        padding-left: 0.5em;
+    }
+    
+    #menu-left div .menu-item.level-3{
         padding-left: 1em;
     }
 
@@ -726,8 +727,6 @@ form.woocommerce-product-search{
         display: none;
     }
     #cssmenu ul {
-        //width: 100%;
-        //display: none;
         top: auto;
         z-index: 10;
         display: none;
@@ -811,18 +810,15 @@ form.woocommerce-product-search{
         content: '';
         position: absolute;
         top: 10px;
-        //right: 20px;
         display: block;
         width: 15px;
         height: 3px;
         border-top: 2px solid #000000;
-        //border-bottom: 2px solid #000000;
     }
     #menu-button-left::before {
         content: '';
         position: absolute;
         top: 15px;
-        //right: 20px;
         display: block;
         width: 15px;
         height: 3px;

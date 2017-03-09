@@ -90,7 +90,7 @@ add_action( 'storefront_single_post',		'storefront_post_content',		30 );
 
 add_action( 'storefront_single_post_after',	'author_header',	10 );
 add_action( 'storefront_single_post_after',	'storefront_display_comments',	20 );
-add_action( 'storefront_single_post_after',	'storefront_post_nav',			30 );
+//add_action( 'storefront_single_post_after',	'storefront_post_nav',			30 );
 
 /**
  * Pages

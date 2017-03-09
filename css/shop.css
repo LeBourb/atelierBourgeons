@@ -9,7 +9,6 @@ and open the template in the editor.
 */
 
 .content-area {
-    //margin: inherit !important;
     width: auto !important;
     margin-right: 0!important;
 }
@@ -28,9 +27,6 @@ and open the template in the editor.
     width: 263px;
     right: 0;
 }
-body {
-    overflow: scroll;
-}
 
 .content-area {
     width: 100%!important;
@@ -45,7 +41,6 @@ body {
 }
 
 .woocommerce-main-image.zoom{
-    //height: initial;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -90,7 +85,7 @@ body {
     margin: 2em;
 }
 
-.thumb_img {
+.woocommerce-page div.product div.thumbnails a.thumb_img {
     display: inline-block;
     width: 20%;
     margin-right: 5%;

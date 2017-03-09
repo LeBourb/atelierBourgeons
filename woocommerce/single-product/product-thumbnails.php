@@ -22,8 +22,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $post, $product, $woocommerce;
 
-$attachment_ids = $product->get_gallery_attachment_ids();
 
+
+$product_fr = new WC_Product(pll_get_post($product->get_id(),'fr'));
+$attachment_ids = $product_fr->get_gallery_attachment_ids();
 if ( $attachment_ids ) {
 	$loop 		= 0;
 	$columns 	= apply_filters( 'woocommerce_product_thumbnails_columns', 3 );

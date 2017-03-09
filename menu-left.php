@@ -7,17 +7,18 @@
  */
 
     //if(!is_pll_wc('cart')) { ?>
-    <ul id="menu-left" class="snap-drawer snap-drawer-left" style="display:none;">
+    <div id="menu-left" class="snap-drawer snap-drawer-left" style="display:none;">
         <?php storefront_product_search(); ?>
        
             
     <li class="menu-item first" ><a href="<?php echo get_home_url(); ?>"><?php _e('Home','atelierbourgeons') ?></a></li>
     
 
-
+<li class="menu-item list" ><a><?php _e('Shop','atelierbourgeons') ?><i class="fa fa-chevron-down"></i></a></li>
+<div style="display:none;">
         <?php
         $parent_cats = array();
-        $product_categories = get_terms( 'product_cat');
+        $product_categories = get_terms(  array( 'taxonomy' => 'product_cat') );//'product_cat');
         foreach ( $product_categories as $woo_cat ) {
                 $woo_cat_id = $woo_cat->term_id; //category ID
                 $woo_cat_name = $woo_cat->name; //category name
@@ -33,7 +34,7 @@
             if (!in_array($last_parent_cat_value, $parent_cats)) {               
                array_push($parent_cats, $last_parent_cat_value);
                $parent_cat_name = get_term( $last_parent_cat_value, 'product_cat' )->name;
-               echo '<li class="menu-item list" ><a href="#">' . $parent_cat_name . '<i class="fa fa-chevron-down"></i></a></li>';
+               echo '<li class="menu-item list level-2" ><a href="#">' . $parent_cat_name . '<i class="fa fa-chevron-down"></i></a></li>';
                $args = array(
                    'hierarchical' => 1,
                    'show_option_none' => '',
@@ -45,7 +46,7 @@
                 echo '<div style="display:none">';
                 foreach ($subcats as $sc) {
                   $link = get_term_link( $sc->slug, $sc->taxonomy );
-                    echo '<li class="menu-item" ><a href="'. $link .'">'.$sc->name.'</a></li>';
+                    echo '<li class="menu-item level-3" ><a href="'. $link .'">'.$sc->name.'</a></li>';
                 }
                 echo '</div>';
                
@@ -53,8 +54,8 @@
             }
         }       
     } 
-        ?>
-
+?>
+</div>
 
     <li class="menu-item" ><a href="<?php echo get_permalink( $blog_id);?>"> <?php _e('Blog','atelierbourgeons'); ?> </a></li>
     <li class="menu-item" ><a href="<?php echo get_pll_page_by_title("Galerie17W");?>"><?php _e('17W','atelierbourgeons') ?></a></li>
@@ -75,5 +76,4 @@
         <li class="menu-item"><a href="<?php echo get_pll_page_by_title("Help") . '/#payment'; ?>"> <?php _e('Payment','atelierbourgeons'); ?> </a></li>
     </div>
     
-</ul>
-    <?php //}?>
+</div>

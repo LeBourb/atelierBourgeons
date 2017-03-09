@@ -19,6 +19,8 @@ function has_banner() {
                || is_pll_wc('myaccount')
                || is_page("About")
                || is_page("Legal Mentions")
+               || is_page("Products")
+               || is_page("Help")
                || is_home()               
        ) {
         return true;
@@ -57,7 +59,7 @@ function has_banner() {
     
     $url_fr = get_pll_url('fr');
     $url_en = get_pll_url('en');
-    $url_jp = get_pll_url('jp');
+    $url_jp = get_pll_url('ja');
     
     $cur_lang = pll_current_language(); 
                     
@@ -80,7 +82,7 @@ function has_banner() {
 
 
 
-<body <?php body_class(); ?>>
+<body>
     <?php
     require 'menu-left.php';
     require 'menu-right.php';
@@ -135,30 +137,8 @@ function has_banner() {
                                 <div class="menu-left">
                                 <ul id="menu-large">
                                     
-                                   <li id="sp_close" style="display:none"><a id="sp_close_button">メニューを閉じる</a></li>
-                      <?php     $product_categories = get_terms( 'product_cat');
-    $parent_cats = array();
-    foreach ( $product_categories as $woo_cat ) {
-        $woo_cat_id = $woo_cat->term_id; //category ID
-        $woo_cat_name = $woo_cat->name; //category name
-        
-        // gets an array of all parent category levels
-        $product_parent_categories_all_hierachy = get_ancestors( $woo_cat_id , 'product_cat' );  
-
-        // This cuts the array and extracts the last set in the array
-        $last_parent_cat = array_slice($product_parent_categories_all_hierachy, -1, 1, true);        
-        foreach($last_parent_cat as $last_parent_cat_value){
-            // $last_parent_cat_value is the id of the most top level category, can be use whichever one like                        
-            if (!in_array($last_parent_cat_value, $parent_cats)) {               
-               array_push($parent_cats, $last_parent_cat_value);
-               $parent_cat_name = get_term( $last_parent_cat_value, 'product_cat' )->name;            
-               $parent_cat_slug = get_term( $last_parent_cat_value, 'product_cat' )->slug;
-               echo '<li class="menu-parent-category" id="' . $parent_cat_slug . '"><a>' . $parent_cat_name . '</a></li>';
-               // display the parent category
-            }
-        }       
-    } 
- ?>
+                                   <li class="menu-parent-category" id="button-eshop" ><a><?php _e('Shop','atelierbourgeons'); ?></a></li>
+  
                                     
                                 </ul>
                                     </div>
@@ -196,8 +176,8 @@ function has_banner() {
                                         } else if (pll_current_language() == "en") {
                                             $prefix = "En";
                                             $url = $url_en;
-                                        } else if (pll_current_language() == "jp") {
-                                            $prefix = "jp";
+                                        } else if (pll_current_language() == "ja") {
+                                            $prefix = "Jp";
                                             $url = $url_fr;
                                         }
                                         echo '<a>'. $prefix  .'</a>'; ?>                                    
@@ -268,7 +248,7 @@ function has_banner() {
                 if($cur_lang != 'en') {
                     echo '<li><a href="'. $url_en .'">English</a></li>';
                 }
-                if($cur_lang != 'jp') {
+                if($cur_lang != 'ja') {
                     echo '<li><a href="'. $url_jp .'">日本語</a></li>';
                 }
                 ?>                                    
@@ -288,22 +268,58 @@ function has_banner() {
                 $subcats = get_categories($args);
                 
                 foreach ($subcats as $sc) {
-                  $link = get_term_link( $sc->slug, $sc->taxonomy );
-                    echo '<li><a href="'. $link .'">'.$sc->name.'</a></li>';
+                    $link = get_term_link( $sc->slug, $sc->taxonomy );                    
+                   
+                    $thumbnail_id = absint( get_woocommerce_term_meta( $sc->term_id, 'thumbnail_id', true ) );
+                    $image = "";
+                    if ( $thumbnail_id ) {
+                        $image = wp_get_attachment_image_url( $thumbnail_id , 'large' );
+                    }
+                    echo '<li class="sub-category-elem" thumbnail-url="'. $image . '" ><a href="'. $link .'" >' . $sc->name . '</a></li>';
                 }
-                
             }
-        
+            // FOR HIDE/SHOW
+            echo '<div id="sub-menu-button-eshop" style="display:none" class="sub-header-menu">';
+            echo '<div id="eshop-categories-container">';
+            
+            $parent_cats = array();
+            $product_categories = null;
+           $product_categories = get_terms( array( 'taxonomy' => 'product_cat'));
+                    //'product_cat', array( 'taxonomy' => 'product_cat' ));
+            //print_r($product_categories);
+            foreach ( $product_categories as $woo_cat ) {
+                    $woo_cat_id = $woo_cat->term_id; //category ID
+                    $woo_cat_name = $woo_cat->name; //category name
+
+
+                // gets an array of all parent category levels
+                $product_parent_categories_all_hierachy = get_ancestors( $woo_cat_id , 'product_cat' );  
+
+                // This cuts the array and extracts the last set in the array
+                $last_parent_cat = array_slice($product_parent_categories_all_hierachy, -1, 1, true);        
+                foreach($last_parent_cat as $last_parent_cat_value){
+                    // $last_parent_cat_value is the id of the most top level category, can be use whichever one like                        
+                    if (!in_array($last_parent_cat_value, $parent_cats)) {               
+                        array_push($parent_cats, $last_parent_cat_value);
+                    }
+                }
+            }
             foreach ( $parent_cats as $parent_cat ) {
-                get_term($parent_cat);
-                
-                echo '<div id="sub-menu-' . get_term( $parent_cat, 'product_cat' )->slug . '" style="display:none" class="sub-category-section sub-header-menu">';
-                echo '<h4>' . __('Categories','atelierbourgeons') . '</h4>';
+                echo '<div class="sub-category-section">';
+                $parent_term = get_term($parent_cat);
+                echo '<h5>' . $parent_term->name . '</h5>';
                 echo '<ul>';
                 display_subcats_from_parentcat_by_ID($parent_cat);
-                echo '</ul>';
+                echo '</ul>';    
                 echo '</div>';
             }
+            echo '</div>';
+            
+            echo '<div id="eshop-categories-meta">';
+            echo '<img id="eshop-categories-image" />';
+            echo '</div>';
+            
+            echo '</div>';
             
             echo '<div id="sub-menu-collection" style="display:none" class="sub-menu-section sub-header-menu">';
             

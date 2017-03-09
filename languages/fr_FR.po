@@ -8,9 +8,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-02-12 16:40+0100\n"
+"PO-Revision-Date: 2017-02-26 19:19+0100\n"
 "Language-Team: EMAIL@ADDRESS\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.12\n"
 "Last-Translator: \n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Language: fr_FR\n"
@@ -57,7 +57,7 @@ msgid "Sign In"
 msgstr "Connexion"
 
 msgid "Blog"
-msgstr "Journal"
+msgstr "Blog"
 
 msgid "17W"
 msgstr "Automne-Hiver 2017"
@@ -75,7 +75,7 @@ msgid "Home"
 msgstr "Accueil"
 
 msgid "Shop"
-msgstr "Boutique"
+msgstr "E-Boutique"
 
 # footer.php
 msgid "Express Delivery"
@@ -118,7 +118,7 @@ msgid "Original Collection"
 msgstr "Collections Originales"
 
 msgid "Fabrics and Accessories"
-msgstr "<p>Tissus & Accessoires</p>Dans un monde de consommation, on trouve beaucoup de matières premières de haute qualité abandonnées dans des entrepôts. On appelle cela des chutes car, dans le processus de fabrication industriel, elle ne sont pas rentables. Atelier Bourgeons donne vie à ces matières inutilisées : nous les achetons aux maisons (de création?) ou aux professionnels et nous les transformons. Chaque nouvelle matière est ensuite intégrée à un modèle de la collection et, associée à des accessoires vintage, devient une création originale et une pièce unique."
+msgstr "<p>Tissus & Accessoires</p>Dans un monde de consommation, on trouve beaucoup de matières premières de haute qualité abandonnées dans des entrepôts. On appelle cela des chutes car, dans le processus de fabrication industriel, elle ne sont pas rentables. Atelier Bourgeons donne vie à ces matières inutilisées : nous les achetons aux maisons de créations ou aux professionnels et nous les transformons. Chaque nouvelle matière est ensuite intégrée à un modèle de la collection et, associée à des accessoires vintage, devient une création originale et une pièce unique."
 
 msgid "Design and Production"
 msgstr "<p>Creation & Fabrication</p> Ce qui guide le processus de création de nos collections c’est l’idée d’offrir à chaque femme ‘‘un charme intemporel en parfaite harmonie avec le rétro et le moderne’’ pour leur permettre d’exprimer leur personnalité, loin des tendances qui les enferment. Chaque pièce est entièrement confectionnée au sein de l’atelier à la manière d’une maison de haute couture."
@@ -252,3 +252,11 @@ msgstr "Lire l'article"
 # help page, help.php
 msgid "Standard form contract"
 msgstr "Conditions générales de ventes"
+
+# meta website, google
+msgid "meta-title"
+msgstr "atelier Bourgeons | Vêtements pour femmes et accessoires mode durable fabriquées en France"
+
+# meta website, google
+msgid "meta-description"
+msgstr "Vêtements pour femmes et accessoires mode durable fabriquées en France. Entreprise de création de vêtements artisanale et vente de vêtements customisés de seconde main"

@@ -77,7 +77,7 @@
                                             <a class="fa fa-facebook fa-lg"></a>
                                         </li>
                                         <li id="instagram">
-                                            <a class="fa fa-instagram fa-lg" href="https://www.instagram.com/atelierbourgeons/" ></a>
+                                            <a class="fa fa-instagram fa-lg" href="https://www.instagram.com/atelier_bourgeons/" ></a>
                                         </li>
                                     </ul>
                                     <div style="clear:both">                                        

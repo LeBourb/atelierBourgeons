@@ -13,7 +13,7 @@
 }
 
 html {
-    overflow-y: hidden;
+    overflow-y: hidden!important;
     max-height: 100%;    
 }
 
@@ -122,6 +122,50 @@ section {
     position: absolute;
     right: 0em;
     bottom: 5em;
+}
+
+#text-field-homepage {
+    position: absolute;
+    z-index: 100;
+    top: 40%;
+    color: white;
+    width: 100%;
+    font-family: IM_FELL;
+    text-align: center;
+}
+
+#text-field-homepage  h1 {    
+    font-size: 48;
+    letter-spacing: 1px;
+    font-weight: 100;
+    margin-bottom: 1px;
+}
+
+#text-field-homepage  h2 {
+    font-size: 40;
+    letter-spacing: 1px;
+    font-weight: 100;
+    margin-bottom: 1px;
+}
+
+
+#text-field-homepage  h3 {
+    font-size: 28;
+    letter-spacing: 1px;
+    padding-top: 0px;
+    margin-bottom: 1px;
+    font-weight: 100;
+}
+
+#text-field-homepage h1, #text-field-homepage h2,#text-field-homepage h3, #text-field-homepage h4, #text-field-homepage h5, #text-field-homepage h6 {
+    color: white;
+    display: inline-flex;
+}
+
+#txt-homepage {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /*.fa-shopping-cart {
@@ -526,6 +570,31 @@ body {
         margin-right: 20%;
         margin-bottom: 5%;
     }
+    
+    #txt-homepage {
+        width:90%;
+    }
+
+#text-field-homepage  h1 {    
+    font-size: 28;
+    letter-spacing: 1px;
+    font-weight: 100;
+    margin-bottom: 1px;
+}
+
+#text-field-homepage  h2 {
+    font-size: 20;
+    letter-spacing: 1px;
+    font-weight: 100;
+    margin-bottom: 1px;
+}
 
 
+#text-field-homepage  h3 {
+    font-size: 16;
+    letter-spacing: 1px;
+    padding-top: 0px;
+    margin-bottom: 1px;
+    font-weight: 100;
+}
 }

@@ -26,7 +26,7 @@ add_action('init','add_query_args');
 */
 //$STYLESHEETPATH = '';
 // custom options
-
+add_theme_support( 'woocommerce' );
 
 require ('plugin.php');    
 
@@ -176,6 +176,7 @@ function get_pll_url($lang)
             wp_register_script('custom-options', get_template_directory_uri() . '/js/custom-options.js' );
             wp_enqueue_script('custom-options');
             
+            
                         
         }
         else if ( is_pll_wc('checkout')) {
@@ -279,6 +280,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 require 'inc/woocommerce/storefront-woocommerce-template-functions.php';
+//require 'woocommerce/includes/class-wc-frontend-scripts.php';
 require 'inc/storefront-template-functions.php';
 /*require 'inc/storefront-functions.php';
 require 'inc/storefront-template-hooks.php';
@@ -299,7 +301,7 @@ $storefront = (object) array(
 if ( class_exists( 'Jetpack' ) ) {
 	$storefront->jetpack = require 'inc/jetpack/class-storefront-jetpack.php';
 }*/
-
+//WC_Frontend_Scripts::init();
 
 
 if ( storefront_is_woocommerce_activated() ) {

@@ -182,9 +182,17 @@ foreach($images as $image) {
             top: 0;
             height: 100%;
             position: absolute;
-            width: 100%;"></div>
-        </div>        
-</div>
+            width: 100%;">
+                
+
+            </div>
+        </div>  
+    <div id="text-field-homepage">
+        <div id="txt-homepage">
+            
+                <?php _e('Home Page Text','atelierbourgeons'); ?>
+        </div>
+    </div>
             
             <?php 
  

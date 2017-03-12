@@ -260,3 +260,7 @@ msgstr ""
 # help page, help.php
 msgid "Standard form contract"
 msgstr ""
+
+# homepage.php
+msgid "Home Page Text"
+msgstr "<h5>Mode durable pour Femmes 100% Fabriquée en France</h5>Création artisanale de vêtements originaux et eco-conçus & Vente de vêtements et accessoires vintages・seconde main"

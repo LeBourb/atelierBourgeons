@@ -82,7 +82,7 @@ function has_banner() {
 
 
 
-<body>
+<body <?php body_class(); ?>>
     <?php
     require 'menu-left.php';
     require 'menu-right.php';
@@ -155,11 +155,12 @@ function has_banner() {
                                     } ?>
                                 </ul>
                                 
-                                
+                                <?php if( is_pll_wc('myaccount') || is_pll_wc('shop') || is_shop() || is_product() || is_product_category() ) { ?>
                                 <ul href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="menu-shop">
                                 <i class="fa fa-shopping-cart fa-lg">
                                     <a>(<?php echo WC()->cart->get_cart_contents_count(); ?>)</a>  
                                 </i>
+                                <?php } ?>
                                                               
 				                         
                                 </ul>
@@ -236,7 +237,8 @@ function has_banner() {
         ?> 
         </div>
             <div id="cart-widget" class="sub-header-menu" style="display:none">
-        <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>       
+        <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?> 
+                
             </div>
             <div id="langue-widget" class="sub-header-menu" style="display:none">
    

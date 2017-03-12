@@ -32,6 +32,10 @@
     font-family: Bell_MT;
     src: url('fonts/BELL.ttf');
 }
+@font-face{
+    font-family: IM_FELL;
+    src: url('fonts/IMFeFCsc28P.ttf');
+}
 li {
     list-style-type: none;
 }
@@ -178,7 +182,9 @@ html {
 }
 
 body {
-    margin-top: 0px !important;
+    margin-top: 0px!important;
+    overflow-y: hidden;
+    height: auto!important;
 }
 
 

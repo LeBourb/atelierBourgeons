@@ -8,7 +8,8 @@
 
     //if(!is_pll_wc('cart')) { ?>
     <div id="menu-left" class="snap-drawer snap-drawer-left" style="display:none;">
-        <?php storefront_product_search(); ?>
+
+      <?php storefront_product_search(); ?>
        
             
     <li class="menu-item first" ><a href="<?php echo get_home_url(); ?>"><?php _e('Home','atelierbourgeons') ?></a></li>

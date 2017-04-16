@@ -8,9 +8,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-03-05 13:30+0100\n"
+"PO-Revision-Date: 2017-04-02 17:34+0200\n"
 "Language-Team: EMAIL@ADDRESS\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "Last-Translator: \n"
@@ -21,13 +21,13 @@ msgid "News"
 msgstr "Blog"
 
 msgid "About"
-msgstr "About"
-
-msgid "about atelier Bourgeons"
 msgstr "atelier Bourgeonsについて"
 
+msgid "about"
+msgstr "おしゃれするのが楽しくなる、女性のためのサステイナブルファッション"
+
 msgid "about bourgeons"
-msgstr "おしゃれするのが楽しくなる、女性のためのお茶目なサステイナブルファッションatelier Bourgeons (アトリエブルジョン)では、クチュールメゾンで役目を終えた余り生地や、工場で廃棄され\"\"るハギレ、中古布、ヴィンテージ素材等で創るオリジナル服と、主にヨーロッパでセレクトする古着＆セカンドハンドの洋服・雑貨を販売しています。オリジナル服は、型紙制作から縫製までをパリ郊外のアトリエで行っています。ご紹介する作品は、ほぼ全て一点ものです。古着のシルエット修正や、リメイクも行っています。"
+msgstr "atelier Bourgeons (アトリエブルジョン)では、クチュールメゾンで役目を終えた余り生地や、工場で廃棄され\"\"るハギレ、中古布、ヴィンテージ素材等で創るオリジナル服と、主にヨーロッパでセレクトする古着＆セカンドハンドの洋服・雑貨を販売しています。オリジナル服は、型紙制作から縫製までをパリ郊外のアトリエで行っています。ご紹介する作品は、ほぼ全て一点ものです。古着のシルエット修正や、リメイクも行っています。"
 
 msgid "Our products & Services"
 msgstr "商品 & サービス"
@@ -36,22 +36,16 @@ msgid "Help"
 msgstr " ヘルプ "
 
 msgid "Concept"
-msgstr " Bourgeons ブルジョン【仏】： 蕾 つぼみ "
+msgstr " コンセプト"
 
-msgid "Concept bourgeons\"　← "
-msgstr " Bourgeons ブルジョン【仏】： 蕾 つぼみ 普段歩く道すがら、今にも咲きそうな蕾を見るといつもハッとする。"
+msgid "Concept bourgeons"
+msgstr "Bourgeons(ブルジョン)とは、日本語で 蕾 。普段歩く道すがら、今にも咲きそうな蕾を見るといつもハッとする。花になるまでの間、気まぐれな天気や環境の中で日々成長を重ねるその小さなフォルムは 繊細でちょっとお茶目。でも実は健気で相当たくましい。そういうところを全部ひっくるめて、何だかとても愛おしく思えるから。何かが完成するまでの過程には、そこに関わる色んな人・モノの感情や ストーリーが詰まっている。その全てに想いを馳せながら、大事にものを選んで、創って 今度はそれを着る人が、新しいストーリーを繋げていく。そういう愛おしい“過程の連続”の一片になりたい 私が渡す蕾を、あなたが花にして育てていくように"
 
 msgid "Creatrice"
 msgstr "管理人・クリエーター紹介"
 
 msgid "Creatrice bourgeons"
-msgstr ""
-"\"管理人・クリエーター紹介Mie MANABE\n"
-"\"\"\n"
-"\"\"岐阜県生まれ。愛知県立大学仏語学科在学中、サステイナブルなものづくりに興味をもち、某サイトにてインタビューやブランド紹介記事の寄稿を開始。週末にはバンタンキャリアスクール・ファッ\"\"ションスタイリング科に通いつつ、プロスタイリストのアシスタント業務も行い、実践的な仕事のノウハウを学ぶ。\n"
-"\"\"大学卒業後、本格的に服創りを学ぶため渡仏。パリのデザイナーズブランドで働く傍ら、パタンナー専門学校AICPに通い、仏政府公認のレディースパタンナー資格を取得。\n"
-"\"\"2016年、以前から集めていたデッドストック生地や布切れを使って服創りを開始し、atelier Bourgeons を立ち上げる。\n"
-"\"\"Fragments magazine (http://www.fragmentsmag.com/)にて執筆活動も行う(不定期)"
+msgstr "管理人・クリエーター紹介Mie MANABE岐阜県生まれ。愛知県立大学仏語学科在学中、サステイナブルなものづくりに興味をもち、某サイトにてインタビューやブランド紹介記事の寄稿を開始。週末にはバンタンキャリアスクール・ファッ\"\"ションスタイリング科に通いつつ、プロスタイリストのアシスタント業務も行い、実践的な仕事のノウハウを学ぶ。大学卒業後、本格的に服創りを学ぶため渡仏。パリのデザイナーズブランドで働く傍ら、パタンナー専門学校AICPに通い、仏政府公認のレディースパタンナー資格を取得。2016年、以前から集めていたデッドストック生地や布切れを使って服創りを開始し、atelier Bourgeons を立ち上げる。Fragments magazine (http://www.fragmentsmag.com/)にて執筆活動も行う(不定期"
 
 msgid "Frequent Questions"
 msgstr "よくあるご質問"
@@ -185,9 +179,7 @@ msgid "Tailor-made second fitting"
 msgstr "試着・修正（２回目）"
 
 msgid "Tailor-made presentation"
-msgstr ""
-"<h3>最終試着・完成！</h3><span class=\\\"card-summary\\\">本縫い後、最後の試着して頂きます。ここで微調整が入る場合、修正後に改めて商品のお渡しとなります。問題なければ、残額のご\"\"精算いただき、服があなたの元へお嫁に参ります。　\n"
-"\"\"</span>"
+msgstr "<h3>最終試着・完成</h3><span class=\\\"card-summary\\\">本縫い後、最後の試着して頂きます。ここで微調整が入る場合、修正後に改めて商品のお渡しとなります。問題なければ、残額のご\"\"精算いただき、服があなたの元へお嫁に参ります。</span>"
 
 msgid "Tailor-made details"
 msgstr " Made-To-Order "
@@ -297,3 +289,7 @@ msgstr "この記事を読む"
 # help page, help.php
 msgid "Standard form contract"
 msgstr "ご利用規約"
+
+# homepage.php
+msgid "Home Page Text"
+msgstr "ハギレやデットストック布を再利用して創る、メイドインフランスのサステイナブルファッション。<br><br>一点物のオリジナル服と、ヨーロッパ古着＆アクセサリーのWEB　SHOP-アトリエブルジョン"

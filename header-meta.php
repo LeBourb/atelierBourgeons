@@ -17,8 +17,8 @@
 <meta name="notify:enabled" content="false">
 <meta name="google-site-verification" content="8QlrOpSvQYNLMI6IiXZpEidW_GuwD7SOZrwV_3dkIHU" />
 <style>                    
-                    @font-face {
-                        font-family: Modesty;
-                        src: url(<?php echo get_site_url ()?>/wp-content/themes/atelierbourgeons/assets/fonts/FontAwesome.otf);
-                    }
+    @font-face {
+         font-family: Modesty;
+         src: url(<?php echo get_site_url ()?>/wp-content/themes/atelierbourgeons/assets/fonts/FontAwesome.otf);
+     }
 </style>

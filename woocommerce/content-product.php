@@ -58,8 +58,17 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
         <div class="itemPhoto <?php global $product;  $num_left = $product->get_stock_quantity(); if( (!is_null($num_left) && $num_left == 0) || $product->stock_status == 'outofstock') { echo "out-of-stock"; } ?> "><a href="<?php echo get_the_permalink()?>"><?php echo woocommerce_get_product_thumbnail('medium');?></a></div>
         <a href="<?php echo get_the_permalink()?>">        
         <div class="itemName"><?php echo get_the_title()?></div>
-        <div class="itemPrice"><?php echo woocommerce_template_single_price()?>
-</div>
+        
+        <?php             
+            $tags =  get_the_terms($product->ID,'product_tag');
+            foreach ( $tags as $tag ) {
+                if( startsWith($tag->name ,'[' ) && endsWith($tag->name, ']'  ) ) {
+                    echo '<div class="itemSize">'. $tag->name .'</div>';
+                }
+            }
+        ?>
+        <div class="itemPrice"><?php echo woocommerce_template_single_price()?></div>
+        
         </a>
         
         <?php 

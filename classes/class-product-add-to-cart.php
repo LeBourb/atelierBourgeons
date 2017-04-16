@@ -6,11 +6,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			
                 add_filter( 'woocommerce_add_cart_item',  'add_cart_item' , 20, 1 );
-
+                
                 // Load cart data per page load
                 add_filter( 'woocommerce_get_cart_item_from_session', 'get_cart_item_from_session' , 20, 2 );
 
                 // Get item data to display
+                //add_filter( 'woocommerce_get_item_data',  'add_cart_item' , 5, 1 );
                 add_filter( 'woocommerce_get_item_data',  'get_item_data' , 10, 2 );
 
                 // Add item data to the cart

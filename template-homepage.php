@@ -33,11 +33,34 @@
     $vintage_img = array ( 1 => "/wp-content/themes/atelierbourgeons/img/vintage/frip_all.png", "/wp-content/themes/atelierbourgeons/img/vintage/frip_ensemble.png", "/wp-content/themes/atelierbourgeons/img/vintage/robe_all.png", "/wp-content/themes/atelierbourgeons/img/vintage/cadre.png" );
     $made_to_order_img = array ( 1 => "/wp-content/themes/atelierbourgeons/img/made-to-order/fleche.png", "/wp-content/themes/atelierbourgeons/img/made-to-order/recherche.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/illustration.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/illustration.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/mannequin.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/devant.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/dos.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/fini.jpg", "/wp-content/themes/atelierbourgeons/img/made-to-order/direction.png");
 ?>
-
 <html <?php language_attributes();  ?> ><?php /*storefront_html_tag_schema();*/ ?>
 <head>
 
-<?php  require 'header-meta.php'; ?>
+<?php  echo '<style>';
+        if( pll_current_language() == 'fr') {
+            echo '
+            @font-face{
+                font-family: IM_FELL;
+                src: url(' . get_site_url () . '/wp-content/themes/atelierbourgeons/fonts/IMFeFCsc28P.ttf);
+            }
+            #text-field-homepage {
+                font-family: IM_FELL;
+            }';
+        }else if (pll_current_language() == 'ja') {
+            echo '
+            @font-face {
+                font-family: Utsukushi;
+                src: url(' . get_site_url () . '/wp-content/themes/atelierbourgeons/fonts/02UtsukushiMincho.ttf);
+            }
+            #text-field-homepage {
+                font-family: Utsukushi;
+                font-size: 1.3em;
+            }';
+        }
+        echo '</style>';
+
+        require 'header-meta.php'; 
+?>
     
 </head>
     

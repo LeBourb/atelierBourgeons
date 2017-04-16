@@ -74,12 +74,6 @@ html {
     width: 100%!important;
 }
 
-.fa-shopping-cart, .fa-shopping-cart-txt {
-    display: inline-block;
-}
-
-
-
 .site {
     overflow-x: none;
 }
@@ -168,10 +162,6 @@ html {
     vertical-align: top;
 }
 
-.itemName{
-    font-weight: bold;
-    color: #000;
-}
 
 
 .share-product > li {
@@ -393,17 +383,7 @@ a:focus {
     .site-logo {
         display :none;
     }
-    .menu-shop {
-        display: inline;
-        position: absolute;
-        left: 0.4em;
-        width: 1.5em;
-    }
-
-    .menu-shop>img {
-        display: inline;
-        width:100%;
-    }
+    
     .menu-left, .menu-right{
         display:none;
     }

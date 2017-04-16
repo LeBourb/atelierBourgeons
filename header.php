@@ -30,9 +30,9 @@ function has_banner() {
     }
 }
 
-?><!DOCTYPE html>
+?>
 <html <?php language_attributes(); ?> <?php /*storefront_html_tag_schema();*/ ?>>
-<head>
+<head class="toto">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -130,8 +130,13 @@ function has_banner() {
                                 <?php require 'svg-logo.php'; ?>
                             </div>
                            
-                            <div id="menu-button-right">
-                               <i class="fa fa-home"></i>
+                            <div id="menu-button-right">                               
+                               <ul href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="menu-shop">
+                               <a>
+                                   <i class="fa fa-shopping-cart"></i>
+                                   (<?php echo WC()->cart->get_cart_contents_count(); ?>)
+                               </a>
+                               </ul>
                             </div>  
                             <div id="cssmenu">                
                                 <div class="menu-left">

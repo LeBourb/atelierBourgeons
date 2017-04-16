@@ -58,7 +58,15 @@ global $post, $product;
         <div class="summary entry-summary">
 
             <ul class="share-product" >
-                <?php echo $product->get_tags( ' ', '<span class="product-tags">' . _n( '', '', $tag_count, 'woocommerce' ) . ' ', '</span>' ); ?>
+                <?php 
+                    
+                    $tags =  get_the_terms($product->ID,'product_tag');
+                    foreach ( $tags as $tag ) {
+                        if( !startsWith($tag->name,'['  ) && !endsWith($tag->name , ']' ) ) {
+                            echo '<span class="product-tags">' . $tag->name . '</span>' ; 
+                        }
+                    }
+                    ?>
                 <li id="facebook" href="http://www.facebook.com/share.php?u=<?php echo get_permalink () ?>" onclick="window.open(this.getAttribute('href'), 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" >
                      <img src="<?php echo get_site_url ( )?>/wp-content/themes/atelierbourgeons/icons/facebook.png"  />
                 </li>
@@ -72,6 +80,7 @@ global $post, $product;
                         /**
                          * Le but est de mettre Titre du produit > Prix > Description > Achat
                          */
+                        woocommerce_template_single_add_to_cart();
                         add_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
                         remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
                         remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
@@ -86,6 +95,7 @@ global $post, $product;
   <col class="liswTableText">
   </colgroup><tbody class="shop-attribute">
       <?php
+      
       global $product;
 $attributes = $product->get_attributes();
 

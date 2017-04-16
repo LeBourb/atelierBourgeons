@@ -71,6 +71,10 @@ header.site-header-menu.header-down {
     text-align: right;
 }
 
+.fa-shopping-cart{
+    
+}
+
 .woocommerce-Button {
     width: 100%!important;
 }
@@ -108,14 +112,6 @@ header.site-header-menu.header-down {
     padding-bottom: 0.5em;
 }
 
-
-.menu-shop {
-    display: inline-block;
-    float: right;
-    width: auto;
-    top: -0.3em;
-}
-
 .menu-shop a {
     top: 0.2em;
 }
@@ -140,8 +136,6 @@ header.site-header-menu.header-down {
     box-sizing: border-box;
 }
 
-
-
 .site-header-menu {
     will-change: top;
     transition: top 0.3s ease-in-out;
@@ -159,23 +153,8 @@ header.header-top {
     transition: padding 1s ease-in-out, background 0.1s ease-out;
 }
 
-
-.menu-shop , #button-signin , #open-search , .fa {
-    cursor: pointer;
-}
-
 .menu-langue > li > a {
     padding: unset!important;
-}
-
-#cssmenu > div > ul > i::before{
-    padding: 0!important;
-    font-size: 17px!important;
-}
-
-#cssmenu > div > ul > i > a {
-    padding: 0!important;
-    font-size: 0.6em!important;
 }
 
 #cssmenu .focus {
@@ -238,11 +217,10 @@ header.header-top {
     padding-left: 0;
 }
 
-#cssmenu > div > ul > li , i {
-    margin: 1px;
-    color: inherit;
-    opacity: 0.9;
-    padding-bottom: 5px;
+#cssmenu i.fa-shopping-cart {
+    top: -15%;
+    position: relative;
+    cursor: pointer;
 }
 
 header#masthead .sub-header-menu {
@@ -308,14 +286,6 @@ header#masthead #sub-menu-collection a {
     height: inherit!important;
     padding-left: 2em;
     padding-right: 2em;
-}
-
-#cssmenu ::before {
-    background-color: transparent;
-    font-size: 1em;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: inherit;
 }
 
 .menu-search ::before {
@@ -427,14 +397,6 @@ form.woocommerce-product-search{
 
 .widget_shopping_cart {
     position:relative;
-}
-
-
-#menu-button-right {
-    display: none;
-    float: right;
-    position: absolute;
-    right: 0px;
 }
 
 #cssmenu > ul > li.has-sub > a::after {
@@ -570,6 +532,10 @@ form.woocommerce-product-search{
 
 #search-box {
     margin-left: auto;
+}
+
+#menu-button-right {
+    display:none;
 }
 
 .site-header-menu{
@@ -787,14 +753,6 @@ form.woocommerce-product-search{
     #cssmenu ul ul li.has-sub > a::after {
         display: none;
     }
-    #menu-button-right {
-        display: inline-block;
-        float: right;
-        color: black;
-        width: 2em;
-        height: 2em;
-        cursor: pointer;
-    }
     #menu-button-left {
         margin-left: 1em;
         display: inline-block;
@@ -824,6 +782,16 @@ form.woocommerce-product-search{
         height: 3px;
         border-top: 2px solid #000000;
         border-bottom: 2px solid #000000;
+    }
+    #menu-button-right {
+        cursor: pointer;
+        margin: 0;
+        height: 100%;
+        display: block;
+    }
+    #menu-button-right > ul {
+        margin: 0;
+        margin-right: 0.5em;
     }
     #cssmenu .submenu-button {
         position: absolute;

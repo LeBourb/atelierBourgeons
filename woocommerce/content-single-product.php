@@ -56,17 +56,19 @@ global $post, $product;
            
 	
         <div class="summary entry-summary">
+            <li class="tags-product">
+            <?php 
 
-            <ul class="share-product" >
-                <?php 
-                    
-                    $tags =  get_the_terms($product->ID,'product_tag');
-                    foreach ( $tags as $tag ) {
-                        if( !startsWith($tag->name,'['  ) && !endsWith($tag->name , ']' ) ) {
-                            echo '<span class="product-tags">' . $tag->name . '</span>' ; 
-                        }
+                $tags =  get_the_terms($product->ID,'product_tag');
+                foreach ( $tags as $tag ) {
+                    if( !startsWith($tag->name,'['  ) && !endsWith($tag->name , ']' ) ) {
+                        echo '<span class="product-tags">' . $tag->name . '</span>' ; 
                     }
-                    ?>
+                }
+            ?>
+            </li>
+            <ul class="share-product" >
+                
                 <li id="facebook" href="http://www.facebook.com/share.php?u=<?php echo get_permalink () ?>" onclick="window.open(this.getAttribute('href'), 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" >
                      <img src="<?php echo get_site_url ( )?>/wp-content/themes/atelierbourgeons/icons/facebook.png"  />
                 </li>
@@ -111,10 +113,52 @@ foreach ( $attributes as $attribute ) :
 		<tr>
 			<th><?php echo wc_attribute_label( $attribute['name'] ); ?></th>
 			<td><span><?php
-				if ( $attribute['is_taxonomy'] ) {
+                                
+				if ( $attribute['is_taxonomy']) {
 
 					$values = wc_get_product_terms( $product->id, $attribute['name'], array( 'fields' => 'names' ) );
-					echo apply_filters( 'woocommerce_attribute', wpautop( wptexturize( implode( ', ', $values ) ) ), $attribute, $values );
+                                        
+                                        $attributes_tax = wc_get_attribute_taxonomies();
+                                        
+                                        /*$attribute_type = null;
+                                        foreach ($attributes_tax as $taxidx => $tax){
+                                            //commandes
+                                            //print_r($tax->attribute_name);
+                                            if($tax->attribute_id == $attribute['id']){
+                                                $attribute_type = $tax->attribute_type;
+                                            }
+                                        }*/
+                                        if(count($values)==1){ 
+                                            
+                                            if(startsWith($values[0], "%table%")) {
+                                                $values = explode(',',$values[0]); 
+                                                $values[0] = str_replace("%table%","",$values[0]);
+                                            }
+                                        }
+					if(count($values)>1) {
+                                            
+                                               echo '<table class="dimensions"><tr class="dimension">';
+                                               $attrs = array();
+                                               $vals = array();
+                                               foreach ( $values as $value ) : 
+                                                   $att = explode(':',$value);
+                                                   array_push($attrs, $att[0]);
+                                                   array_push($vals , $att[1]);
+                                                   endforeach;
+                                               foreach($attrs as $attr) : 
+                                                   echo '<td>' . $attr . '</td>';
+                                               endforeach;
+                                               echo '</tr><tr class="dimension">';
+                                               foreach($vals as $val) : 
+                                                   echo '<td>' . $val . '</td>';
+                                               endforeach;
+                                               echo '</tr>';
+                                               echo '</table>';
+                                            } else {
+                                               echo apply_filters( 'woocommerce_attribute', wpautop( wptexturize( implode( ', ', $values ) ) ), $attribute, $values );
+                                            }
+                                        
+                                        //explode ( ',' ,  );
 
 				} else {
 

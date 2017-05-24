@@ -436,6 +436,7 @@ function add_attachment_field_position_y( $form_fields, $post ) {
 }
 add_filter( 'attachment_fields_to_edit', 'add_attachment_field_position_y', 11, 2 );
 
+
 function add_attachment_field_position_x_save( $post, $attachment ) {
     if( isset( $attachment['focus_position_x'] ) )
     update_post_meta( $post['ID'], 'focus_position_x', $attachment['focus_position_x'] );

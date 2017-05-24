@@ -158,21 +158,19 @@ function has_banner() {
                                         else { 
                                         echo '<li><a id="button-signin">' . __('Sign In','atelierbourgeons') . '</a></li>';
                                     } ?>
-                                </ul>
+                               
                                 
                                 <?php if( is_pll_wc('myaccount') || is_pll_wc('shop') || is_shop() || is_product() || is_product_category() ) { ?>
-                                <ul href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="menu-shop">
-                                <i class="fa fa-shopping-cart fa-lg">
-                                    <a>(<?php echo WC()->cart->get_cart_contents_count(); ?>)</a>  
+                                    <li><a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="menu-shop" >
+                                <i class="fa fa-shopping-cart fa-lg">                                    
                                 </i>
+                                <span>(<?php echo WC()->cart->get_cart_contents_count(); ?>)</span>
+                                </a>
+                                </li>
                                 <?php } ?>
                                                               
-				                         
-                                </ul>
-                            
-                            
-                                <ul id="menu-langue">
-                                    <li style="cursor: unset;">                                        
+				<li style="cursor: unset;">
+                                    
                                         <?php 
                                         $prefix = "";
                                         $url = "";
@@ -187,17 +185,15 @@ function has_banner() {
                                             $url = $url_fr;
                                         }
                                         echo '<a>'. $prefix  .'</a>'; ?>                                    
-                                    </li>
-                                </ul>
-                                    
-                                <ul class="menu-search">
-                                   <span id="open-search" class="fa fa-search"></span>
+                                </li>
+                                <li><a><i id="open-search" class="fa fa-search fa-lg"></i></a></li>
+                                <li id="search-box" style="display:none;">    
+                                    <?php require 'woocommerce/product-searchform.php'; ?>
+                                </li>   
                                 </ul>
                                 
                                 </div>
-                                <div id="search-box" style="display:none;">    
-                                    <?php storefront_product_search(); ?>
-                                </div>    
+                                 
                             </div> 
 		<?php } 
 

@@ -210,23 +210,21 @@ $(document).ready(function() {
         });
         
         $('#open-search').on('click', function(){
-                var sbox = $($('#search-box')[0]);
-                if ($('#search-box:hidden').length){
-                    sbox.show();
-                    $($('.menu-right')[0]).hide();
-                }else {
-                    sbox.hide();
-                    $($('.menu-right')[0]).show();
-                }
+                //var sbox = $($('#search-box')[0]);
+                //if ($('#search-box:hidden').length){
+                    //sbox.show();
+                    $('.menu-right > ul > li').each(function(id,el){$(el).toggle();})
+                //}else {
+                    //sbox.hide();
+                  //  $('.menu-right > ul > li').each(function(id,el){$(el).toggle();})
+                //}
                 
                 
          });  
          
          $('.close-search').on('click', function(){
              if($(window).width()> 768) {
-                 var sbox = $($('#search-box')[0]);
-                 sbox.hide();
-                 $($('.menu-right')[0]).show();                
+                 $('.menu-right > ul > li').each(function(id,el){$(el).toggle();})
              }
              
          });

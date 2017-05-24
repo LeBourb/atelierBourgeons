@@ -8,9 +8,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-04-02 11:16+0200\n"
+"PO-Revision-Date: 2017-04-30 23:22+0200\n"
 "Language-Team: EMAIL@ADDRESS\n"
-"X-Generator: Poedit 2.0\n"
+"X-Generator: Poedit 2.0.1\n"
 "Last-Translator: \n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Language: fr_FR\n"
@@ -264,3 +264,6 @@ msgstr "Vêtements pour femmes et accessoires mode durable fabriquées en France
 # homepage.php
 msgid "Home Page Text"
 msgstr "<h1>M</h1><h2>ode</h2><h1>&nbsp;D</h1><h2>urable pour</h2><h1>&nbsp;F</h1><h2>emme</h2><br><h1>&nbsp;F</h1><h2>abriquée en</h2><h1>&nbsp;F</h1><h2>rance</h2><br><br><b><h2>C</h2></b><h3>réation artisanale de vêtements </h3><h3>originaux et eco-conçus</h3><br><h3>&</h3><br><h2><b>V</b></h2><h3>ente de vêtements et accessoires</h3><h3> vintages, de seconde main</h3>"
+
+msgid "Size"
+msgstr "Taille"

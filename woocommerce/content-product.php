@@ -60,12 +60,16 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
         <div class="itemName"><?php echo get_the_title()?></div>
         
         <?php             
-            $tags =  get_the_terms($product->ID,'product_tag');
+            global $product;
+            $attribute = $product->get_attribute("size-fr");            
+            echo '<div class="itemSize">['. __('Size','atelierbourgeons') . ': ' . $attribute . ']' . '</div>';
+            
+            /*$tags =  get_the_terms($product->ID,'product_tag');
             foreach ( $tags as $tag ) {
                 if( startsWith($tag->name ,'[' ) && endsWith($tag->name, ']'  ) ) {
                     echo '<div class="itemSize">'. $tag->name .'</div>';
                 }
-            }
+            }*/
         ?>
         <div class="itemPrice"><?php echo woocommerce_template_single_price()?></div>
         

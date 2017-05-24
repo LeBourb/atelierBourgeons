@@ -104,7 +104,6 @@ header.site-header-menu.header-down {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0!important;
-    height: 100%;
 }
 
 #cssmenu {
@@ -217,10 +216,12 @@ header.header-top {
     padding-left: 0;
 }
 
-#cssmenu i.fa-shopping-cart {
-    top: -15%;
+#cssmenu i.fa-shopping-cart ,
+#cssmenu i.fa-search {
     position: relative;
     cursor: pointer;
+    vertical-align: middle;
+    margin-right: 0.3em;
 }
 
 header#masthead .sub-header-menu {
@@ -279,6 +280,20 @@ header#masthead #sub-menu-collection a {
     text-decoration: none;
     text-transform: uppercase;
     color: inherit;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    line-height: 2em;
+}
+
+.fa-shopping-cart:before {    
+    top: 23%;
+    position: relative;    
+}
+
+.fa-search:before {
+    top: 40%;
+    position: relative;
+    font-size: 10px;
 }
 
 .site-branding{
@@ -374,6 +389,8 @@ input[type="search"] {
     font-weight: 400;
     box-shadow: 0px 1px 1px inherit inset;
     border-bottom-color: inherit!important;
+    line-height: 1em;
+    font-size: 10px;
 }
 
 .site-header-menu.product.header-top {
@@ -551,6 +568,16 @@ form.woocommerce-product-search{
     min-height: 4em;
 }
 
+li.tags-product {
+    width: auto;
+    border-style: solid;
+    border-width: 5px;    
+    display: inline-flex;    
+}
+
+li.tags-product > span {
+    margin : 0.2em;
+}
 
 
 /*#cssmenu ul ul li.has-sub:hover > a::after {

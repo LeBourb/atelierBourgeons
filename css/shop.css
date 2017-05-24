@@ -173,7 +173,26 @@ main.site-main > div.product.type-product > .summary.entry-summary {
 .itemSize{
     display: inline-block;
     margin-left: 2em;
+    font-weight: bold;
 }
+
+.dimensions td {
+    font-size: 0.8em;
+}
+
+.dimensions td:not(:last-child) {
+    border-right: solid;
+}
+
+.dimensions tr:not(:last-child) td {
+    border-bottom: solid;
+}
+
+table.lisTable {
+    display: block;
+    overflow-x: auto;
+}
+    
 
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
 
@@ -259,9 +278,46 @@ main.site-main > div.product.type-product > .summary.entry-summary {
     main.site-main > div.product.type-product > .summary.entry-summary {
         width: 100%;
     }
-
+    
+    
+    
 }
 
+@media all and (max-width: 384px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 512px), only screen and (min-resolution: 192dpi) and (max-width: 512px), only screen and (min-resolution: 2dppx) and (max-width: 512px) {
+    tr.dimension{
+        display: inline-grid;
+    }   
+    
+    .shop-attribute {
+        font-size: 0.7em;
+    }
+    
+    .shop-attribute th {
+        min-width: 2em;
+        width: 2em;
+    }
+
+    .dimensions td {
+        font-size: 0.7em;
+        padding: 1em;
+        border-bottom: solid;
+        
+    }
+    
+     .dimensions td:not(:last-child) {
+        border-right: none;
+    }
+    .dimensions td:last-child {
+        border-bottom: none!important;
+    }
+    .dimensions tr:not(:last-child) td {
+        border-right: solid;
+    }
+    
+    table.lisTable {        
+        overflow-x: hidden;
+    }
+}
 
 
 

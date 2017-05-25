@@ -210,7 +210,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				
 				$tax_display_mode = get_option( 'woocommerce_tax_display_shop' );
 				
-				$display_price    = $tax_display_mode == 'incl' ? $product->get_price_including_tax( 1, $price ) : $product->get_price_excluding_tax( 1, $price );
+				$display_price    = $tax_display_mode == 'incl' ? $wc_get_price_excluding_tax( $product,array('qty'=> 1,'price' => $price)) : $wc_get_price_excluding_tax( $product,array('qty'=> 1,'price' => $price));
 			
 			} else {
 				

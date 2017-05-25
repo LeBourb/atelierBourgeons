@@ -58,8 +58,7 @@ function is_woocommerce_activated() {
         
 function is_pll_wc( $wc_page)
 { 
-    global $polylang;
-    $cart_ids = $polylang->model->get_translations('page', wc_get_page_id( $wc_page));
+    $cart_ids = PLL()->model->post->get_translations(wc_get_page_id( $wc_page));
     if(count($cart_ids)==0) {
 	return false;
     }
@@ -69,8 +68,7 @@ function is_pll_wc( $wc_page)
 
 function get_pll_wc_url( $wc_page, $lang = null)
 { 
-   global $polylang;
-    $cart_ids = $polylang->model->get_translations('page', wc_get_page_id( $wc_page));
+   $cart_ids = PLL()->model->post->get_translations(wc_get_page_id( $wc_page));
     
     // j'affiche le contenu de la page About dans la langue courrante        
     if( $lang == null) {
@@ -114,13 +112,12 @@ add_action('wp_logout', 'atelierb_logout_redirect');
 function get_pll_url($lang)
 { 
     //print_r("url: "+$url);
-    global $polylang;
-    $cart_ids = $polylang->model->get_translations('page', get_the_ID());                
+    $cart_ids = PLL()->model->post->get_translations(get_the_ID());                
                 // j'affiche le contenu de la page About dans la langue courrante     
      //           print_r($cart_ids);
     //echo get_the_ID(); 
-    //print_r($cart_ids);
-    if($cart_ids[$lang] == "")  {
+    
+    if(!in_array($lang, $cart_ids))  {
         return "";
     }
     return get_permalink( $cart_ids[$lang] );
@@ -237,8 +234,8 @@ function get_pll_url($lang)
         }
         
         if(is_product()) {
-            wp_register_style( 'content-single-product', get_template_directory_uri() . '/css/content-single-product.css' );
-            wp_enqueue_style('content-single-product');
+            wp_register_style( 'content-single-product-css', get_template_directory_uri() . '/css/content-single-product.css' );
+            wp_enqueue_style('content-single-product-css');
         }
         
         if(is_page("About") || is_page("Products") || is_page("Help")) {
@@ -322,8 +319,7 @@ if ( is_admin() ) {
     function get_pll_page_id_by_title( $page_title, $lang = null) {
         $page_l = get_page_by_title( $page_title );        
         //$post_slug = pll_get_post($page_l->ID, 'en');
-        global $polylang;
-        $cart_ids =  $polylang->model->get_translations('page', $page_l->ID);
+        $cart_ids =  PLL()->model->post->get_translations($page_l->ID);
         if( $lang == null) {
             return $cart_ids[pll_current_language()];
         }else {

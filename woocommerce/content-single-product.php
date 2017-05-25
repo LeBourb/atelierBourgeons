@@ -37,7 +37,7 @@ global $post, $product;
 	 }
 ?>
 
-<div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div itemscope itemtype="" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php
 		/**
@@ -59,7 +59,7 @@ global $post, $product;
             <li class="tags-product">
             <?php 
 
-                $tags =  get_the_terms($product->ID,'product_tag');
+                $tags =  get_the_terms($product->get_id(),'product_tag');
                 foreach ( $tags as $tag ) {
                     if( !startsWith($tag->name,'['  ) && !endsWith($tag->name , ']' ) ) {
                         echo '<span class="product-tags">' . $tag->name . '</span>' ; 
@@ -72,7 +72,7 @@ global $post, $product;
                 <li id="facebook" href="http://www.facebook.com/share.php?u=<?php echo get_permalink () ?>" onclick="window.open(this.getAttribute('href'), 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" >
                      <img src="<?php echo get_site_url ( )?>/wp-content/themes/atelierbourgeons/icons/facebook.png"  />
                 </li>
-                <li id="twitter" href="https://twitter.com/intent/tweet?text=<?php echo "atelier Bourgeons - " . $product->post->post_title; ?>&url=<?php echo get_permalink () ?>" onclick="window.open(this.getAttribute('href'), 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="<?php echo get_site_url ( )?>/wp-content/themes/atelierbourgeons/icons/twitter.png" /></li>                
+                <li id="twitter" href="https://twitter.com/intent/tweet?text=<?php echo "atelier Bourgeons - " . $product->get_title(); ?>&url=<?php echo get_permalink () ?>" onclick="window.open(this.getAttribute('href'), 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="<?php echo get_site_url ( )?>/wp-content/themes/atelierbourgeons/icons/twitter.png" /></li>                
             </ul>
 		<?php
 			
@@ -116,7 +116,7 @@ foreach ( $attributes as $attribute ) :
                                 
 				if ( $attribute['is_taxonomy']) {
 
-					$values = wc_get_product_terms( $product->id, $attribute['name'], array( 'fields' => 'names' ) );
+					$values = wc_get_product_terms( $product->get_id(), $attribute['name'], array( 'fields' => 'names' ) );
                                         
                                         $attributes_tax = wc_get_attribute_taxonomies();
                                         
@@ -135,8 +135,9 @@ foreach ( $attributes as $attribute ) :
                                                 $values[0] = str_replace("%table%","",$values[0]);
                                             }
                                         }
-					if(count($values)>1) {
-                                            
+					if(count($values)>1 && in_array("TABLE",$values)) {
+                                               $index = array_search("TABLE", $values);
+                                               unset($values[$index]);
                                                echo '<table class="dimensions"><tr class="dimension">';
                                                $attrs = array();
                                                $vals = array();
@@ -154,14 +155,14 @@ foreach ( $attributes as $attribute ) :
                                                endforeach;
                                                echo '</tr>';
                                                echo '</table>';
-                                            } else {
-                                               echo apply_filters( 'woocommerce_attribute', wpautop( wptexturize( implode( ', ', $values ) ) ), $attribute, $values );
-                                            }
-                                        
+                                        } else {
+                                            echo apply_filters( 'woocommerce_attribute', wpautop( wptexturize( implode( ', ', $values ) ) ), $attribute, $values );
+                                        }
+                                        //print_r($values);
                                         //explode ( ',' ,  );
 
 				} else {
-
+                                        //print_r($values);
 					// Convert pipes to commas and display values
 					$values = array_map( 'trim', explode( WC_DELIMITER, $attribute['value'] ) );
 					echo apply_filters( 'woocommerce_attribute', wpautop( wptexturize( implode( ', ', $values ) ) ), $attribute, $values );

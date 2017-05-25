@@ -48,13 +48,15 @@ function has_banner() {
 </head>
 
 <?php /*if (! is_front_page()) :*/
-    global $polylang;
     $pageids = get_option('page_for_posts' );  
-    $blog_ids = $polylang->model->get_translations('page', $pageids);  
+    global $polylang;
+    //$blog_ids = $polylang->model->get_translations('page', $pageids); 
+    $blog_ids = PLL()->model->post->get_translations($pageids);  
+    
     $blog_id = $blog_ids[pll_current_language()];
 
-    $shop_id = woocommerce_get_page_id( 'shop' );
-    $shop_ids = $polylang->model->get_translations('page', $shop_id);  
+    $shop_id = wc_get_page_id( 'shop' );
+    $shop_ids = PLL()->model->post->get_translations($shop_id);  
     $shop_id = $shop_ids[pll_current_language()];    
     
     $url_fr = get_pll_url('fr');
@@ -212,10 +214,7 @@ function has_banner() {
                             </div>
         <div id="signid" style="display:none">
             
-                            <?php     global $polylang;
-                //echo $get_option('woocommerce_myaccount_page_id');
-                //do_action('woocommerce_account_content');
-                
+                            <?php     
                   //$current_user = wp_get_current_user();
       wc_get_template( 'myaccount/form-login.php' );
                 if (is_user_logged_in()) {
@@ -231,7 +230,7 @@ function has_banner() {
                   //print_r($current_user);
                   //if($current_user->user_nicename != "")
                     //echo '<div>' + $current_user->user_nicename + '<div/>';   
-                //$post_ids = $polylang->model->get_translations('page', );                
+                            
                 // j'affiche le contenu de la page About dans la langue courrante 
                 //echo get_post($post_ids[pll_current_language()])->post_content;      
                 

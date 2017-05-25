@@ -43,7 +43,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<tbody>
 							<tr>
 								<td><input  type="text" name="product_option_label[<?php echo $loop; ?>]" value="<?php echo _e('Gift Wrapping', 'atelierbourgeons'); ?>"/></td>
-								<td class="price_column"><input  type="text" name="product_option_price[<?php echo $loop; ?>]" value="<?php echo esc_attr( wc_format_localized_price( $option['price'] ) ); ?>" placeholder="0.00" class="wc_input_price" /></td>
+                                                                <td class="price_column"><input  type="text" name="product_option_price[<?php echo $loop; ?>]" value="<?php if(in_array('price',$option)) { echo esc_attr( wc_format_localized_price( $option['price'] ) );} ?>" placeholder="0.00" class="wc_input_price" /></td>
                                                                 <td class="minmax_column"><input  type="number" name="product_option_max[<?php echo $loop; ?>]" value="<?php echo "255"; ?>" min="0" step="any"/></td>
 							</tr>
 						</tbody>

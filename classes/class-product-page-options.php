@@ -31,7 +31,7 @@ class product_page_options_class {
 			
 		}
 		
-		$pro_type = $product->product_type;
+		$pro_type = $product->get_type();
 		
 		if($pro_type === 'simple' || $pro_type === 'variable')
 		{
@@ -65,7 +65,7 @@ class product_page_options_class {
 			
 			}
 			
-			if ( ! isset( $product ) || $product->id != $post_id ) {
+			if ( ! isset( $product ) || $product->get_id() != $post_id ) {
 				
 				$the_product = get_product( $post_id );
 				
@@ -79,7 +79,7 @@ class product_page_options_class {
 				
 				$tax_display_mode = get_option( 'woocommerce_tax_display_shop' );
 				
-				$display_price    = $tax_display_mode == 'incl' ? $the_product->get_price_including_tax() : $the_product->get_price_excluding_tax();
+				$display_price    = $tax_display_mode == 'incl' ? $the_product->get_price_including_tax() : wc_get_price_excluding_tax($the_product);
 			
 			} else {
 				
@@ -87,7 +87,7 @@ class product_page_options_class {
 				
 			}
 
-			echo '<div id="product-options-total" product-type="' . $the_product->product_type . '" product-price="' . $display_price . '"></div>';
+			echo '<div id="product-options-total" product-type="' . $the_product->get_type( ) . '" product-price="' . $display_price . '"></div>';
 		}
 	}
 	

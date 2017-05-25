@@ -23,7 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 					
 						add_action( 'woocommerce_product_write_panel_tabs', array( $this, 'custom_options_tab' ) );
 						
-						add_action( 'woocommerce_product_write_panels', array( $this, 'custom_options_tab_options' ) );
+						//add_action( 'woocommerce_product_write_panels', array( $this, 'custom_options_tab_options' ) );
+                                                add_action( 'woocommerce_product_data_panels', array( $this, 'custom_options_tab_options' ) );                                                
 						
 						add_action( 'woocommerce_process_product_meta', array( $this, 'process_product_meta_custom_tab' ) );
 					

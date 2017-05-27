@@ -80,6 +80,18 @@ function get_pll_wc_url( $wc_page, $lang = null)
    
 }
 
+function get_pll_term ($value) {
+    $term_id = pll_get_term($value, pll_current_language());
+    $term = get_term_by('term_taxonomy_id', $term_id, 'product_cat');     
+    $pll_name = $term->name;    
+    if( $pll_name != null && $pll_name!= "") {
+        return $pll_name;
+        
+    }
+    else {
+        return get_term_by('id', $value, 'product_cat')->name;        
+    }
+}
 
 function is_sub_account_menu() {
     global $wp;

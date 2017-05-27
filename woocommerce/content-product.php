@@ -61,8 +61,9 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
         
         <?php             
             global $product;
-            $attribute = $product->get_attribute("size");            
-            echo '<div class="itemSize">['. __('Size','atelierbourgeons') . ': ' . $attribute . ']' . '</div>';
+            $attribute = $product->get_attribute("size"); 
+            if($attribute != null && $attribute != "")
+                echo '<div class="itemSize">['. __('Size','atelierbourgeons') . ': ' . $attribute . ']' . '</div>';
             
             /*$tags =  get_the_terms($product->ID,'product_tag');
             foreach ( $tags as $tag ) {

@@ -99,7 +99,10 @@ global $post, $product;
       <?php
       
       global $product;
-$attributes = $product->get_attributes();
+      
+use Hyyan\WPI\Utilities;
+
+$attributes = Utilities::getProductTranslationByObject($product,'fr')->get_attributes();
 
 foreach ( $attributes as $attribute ) :
 		if ( empty( $attribute['is_visible'] ) || ( $attribute['is_taxonomy'] && ! taxonomy_exists( $attribute['name'] ) ) ) {
@@ -111,37 +114,26 @@ foreach ( $attributes as $attribute ) :
 		?>
         
 		<tr>
-			<th><?php echo wc_attribute_label( $attribute['name'] ); ?></th>
+			<th><?php echo esc_html__( wc_attribute_label( $attribute['name'] ), 'atelierbourgeons' );?></th>
 			<td><span><?php
                                 
 				if ( $attribute['is_taxonomy']) {
 
-					$values = wc_get_product_terms( $product->get_id(), $attribute['name'], array( 'fields' => 'names' ) );
+					//$values = wc_get_product_terms( Utilities::getProductTranslationByObject($product,'fr')->get_id(), $attribute['name'], array( 'fields' => 'ids', 'order_by' => 'menu_order' ) );
+                                        $values = wp_get_post_terms( Utilities::getProductTranslationByObject($product,'fr')->get_id(), $attribute['name'], array( 'fields' => 'ids', 'order_by' => 'menu_order' ) );
+                                        $pll_values = array();
+                                        foreach ( $values as $value ) :                                                    
+                                            array_push ( $pll_values , get_pll_term($value) );
+                                        endforeach;
+                                        $values = $pll_values;
                                         
-                                        $attributes_tax = wc_get_attribute_taxonomies();
-                                        
-                                        /*$attribute_type = null;
-                                        foreach ($attributes_tax as $taxidx => $tax){
-                                            //commandes
-                                            //print_r($tax->attribute_name);
-                                            if($tax->attribute_id == $attribute['id']){
-                                                $attribute_type = $tax->attribute_type;
-                                            }
-                                        }*/
-                                        if(count($values)==1){ 
-                                            
-                                            if(startsWith($values[0], "%table%")) {
-                                                $values = explode(',',$values[0]); 
-                                                $values[0] = str_replace("%table%","",$values[0]);
-                                            }
-                                        }
 					if(count($values)>1 && in_array("TABLE",$values)) {
                                                $index = array_search("TABLE", $values);
                                                unset($values[$index]);
                                                echo '<table class="dimensions"><tr class="dimension">';
                                                $attrs = array();
                                                $vals = array();
-                                               foreach ( $values as $value ) : 
+                                               foreach ( $values as $value ) :                                                                                                       
                                                    $att = explode(':',$value);
                                                    array_push($attrs, $att[0]);
                                                    array_push($vals , $att[1]);
@@ -156,7 +148,7 @@ foreach ( $attributes as $attribute ) :
                                                echo '</tr>';
                                                echo '</table>';
                                         } else {
-                                            echo apply_filters( 'woocommerce_attribute', wpautop( wptexturize( implode( ', ', $values ) ) ), $attribute, $values );
+                                            echo apply_filters( 'woocommerce_attribute', wpautop( wptexturize( implode( ', ', $pll_values ) ) ), $attribute, $pll_values );                                            
                                         }
                                         //print_r($values);
                                         //explode ( ',' ,  );

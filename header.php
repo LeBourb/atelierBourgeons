@@ -32,7 +32,7 @@ function has_banner() {
 
 ?>
 <html <?php language_attributes(); ?> <?php /*storefront_html_tag_schema();*/ ?>>
-<head class="toto">
+
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -131,7 +131,9 @@ function has_banner() {
                                    <!--<img src="<?php //echo esc_url( home_url( '/wp-content/themes/atelierbourgeons/icons/atelier_bourgeons.bmp' ) ); ?>"></div> -->
                                 <?php require 'svg-logo.php'; ?>
                             </div>
-                           
+                            <!--<div>
+                                <i id="open-search-mobile" class="fa fa-search fa-lg"></i>
+                            </div>-->
                             <div id="menu-button-right">                               
                                <ul href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="menu-shop">
                                <a>

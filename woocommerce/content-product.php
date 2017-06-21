@@ -72,7 +72,19 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
                 }
             }*/
         ?>
-        <div class="itemPrice"><?php echo woocommerce_template_single_price()?></div>
+        <div class="itemPrice">
+            
+            
+            <?php 
+            
+            if( pll_current_language() == 'ja') {
+                $product->set_price( EURToJPY( $product->get_price() ) ); 
+            }
+            
+            ?><span class="price"><?php 
+            
+            echo $product->get_price_html(); ?></span>
+        </div>
         
         </a>
         

@@ -275,7 +275,11 @@ function get_pll_url($lang)
        // wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style-storefront.css' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/style-storefront.css' )  );
         wp_enqueue_style( 'force-ab-style', get_template_directory_uri() . '/style.css' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/style.css' )  );
         
+        wp_register_script( 'money-js', get_template_directory_uri() . '/js/money.js', array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/js/money.js' ) );
+        wp_enqueue_script('money-js');
         
+        wp_register_script( 'atelierbourgeons-money-js', get_template_directory_uri() . '/js/atelierbourgeons-money.js', array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/js/atelierbourgeons-money.js' ) );
+        wp_enqueue_script('atelierbourgeons-money-js');
 
 /******* storefront **********/
 $theme              = wp_get_theme( 'atelierbourgeons' );
@@ -460,6 +464,60 @@ function add_attachment_field_position_y_save( $post, $attachment ) {
     return $post;
 }
 add_filter( 'attachment_fields_to_save', 'add_attachment_field_position_y_save', 11, 3 );
+
+// Our filter callback function
+function woocommerce_currency_atelierb( $string ) {
+    // (maybe) modify $string
+    if(pll_current_language() == 'ja')
+        return 'JPY';
+    else 
+        return 'EUR';
+}
+add_filter( 'woocommerce_currency', 'woocommerce_currency_atelierb', 10, 3 );
+
+/**
+ * Trim zeros in price decimals
+ **/
+// Our filter callback function
+function woocommerce_price_trim_zeros_atelierb( $string ) {
+    // (maybe) modify $string
+    if(pll_current_language() == 'jp')
+        return true;
+    else 
+        return false;
+}
+ add_filter( 'woocommerce_price_trim_zeros', woocommerce_price_trim_zeros_atelierb );
+ 
+ 
+ function EURToJPY ($price) {
+    $rate = get_rate_eurjpy();
+    return intval(round($price * $rate / 100 + 1 ) * 100);
+ }
+ 
+function get_rate_eurjpy(){
+    $today = date("m.d.y");                         // 03.10.01
+    $filename = "yahoo-EURJPY-'. $today . '.txt";
+    $json = '';
+    if(!file_exists ( $filename )){
+        $response = wp_remote_get( 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20csv%20where%20url%3D%22http%3A%2F%2Ffinance.yahoo.com%2Fd%2Fquotes.csv%3Fe%3D.csv%26f%3Dnl1d1t1%26s%3Deurjpy%3DX%22%3B&format=json&callback=' );
+        $today = date("m.d.y"); 
+        if( is_array($response)  ) {
+          $header = $response['headers']; // array of http header lines
+          $json = $response['body']; // use the content
+
+
+          $myfile = fopen($filename, "w") or die("Unable to open file!");
+            fwrite($myfile, $json);
+            fclose($myfile);
+        }
+    }else {
+       $myfile = fopen($filename, "r") or die("Unable to open file!");
+       $json = stream_get_contents($myfile);
+    }
+    $obj = json_decode($json);
+    $rate = $obj->{'query'}->{'results'}->{'row'}->{'col1'};
+    return $rate;
+}
 
 
 

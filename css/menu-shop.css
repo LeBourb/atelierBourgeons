@@ -579,6 +579,21 @@ li.tags-product > span {
     margin : 0.2em;
 }
 
+#open-search-mobile {
+    width: 100%;
+    height: 100%;
+}
+
+#open-search-mobile::before {
+    width: 100%;
+    height: 100%;
+    top: 20%;
+    left: 20%;
+    position: relative;
+    color: black;
+}
+
+
 
 /*#cssmenu ul ul li.has-sub:hover > a::after {
     border-color: #ffffff;

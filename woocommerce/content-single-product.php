@@ -179,6 +179,14 @@ foreach ( $attributes as $attribute ) :
 			 * @hooked woocommerce_template_single_meta - 40
 			 * @hooked woocommerce_template_single_sharing - 50
 			 */
+            
+            if(pll_current_language() == 'jp') {
+            }else {                
+            }
+            $rate = get_rate_eurjpy();
+            if(pll_current_language() == 'ja') {
+                $product->set_price( EURToJPY($product->get_price()) ); 
+            }
                          remove_filter('woocommerce_single_product_summary','woocommerce_template_single_title',5);
 			do_action( 'woocommerce_single_product_summary' );     
                 

@@ -23,9 +23,24 @@ if ( ! defined( 'ABSPATH' ) ) {
                 // Add meta to order
                 add_action( 'woocommerce_add_order_item_meta',  'order_item_meta' , 10, 2 );
 
+                add_filter( 'woocommerce_cart_item_price', 'cart_item_price', 10, 3 );
+                function cart_item_price( $price, $cart_item, $cart_item_key ) {
 
-		
-		
+                    return wc_price($cart_item[ 'data' ]->price);
+                }
+                
+                
+
+add_filter( 'woocommerce_cart_item_subtotal', 'cart_item_subtotal', 10, 3 );
+function cart_item_subtotal( $subtotal, $cart_item, $cart_item_key ) {
+
+    if ( $cart_item[ 'data' ]->price == 0 ) {
+        $subtotal = __( 'To be determined', 'yourtheme' );
+    }
+
+   return wc_price($cart_item[ 'data' ]->price);//EURToJPY($cart_item[ 'data' ]->price));
+}
+
 		
 		function add_to_cart_product( $cart_item_data,$product_id ) {
 				
@@ -56,7 +71,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 						}
 						
 					}
-					
+					//$cart_item_data->set_price('10000');
+                                        //$cart_item_data = add_cart_item($cart_item_data);
 					return $cart_item_data;
 					
 		}
@@ -157,7 +173,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				$cart_item_data['data']->adjust_price( $extra_cost );
 			}
-
+                        
+                        //$cart_item_data['data']->adjust_price('10000');
+                        $product           = $cart_item_data['data'];
+                        if(pll_current_language() == 'ja') { 
+                            $product->set_price(EURToJPY($cart_item_data['data']->price));
+                        }
+                        
 			return $cart_item_data;
 		}
 
@@ -171,6 +193,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				$cart_item_data = add_cart_item( $cart_item_data );
 				
 			}
+                        $cart_item_data = add_cart_item($cart_item_data);
 			return $cart_item_data;
 		}
 

@@ -8,9 +8,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-04-02 11:16+0200\n"
+"PO-Revision-Date: 2017-06-26 16:02+0200\n"
 "Language-Team: EMAIL@ADDRESS\n"
-"X-Generator: Poedit 2.0\n"
+"X-Generator: Poedit 2.0.1\n"
 "Last-Translator: \n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Language: en_US\n"
@@ -264,3 +264,10 @@ msgstr ""
 # homepage.php
 msgid "Home Page Text"
 msgstr "<h5>Mode durable pour Femmes 100% Fabriquée en France</h5>Création artisanale de vêtements originaux et eco-conçus & Vente de vêtements et accessoires vintages・seconde main"
+
+# checkout class-product-shipping-methods.php
+msgid "Livraison gratuite Atelier Bourgeons"
+msgstr "Livraison gratuite Atelier Bourgeons"
+
+msgid "Cette méthode de livraison prend en compte les taux de conversion"
+msgstr "Cette méthode de livraison prend en compte les taux de conversion"

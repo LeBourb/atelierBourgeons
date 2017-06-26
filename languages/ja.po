@@ -8,9 +8,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-04-02 17:34+0200\n"
+"PO-Revision-Date: 2017-06-26 16:02+0200\n"
 "Language-Team: EMAIL@ADDRESS\n"
-"X-Generator: Poedit 2.0\n"
+"X-Generator: Poedit 2.0.1\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "Last-Translator: \n"
@@ -293,3 +293,10 @@ msgstr "ご利用規約"
 # homepage.php
 msgid "Home Page Text"
 msgstr "ハギレやデットストック布を再利用して創る、メイドインフランスのサステイナブルファッション。<br><br>一点物のオリジナル服と、ヨーロッパ古着＆アクセサリーのWEB　SHOP-アトリエブルジョン"
+
+# checkout class-product-shipping-methods.php
+msgid "Livraison gratuite Atelier Bourgeons"
+msgstr "ただただ　Aterlier Bourgeons"
+
+msgid "Cette méthode de livraison prend en compte les taux de conversion"
+msgstr "ただただ　Aterlier Bourgeons description"

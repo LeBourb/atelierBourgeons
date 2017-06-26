@@ -481,12 +481,26 @@ add_filter( 'woocommerce_currency', 'woocommerce_currency_atelierb', 10, 3 );
 // Our filter callback function
 function woocommerce_price_trim_zeros_atelierb( $string ) {
     // (maybe) modify $string
-    if(pll_current_language() == 'jp')
+    if(pll_current_language() == 'ja')
         return true;
     else 
         return false;
 }
  add_filter( 'woocommerce_price_trim_zeros', woocommerce_price_trim_zeros_atelierb );
+ 
+ 
+ /**
+ * position symbol / prix
+ **/
+// Our filter callback function
+function woocommerce_price_format_atelierb( $format ) {
+    // (maybe) modify $string
+    if(pll_current_language() == 'ja')
+        return '%1$s%2$s';
+    else 
+        return $format;
+}
+add_filter( 'woocommerce_price_format', 'woocommerce_price_format_atelierb' );
  
  
  function EURToJPY ($price) {

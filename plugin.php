@@ -34,6 +34,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 						require_once( 'classes/class-product-page-options.php' );
 						
 						require_once( 'classes/class-product-add-to-cart.php' );
+                                                
+                                                require_once( 'classes/class-product-checkout.php' );
+                                                
+                                                require_once( 'classes/class-product-shipping-methods.php' );
 						
 			
 				}

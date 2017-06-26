@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-04-30 23:22+0200\n"
+"PO-Revision-Date: 2017-06-26 16:02+0200\n"
 "Language-Team: EMAIL@ADDRESS\n"
 "X-Generator: Poedit 2.0.1\n"
 "Last-Translator: \n"
@@ -267,3 +267,10 @@ msgstr "<h1>M</h1><h2>ode</h2><h1>&nbsp;D</h1><h2>urable pour</h2><h1>&nbsp;F</h
 
 msgid "Size"
 msgstr "Taille"
+
+# checkout class-product-shipping-methods.php
+msgid "Livraison gratuite Atelier Bourgeons"
+msgstr "Livraison gratuite Atelier Bourgeons"
+
+msgid "Cette méthode de livraison prend en compte les taux de conversion"
+msgstr "Cette méthode de livraison prend en compte les taux de conversion"

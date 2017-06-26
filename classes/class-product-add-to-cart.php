@@ -41,6 +41,38 @@ function cart_item_subtotal( $subtotal, $cart_item, $cart_item_key ) {
    return wc_price($cart_item[ 'data' ]->price);//EURToJPY($cart_item[ 'data' ]->price));
 }
 
+
+function atelierb_package_rates( $rates, $package ) {
+	//$destination = $package['destination'];
+	//$country     = $destination['country'];
+        //print_r($rates);
+	// Make sure flat rate is available
+	//if ( isset( $rates['flat_rate'] ) ) {
+		// Check if the customer is in the United States or Canada
+		//if ( $country == 'US' || $country == 'CA' ) {
+			// Set flat rate to cost $10 more
+			//$rates['flat_rate']->cost = $rates['flat_rate']->cost + 10;
+		//}
+	//}
+    //print_r($rates);
+    if(pll_current_language() == 'ja') { 
+        foreach ($rates as $key => $value){
+        //commandes
+            if(substr( $key, 0, 9 ) === "flat_rate" ) {
+                $rates[$key]->cost = EURToJPY($rates[$key]->cost);                   
+            }
+            /*else if ( substr( $key, 0, 13 ) === "free_shipping" ) {
+                $rates[ $key ]->get_option('min_amount', EURToJPY($rates[ $key ]->get_option( 'min_amount')) );
+            }*/
+        }
+       
+    }
+
+	return $rates;
+}
+
+add_filter( 'woocommerce_package_rates', 'atelierb_package_rates', 10, 2 );
+
 		
 		function add_to_cart_product( $cart_item_data,$product_id ) {
 				

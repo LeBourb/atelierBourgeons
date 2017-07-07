@@ -325,14 +325,36 @@ function has_banner() {
             
             echo '</div>';
             
-            echo '<div id="sub-menu-collection" style="display:none" class="sub-menu-section sub-header-menu">';
+            echo '<div id="sub-menu-collection" style="display:none" class="sub-menu-section sub-header-menu"><div class="gallery-menu-items" style="display:inline-flex; float:right;">';
+            $pages = get_pages(array(
+                'meta_key' => '_wp_page_template',
+                'meta_value' => 'galerie-17w.php'
+            ));            
+            foreach($pages as $page){
+                // Check if page is in the current language. 
+                if( pll_get_post_language($page->ID) == pll_current_language() ) {
+                    echo '<a href="' . get_page_link($page->ID) . '">';
+                    echo wp_get_attachment_image( get_post_thumbnail_id ( $page->ID )  , 'thumbnail' );
+                    echo '<h5>' . get_the_title( $page ) . '</h5>';
+                    echo'</a>';
+                }
+            }
+            $pages_s = get_pages(array(
+                'meta_key' => '_wp_page_template',
+                'meta_value' => 'galerie-17s.php'
+            ));            
+            foreach($pages_s as $page){
+                // Check if page is in the current language. 
+                if( pll_get_post_language($page->ID) == pll_current_language() ) {
+                    echo '<a href="' . get_page_link($page->ID) . '">';
+                    echo wp_get_attachment_image( get_post_thumbnail_id ( $page->ID )  , 'thumbnail' );
+                    echo '<h5>' . get_the_title( $page ) . '</h5>';
+                    echo'</a>';
+                }
+            }
             
-            echo '<a href="' . get_pll_page_by_title("Galerie17W") . '">';
-            echo wp_get_attachment_image( get_post_thumbnail_id ( get_pll_page_id_by_title("Galerie17W") ) , 'thumbnail' );
-            echo '<h4>' . __('17W','atelierbourgeons') . '</h4>';
-            echo'</a>';
             
-            echo '</div>';
+            echo '</div></div>';
         ?>
             
 	</header><!-- #masthead -->

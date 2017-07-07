@@ -59,7 +59,27 @@
 </div>
 
     <li class="menu-item" ><a href="<?php echo get_permalink( $blog_id);?>"> <?php _e('Blog','atelierbourgeons'); ?> </a></li>
-    <li class="menu-item" ><a href="<?php echo get_pll_page_by_title("Galerie17W");?>"><?php _e('17W','atelierbourgeons') ?></a></li>
+    <?php $pages = get_pages(array(
+                'meta_key' => '_wp_page_template',
+                'meta_value' => 'galerie-17w.php'
+            ));            
+            foreach($pages as $page){
+                // Check if page is in the current language. 
+                if( pll_get_post_language($page->ID) == pll_current_language() ) {
+                     echo '<li class="menu-item" ><a href="' . get_page_link($page->ID) . '">' . get_the_title( $page ) . '</a></li>';
+                }
+            }
+            $pages_s = get_pages(array(
+                'meta_key' => '_wp_page_template',
+                'meta_value' => 'galerie-17s.php'
+            ));            
+            foreach($pages_s as $page){
+                // Check if page is in the current language. 
+                if( pll_get_post_language($page->ID) == pll_current_language() ) {
+                     echo '<li class="menu-item" ><a href="' . get_page_link($page->ID) . '">' . get_the_title( $page ) . '</a></li>';
+                }
+            }
+    ?>   
     <li class="menu-item list" ><a><?php _e('About','atelierbourgeons') ?><i class="fa fa-chevron-down"></i></a></li>
     <div style="display:none">
         <li class="menu-item"><a href="<?php echo get_pll_page_by_title("About"); ?>"> <?php _e('About','atelierbourgeons'); ?> </a></li>

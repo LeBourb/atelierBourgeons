@@ -238,8 +238,10 @@ header#masthead .sub-category-section ul{
 }
 
 header#masthead #sub-menu-collection a {
-    margin-left: 80%;
+    width: 10em;
     display: block;
+    margin-right: 2em;
+    text-align: center;
 }
 
 #eshop-categories-container {

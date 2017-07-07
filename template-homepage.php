@@ -120,32 +120,34 @@
 $index = 0;
 $gallery = get_post_gallery( get_the_ID(), false );
 $images = explode ( ',',$gallery['ids']);
+
 foreach($images as $image) { 
     
     
         $index++;
    $image_attributes = wp_get_attachment_image_src($image,'large');
    $image_metas_x = get_post_meta( $image, 'focus_position_x', true );//( $image->ID ); 
-   
-   $value = "bgimgs.push(\"$image_attributes[0]\");";
-   if($image_metas_x != "") {
-    $focus_x = "$image_metas_x%";
+   if($image_attributes[0] != "") {
+        $value = "bgimgs.push(\"$image_attributes[0]\");";
+        if($image_metas_x != "") {
+         $focus_x = "$image_metas_x%";
+        }
+        else {
+         $focus_x = 'right';
+        }
+
+        $image_metas_y = get_post_meta( $image, 'focus_position_y', true );
+        if($image_metas_y != "") {
+         $focus_y = "$image_metas_y%";
+        }
+        else {
+         $focus_y = 'center';
+        }
+
+        echo ($value);
+        echo "bgFocusX.push(\"$focus_x\");";
+        echo "bgFocusY.push(\"$focus_y\");";
    }
-   else {
-    $focus_x = 'right';
-   }
-   
-   $image_metas_y = get_post_meta( $image, 'focus_position_y', true );
-   if($image_metas_y != "") {
-    $focus_y = "$image_metas_y%";
-   }
-   else {
-    $focus_y = 'center';
-   }
-   
-   echo ($value);
-   echo "bgFocusX.push(\"$focus_x\");";
-   echo "bgFocusY.push(\"$focus_y\");";
    ?>
             
             

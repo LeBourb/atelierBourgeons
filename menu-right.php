@@ -7,13 +7,17 @@
  */
 //if(!is_pll_wc('cart')) { 
 ?>
-<div id="menu-right" class="snap-drawer snap-drawer-right" style="display:none;">
+<div id="menu-right" class="snap-drawer snap-drawer-right" style="display:none; z-index:1;">
    <?php  
         $user_info = get_userdata(1);
         if(is_user_logged_in()) {
           echo '<li class="menu-item"><a style="text-align:center;">' . $user_info->user_login . '</a></li>';
         }
-        echo '<li class="menu-item"><a href="' . get_pll_wc_url( 'cart', null) . '" data-cartquantity=""> ' . __('Cart','atelierbourgeons') . '(' . WC()->cart->get_cart_contents_count() . ')' . '</a></li>';
+        if(WC()->cart->get_cart_contents_count() == 0)
+            echo '<li class="menu-item"><a href="' . get_pll_wc_url( 'cart', null) . '" data-cartquantity=""> ' . __('Cart','atelierbourgeons') . '(' . WC()->cart->get_cart_contents_count() . ')' . '</a></li>';
+        else 
+            the_widget( 'WC_Widget_Cart', 'title=' );
+        
       
 
         //get_signin();

@@ -240,7 +240,7 @@ function get_pll_url($lang)
             wp_enqueue_script('lightboxjs');
             wp_enqueue_style('lightboxcss');
             wp_enqueue_style( 'child-galeriecss', get_template_directory_uri() . '/css/galerie.css');
-            wp_register_script('script-galerie', get_template_directory_uri() . '/js/galerie.js' );
+            wp_register_script('script-galerie', get_template_directory_uri() . '/js/galerie.js' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/js/galerie.js' )  );
             wp_enqueue_script('script-galerie');
             
         }
@@ -251,7 +251,7 @@ function get_pll_url($lang)
         }
         
         if(is_page("About") || is_page("Products") || is_page("Help")) {
-            wp_register_style( 'about-stylecss', get_template_directory_uri() . '/css/about.css' );
+            wp_register_style( 'about-stylecss', get_template_directory_uri() . '/css/about.css' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/about.css' )  );
             wp_enqueue_style('about-stylecss');
             wp_register_script('script-about', get_template_directory_uri() . '/js/about.js' );
             wp_enqueue_script('script-about');

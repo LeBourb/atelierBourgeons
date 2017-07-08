@@ -7,7 +7,7 @@
  */
 
     //if(!is_pll_wc('cart')) { ?>
-    <div id="menu-left" class="snap-drawer snap-drawer-left" style="display:none;">
+    <div id="menu-left" class="snap-drawer snap-drawer-left" style="display:none; z-index:1;">
 
       <?php storefront_product_search(); ?>
        

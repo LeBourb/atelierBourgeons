@@ -105,7 +105,7 @@ $(document).ready(function() {
                   $($("#customer_login")[0]).css("display", "none");
                   }
                if($("#signid").hasClass('open')) {
-                  $("#signid").hide();
+                  $("#signid").hide();                  
                   $("#signid").removeClass('open');
                   
               }else {                  
@@ -186,11 +186,16 @@ $(document).ready(function() {
             $("#menu-button-left").on('click', function () {
                 if(!$('#page').hasClass('left')) {
                     $('#page').addClass('left');
-                    $('#menu-left').show();
+                    $('html').css('overflow-y','hidden');
+                    $('#menu-left').show();                     
                 }
                 else {
                     $('#page').removeClass('left');
-                    $('#menu-left').hide();
+                    $('html').css('overflow-y','auto');
+                    setTimeout(function(){
+                        $('#menu-left').hide();
+                    },1000);
+                    
                 }
             });
         if($("#menu-button"))
@@ -202,10 +207,14 @@ $(document).ready(function() {
             if(!$('#page').hasClass('right')) {
                 $('#page').addClass('right');
                 $('#menu-right').show();
+                $('html').css('overflow-y','hidden');
             }
             else {
                 $('#page').removeClass('right');
-                $('#menu-right').hide();
+                setTimeout(function(){
+                    $('#menu-right').hide();
+                },1000);
+                $('html').css('overflow-y','auto');
             }
         });
         

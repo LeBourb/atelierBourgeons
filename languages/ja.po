@@ -8,9 +8,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-06-26 16:02+0200\n"
+"PO-Revision-Date: 2017-07-07 11:30+0200\n"
 "Language-Team: EMAIL@ADDRESS\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.0.2\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "Last-Translator: \n"
@@ -20,8 +20,9 @@ msgstr ""
 msgid "News"
 msgstr "Blog"
 
+#, fuzzy
 msgid "About"
-msgstr "atelier Bourgeonsについて"
+msgstr "About"
 
 msgid "about"
 msgstr "おしゃれするのが楽しくなる、女性のためのサステイナブルファッション"
@@ -33,19 +34,19 @@ msgid "Our products & Services"
 msgstr "商品 & サービス"
 
 msgid "Help"
-msgstr " ヘルプ "
+msgstr "Help"
 
 msgid "Concept"
-msgstr " コンセプト"
+msgstr "コンセプト"
 
 msgid "Concept bourgeons"
-msgstr "Bourgeons(ブルジョン)とは、日本語で 蕾 。普段歩く道すがら、今にも咲きそうな蕾を見るといつもハッとする。花になるまでの間、気まぐれな天気や環境の中で日々成長を重ねるその小さなフォルムは 繊細でちょっとお茶目。でも実は健気で相当たくましい。そういうところを全部ひっくるめて、何だかとても愛おしく思えるから。何かが完成するまでの過程には、そこに関わる色んな人・モノの感情や ストーリーが詰まっている。その全てに想いを馳せながら、大事にものを選んで、創って 今度はそれを着る人が、新しいストーリーを繋げていく。そういう愛おしい“過程の連続”の一片になりたい 私が渡す蕾を、あなたが花にして育てていくように"
+msgstr "<br><br>Bourgeons(ブルジョン)とは、日本語で 蕾 。<br>普段歩く道すがら、今にも咲きそうな蕾を見るといつもハッとする。<br>花になるまでの間、気まぐれな天気や環境の中で日々成長を重ねるその小さなフォルムは 繊細でちょっとお茶目。でも実は健気で相当たくましい。<br>そういうところを全部ひっくるめて、何だかとても愛おしく思えるから。<br>何かが完成するまでの過程には、そこに関わる色んな人・モノの感情や ストーリーが詰まっている。その全てに想いを馳せながら、大事にものを選んで、創って 今度はそれを着る人が、新しいストーリーを繋げていく。<br>そういう愛おしい“過程の連続”の一片になりたい。<br>私が渡す蕾を、あなたが花にして育てていくように。"
 
 msgid "Creatrice"
 msgstr "管理人・クリエーター紹介"
 
 msgid "Creatrice bourgeons"
-msgstr "管理人・クリエーター紹介Mie MANABE岐阜県生まれ。愛知県立大学仏語学科在学中、サステイナブルなものづくりに興味をもち、某サイトにてインタビューやブランド紹介記事の寄稿を開始。週末にはバンタンキャリアスクール・ファッ\"\"ションスタイリング科に通いつつ、プロスタイリストのアシスタント業務も行い、実践的な仕事のノウハウを学ぶ。大学卒業後、本格的に服創りを学ぶため渡仏。パリのデザイナーズブランドで働く傍ら、パタンナー専門学校AICPに通い、仏政府公認のレディースパタンナー資格を取得。2016年、以前から集めていたデッドストック生地や布切れを使って服創りを開始し、atelier Bourgeons を立ち上げる。Fragments magazine (http://www.fragmentsmag.com/)にて執筆活動も行う(不定期"
+msgstr "Mie MANABE<p><p/>岐阜県生まれ。大学在学中、サステイナブルなものづくりに興味をもち、某サイトにてインタビューやブランド紹介記事の寄稿を開始。週末にはバンタンキャリアスクール・ファッションスタイリング科に通いつつ、プロスタイリストのアシスタント業務も行い、実践的な仕事のノウハウを学ぶ。大学卒業後、本格的に服創りを学ぶため渡仏。パリのデザイナーズブランドで働く傍ら、パタンナー専門学校AICPに通い、仏政府公認のレディースパタンナー資格を取得。2016年、以前から集めていたデッドストック生地や布切れを使って服創りを開始し、atelier Bourgeons を立ち上げる。Fragments magazine (http://www.fragmentsmag.com/)にて執筆活動も行う(不定期)。"
 
 msgid "Frequent Questions"
 msgstr "よくあるご質問"
@@ -119,85 +120,21 @@ msgid "Original Collection"
 msgstr " Original Collection "
 
 msgid "Fabrics and Accessories"
-msgstr ""
-"<p>Fabrics and Accessories</p>モノが溢れている今の世の中には、まだ使えても倉庫に埋もれていたり、捨てられていく魅力的な素材が沢山あります。\n"
-"\"\"\n"
-"\"\"そんな彼らの良さをもっと伝えたくて、服の素材には一度表舞台から降りてしまったものを選んで使用しています。小さな布切れも、パズルのピースをはめ込むようにさりげなく服の中へ取り入れ\"\"て、遊び心をプラス。\n"
-"\"\"\n"
-"\"\"アクセントにあしらうフランスらしいヴィンテージボタンやリボンも、ちょっとしたこだわりです。"
+msgstr "<p>Fabrics and Accessories</p>モノが溢れている今の世の中には、まだ使えても倉庫に埋もれていたり、捨てられていく魅力的な素材が沢山あります。そんな彼らの良さをもっと伝えたくて、服の素材には一度表舞台から降りてしまったものを選んで使用しています。小さな布切れも、パズルのピースをはめ込むようにさりげなく服の中へ取り入れて、遊び心をプラス。アクセントにあしらうフランスらしいヴィンテージボタンやリボンも、ちょっとしたこだわりです。"
 
 msgid "Design and Production"
 msgstr ""
-"<p>Design and Creation</p>レトロな雰囲気と新しさが微妙にマッチしたときの、独特な面白さ。次々と入れ替わる「トレンド」だけに縛られず、あなたの“好き”や個性を素直に表せるような服創りを目指\"\"して。\n"
-"\"\"\n"
-"\"\"仮縫い用布をトルソーに沿わせながら形を作り、型紙(パターン)に起こしたら生地を裁断。その後縫いと修正を繰り返し、一枚の服が完成します。\n"
-"\"\"\n"
-"\"\"クチュールメゾンのように多くの工程を手作業で行い、細やかさと温もりのある服を皆さまへお届けします。"
+"<p>Design and Creation</p>レトロな雰囲気と新しさが微妙にマッチしたときの、独特な面白さ。次々と入れ替わる「トレンド」だけに縛られず、あなたの“好き”や個性を素直に表せるような服創りを目指して。\n"
+"\"仮縫い用布をトルソーに沿わせながら形を作り、型紙(パターン)に起こしたら生地を裁断。その後縫いと修正を繰り返し、一枚の服が完成します。クチュールメゾンのように多くの工程を手作業で行い、細やかさと温もりのある服を皆さまへお届けします。"
 
 msgid "Card, Label, Packaging"
-msgstr ""
-"<p>Card, Label, Packaging</p>当アトリエでは、３R（リサイクル・リユース・リデュース）をモットーに、洋服の素材はもちろんタグや梱包も全てリサイクル ・エコフレンドリーなものを使用していま\"\"す。配達BOXと包装紙は、使用後に再びリサイクル資源として分別していただけます。ブランドネームタグとラッピング用リボンは、オーガニックコットン100％のイタリア製です。洗濯表示ラベル&\"\"サイズタグは、使用済みの仮縫い用布(シーチング)を再利用して作っています。\n"
-"\"\"\n"
-"\"\"ギフト用にリボンとメッセージカードをお付けできます。詳しくはこちら"
+msgstr "<p>Card, Label, Packaging</p>当アトリエでは、３R（リサイクル・リユース・リデュース）をモットーに、洋服の素材はもちろんタグや梱包も全てリサイクル ・エコフレンドリーなものを使用しています。配達BOXと包装紙は、使用後に再びリサイクル資源として分別していただけます。ブランドネームタグとラッピング用リボンは、オーガニックコットン100％のイタリア製です。洗濯表示ラベル&サイズタグは、使用済みの仮縫い用布(シーチング)を再利用して作っています。ギフト用にリボンとメッセージカードをお付けできます。詳しくはこちら"
 
 msgid "Vintage and Second Hand"
-msgstr "<p class=\"title\">Vintage, Second hand and Customised clothingatelier Bourgeons</p><li class=\"text\">では、主にヨーロッパの蚤の市、ヴィンテージショップ、業者用の倉庫から仕入れる古着・中古服・小物も取り扱っています。よ\"\"り着やすく可愛い服を楽しんでいただけるよう、必要に応じてリサイズ・リメイクも行います。各商品の詳細については、Web shopの商品紹介ページをご覧ください。</li>"
-
-msgid "Tailor-made clothes"
-msgstr ""
-"<p class=\"concept title\">Made-To-Order</p><li class=\"concept text\">自分が本当に気に入るデザインで、サイズがピッタリな服を見つけるのはなかなか難しいもの。\n"
-"\"\"特別な日でも、普段用でも、あなただけの一着を一緒に創ってみませんか？\n"
-"\"\"デザインのご相談とお見積りは無料です、どうぞお気軽にお問合せください。</li>"
-
-msgid "Tailor-made steps"
-msgstr "<p class=\"title\">Made-To-Order</p>"
-
-msgid "Tailor-made design"
-msgstr ""
-"<h3>デザインとお見積りのお問合せ・ご相談</h3><span class=\\\"card-summary\\\">アトリエ訪問（要予約）、またはメールにてご希望のイメージをお伝え\"\"ください。トップス、ワンピースなどのアイテム名、デザインのポイント、素材など。雑誌の切り抜き・イラスト等の参考資料や具体的なご要望があれば、より詳細なデザイン画・お見積り作成が可\"\"能です。予算や納期についても、お気軽にご相談ください。\n"
-"\"\"\n"
-"\"\"後日、デザイン画とお見積りをメールにてお送りいたします。</span>\n"
-"\"\"<span class=\\\"card-summary\\\">\n"
-"\"\"\n"
-"\"\"デザイン画は最終決定まで何度でも無料で修正いたします。\n"
-"\"\"最終的に決定した内容でご依頼を承った場合、前金としてお見積り金額の50％をお支払い頂き、生地選びに進みます。\n"
-"\"\"生地は、ご自身が事前に購入されても、アトリエのストック生地から購入していただいても構いません。ストックにご希望の生地がなければ、こちらが代理で購入することも可能です(生地代はご負\"\"担いただきます、予め大体の予算をお伝えください)。\n"
-"\"\"</span>"
-
-msgid "Tailor-made measure"
-msgstr ""
-"<h3>採寸・トワル制作</h3><span class=\\\"card-summary\\\">採寸の為に一度アトリエにお越しいただき、サイズに合わせてトルソーを調節します。その後、仮縫い用の生地で服\"\"の原型(トワル)の製作に入ります。制作途中、デザイン等の確認でご連絡をさせて頂くことがございます。\n"
-"\"\"</span>"
-
-msgid "Tailor-made first fitting"
-msgstr ""
-"<h3>試着・修正</h3><span class=\\\"card-summary\\\">出来上がったトワルを、アトリエにて試着して頂きます。\n"
-"\"\"アトリエにお越し頂くお日にちは、納期やご都合に合わせて柔軟に対応いたします。\n"
-"\"\"</span>"
-
-msgid "Tailor-made second fitting"
-msgstr "試着・修正（２回目）"
-
-msgid "Tailor-made presentation"
-msgstr "<h3>最終試着・完成</h3><span class=\\\"card-summary\\\">本縫い後、最後の試着して頂きます。ここで微調整が入る場合、修正後に改めて商品のお渡しとなります。問題なければ、残額のご\"\"精算いただき、服があなたの元へお嫁に参ります。</span>"
-
-msgid "Tailor-made details"
-msgstr " Made-To-Order "
-
-msgid "Rate - Tailor-made"
-msgstr "Made-To-Order Price liste "
-
-msgid "Rate - Tailor-made details"
-msgstr " Made-To-Order Price liste details"
-
-msgid "Rate - Tailor-made price 1"
-msgstr "Made-To-Order Price liste 1"
-
-msgid "Rate - Tailor-made price 2"
-msgstr "Made-To-Order Price liste 2"
+msgstr "<p class=\"title\">Vintage, Second hand and Customised clothing<p/><li class=\"text\">atelier Bourgeonsでは、主にヨーロッパの蚤の市、ヴィンテージショップ、業者用の倉庫から仕入れる古着・中古服・小物も取り扱っています。より着やすく可愛い服を楽しんでいただけるよう、必要に応じてリサイズ・リメイクも行います。各商品の詳細については、Web shopの商品紹介ページをご覧ください。</li>"
 
 msgid "Gift Wrapping text"
-msgstr "<p class=\\\"concept title\\\">Gift Wrapping</p><li class=\\\"concept text\\\">プレゼント用に、リボンとメッセージカードをお付けできます(別料金)。ご希望の方は、Web \"\"shopの各商品ページにある【ギフトラッピング追加】欄に印をつけていただきますようお願いたします。</li>"
+msgstr "<p class=\"title\">Gift Wrapping<p/><li class=\"text\">プレゼント用に、リボンとメッセージカードをお付けできます(別料金)。ご希望の方は、Web shopの各商品ページにある【ギフトラッピング追加】欄に印をつけていただきますようお願いたします。</li>"
 
 # Custom-options.php
 msgid "\"%s\" is a required field."

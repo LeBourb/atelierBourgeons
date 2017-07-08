@@ -76,6 +76,15 @@ html {
 
 .site {
     overflow-x: none;
+    z-index:2;
+}
+
+#page{
+    z-index:2;
+    transition: transform 0.5s;
+    position: relative;
+    overflow-y: hidden;
+    background: white;
 }
 
 .site-title {
@@ -173,7 +182,7 @@ html {
 
 body {
     margin-top: 0px!important;
-    overflow-y: hidden;
+    overflow-y: hidden!important;
     height: auto!important;
 }
 

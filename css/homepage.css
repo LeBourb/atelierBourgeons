@@ -184,6 +184,7 @@ section {
 }
 #page {
     position: relative;
+    transition: transform 0.5s;
     min-height: 100%;
 }
 

@@ -96,7 +96,7 @@ function has_banner() {
 <?php  if ( !is_pll_wc('checkout')) /*is_shop() || is_pll_wc('shop') || is_product() || is_product_category() || is_pll_wc('cart') || is_account_page())*/  :
     
        ?>
-    <header id="masthead" class="site-header-menu  <?php if(has_banner() || is_front_page() || is_page_template( 'galerie-17w.php' )) echo "banner "; if ( is_product() ) echo "product"; if ( current_user_can('administrator') ) echo 'admin';?> " role="banner" >
+    <header id="masthead" class="site-header-menu  <?php if(has_banner() || is_front_page() || is_page_template( 'galerie-17w.php' )) echo "banner overlay-mobile "; if ( is_product() ) echo "product"; if ( current_user_can('administrator') ) echo 'admin'; ?> " role="banner" >
 
 
       
@@ -124,7 +124,7 @@ function has_banner() {
                 if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
 			jetpack_the_site_logo();
 		} else { ?>                        
-                        <div class="site-branding">
+                        <div class="site-branding <?php if(has_banner() || is_front_page() || is_page_template( 'galerie-17w.php' )) echo "invert"; ?>">
                             
                             <div id="menu-button-left"></div>  
                             <div class="site-logo" onclick="gotohome()">
@@ -135,7 +135,7 @@ function has_banner() {
                                 <i id="open-search-mobile" class="fa fa-search fa-lg"></i>
                             </div>-->
                             <div id="menu-button-right">                               
-                               <ul href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="menu-shop">
+                               <!--<ul href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="menu-shop">-->
                                <a>
                                    <i class="fa fa-shopping-cart"></i>
                                    (<?php echo WC()->cart->get_cart_contents_count(); ?>)

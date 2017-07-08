@@ -49,6 +49,9 @@ $(document).ready(function() {
         col1 = true;
         padding = (0.01 * $main.width())/2;         
         widthimg = $main.width() - 2 * padding;
+        console.log('image width: ' + widthimg);
+        console.log('padding: ' + padding);
+        console.log('main width: ' + $main.width());
         // stop lightbox 
         lightbox.disable();
     }

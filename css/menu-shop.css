@@ -52,6 +52,7 @@ header.site-header-menu.header-down {
     background-align: top center;
     background-repeat: no-repeat;
     margin-bottom: 40px;
+    z-index:2;
 }
 
 .header-background {
@@ -143,7 +144,6 @@ header.site-header-menu.header-down {
 .site-header-menu.header-top.banner {
     background-color: transparent!important;
     opacity: 1;
-    fill: white;
     color: white;
     border-bottom: none!important;
 }
@@ -305,6 +305,8 @@ header#masthead #sub-menu-collection a {
     padding-right: 2em;
 }
 
+
+
 .menu-search ::before {
     font-size: 15px!important;
 }
@@ -336,6 +338,7 @@ header#masthead #sub-menu-collection a {
     z-index: 100;
     background-color: white;
     width: 15em;
+    overflow-y: auto;
 }
 
 #langue-widget > li {
@@ -595,7 +598,13 @@ li.tags-product > span {
     color: black;
 }
 
+header.header-top .site-branding.invert  {        
+        fill: white;        
+}
 
+header.header-down .site-branding.invert  {        
+        fill: black;        
+}
 
 /*#cssmenu ul ul li.has-sub:hover > a::after {
     border-color: #ffffff;
@@ -606,9 +615,23 @@ li.tags-product > span {
         padding: 0!important;
         border-bottom: 1px solid #dddddd;
     }
+    
+    .site-branding.invert  {
+        background: transparent;
+        fill: white;
+        border: none;
+    }
+    .site-branding.invert a {
+        color: white;
+    }
 
     header.admin.header-top {
         margin-top: 0;
+    }
+    
+    header.overlay-mobile {
+        position: absolute!important;
+        background: transparent;
     }
 
     .site-search{
@@ -678,8 +701,7 @@ li.tags-product > span {
     .site-logo {
         display: inline-block!important;
         float: none;
-        width: 10em!important;
-        fill: black;
+        width: 10em!important;        
         margin-left: auto;
         margin-right: auto;
     }
@@ -691,6 +713,15 @@ li.tags-product > span {
     #menu-left > ul {
         margin: 0;
         padding: 0;
+    }
+    
+    #menu-right .quantity , 
+    #menu-right .woocommerce-mini-cart__total.total , 
+    #menu-right .woocommerce-mini-cart__buttons.buttons .button {
+        float : right;
+    }
+    #menu-right .widget.woocommerce.widget_shopping_cart {
+        margin: 0;
     }
 
     #masthead{
@@ -802,8 +833,7 @@ li.tags-product > span {
         display: inline-block;
         width: 2em;
         height: 2em;
-        float: left;
-        color: #000000;
+        float: left;        
         cursor: pointer;
         font-size: 12px;
         text-transform: uppercase;
@@ -815,7 +845,7 @@ li.tags-product > span {
         display: block;
         width: 15px;
         height: 3px;
-        border-top: 2px solid #000000;
+        border-top: 2px solid black;
     }
     #menu-button-left::before {
         content: '';
@@ -824,8 +854,15 @@ li.tags-product > span {
         display: block;
         width: 15px;
         height: 3px;
-        border-top: 2px solid #000000;
-        border-bottom: 2px solid #000000;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+    }
+    
+    header.overlay-mobile #menu-button-left::before ,
+    header.overlay-mobile #menu-button-left::after 
+    {
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
     }
     #menu-button-right {
         cursor: pointer;

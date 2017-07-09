@@ -39,7 +39,7 @@ global $post, $product;
 			echo apply_filters(
 				'woocommerce_single_product_image_html',
 				sprintf(
-					'<div href="%s" itemprop="image" class="woocommerce-main-image zoom" title="%s" data-rel="prettyPhoto%s"><div class="zoom-content">%s</div></div>',
+					'<div href="%s" itemprop="image" class="woocommerce-main-image zoom" title="%s" data-rel="prettyPhoto%s"><div class="zoom-content">%s</div><div class="lb-nav" style=""><a class="lb-prev" style=""></a><a class="lb-next" style=""></a></div></div>',
 					esc_url( $props['url'] ),
 					esc_attr( $props['caption'] ),
 					$gallery,

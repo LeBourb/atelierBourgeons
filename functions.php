@@ -179,12 +179,14 @@ function get_pll_url($lang)
                         
             wp_enqueue_style( 'shop-style', get_template_directory_uri() . '/css/shop.css' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/shop.css' )  );
             
-            wp_register_script('shop-rollover', get_template_directory_uri() . '/js/shop-rollover.js' );
+            wp_register_script('shop-rollover', get_template_directory_uri() . '/js/shop-rollover.js', array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/js/shop-rollover.js' ) );
             wp_enqueue_script('shop-rollover');
             
             wp_register_script('custom-options', get_template_directory_uri() . '/js/custom-options.js' );
             wp_enqueue_script('custom-options');
             
+            wp_register_style( 'lightboxcss', get_template_directory_uri() . '/css/lightbox.css' );
+            wp_enqueue_style('lightboxcss');
             
                         
         }
@@ -203,7 +205,7 @@ function get_pll_url($lang)
             
         }
         else if ( is_home() ){
-            wp_enqueue_style( 'blog-style', get_template_directory_uri() . '/css/blog.css' );
+            wp_enqueue_style( 'blog-style', get_template_directory_uri() . '/css/blog.css', array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/blog.css' ) );
             wp_enqueue_style( 'blog-style-common', get_template_directory_uri() . '/css/blog-common.css' );
             
             wp_register_script( 'blog-stylejs', get_template_directory_uri() . '/js/blog.js' );

@@ -67,6 +67,10 @@ global $post, $product;
                 }
             ?>
             </li>
+            <?php
+                // Le titre                        
+                the_title( '<h1 class="product_title entry-title">', '</h1>' );
+            ?>
             <ul class="share-product" >
                 
                 <li id="facebook" href="http://www.facebook.com/share.php?u=<?php echo get_permalink () ?>" onclick="window.open(this.getAttribute('href'), 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" >
@@ -76,9 +80,7 @@ global $post, $product;
             </ul>
 		<?php
 			
-                        // Le titre                        
-                        woocommerce_template_single_title();
-                
+                                       
                         /**
                          * Le but est de mettre Titre du produit > Prix > Description > Achat
                          */

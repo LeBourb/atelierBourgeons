@@ -394,7 +394,7 @@ function has_banner() {
                 //esc_url(the_post_thumbnail_url( 'large' )) //get_site_url();
                 ?>') no-repeat top center; background-size:cover;">                
                 
-                <h1 class="header-title"> <?php 
+                <h1 class="header-title <?php if(pll_current_language() == 'ja') echo "jp";  ?>"> <?php 
                 
                     if (!is_product() && !is_front_page()){
                         if(is_home()) {

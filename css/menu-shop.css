@@ -48,10 +48,9 @@ header.site-header-menu.header-down {
 .header-shop {
     height: auto;
     position: relative;
-    height: 395px;
+    height: 40%;
     background-align: top center;
-    background-repeat: no-repeat;
-    margin-bottom: 40px;
+    background-repeat: no-repeat;    
     z-index:2;
 }
 
@@ -59,6 +58,11 @@ header.site-header-menu.header-down {
     margin-top: 0;
     font-size: 12px !important;
     min-width: 100%;
+}
+
+.header-title.jp {
+    font-family: Mincho;
+    font-size: 2.1em;
 }
 
 .header-title {
@@ -69,7 +73,7 @@ header.site-header-menu.header-down {
     font-size: 4em;
     font-weight: 400;
     width: 90%;
-    text-align: right;
+    text-align: right;    
 }
 
 .fa-shopping-cart{
@@ -573,16 +577,6 @@ form.woocommerce-product-search{
     min-height: 4em;
 }
 
-li.tags-product {
-    width: auto;
-    border-style: solid;
-    border-width: 5px;    
-    display: inline-flex;    
-}
-
-li.tags-product > span {
-    margin : 0.2em;
-}
 
 #open-search-mobile {
     width: 100%;
@@ -602,9 +596,18 @@ header.header-top .site-branding.invert  {
         fill: white;        
 }
 
-header.header-down .site-branding.invert  {        
+header.header-down:not(.overlay-mobile) .site-branding.invert  {        
         fill: black;        
 }
+
+
+    #page.left {
+        transform: translate3d( 15em, 0px, 0px);
+    }
+
+    #page.right {
+        transform: translate3d(-15em, 0px, 0px);
+    }
 
 /*#cssmenu ul ul li.has-sub:hover > a::after {
     border-color: #ffffff;
@@ -636,6 +639,10 @@ header.header-down .site-branding.invert  {
 
     .site-search{
         width: 100%;
+    }
+    
+    .header-shop {
+        height:35%;
     }
 
     .menu-item {

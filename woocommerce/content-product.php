@@ -54,16 +54,15 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 
 	
         
-        <div style="height: 20px;" class="itemCopy"><span class="new">NEW</div>
         <div class="itemPhoto <?php global $product;  $num_left = $product->get_stock_quantity(); if( (!is_null($num_left) && $num_left == 0) || $product->get_stock_status() == 'outofstock') { echo "out-of-stock"; } ?> "><a href="<?php echo get_the_permalink()?>"><?php echo woocommerce_get_product_thumbnail('medium');?></a></div>
         <a href="<?php echo get_the_permalink()?>">        
-        <div class="itemName"><?php echo get_the_title()?></div>
+        <h5 class="itemName"><?php echo get_the_title()?></h5>
         
         <?php             
             global $product;
             $attribute = $product->get_attribute("size"); 
             if($attribute != null && $attribute != "")
-                echo '<div class="itemSize">['. __('Size','atelierbourgeons') . ': ' . $attribute . ']' . '</div>';
+                echo '<h6 class="itemSize">['. __('Size','atelierbourgeons') . ': ' . $attribute . ']' . '</h6>';
             
             /*$tags =  get_the_terms($product->ID,'product_tag');
             foreach ( $tags as $tag ) {
@@ -72,7 +71,7 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
                 }
             }*/
         ?>
-        <div class="itemPrice">
+        <h6 class="itemPrice">
             
             
             <?php 
@@ -84,7 +83,7 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
             ?><span class="price"><?php 
             
             echo $product->get_price_html(); ?></span>
-        </div>
+        </h6>
         
         </a>
         

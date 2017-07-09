@@ -66,7 +66,7 @@ and open the template in the editor.
 }
 
 
-.woocommerce-main-image.zoom:hover > div.zoom-content >img {
+.woocommerce-main-image.zoom.inzoom > div.zoom-content >img {
     max-width : none !important;
     max-height : none !important;
     width: 200%;
@@ -81,8 +81,41 @@ and open the template in the editor.
 .thumbnails , .summary.entry-summary {
     background-color: white;
 }
+
+li.tags-product > span {
+    margin: 0.2em;
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    background-color: black;
+}
+
+
 .thumbnails {
     margin: 2em;
+}
+
+.summary.entry-summary h1{
+    font-size: 2em;
+    margin-top:1em;
+    display: inline-block;
+}
+
+.summary.entry-summary h2{
+    font-size: 1.5em;
+    margin-top: 0.5em;
+    display: inline-block;
+}
+
+.summary.entry-summary .cart{
+    margin-bottom:0.2em!important;
 }
 
 .woocommerce-page div.product div.thumbnails a.thumb_img {
@@ -140,6 +173,8 @@ main.site-main > div.product.type-product > .summary.entry-summary {
 
 .share-product{
     margin: 0;
+    margin-right: 1em;
+    float:right;
 }
 
 .product-tags a {
@@ -167,11 +202,16 @@ main.site-main > div.product.type-product > .summary.entry-summary {
 .itemName{
     font-weight: bold;
     color: #000;
+    display: block;
+    margin-bottom: 0;
+}
+
+.itemPrice{
     display: inline-block;
 }
 
 .itemSize{
-    display: inline-block;
+    float: right;
     margin-left: 2em;
     font-weight: bold;
 }
@@ -193,6 +233,12 @@ table.lisTable {
     overflow-x: auto;
 }
 
+
+@media all and (min-width: 2048px) {
+    .woocommerce-main-image.zoom{
+        height:93%;
+    }
+}
 
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
 
@@ -258,13 +304,6 @@ table.lisTable {
     }
 
 
-    #page.left {
-        transform: translate3d( 266px, 0px, 0px);
-    }
-
-    #page.right {
-        transform: translate3d(-266px, 0px, 0px);
-    }
 
     .single-product .summary {
         float:none;
@@ -278,7 +317,23 @@ table.lisTable {
     main.site-main > div.product.type-product > .summary.entry-summary {
         width: 100%;
     }   
-        
+    
+    
+    .woocommerce-main-image.zoom .lb-nav a.lb-prev ,
+    .woocommerce-main-image.zoom .lb-nav a.lb-next 
+    {
+        width: 34%;
+        opacity: 1;
+    }
+    
+    .images .thumbnails.columns-3 {
+        display : none;
+    }
+    
+    .woocommerce div.product div.images {
+        margin-bottom: 0em;
+    }
+
 }
 
 @media all and (max-width: 384px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 512px), only screen and (min-resolution: 192dpi) and (max-width: 512px), only screen and (min-resolution: 2dppx) and (max-width: 512px) {

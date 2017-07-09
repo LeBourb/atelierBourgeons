@@ -157,18 +157,19 @@ html {
     font-size: 11px;
 }
 
-.itemPhoto {
-    margin-bottom: 12px;
+.itemPhoto {    
     text-align: center;
 }
 
 .products > li {
-    width: 33%;
+    width: 24%;
     display: inline-block;
     margin: 0;
     text-align: left;
-    padding-left: 1em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
     vertical-align: top;
+    padding-top: 1em;
 }
 
 
@@ -342,9 +343,7 @@ a:focus {
     margin-bottom: 4em;
 }
 
-
-
-@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+@media all and (max-width: 768px) {
 
     .legal_mentions {
         width: 80%;
@@ -399,7 +398,7 @@ a:focus {
     }
 
     .products > li {
-        width: 49%;
+        width: 32%;
     }
 
     /*#cssmenu {
@@ -417,7 +416,15 @@ ul.menu li a,
     color: black;
 }
 
-@media all and (max-width: 384px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 512px), only screen and (min-resolution: 192dpi) and (max-width: 512px), only screen and (min-resolution: 2dppx) and (max-width: 512px) {
+
+@media all and (max-width: 650px) {
+.products > li {
+        width: 49%;
+    }
+}
+
+
+@media all and (max-width: 384px) {
 
     img.bgimgs {
         display: none!important;
@@ -430,8 +437,6 @@ ul.menu li a,
 
     .products > li {
         width: 100%;
-        margin: 0 0 0 0;
-        padding-left: 0;
     }
     .col-full {
 

@@ -15,6 +15,7 @@ and open the template in the editor.
 
 .am-wrapper{
     position: absolute;
+    background: rgba(231, 228, 228, 0.64); 
 }
 
 .am-wrapper::before {
@@ -80,6 +81,7 @@ canvas{
     left: 0;
     right: 0;
     bottom: 0;
+    background: rgba(231, 228, 228, 0.64);
 }
 
 .am-wrapper>.overlay {
@@ -97,6 +99,18 @@ body {
     overflow-x: hidden;
     width: 100%;
 }
+
+.remerciement_box {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 0.05em;
+    padding: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    min-width: 300px;
+}
+    
 
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
 

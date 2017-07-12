@@ -241,7 +241,7 @@ function get_pll_url($lang)
             
             wp_enqueue_script('lightboxjs');
             wp_enqueue_style('lightboxcss');
-            wp_enqueue_style( 'child-galeriecss', get_template_directory_uri() . '/css/galerie.css');
+            wp_enqueue_style( 'child-galeriecss', get_template_directory_uri() . '/css/galerie.css' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/galerie.css' )  );
             wp_register_script('script-galerie', get_template_directory_uri() . '/js/galerie.js' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/js/galerie.js' )  );
             wp_enqueue_script('script-galerie');
             

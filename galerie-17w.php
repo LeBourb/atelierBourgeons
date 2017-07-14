@@ -22,7 +22,7 @@
     <?php 
  get_header(); 
  ?>
-<div class="galerie am-container" id="am-container">
+<ul class="galerie am-container" id="am-container">
 <?php 
 // http://wordpress.stackexchange.com/questions/80408/how-to-get-page-post-gallery-attachment-images-in-order-they-are-set-in-backend
 // helper function to return first regex match
@@ -58,7 +58,7 @@ foreach($images as $image) {
    
    $ratio = $image_attributes[2]/$image_attributes[1];
    ?>
-    <a  href="<?php echo $image_attributes[0]?>" data-lightbox="roadtrip" class="am-wrapper" <?php echo 'ratio="' . $ratio . '"'; ?> style="" data-title="Optional caption." >
+    <li  href="<?php echo $image_attributes[0]?>" data-lightbox="roadtrip" class="am-wrapper" <?php echo 'ratio="' . $ratio . '"'; ?> style="" data-title="Optional caption." >
            <?php 
             //echo '<img src="' . $image_attributes[0] . '" />';
             echo wp_get_attachment_image( $image->ID,
@@ -73,8 +73,9 @@ foreach($images as $image) {
 					<div class="overlay" style="opacity: 0.9; display:none;"></div>
                                         
 				 
-				</a>
+				</li>
 <?php } ?>
+                                </ul>
 <script id='galerie' type="text/javascript">
         /* 
  * To change this license header, choose License Headers in Project Properties.
@@ -121,7 +122,7 @@ foreach($images as $image) {
         console.log('image width: ' + widthimg);
         console.log('padding: ' + padding);
         console.log('main width: ' + $main.width());
-        lightbox.enable();
+        //lightbox.enable();
         prev_width = $main.width();
     }
     else if($main.width() > 768 &&  prev_width != $main.width()) {
@@ -134,7 +135,7 @@ foreach($images as $image) {
         console.log('main width: ' + $main.width());
         console.log('size_cache: ' + $main.width());
 
-        lightbox.enable();
+        //lightbox.enable();
         prev_width = $main.width();
     }
     else if ( prev_width != $main.width()) {
@@ -145,7 +146,7 @@ foreach($images as $image) {
         console.log('padding: ' + padding);
         console.log('main width: ' + $main.width());
         // stop lightbox 
-        lightbox.disable();
+        //lightbox.disable();
         prev_width = $main.width();
     }
     else 
@@ -260,17 +261,17 @@ foreach($images as $image) {
         }                
     });
     };
-    lightbox.option({
+    /*lightbox.option({
       'resizeDuration': 200,
       'wrapAround': true
-    })
+    })*/
     
     //lightbox.build();    
     $(window).resize(onresize);
     onresize();
     
     // on aviche de l'overlay quand on passe la souris sur l'image
-    $articles.each( function( idx ){
+    /*$articles.each( function( idx ){
            var article = $($articles[idx]);
            article.mouseenter(function() {
                $(this).find('.overlay').show();
@@ -278,7 +279,9 @@ foreach($images as $image) {
            article.mouseleave(function() {
                $(this).find('.overlay').hide();
            }) ;
-    });
+    });*/
+    
+    var viewer = new Viewer(document.getElementById('am-container'), {toolbar:false, title:false});
     
     
 //});
@@ -288,7 +291,7 @@ foreach($images as $image) {
 //document.onreadystatechange = galerie;
     </script>   
 <?php
-echo '</div><div class="remerciement_section"><ul  class="remerciement_box">
+echo '<div class="remerciement_section"><ul  class="remerciement_box">
         <li><b><u>' . __('Remerciements','atelierbourgeons') . ':</b></u></li>    
         <p></p>
         <li><b>' . __('Photographe','atelierbourgeons') . '/ </b>Florent </li>
@@ -305,7 +308,7 @@ echo '</div><div class="remerciement_section"><ul  class="remerciement_box">
 //wp_footer(); 
 get_footer();
 ?>
-</div>
+
    
     </body>
     </html>

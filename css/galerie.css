@@ -11,11 +11,13 @@ and open the template in the editor.
 .am-container{
     position: relative;
     width: 100%;
+    margin: 0;
 }
 
 .am-wrapper{
     position: absolute;
     background: rgba(231, 228, 228, 0.64); 
+    cursor: pointer;
 }
 
 .am-wrapper::before {

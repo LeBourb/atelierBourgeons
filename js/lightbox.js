@@ -209,10 +209,10 @@
     // Position Lightbox
     var top  = $window.scrollTop() + this.options.positionFromTop;
     var left = $window.scrollLeft();
-    this.$lightbox.css({
+    this.$lightbox./*css({
       top: top + 'px',
       left: left + 'px'
-    }).fadeIn(this.options.fadeDuration);
+    }).*/fadeIn(this.options.fadeDuration);
 
     // Disable scrolling of the page while open
     if (this.options.disableScrolling) {
@@ -251,8 +251,8 @@
 
       $preloader = $(preloader);
 
-      $image.width(preloader.width);
-      $image.height(preloader.height);
+      //$image.width(preloader.width);
+      //$image.height(preloader.height);
 
       if (self.options.fitImagesInViewport) {
         // Fit image inside the viewport.
@@ -260,7 +260,7 @@
 
         windowWidth    = $(window).width();
         windowHeight   = $(window).height();
-        maxImageWidth  = windowWidth - self.containerLeftPadding - self.containerRightPadding - 20;
+        /*maxImageWidth  = windowWidth - self.containerLeftPadding - self.containerRightPadding - 20;
         maxImageHeight = windowHeight - self.containerTopPadding - self.containerBottomPadding - 120;
 
         // Check if image size is larger then maxWidth|maxHeight in settings
@@ -284,7 +284,7 @@
             $image.width(imageWidth);
             $image.height(imageHeight);
           }
-        }
+        }*/
       }
       self.sizeContainer($image.width(), $image.height());
     };
@@ -295,16 +295,16 @@
 
   // Stretch overlay to fit the viewport
   Lightbox.prototype.sizeOverlay = function() {
-    this.$overlay
+    /*this.$overlay
       .width($(document).width())
-      .height($(document).height());
+      .height($(document).height());*/
   };
 
   // Animate the size of the lightbox to fit the image we are showing
   Lightbox.prototype.sizeContainer = function(imageWidth, imageHeight) {
     var self = this;
-
-    var oldWidth  = this.$outerContainer.outerWidth();
+self.showImage();
+   /* var oldWidth  = this.$outerContainer.outerWidth();
     var oldHeight = this.$outerContainer.outerHeight();
     var newWidth  = imageWidth + this.containerLeftPadding + this.containerRightPadding;
     var newHeight = imageHeight + this.containerTopPadding + this.containerBottomPadding;
@@ -325,7 +325,7 @@
       });
     } else {
       postResize();
-    }
+    }*/
   };
 
   // Display the image and its details and begin preload neighboring images.

@@ -29,6 +29,7 @@
         elseif (!is_user_logged_in()) {
           echo '<li class="menu-item"><a href="'. get_pll_wc_url( 'myaccount', null ) .'">' . __('Log In','atelierbourgeons') . '</a></li>';        
         }
+        /*
         echo '<div class="langue-menu">';
         if( $cur_lang != 'fr') {
               echo '<li><a href="'. $url_fr .'">Français</a></li>';
@@ -39,6 +40,6 @@
         if($cur_lang != 'jp') {
               echo '<li><a href="'. $url_jp .'">日本語</a></li>';
         }
-        echo '</div>';
+        echo '</div>';*/
                 ?>
  </div>

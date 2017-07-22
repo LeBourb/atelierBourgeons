@@ -159,7 +159,11 @@ foreach ( $attributes as $attribute ) :
                                         //print_r($values);
 					// Convert pipes to commas and display values
 					$values = array_map( 'trim', explode( WC_DELIMITER, $attribute['value'] ) );
-					echo apply_filters( 'woocommerce_attribute', wpautop( wptexturize( implode( ', ', $values ) ) ), $attribute, $values );
+                                        $pll_values = array();
+                                        foreach ( $values as $value ) :                                                    
+                                            array_push ( $pll_values , get_pll_term($value) );
+                                        endforeach;                                        
+					echo apply_filters( 'woocommerce_attribute', wpautop( wptexturize( implode( ', ', $pll_values ) ) ), $attribute, $values );
 
 				}
 			?></span></td>
@@ -182,15 +186,11 @@ foreach ( $attributes as $attribute ) :
 			 * @hooked woocommerce_template_single_sharing - 50
 			 */
             
-            if(pll_current_language() == 'jp') {
-            }else {                
-            }
-            $rate = get_rate_eurjpy();
-            if(pll_current_language() == 'ja') {
+            if(pll_current_language() == 'ja') {                                
                 $product->set_price( EURToJPY($product->get_price()) ); 
             }
-                         remove_filter('woocommerce_single_product_summary','woocommerce_template_single_title',5);
-			do_action( 'woocommerce_single_product_summary' );     
+            remove_filter('woocommerce_single_product_summary','woocommerce_template_single_title',5);
+            do_action( 'woocommerce_single_product_summary' );
                 
                        
 		?>

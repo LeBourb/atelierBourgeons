@@ -80,15 +80,14 @@ function get_pll_wc_url( $wc_page, $lang = null)
    
 }
 
-function get_pll_term ($value) {
+function get_pll_term ($value) {    
     $term_id = pll_get_term($value, pll_current_language());
     $term = get_term_by('term_taxonomy_id', $term_id, 'product_cat');     
     $pll_name = $term->name;    
-    if( $pll_name != null && $pll_name!= "") {
-        return $pll_name;
-        
+    if( $pll_name != null && $pll_name!= "") {        
+        return $pll_name;                
     }
-    else {
+    else {        
         return get_term_by('id', $value, 'product_cat')->name;        
     }
 }
@@ -305,6 +304,8 @@ if ( ! isset( $content_width ) ) {
 require 'inc/woocommerce/storefront-woocommerce-template-functions.php';
 //require 'woocommerce/includes/class-wc-frontend-scripts.php';
 require 'inc/storefront-template-functions.php';
+
+//require 'templates/feed.php';
 /*require 'inc/storefront-functions.php';
 require 'inc/storefront-template-hooks.php';
 require 'inc/storefront-template-functions.php';
@@ -511,7 +512,7 @@ function woocommerce_price_format_atelierb( $format ) {
         return $format;
 }
 add_filter( 'woocommerce_price_format', 'woocommerce_price_format_atelierb' );
- 
+
  
  function EURToJPY ($price) {
     $rate = get_rate_eurjpy();
@@ -544,5 +545,59 @@ function get_rate_eurjpy(){
 }
 
 
+function calculate_shipping($target_country, $item_price, $shipping_class) {
+    //print_r('inputs are: ' . $target_country . ', price: ' . $item_price . ', class: ' . $shipping_class);
+    $package= array();
+    $package['destination']['country'] = $target_country;
+    $package['destination']['state'] = '';
+    $package['destination']['postcode'] = '';
+    $status_options  = get_option( 'woocommerce_status_options', array() );
+    $shipping_zone  = WC_Shipping_Zones::get_zone_matching_package( $package );
+    //print_r('zone matching: ' . $shipping_zone);
+    $all_methods = $shipping_zone->get_shipping_methods( true );
+    //print_r($all_methods);
+    foreach($all_methods as $method)
+    {
+        if($method->id == 'free_shipping_atelierb')
+        {
+                $fg = 0;	
+                foreach($method->countries as $country)
+                {
+                        if( $target_country == $country)
+                        {
+                                $fg = 1;	
+                        }
+                }
+                if( $fg == 1 && ($method->min_amount <= $item_price )) {
+                    $cost = 0;
+                    break;
+                }
+        }else
+        {		
+            $fg = 0;	
+            foreach($method->countries as $country)
+            {
+                    if($target_country == $country)
+                    {
+                            $fg = 1;	
+                    }
+            }
+            $total_cost = 0;
+            $shipping_class_term = get_term_by( 'slug', $shipping_class, 'product_shipping_class' );
+            $cost = $method->get_option( 'class_cost_' . $shipping_class_term->term_id, $method->get_option( 'class_cost_' . $shipping_class, '' ) ) ;
+            //$cost = $method->cost;	
+            
+            
+        }
+    }
+    //print_r('return cost:' . $cost);
+    return $cost;
+}
+
+function pll_get_product($product,$lang) {
+    $product_id = pll_get_post($product->get_id(),$lang);
+    $_pf = new WC_Product_Factory();
+    return $_pf->get_product($product_id);    
+}
 
 ?>

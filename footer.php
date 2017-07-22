@@ -29,10 +29,7 @@
                         <div class="footer_wrap">
                             <div class="cols_3 clearfix">
                                 <div class="column">
-                                    <h5><?php _e('Express Delivery','atelierbourgeons'); ?></h5>
-                                    <a class="footer_iconSet" href="http://www.boxtale.com/"> 
-                                        <img src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/shipping_icon_0.png" alt="Boxtal icon">                                     
-                                    </a>
+                                    <h5><?php _e('Express Delivery','atelierbourgeons'); ?></h5>                                    
                                 </div>
                                 <div class="column column_flag">
                                     <img src="<?php echo get_site_url();?>/wp-content/themes/atelierbourgeons/img/flag.png" alt="France flag">                                     
@@ -71,6 +68,18 @@
                                     </h5>
                                 </div>
                                 <div class="column middle">
+                                    <i class="fa fa-globe"></i>
+                                    <?php
+                                    echo '<select onChange="window.location.href=this.value">';
+                                        if(pll_current_language() == 'fr') {
+                                            echo '<option selected value="' . get_permalink(pll_get_post(get_the_ID() , 'fr')) . '" >FRANCE</option>';
+                                            echo '<option  value="' . get_permalink(pll_get_post(get_the_ID() , 'ja')) . '">日本</option>';
+                                        }else if (pll_current_language() == 'ja') {
+                                            echo '<option selected  value="' . get_permalink(pll_get_post(get_the_ID() , 'ja')) . '">日本</option>';
+                                            echo '<option  value="' . get_permalink(pll_get_post(get_the_ID() , 'fr')) . '" >FRANCE</option>';
+                                        }                                       
+                                        echo '</select>';
+                                    ?>
                                     <h5><?php _e('Follow us','atelierbourgeons');?></h5>
                                     <ul class="social_icons">
                                         <li id="facebook" href="https://www.facebook.com/atelierbourgeons/" onclick="window.open(this.getAttribute('href'), 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" >

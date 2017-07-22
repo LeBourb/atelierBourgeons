@@ -27,17 +27,25 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                                                 add_action( 'woocommerce_product_data_panels', array( $this, 'custom_options_tab_options' ) );                                                
 						
 						add_action( 'woocommerce_process_product_meta', array( $this, 'process_product_meta_custom_tab' ) );
+                                                
+                                                require_once( 'classes/woocommerce-google-merchant-center-feed.php' );
+                                                
+                                                require_once( 'classes/class-wc-gmcf-settings.php' );
+                                                
+                                                $Google_Merchant_Center_obj = new WC_Google_Merchant_Center_Feed();
 					
 					}
 					
-						
-						require_once( 'classes/class-product-page-options.php' );
-						
-						require_once( 'classes/class-product-add-to-cart.php' );
-                                                
-                                                require_once( 'classes/class-product-checkout.php' );
-                                                
-                                                require_once( 'classes/class-product-shipping-methods.php' );
+
+                                        require_once( 'classes/class-product-page-options.php' );
+
+                                        require_once( 'classes/class-product-add-to-cart.php' );
+
+                                        require_once( 'classes/class-product-checkout.php' );
+
+                                        require_once( 'classes/class-product-shipping-methods.php' );
+
+
 						
 			
 				}
@@ -331,5 +339,6 @@ jQuery(function(){
 		
 		$Product_Custom_Options_obj = new Product_Custom_Options();
 		
+                
 	
 ?>

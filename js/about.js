@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+/*
 $(document).ready(function() {
     
     //bgimgs = $( '#bgimgs' ).children();
@@ -34,9 +34,22 @@ $(document).ready(function() {
             });
         }
         window.previous_width = $(window).width();
+        
+        
             
     };
     $( window ).resize(resize);    
     resize();
+ 
+
+       
+      
     
 });
+*/
+$(document).ready(function(){
+
+  $('.parallax').parallax();
+
+});
+

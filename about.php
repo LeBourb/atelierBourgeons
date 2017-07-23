@@ -11,25 +11,30 @@
    
  require 'header-about.php';
 ?>
-
-<div class="about-right container">
-    <div>
-        <p class="title"><?php _e( 'about', 'atelierbourgeons' );?></p>
+<div class="parallax-container">
+   <!-- -->
+    <div class="parallax">
+        <img src ="<?php echo get_site_url() . "/wp-content/themes/atelierbourgeons/img/about/About.jpg"; ?>" />
+    </div>
+    <div class="about-text <?php if(pll_current_language()=='ja') echo 'ja'; ?>">
+        <div><p class="title"><?php _e( 'about', 'atelierbourgeons' );?></p>
         <li class="text"><?php _e( 'about bourgeons', 'atelierbourgeons' );?></li>
+        </div>
     </div>
-    <img src ="<?php echo get_site_url(); echo "/wp-content/themes/atelierbourgeons/img/about/About.jpg"; ?>" />
 </div>
-<div class="about-left container">
-    
-    <img id="Concept_img" src ="<?php echo get_site_url(); echo "/wp-content/themes/atelierbourgeons/img/about/Concept.jpg"; ?>" />
-
-    <div id="Concept_div">
-        <p class="title"><?php _e( 'Concept', 'atelierbourgeons' );?></p>
-        <li class="text"><?php _e( 'Concept bourgeons', 'atelierbourgeons' );?></li>
+<div style="width:100%; height:3em; background-color: white;"></div>
+<div class="parallax-container">
+    <div class="parallax">
+        <img src ="<?php echo get_site_url() . "/wp-content/themes/atelierbourgeons/img/about/Concept.jpg"; ?>" />
     </div>
+    <div class="about-text <?php if(pll_current_language()=='ja') echo 'ja'; ?>">
+        <div><p class="title"><?php _e( 'Concept', 'atelierbourgeons' );?></p>
+        <li class="text"><?php _e( 'Concept bourgeons', 'atelierbourgeons' );?></li>
+        </div>
+    </div>    
 </div>    
 <div class="about-right container">
-    <div>
+    <div  class="about-text <?php if(pll_current_language()=='ja') echo 'ja'; ?>">
         <p class="title"><?php _e( 'Creatrice', 'atelierbourgeons' );?></p>
         <li class="text"><?php _e( 'Creatrice bourgeons', 'atelierbourgeons' );?></li>
     </div>

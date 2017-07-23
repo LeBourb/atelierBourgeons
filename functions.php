@@ -262,8 +262,14 @@ function get_pll_url($lang)
         if(is_page("About") || is_page("Products") || is_page("Help")) {
             wp_register_style( 'about-stylecss', get_template_directory_uri() . '/css/about.css' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/about.css' )  );
             wp_enqueue_style('about-stylecss');
-            wp_register_script('script-about', get_template_directory_uri() . '/js/about.js' );
+            wp_register_style( 'parallaxcss', get_template_directory_uri() . '/css/parallax.css' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/parallax.css' )  );
+            wp_enqueue_style('parallaxcss');
+                  wp_register_script('parallaxjs', get_template_directory_uri() . '/js/parallax.js',  array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/js/parallax.js' )); 
+            wp_enqueue_script('parallaxjs');
+            
+            wp_register_script('script-about', get_template_directory_uri() . '/js/about.js' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/js/about.js' ));
             wp_enqueue_script('script-about');
+      
         }
         
         if(is_page("Products")) {

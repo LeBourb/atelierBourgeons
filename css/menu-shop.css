@@ -309,7 +309,65 @@ header#masthead #sub-menu-collection a {
     padding-right: 2em;
 }
 
+#menu-langue a span {
+    display: none;
+}
 
+#menu-langue a span{
+    position: absolute;
+    margin-top: 2em;
+    margin-left: -0.2em;
+    color: black;
+    background: white;    
+    border-radius: 3px;
+    box-shadow: 0 0 2px rgba(0,0,0,.5);    
+}
+
+#menu-langue a span::before {
+    content: '';
+    position: absolute;
+    top: -0.4em;
+    left: 0.5em;
+    width: 0;
+    height: 0;
+    border-bottom: 0.4em solid rgba(255, 255, 255, 1);
+    border-left: 0.4em solid transparent;
+    border-right: 0.4em solid transparent;
+}
+
+.flag-icon-background {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.flag-icon {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+  width: 1.33333333em;
+  line-height: 1em;
+  margin: 0;
+}
+.flag-icon:before {
+  content: "\00a0";
+}
+.flag-icon.flag-icon-squared {
+  width: 1em;
+}
+.flag-icon-fr {
+  background-image: url(../flags/4x3/fr.svg);
+}
+.flag-icon-fr.flag-icon-squared {
+  background-image: url(../flags/1x1/fr.svg);
+}
+.flag-icon-jp {
+  background-image: url(../flags/4x3/jp.svg);
+}
+.flag-icon-jp.flag-icon-squared {
+  background-image: url(../flags/1x1/jp.svg);
+}
 
 .menu-search ::before {
     font-size: 15px!important;

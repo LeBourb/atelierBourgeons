@@ -107,7 +107,7 @@ function has_banner() {
                 //$current_url = the_permalink();
                 $url_fr = get_permalink(pll_get_post(get_the_ID() , 'fr'));//get_pll_wc_url('shop','fr');
                 $url_en = get_permalink(pll_get_post(get_the_ID() , 'en')); //get_pll_wc_url(esc_attr( the_title_attribute() ) ,'en'); ////
-                $url_jp = get_permalink(pll_get_post(get_the_ID() , 'jp'));//get_pll_wc_url('shop','jp');
+                $url_jp = get_permalink(pll_get_post(get_the_ID() , 'ja'));//get_pll_wc_url('shop','jp');
             
                 
                 //$url = get_term_link( $product_categories[0]->ID, 'product_cat' );
@@ -173,22 +173,29 @@ function has_banner() {
                                 </li>
                                 <?php } ?>
                                                               
-				<li style="cursor: unset;">
+				<li id="menu-langue">
                                     
                                         <?php 
                                         $prefix = "";
                                         $url = "";
                                         if (pll_current_language() == "fr") {
-                                            $prefix = "Fr";
-                                            $url = $url_fr;
+                                            $prefix = "fr";
+                                            $url = $url_jp;
+                                            $select = 'jp';                                            
                                         } else if (pll_current_language() == "en") {
                                             $prefix = "En";
                                             $url = $url_en;
                                         } else if (pll_current_language() == "ja") {
-                                            $prefix = "Jp";
+                                            $prefix = "jp";
                                             $url = $url_fr;
+                                            $select = 'fr';
                                         }
-                                        echo '<a>'. $prefix  .'</a>'; ?>                                    
+                                        echo '<a>' . $prefix . '<h5 class="flag-icon flag-icon-'. $prefix .'"></h5>' ;
+                                        echo '<span href="' . $url .'" >'. $select .'<h5 class="flag-icon flag-icon-'. $select .'"></h5></span>';
+                                        echo '</a>'; 
+                                        
+                                            ?>       
+                                        
                                 </li>
                                 <li><a><i id="open-search" class="fa fa-search fa-lg"></i></a></li>
                                 <li id="search-box" style="display:none;">    
@@ -249,11 +256,8 @@ function has_banner() {
                 if( $cur_lang != 'fr') {
                     echo '<li><a href="'. $url_fr .'">Français</a></li>';
                 }
-                if($cur_lang != 'en') {
-                    echo '<li><a href="'. $url_en .'">English</a></li>';
-                }
                 if($cur_lang != 'ja') {
-                    echo '<li><a href="'. $url_jp .'">日本語</a></li>';
+                    echo '<li><a href="'. $url_jp .'">日本</a></li>';
                 }
                 ?>                                    
    

@@ -29,7 +29,7 @@ add_action('init','add_query_args');
 add_theme_support( 'woocommerce' );
 
 require ('plugin.php');    
-
+require('amp-woocommerce.php');
 // product tag image 
 require ('wp-custom-taxonomy-image.php');
 
@@ -222,7 +222,11 @@ function get_pll_url($lang)
        // wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style-storefront.min.css' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/style-storefront.min.css' )  );
         wp_enqueue_style( 'force-ab-style', get_template_directory_uri() . '/style.min.css' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/style.min.css' )  );
         
-
+        
+        /**************** amp *******************/
+        
+        
+        
 /******* storefront **********/
 $theme              = wp_get_theme( 'atelierbourgeons' );
 $storefront_version = $theme['Version'];

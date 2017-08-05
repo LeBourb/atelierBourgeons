@@ -188,8 +188,10 @@ foreach ( $attributes as $attribute ) :
             
             if(pll_current_language() == 'ja') {                                
                 $product->set_price( EURToJPY( $product->get_price() ) ); 
-                $product->set_regular_price( EURToJPY($product->get_regular_price() ) );
-                $product->set_sale_price( EURToJPY($product->get_sale_price() ) );
+                if( $product->is_on_sale() ) {
+                    $product->set_regular_price( EURToJPY($product->get_regular_price() ) );
+                    $product->set_sale_price( EURToJPY($product->get_sale_price() ) );
+                }                
             }
             remove_filter('woocommerce_single_product_summary','woocommerce_template_single_title',5);
             do_action( 'woocommerce_single_product_summary' );

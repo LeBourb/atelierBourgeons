@@ -78,8 +78,10 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
             
             if( pll_current_language() == 'ja') {
                 $product->set_price( EURToJPY( $product->get_price() ) ); 
-                $product->set_regular_price( EURToJPY($product->get_regular_price() ) );
-                $product->set_sale_price( EURToJPY($product->get_sale_price() ) );
+                if( $product->is_on_sale() ) {
+                    $product->set_regular_price( EURToJPY($product->get_regular_price() ) );
+                    $product->set_sale_price( EURToJPY($product->get_sale_price() ) );
+                }     
             }
             
             ?><span class="price"><?php 

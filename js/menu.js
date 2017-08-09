@@ -72,7 +72,7 @@
       });
   };
 
-$(document).ready(function(){
+
 
 $(document).ready(function() {
   $("#cssmenu").menumaker({
@@ -371,8 +371,14 @@ function() {
   //menuLine.css("width", defaultWidth);
 });
 
+if(window.navigator.language == 'ja' && window.location.href.indexOf('/fr/') > 0) {
+    $('#langue-popup').show();
+}
+
 });
 
 
-});
+
+//alert('langue is:' + window.navigator.language);
+
 })(jQuery);

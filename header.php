@@ -90,6 +90,11 @@ function has_banner() {
     require 'menu-right.php';
     ?>
 <div id="page" class="hfeed site">
+          <div id="langue-popup" class="popup-down" style="display:none">
+            <a id="close-popup" onclick="$(&quot#langue-popup&quot).hide()">X</a>
+            <li class="text">あなたのナビゲーターは日本語であることを検知しました。OKボタンを押すと、日本語サイトに移動します。</li>
+            <li><a class="button" href="<?php echo get_permalink(pll_get_post(get_the_ID() , 'ja')); ?>">OK</a></li>
+        </div>
 	<?php 
         
 	//do_action( 'storefront_before_header' ); ?>

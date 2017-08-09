@@ -213,10 +213,10 @@ function get_pll_url($lang)
             wp_enqueue_style('cards-stylecss');
         }
         
-        wp_register_style( 'menu-stylecss', get_template_directory_uri() . '/css/menu-shop.min.css', array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/menu-shop.min.css' )  );
+        wp_register_style( 'menu-stylecss', get_template_directory_uri() . '/css/menu-shop.css', array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/menu-shop.css' )  );
         wp_enqueue_style('menu-stylecss');
 
-        wp_register_script( 'menu-stylejs', get_template_directory_uri() . '/js/menu.min.js', array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/js/menu.min.js' )  );
+        wp_register_script( 'menu-stylejs', get_template_directory_uri() . '/js/menu.js', array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/js/menu.js' )  );
         wp_enqueue_script('menu-stylejs');
         
        // wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style-storefront.min.css' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/style-storefront.min.css' )  );

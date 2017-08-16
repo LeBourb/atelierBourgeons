@@ -79,9 +79,12 @@ global $post, $product;
                 <li id="twitter" href="https://twitter.com/intent/tweet?text=<?php echo "atelier Bourgeons - " . $product->get_title(); ?>&url=<?php echo get_permalink () ?>" onclick="window.open(this.getAttribute('href'), 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"><img src="<?php echo get_site_url ( )?>/wp-content/themes/atelierbourgeons/icons/twitter.png" /></li>                
             </ul>
 		<?php
-			
-                                       
-                        /**
+			//print_r($product->get_category_ids());
+                        //get_term_by('id', $product->get_category_ids()[0], 'category');
+                        
+            
+                    //print_r('thumb is: ' . $image_meta);
+                        /**;
                          * Le but est de mettre Titre du produit > Prix > Description > Achat
                          */
                         woocommerce_template_single_add_to_cart();
@@ -171,7 +174,23 @@ foreach ( $attributes as $attribute ) :
 	<?php endforeach; ?>
   
 </tbody></table>
-            
+            <?php 
+                $categories = $product->get_category_ids();
+                foreach($categories as $category ) {
+                    $term = get_term_by('term_taxonomy_id', $category, 'product_cat');     
+                    $thumb_id = get_woocommerce_term_meta( $category, 'product_cat_attachment', true );
+                    if($thumb_id)  {
+                        //Guide des tailles (測り方ガイド)
+                        echo '<div id="accordion">                            
+                            <h3>' . __('Sizing Guide','atelierbourgeons') . '</h3>
+                            <div>' . wp_get_attachment_image( $thumb_id, 'large', false ,array(
+                                'title'	 => $props['title'],
+                                'alt'    => $props['alt'],
+                                'sizes'       => '(max-width: 768px) 500px , 1920px'
+                        ) ) . '</div></div>';
+                    }
+                }
+            ?>
             <?php
                         
                         /**
@@ -198,9 +217,9 @@ foreach ( $attributes as $attribute ) :
                 
                        
 		?>
-
+            
 	</div><!-- .summary -->
-
+        
 	<?php
 		
 	?>

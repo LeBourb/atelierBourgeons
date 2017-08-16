@@ -32,6 +32,7 @@ require ('plugin.php');
 require('amp-woocommerce.php');
 // product tag image 
 require ('wp-custom-taxonomy-image.php');
+require ('wp-custom-taxonomy-attachment.php');
 
 /**
  * Storefront  functions.
@@ -154,6 +155,12 @@ function get_pll_url($lang)
         } else if ( is_pll_wc('shop') || is_shop() || is_product() || is_product_category() || is_pll_wc('cart')){
             wp_enqueue_style( 'shop-style', get_template_directory_uri() . '/css/shop.min.css' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/shop.min.css' )  );
             
+            wp_enqueue_script( 'jquery-ui-js', get_template_directory_uri() . '/js/jquery-ui-1.12.1.min.js',  array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/js/jquery-ui-1.12.1.min.js' ));
+            wp_enqueue_style( 'jquery-ui-css', get_template_directory_uri() . '/css/jquery-ui-1.12.1.min.css',  array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/jquery-ui-1.12.1.min.css' ) );
+            
+            wp_enqueue_script( 'viewerjs', get_template_directory_uri() . '/js/viewer.min.js',  array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/js/viewer.min.js' ));
+            wp_enqueue_style( 'viewercss', get_template_directory_uri() . '/css/viewer.min.css' ,  array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/viewer.min.css' ));            
+            
             wp_register_script('shop-rollover', get_template_directory_uri() . '/js/shop-rollover.min.js', array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/js/shop-rollover.min.js' ) );
             wp_enqueue_script('shop-rollover');
             
@@ -162,6 +169,8 @@ function get_pll_url($lang)
             
             wp_register_style( 'lightboxcss', get_template_directory_uri() . '/css/lightbox.min.css' );
             wp_enqueue_style('lightboxcss');
+           
+            
             
                         
         }
@@ -184,7 +193,8 @@ function get_pll_url($lang)
         } else if(is_product()) {
             wp_enqueue_style( 'shop-product-page-style', get_template_directory_uri() . '/css/shop-product-page.min.css' );
             wp_register_style( 'content-single-product-css', get_template_directory_uri() . '/css/content-single-product.min.css' );
-            wp_enqueue_style('content-single-product-css');
+            wp_enqueue_style('content-single-product-css');            
+            
         } else if (is_page_template( 'galerie-17w.php' )) {
             wp_register_script( 'viewerjs', get_template_directory_uri() . '/js/viewer.min.js',  array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/js/viewer.min.js' ));
             wp_register_style( 'viewercss', get_template_directory_uri() . '/css/viewer.min.css' ,  array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/viewer.min.css' ));            

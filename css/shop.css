@@ -233,7 +233,15 @@ table.lisTable {
     overflow-x: auto;
 }
 
+.summary.entry-summary .ui-state-active {
+    border: 1px solid #34363a;
+    background: #43454b;
+}
 
+.summary.entry-summary .ui-accordion-content {
+    padding: 0;
+}
+    
 @media all and (min-width: 2048px) {
     .woocommerce-main-image.zoom{
         height:93%;

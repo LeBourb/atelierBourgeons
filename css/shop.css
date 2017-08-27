@@ -82,7 +82,7 @@ and open the template in the editor.
     background-color: white;
 }
 
-li.tags-product > span {
+li.tags-product > span.product-tags {
     margin: 0.2em;
     display: inline;
     padding: .2em .6em .3em;
@@ -95,6 +95,7 @@ li.tags-product > span {
     vertical-align: baseline;
     border-radius: .25em;
     background-color: black;
+    cursor: pointer;
 }
 
 
@@ -241,6 +242,51 @@ table.lisTable {
 .summary.entry-summary .ui-accordion-content {
     padding: 0;
 }
+
+.entry-content {
+    width: 95%;
+    max-width: 1200px;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.woocommerce-cart-form .woocommerce-cart-form__cart-item.cart_item img {
+    margin-bottom: 0;
+    width: 9em;
+}
+
+.woocommerce-cart-form {
+    margin-top: 1em;
+}
+
+.blocker.jquery-modal {
+    z-index:10;
+    padding:1em;
+    padding-top:4em;
+}
+
+#cross_sells {
+    max-width: 40em;
+    height: 70%;
+    padding: 1em;
+}
+
+#cross_sells .products {
+    margin: 0;
+}
+
+#cross_sells li {
+    width: 49%;
+}
+
+ .cross-sells {
+    width:100%;
+    height:100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0.7em;
+}
     
 @media all and (min-width: 2048px) {
     .woocommerce-main-image.zoom{
@@ -276,12 +322,6 @@ table.lisTable {
 
     }
 
-    .entry-content {
-        width: 50%;
-        align-content: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
 
     #signid > div {
         display:none;
@@ -341,6 +381,8 @@ table.lisTable {
     .woocommerce div.product div.images {
         margin-bottom: 0em;
     }
+    
+    
 
 }
 
@@ -377,6 +419,16 @@ table.lisTable {
     
     table.lisTable {        
         overflow-x: hidden;
+    }
+    
+    #cross_sells {
+        width: 100%;
+        height: 100%;
+    }
+    
+
+    #cross_sells li {
+        width: 100%;
     }
 }
 

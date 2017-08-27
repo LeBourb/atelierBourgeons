@@ -79,10 +79,15 @@ $(function(){
        
          
     });
-    $( "#accordion" ).accordion({
-        collapsible: true,
-        active: false
-    });
+    
+    
+    
+    if($( '#cross_sells' ).length) {
+        $( '#cross_sells' ).modal({
+            fadeDuration: 400,
+            fadeDelay: 0.50
+        });
+    }
     /*
     $('.easyzoom').easyZoom();
     

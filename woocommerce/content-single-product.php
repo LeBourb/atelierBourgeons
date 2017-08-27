@@ -183,11 +183,19 @@ foreach ( $attributes as $attribute ) :
                         //Guide des tailles (測り方ガイド)
                         echo '<div id="accordion">                            
                             <h3>' . __('Sizing Guide','atelierbourgeons') . '</h3>
-                            <div>' . wp_get_attachment_image( $thumb_id, 'large', false ,array(
+                            <div id="sizing-guide-img">' . wp_get_attachment_image( $thumb_id, 'large', false ,array(
                                 'title'	 => $props['title'],
                                 'alt'    => $props['alt'],
                                 'sizes'       => '(max-width: 768px) 500px , 1920px'
                         ) ) . '</div></div>';
+                        echo '<script> 
+                        //$("#sizing-guide-img > img")[0].addEventListener("load", function(){
+                            $( "#accordion" ).accordion({
+                                collapsible: true,
+                                active: false
+                            });            
+                        //});
+                        </script>';
                     }
                 }
             ?>
@@ -215,6 +223,7 @@ foreach ( $attributes as $attribute ) :
             remove_filter('woocommerce_single_product_summary','woocommerce_template_single_title',5);
             do_action( 'woocommerce_single_product_summary' );
                 
+            woocommerce_cross_sell_display();
                        
 		?>
             

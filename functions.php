@@ -218,6 +218,11 @@ function get_pll_url($lang)
       
         }
         
+        if(is_pll_wc('cart')) { 
+            wp_enqueue_script( 'jquery-modal-js', get_template_directory_uri() . '/js/jquery-modal-0.8.2.min.js',  array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/js/jquery-modal-0.8.2.min.js' ));
+            wp_enqueue_style( 'jquery-modal-css', get_template_directory_uri() . '/css/jquery-modal-0.8.2.min.css',  array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/jquery-modal-0.8.2.min.css' ) );
+        }
+        
         if(is_page("Products")) {
             wp_register_style( 'cards-stylecss', get_template_directory_uri() . '/css/cards.min.css' );
             wp_enqueue_style('cards-stylecss');
@@ -545,6 +550,101 @@ function pll_get_product($product,$lang) {
     $product_id = pll_get_post($product->get_id(),$lang);
     $_pf = new WC_Product_Factory();
     return $_pf->get_product($product_id);    
+}
+
+// woocommerce_cart_collaterals hook.
+remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display');
+add_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display_atelierb', 20);
+
+function woocommerce_cross_sell_display_atelierb ($limit = 2, $columns = 2, $orderby = 'rand', $order = 'desc' ) {
+    
+    global $woocommerce_loop;
+
+    if ( is_checkout() ) {
+            return;
+    }
+    
+    // Get visble cross sells then sort them at random.
+    /*$cross_sells                 = array_filter( array_map( 'wc_get_product', WC()->cart->get_cross_sells() ), 'wc_products_array_filter_visible' );
+    $woocommerce_loop['name']    = 'cross-sells';
+    $woocommerce_loop['columns'] = apply_filters( 'woocommerce_cross_sells_columns', $columns );
+
+    // Handle orderby and limit results.
+   
+    */
+    
+    $in_cart     = array();
+    if ( ! WC()->cart->is_empty() ) {
+            $cart_items = WC()->cart->get_cart();
+            foreach ( $cart_items as $key => $values ) {
+                    if ( $values['quantity'] > 0 ) {
+                            $cart_items[$key]['cross_sells'] = $values['data']->get_cross_sell_ids();
+                            
+                            //$in_cart[]   = $values['product_id'];
+                            array_push ( $in_cart , $values['product_id']);
+                            //$cross_sells = array_diff( $cross_sells, $in_cart );
+                            //$cross_sells = wp_parse_id_list( $cross_sells );
+                            /*if(count($cross_sells)) {
+                                echo '<div id="cross_sells" style="display:none">';
+                                wc_get_template( 'cart/cross-sells.php', array(
+                                        'cross_sells'        => $cross_sells,
+
+                                        // Not used now, but used in previous version of up-sells.php.
+                                        'posts_per_page'	 => $limit,
+                                        'orderby'			 => $orderby,
+                                        'columns'			 => $columns,
+                                ) );
+                                echo '</div>';
+
+                            }*/
+                    }
+            }
+            
+            foreach ( $cart_items as $values ) {
+                
+                if(is_array($values['cross_sells'])) {
+                    
+                    $array_cross_sells = array_diff( $values['cross_sells'], $in_cart );
+                    
+                    $cross_sells = wp_parse_id_list( $array_cross_sells );
+                    
+                    if(count($cross_sells)) {
+                        $cross_sells = array_filter( array_map( 'wc_get_product', $cross_sells ), 'wc_products_array_filter_visible' );
+                        $orderby     = apply_filters( 'woocommerce_cross_sells_orderby', $orderby );
+                        $cross_sells = wc_products_array_orderby( $cross_sells, $orderby, $order );
+                        $limit       = apply_filters( 'woocommerce_cross_sells_total', $limit );
+                        $cross_sells = $limit > 0 ? array_slice( $cross_sells, 0, $limit ) : $cross_sells; 
+                        
+                        echo '<div id="cross_sells" style="display:none"><div class="cross-sells"><h2>' .
+                            sprintf( _n( 'We suggest this following accessory with "%s"', 'We suggest these following accessories with "%s"', count($cross_sells) , 'atelierbourgeons' ) , $values['data']->name) . '</h2>' ; 
+                         
+                        woocommerce_product_loop_start(); 
+
+			foreach ( $cross_sells as $cross_sell ) : 
+
+                            $post_object = get_post( $cross_sell->get_id() );
+
+                            // génére avis ? 
+                            setup_postdata( $GLOBALS['post'] =& $post_object );
+
+                            wc_get_template_part( 'content', 'product' );
+
+			endforeach; 
+
+                        setup_postdata( $GLOBALS['post'] = null );
+                        woocommerce_product_loop_end();
+
+                        echo '</div></div>';
+
+                    }
+                }
+            }
+    }
+    //§§$cross_sells = array_diff( $cross_sells, $in_cart );
+    //return wp_parse_id_list( $cross_sells );
+    
+    
+
 }
 
 ?>

@@ -55,17 +55,33 @@
                                         <a href="<?php echo get_pll_page_by_title("Help") . "/#frequent-questions"  ;  ?>"><?php _e('FAQ','atelierbourgeons');?></a>
                                     </h5>
                                     <h5>
-                                        <a href="<?php echo get_pll_page_by_title("Legal Mentions") ;  ?>"><?php _e('Legal Notices','atelierbourgeons');?></a>
+                                        <a href="<?php echo get_pll_page_by_title("Help") . "/#shipping"  ;  ?>"><?php _e('Shipping','atelierbourgeons');?></a>
                                     </h5>
                                     <h5>
-                                        <a href="<?php echo get_pll_page_by_title("Help") . "/#shipping"  ;  ?>"><?php _e('Shipping','atelierbourgeons');?></a>
+                                        <a href="<?php echo get_pll_page_by_title("Help") . "/#payment"  ;  ?>"><?php _e('Secure payment','atelierbourgeons');?></a>
+                                    </h5>
+                                     <?php if(pll_current_language() == "ja") {?>
+                                    <h5>
+                                        <a href="<?php echo get_pll_page_by_title("Help") . "/#import"  ;  ?>"><?php _e('Import','atelierbourgeons');?></a>
+                                    </h5>
+                                    <?php }?>
+                                    <h5>
+                                        <a href="<?php echo get_pll_page_by_title("Help") . "/#return"  ;  ?>"><?php _e('Return','atelierbourgeons');?></a>
+                                    </h5>                                    
+                                    <?php if(pll_current_language() == "ja") {?>
+                                    <h5>
+                                        <a href="<?php echo get_pll_page_by_title("Help") . "/#goods"  ;  ?>"><?php _e('Goods','atelierbourgeons');?></a>
+                                    </h5>
+                                    <?php }?>                                    
+                                    <h5>
+                                        <a href="<?php echo get_pll_page_by_title("Help") . "/#contract"  ;  ?>"><?php _e('Contract','atelierbourgeons');?></a>
                                     </h5>
                                     <h5>
                                         <a href="<?php echo get_pll_page_by_title("Help") . "/#cookies"  ;  ?>"><?php _e('Cookies','atelierbourgeons');?></a>
                                     </h5>
                                     <h5>
-                                        <a href="<?php echo get_pll_page_by_title("Help") . "/#payment"  ;  ?>"><?php _e('Secure payment','atelierbourgeons');?></a>
-                                    </h5>
+                                        <a href="<?php echo get_pll_page_by_title("Legal Mentions") ;  ?>"><?php _e('Legal Notices','atelierbourgeons');?></a>
+                                    </h5>                                    
                                 </div>
                                 <div class="column middle">
                                     <i class="fa fa-globe"></i>

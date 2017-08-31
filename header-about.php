@@ -30,7 +30,7 @@
                         font-family: Utsukushi;
                         src: url(' . get_site_url () . '/wp-content/themes/atelierbourgeons/fonts/02UtsukushiMincho.ttf);
             }
-            .title {
+            .about-text.ja .title {
                 font-family: Utsukushi;
                 font-size: 2em;
                 text-align: center;

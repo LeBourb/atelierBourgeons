@@ -13,46 +13,57 @@
 ?>
 
 
-<div class="original">
-    <p class="title"><?php _e('Original Collection','atelierbourgeons')?></p> 
-    <div>        
-        <div class="text-right">            
-            <img src ="<?php echo get_site_url(); echo "/wp-content/themes/atelierbourgeons/img/about/Fabrics.jpg"; ?>" />
-            <div><?php _e('Fabrics and Accessories','atelierbourgeons')?>                
-            </div>
-        </div>
-        <div class="separator"></div>
-        <div class="text-left">
-            <img src ="<?php echo get_site_url(); echo "/wp-content/themes/atelierbourgeons/img/about/Sewing.jpg"; ?>" />
-            <div><?php _e('Design and Production','atelierbourgeons')?>
-            </div>
-        </div>
-        <div class="separator"></div>
-        <div class="text-right">            
-            <img src ="<?php echo get_site_url(); echo "/wp-content/themes/atelierbourgeons/img/about/packaging.jpg"; ?>" />
-            <div><?php _e('Card, Label, Packaging','atelierbourgeons')?>                
-            </div>
-        </div>
-    </div>
+<img class="image-s" src ="<?php echo get_site_url(); echo "/wp-content/themes/atelierbourgeons/img/about/Fabrics-s.jpg"; ?>" />
+<div class="parallax-container">
+<!-- -->
+<div class="parallax">
+    <img src ="<?php echo get_site_url() . "/wp-content/themes/atelierbourgeons/img/about/Fabrics.jpg"; ?>" />
 </div>
-<div class="about-right container">
-    
+<div class="about-text <?php if(pll_current_language()=='ja') echo 'ja'; ?>">
     <div>
-        <?php _e('Vintage and Second Hand','atelierbourgeons')?>        
+    <li class="text"><?php _e( 'Fabrics and Accessories', 'atelierbourgeons' );?></li>
     </div>
-    <img src ="<?php echo get_site_url(); echo "/wp-content/themes/atelierbourgeons/img/about/Vintage.jpg"; ?>" />
 </div>
-
-    <div class="about-left container">
-    
-    <img src ="<?php echo get_site_url(); echo "/wp-content/themes/atelierbourgeons/img/about/Gift.jpg"; ?>" />
-
+</div>
+<div style="width:100%; height:3em; background-color: white;"></div>
+<img class="image-s" src ="<?php echo get_site_url(); echo "/wp-content/themes/atelierbourgeons/img/about/Sewing-s.jpg"; ?>" />
+<div class="parallax-container">
+<!-- -->
+<div class="parallax">
+    <img src ="<?php echo get_site_url() . "/wp-content/themes/atelierbourgeons/img/about/Sewing.jpg"; ?>" />
+</div>
+<div class="about-text <?php if(pll_current_language()=='ja') echo 'ja'; ?>">
     <div>
-        <?php _e('Gift Wrapping text','atelierbourgeons')?>                
-    </div>
+    <li class="text"><?php _e( 'Design and Production', 'atelierbourgeons' );?></li>
     </div>
 </div>
-
+</div>
+<div style="width:100%; height:3em; background-color: white;"></div>
+<img class="image-s" src ="<?php echo get_site_url(); echo "/wp-content/themes/atelierbourgeons/img/about/packaging-s.jpg"; ?>" />
+<div class="parallax-container">
+<!-- -->
+<div class="parallax">
+    <img src ="<?php echo get_site_url() . "/wp-content/themes/atelierbourgeons/img/about/packaging.jpg"; ?>" />
+</div>
+<div class="about-text <?php if(pll_current_language()=='ja') echo 'ja'; ?>">
+    <div>
+    <li class="text"><?php _e( 'Card, Label, Packaging', 'atelierbourgeons' );?></li>
+    </div>
+</div>
+</div> 
+<div style="width:100%; height:3em; background-color: white;"></div>
+<img class="image-s" src ="<?php echo get_site_url(); echo "/wp-content/themes/atelierbourgeons/img/about/Vintage-s.jpg"; ?>" />
+<div class="parallax-container">
+<!-- -->
+<div class="parallax">
+    <img src ="<?php echo get_site_url() . "/wp-content/themes/atelierbourgeons/img/about/Vintage.jpg"; ?>" />
+</div>
+<div class="about-text <?php if(pll_current_language()=='ja') echo 'ja'; ?>">
+    <div>
+    <li class="text"><?php _e( 'Vintage and Second Hand', 'atelierbourgeons' );?></li>
+    </div>
+</div>
+</div>
 <?php
 require 'footer-about.php';
 ?>

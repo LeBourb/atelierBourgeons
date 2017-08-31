@@ -89,7 +89,7 @@ function has_banner() {
     require 'menu-left.php';
     require 'menu-right.php';
     ?>
-<div id="page" class="hfeed site">
+<div id="page" class="hfeed site" >
           <div id="langue-popup" class="popup-down" style="display:none">
             <a id="close-popup" onclick="$(&quot#langue-popup&quot).hide()">X</a>
             <li class="text">あなたのナビゲーターは日本語であることを検知しました。OKボタンを押すと、日本語サイトに移動します。</li>

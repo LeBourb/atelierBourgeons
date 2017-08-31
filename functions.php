@@ -153,7 +153,7 @@ function get_pll_url($lang)
             
             
         } else if ( is_pll_wc('shop') || is_shop() || is_product() || is_product_category() || is_pll_wc('cart')){
-            wp_enqueue_style( 'shop-style', get_template_directory_uri() . '/css/shop.min.css' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/shop.min.css' )  );
+            wp_enqueue_style( 'shop-style', get_template_directory_uri() . '/css/shop.css' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/shop.css' )  );
             
             wp_enqueue_script( 'jquery-ui-js', get_template_directory_uri() . '/js/jquery-ui-1.12.1.min.js',  array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/js/jquery-ui-1.12.1.min.js' ));
             wp_enqueue_style( 'jquery-ui-css', get_template_directory_uri() . '/css/jquery-ui-1.12.1.min.css',  array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/jquery-ui-1.12.1.min.css' ) );
@@ -228,10 +228,10 @@ function get_pll_url($lang)
             wp_enqueue_style('cards-stylecss');
         }
         
-        wp_register_style( 'menu-stylecss', get_template_directory_uri() . '/css/menu-shop.css', array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/menu-shop.css' )  );
+        wp_register_style( 'menu-stylecss', get_template_directory_uri() . '/css/menu-shop.min.css', array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/menu-shop.min.css' )  );
         wp_enqueue_style('menu-stylecss');
 
-        wp_register_script( 'menu-stylejs', get_template_directory_uri() . '/js/menu.js', array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/js/menu.js' )  );
+        wp_register_script( 'menu-stylejs', get_template_directory_uri() . '/js/menu.min.js', array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/js/menu.min.js' )  );
         wp_enqueue_script('menu-stylejs');
         
        // wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style-storefront.min.css' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/style-storefront.min.css' )  );
@@ -476,14 +476,13 @@ function get_rate_eurjpy(){
     $filename = "yahoo-EURJPY-'. $today . '.txt";
     $json = '';
     if(!file_exists ( $filename )){
-        $response = wp_remote_get( 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20csv%20where%20url%3D%22http%3A%2F%2Ffinance.yahoo.com%2Fd%2Fquotes.csv%3Fe%3D.csv%26f%3Dnl1d1t1%26s%3Deurjpy%3DX%22%3B&format=json&callback=' );
+        //$response = wp_remote_get( 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20csv%20where%20url%3D%22http%3A%2F%2Ffinance.yahoo.com%2Fd%2Fquotes.csv%3Fe%3D.csv%26f%3Dnl1d1t1%26s%3Deurjpy%3DX%22%3B&format=json&callback=' );
+        $response = wp_remote_get( 'http://www.apilayer.net/api/live?access_key=2b0f325bae92ece75a3b2a730818a9bd&format=1' );
         $today = date("m.d.y"); 
         if( is_array($response)  ) {
-          $header = $response['headers']; // array of http header lines
-          $json = $response['body']; // use the content
-
-
-          $myfile = fopen($filename, "w") or die("Unable to open file!");
+            $header = $response['headers']; // array of http header lines
+            $json = $response['body']; // use the content
+            $myfile = fopen($filename, "w") or die("Unable to open file!");
             fwrite($myfile, $json);
             fclose($myfile);
         }
@@ -492,7 +491,8 @@ function get_rate_eurjpy(){
        $json = stream_get_contents($myfile);
     }
     $obj = json_decode($json);
-    $rate = $obj->{'query'}->{'results'}->{'row'}->{'col1'};
+    //$rate = $obj->{'query'}->{'results'}->{'row'}->{'col1'};
+    $rate = ( $obj->{'quotes'}->{'USDJPY'} ) / ( $obj->{'quotes'}->{'USDEUR'} );
     return $rate;
 }
 

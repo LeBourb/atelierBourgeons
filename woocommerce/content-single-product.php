@@ -188,13 +188,22 @@ foreach ( $attributes as $attribute ) :
                                 'alt'    => $props['alt'],
                                 'sizes'       => '(max-width: 768px) 500px , 1920px'
                         ) ) . '</div></div>';
-                        echo '<script> 
-                        //$("#sizing-guide-img > img")[0].addEventListener("load", function(){
-                            $( "#accordion" ).accordion({
-                                collapsible: true,
-                                active: false
-                            });            
-                        //});
+                        echo '<script>
+                            if($("#sizing-guide-img > img")[0].complete) {
+                                $( "#accordion" ).accordion({
+                                    collapsible: true,
+                                    active: false
+                                });            
+                            }
+                            else {
+                                $("#sizing-guide-img > img")[0].addEventListener("load", function(){
+                                    $( "#accordion" ).accordion({
+                                        collapsible: true,
+                                        active: false
+                                    });            
+                                });
+                            }
+                        
                         </script>';
                     }
                 }
@@ -223,7 +232,7 @@ foreach ( $attributes as $attribute ) :
             remove_filter('woocommerce_single_product_summary','woocommerce_template_single_title',5);
             do_action( 'woocommerce_single_product_summary' );
                 
-            woocommerce_cross_sell_display();
+            //woocommerce_cross_sell_display();
                        
 		?>
             

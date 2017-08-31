@@ -27,21 +27,25 @@ section {
 }
 
 .parallax-container .about-text{
-    height:100%;
-    opacity:0.6;
+    height:100%;    
     width: 100%;
-    padding-top: 1em;
-    background-color: white;
-    padding-left : 2em;
-    padding-right : 2em;
-    display:flex;
+    padding-top: 1em;   
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .about-text > div {
     height: auto;
+    opacity:0.8;
+    background-color: white;
     margin-top: auto;
     margin-bottom:auto;
-    width:100%
+    padding-top: 2em;
+    padding-bottom:2em;
+    width:100%;
+    max-width: 70em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .container .about-text {
@@ -131,7 +135,6 @@ section {
 }
 
 #inline-menu {
-    font-size: 1rem;
     text-align: center;
     background: #fff;
     border-bottom: 1px solid #f2f2f2;
@@ -177,6 +180,7 @@ section {
 .parallax-container {
   height: 500px;
   width: 100%;
+  display: table;
 }
 
 pre {
@@ -214,17 +218,17 @@ footer a:hover {
 
     .container img {        
         height: auto;
+        max-height:30em;
     }
 
     .title {
-        font-size: 1.6em;
+        font-size: 3em;
         margin: 0;
-        margin-bottom: 0.5em;
-        margin-top: 0.5em;
+        line-height: 0.8em;
     }
 
     .text {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 }
 
@@ -259,6 +263,15 @@ footer a:hover {
 .help-nav > div > ul > li {
     padding: 2.5em 0;
 }
+
+.parallax-container .parallax {
+        display: block;
+    }
+    
+    .image-s {
+        display: none;
+    }
+
 
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
 
@@ -332,7 +345,7 @@ footer a:hover {
     }
     
     .parallax-container {
-        height: 80%!important;        
+        height: auto!important;       
     }
     
     .parallax-container .about-text {
@@ -340,6 +353,17 @@ footer a:hover {
     }
     
     .text {
-        font-size: 0.7em;
+        font-size: 1em;
+        padding-left: 0.6em;
+        padding-right: 0.6em;
+    }
+    
+    .parallax-container .parallax {
+        display: none;
+    }
+    
+    .image-s {
+        display: block;
+        width: 100%;
     }
 }

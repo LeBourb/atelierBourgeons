@@ -232,6 +232,11 @@ main.site-main > div.product.type-product > .summary.entry-summary {
 table.lisTable {
     display: block;
     overflow-x: auto;
+    font-size: inherit;
+}
+
+table.lisTable table {
+    font-size: inherit;
 }
 
 .summary.entry-summary .ui-state-active {
@@ -282,7 +287,6 @@ table.lisTable {
 
  .cross-sells {
     width:100%;
-    height:100%;
     overflow-y: auto;
     overflow-x: hidden;
     padding: 0.7em;
@@ -391,17 +395,12 @@ table.lisTable {
         display: inline-grid;
     }   
     
-    .shop-attribute {
-        font-size: 0.7em;
-    }
-    
     .shop-attribute th {
         min-width: 2em;
         width: 2em;
     }
 
     .dimensions td {
-        font-size: 0.7em;
         padding: 1em;
         border-bottom: solid;
         

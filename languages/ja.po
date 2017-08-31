@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-08-27 12:59+0200\n"
+"PO-Revision-Date: 2017-08-31 21:19+0200\n"
 "Language-Team: EMAIL@ADDRESS\n"
 "X-Generator: Poedit 2.0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -86,7 +86,7 @@ msgid "Made in France"
 msgstr "Made in France"
 
 msgid "Secure payment"
-msgstr "安心安全な決済システム"
+msgstr "お支払いについて"
 
 msgid "FAQ"
 msgstr "よくあるご質問"
@@ -98,19 +98,22 @@ msgid "Follow us"
 msgstr "フォローする"
 
 msgid "Contact address mail"
-msgstr "メールを送る"
+msgstr "<h5>atelier Bourgeons</h5><h5>24 rue Traversière</h5><h5>92100, Boulogne-Billancourt</h5><h5>contact@atelierbourgeons.com</h5>"
 
-# English : "We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, you consent to our cookies on this device in accordance with our cookie policy."
-# Japanese : "当サイトでは、お客様が再訪された際に快適にご利用いただけるようクッキー（Cookie）を利用しております。お客様のプライバシーを侵害するものではありません。このままご利用いただいた時点で、当サイトのプライバシーポリシーに同意したものとみなします。"
-msgid "Cookie Notice"
-msgstr "クッキー（Cookie）の利用"
+msgid "Return"
+msgstr "返品ついて"
 
-# help.php
-msgid "Returns"
-msgstr "返品・交換"
+msgid "Contract"
+msgstr "ご利用規約"
+
+msgid "Import"
+msgstr "輸入税について"
+
+msgid "Goods"
+msgstr "商品の状態ついて"
 
 msgid "Shipping"
-msgstr "発送について"
+msgstr "お届けについて"
 
 msgid "Cookies"
 msgstr "クッキー（Cookie）の利用"
@@ -120,13 +123,13 @@ msgid "Original Collection"
 msgstr " Original Collection "
 
 msgid "Fabrics and Accessories"
-msgstr "<p>Fabrics and Accessories</p>モノが溢れている今の世の中には、まだ使えても倉庫に埋もれていたり、捨てられていく魅力的な素材が沢山あります。そんな彼らの良さをもっと伝えたくて、服の素材には一度表舞台から降りてしまったものを選んで使用しています。小さな布切れも、パズルのピースをはめ込むようにさりげなく服の中へ取り入れて、遊び心をプラス。アクセントにあしらうフランスらしいヴィンテージボタンやリボンも、ちょっとしたこだわりです。"
+msgstr "<p class=\"title\">Fabrics and Accessories</p>モノが溢れている今の世の中には、まだ使えても倉庫に埋もれていたり、捨てられていく魅力的な素材が沢山あります。そんな彼らの良さをもっと伝えたくて、服の素材には一度表舞台から降りてしまったものを選んで使用しています。小さな布切れも、パズルのピースをはめ込むようにさりげなく服の中へ取り入れて、遊び心をプラス。アクセントにあしらうフランスらしいヴィンテージボタンやリボンも、ちょっとしたこだわりです。"
 
 msgid "Design and Production"
-msgstr "<p>Design and Creation</p>レトロな雰囲気と新しさが微妙にマッチしたときの、独特な面白さ。次々と入れ替わる「トレンド」だけに縛られず、あなたの“好き”や個性を素直に表せるような服創りを目指して。仮縫い用布をトルソーに沿わせながら形を作り、型紙(パターン)に起こしたら生地を裁断。その後縫いと修正を繰り返し、一枚の服が完成します。クチュールメゾンのように多くの工程を手作業で行い、細やかさと温もりのある服を皆さまへお届けします。"
+msgstr "<p class=\"title\">Design and Creation</p>レトロな雰囲気と新しさが微妙にマッチしたときの、独特な面白さ。次々と入れ替わる「トレンド」だけに縛られず、あなたの“好き”や個性を素直に表せるような服創りを目指して。仮縫い用布をトルソーに沿わせながら形を作り、型紙(パターン)に起こしたら生地を裁断。その後縫いと修正を繰り返し、一枚の服が完成します。クチュールメゾンのように多くの工程を手作業で行い、細やかさと温もりのある服を皆さまへお届けします。"
 
 msgid "Card, Label, Packaging"
-msgstr "<p>Card, Label, Packaging</p>当アトリエでは、３R（リサイクル・リユース・リデュース）をモットーに、洋服の素材はもちろんタグや梱包も全てリサイクル ・エコフレンドリーなものを使用しています。配達BOXと包装紙は、使用後に再びリサイクル資源として分別していただけます。ブランドネームタグとラッピング用リボンは、オーガニックコットン100％のイタリア製です。洗濯表示ラベル&サイズタグは、使用済みの仮縫い用布(シーチング)を再利用して作っています。ギフト用にリボンとメッセージカードをお付けできます。詳しくはこちら"
+msgstr "<p class=\"title\">Card, Label, Packaging</p>当アトリエでは、３R（リサイクル・リユース・リデュース）をモットーに、洋服の素材はもちろんタグや梱包も全てリサイクル ・エコフレンドリーなものを使用しています。配達BOXと包装紙は、使用後に再びリサイクル資源として分別していただけます。ブランドネームタグとラッピング用リボンは、オーガニックコットン100％のイタリア製です。洗濯表示ラベル&サイズタグは、使用済みの仮縫い用布(シーチング)を再利用して作っています。ギフト用にリボンとメッセージカードをお付けできます。詳しくはこちら"
 
 msgid "Vintage and Second Hand"
 msgstr "<p class=\"title\">Vintage, Second hand and Customised clothing<p/><li class=\"text\">atelier Bourgeonsでは、主にヨーロッパの蚤の市、ヴィンテージショップ、業者用の倉庫から仕入れる古着・中古服・小物も取り扱っています。より着やすく可愛い服を楽しんでいただけるよう、必要に応じてリサイズ・リメイクも行います。各商品の詳細については、Web shopの商品紹介ページをご覧ください。</li>"

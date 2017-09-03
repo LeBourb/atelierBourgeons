@@ -141,10 +141,11 @@ function has_banner() {
                             </div>-->
                             <div id="menu-button-right">                               
                                <!--<ul href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="menu-shop">-->
-                               <a>
-                                   <i class="fa fa-shopping-cart"></i>
+                               <i class="fa fa-shopping-cart"></i>
+                               <span>
+                                   
                                    (<?php echo WC()->cart->get_cart_contents_count(); ?>)
-                               </a>
+                               </span>
                                </ul>
                             </div>  
                             <div id="cssmenu">                
@@ -158,19 +159,19 @@ function has_banner() {
                                     </div>
                                 <div class="menu-right">
                                 <ul href="" class="">
-                                    <li><a id="button-home"  href="<?php echo get_pll_page_by_title("About"); ?>"><?php _e('About','atelierbourgeons'); ?></a></li>
-                                    <li id="button-collection" ><a><?php _e('Galleries','atelierbourgeons'); ?></a></li>
-                                    <li><a id="button-blog" href="<?php echo get_permalink( $blog_id);?>"><?php _e('Blog','atelierbourgeons'); ?> </a></li>
+                                    <li  class="menu-elem" ><a id="button-home" href="<?php echo get_pll_page_by_title("About"); ?>"><?php _e('About','atelierbourgeons'); ?></a></li>
+                                    <li class="menu-parent-category" id="button-collection" ><a><?php _e('Galleries','atelierbourgeons'); ?></a></li>
+                                    <li  class="menu-elem" ><a id="button-blog" href="<?php echo get_permalink( $blog_id);?>"><?php _e('Blog','atelierbourgeons'); ?> </a></li>
                                     <?php if (is_user_logged_in()) { 
-                                        echo '<li><a id="button-account" href="'. get_pll_wc_url( 'myaccount' ,null) .'">' . __('Account','atelierbourgeons') . '</a></li>';
+                                        echo '<li class="menu-elem"><a id="button-account" href="'. get_pll_wc_url( 'myaccount' ,null) .'">' . __('Account','atelierbourgeons') . '</a></li>';
                                     } 
                                         else { 
-                                        echo '<li><a id="button-signin">' . __('Sign In','atelierbourgeons') . '</a></li>';
+                                        echo '<li class="menu-elem"><a id="button-signin">' . __('Sign In','atelierbourgeons') . '</a></li>';
                                     } ?>
                                
                                 
                                 <?php if( is_pll_wc('myaccount') || is_pll_wc('shop') || is_shop() || is_product() || is_product_category() ) { ?>
-                                    <li><a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="menu-shop" >
+                                    <li  class="menu-elem"><a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="menu-shop" >
                                 <i class="fa fa-shopping-cart fa-lg">                                    
                                 </i>
                                 <span>(<?php echo WC()->cart->get_cart_contents_count(); ?>)</span>
@@ -178,7 +179,7 @@ function has_banner() {
                                 </li>
                                 <?php } ?>
                                                               
-				<li id="menu-langue">
+				<li id="menu-langue"  class="menu-elem">
                                     
                                         <?php 
                                         $prefix = "";
@@ -202,7 +203,7 @@ function has_banner() {
                                             ?>       
                                         
                                 </li>
-                                <li><a><i id="open-search" class="fa fa-search fa-lg"></i></a></li>
+                                <li class="menu-elem"><a><i id="open-search" class="fa fa-search fa-lg"></i></a></li>
                                 <li id="search-box" style="display:none;">    
                                     <?php require 'woocommerce/product-searchform.php'; ?>
                                 </li>   
@@ -250,10 +251,6 @@ function has_banner() {
                 
         ?> 
         </div>
-            <div id="cart-widget" class="sub-header-menu" style="display:none">
-        <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?> 
-                
-            </div>
             <div id="langue-widget" class="sub-header-menu" style="display:none">
    
                 <?php              
@@ -292,7 +289,7 @@ function has_banner() {
                 }
             }
             // FOR HIDE/SHOW
-            echo '<div id="sub-menu-button-eshop" style="display:none" class="sub-header-menu">';
+            echo '<section id="sub-menu-button-eshop" style="display:none" class="sub-header-menu">';
             echo '<div id="eshop-categories-container">';
             
             $parent_cats = array();
@@ -332,9 +329,9 @@ function has_banner() {
             echo '<img id="eshop-categories-image" />';
             echo '</div>';
             
-            echo '</div>';
+            echo '</section>';
             
-            echo '<div id="sub-menu-collection" style="display:none" class="sub-menu-section sub-header-menu"><div class="gallery-menu-items" style="display:inline-flex; float:right;">';
+            echo '<section id="sub-menu-button-collection" style="display:none" class="sub-menu-section sub-header-menu"><div class="gallery-menu-items" style="display:inline-flex; float:right;">';
             $pages = get_pages(array(
                 'meta_key' => '_wp_page_template',
                 'meta_value' => 'galerie-17w.php'
@@ -363,7 +360,7 @@ function has_banner() {
             }
             
             
-            echo '</div></div>';
+            echo '</div></section>';
         ?>
             
 	</header><!-- #masthead -->

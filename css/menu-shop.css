@@ -23,7 +23,7 @@ header > .site-branding , header.header-down > .site-branding {
     align-items: center;
 }
 
-header.admin.header-top {
+header.admin.header-top , header.admin.header-down {
     margin-top: 2em;
 }
 
@@ -105,17 +105,11 @@ header.site-header-menu.header-down {
     width: auto;
     z-index: 1;
     list-style: none;
-    line-height: 1;
     position: relative;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0!important;
-}
-
-#cssmenu {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
 }
 
 .menu-shop a {
@@ -140,6 +134,7 @@ header.site-header-menu.header-down {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    border-bottom: 1px solid transparent;
 }
 
 .site-header-menu {
@@ -154,6 +149,12 @@ header.site-header-menu.header-down {
     border-bottom: none!important;
 }
 
+
+.site-header-menu.header-open.banner {
+    color: #9aa0a7;
+    fill: #585d63;
+}
+
 header.header-top {
     transition: padding 1s ease-in-out, background 0.1s ease-out;
 }
@@ -162,11 +163,18 @@ header.header-top {
     padding: unset!important;
 }
 
-#cssmenu .focus {
+#cssmenu .focus , .menu-elem:hover {
     border-bottom: 1px solid #0f2130;
-    padding-bottom : 4px !important;
 }
 
+header.header-down #cssmenu .menu-elem:hover {
+    border-bottom: 1px solid rgb(15, 33, 48);
+}
+
+
+header.header-top #cssmenu .menu-elem:hover {
+    border-bottom: 1px solid white;
+}
 
 .langue-menu > li > a {
     color: #4573a7;
@@ -199,10 +207,7 @@ header.header-top {
 }
 #cssmenu {
     width: 80%;
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1;
-    max-height: 2em;
-    height: auto;
+    height: 2em;
 }
 #menu-line {
     position: relative;
@@ -222,16 +227,25 @@ header.header-top {
     padding-left: 0;
 }
 
-#cssmenu i.fa-shopping-cart ,
-#cssmenu i.fa-search {
+#cssmenu i.fa-shopping-cart {
     position: relative;
     cursor: pointer;
-    vertical-align: middle;
-    margin-right: 0.3em;
+    width: 1em;
 }
+
+#cssmenu i.fa-search {
+    cursor: pointer;
+    width: 1em;
+}
+
 
 header#masthead .sub-header-menu {
     padding: 2em;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    padding-top: 5em;
+    background-color: white;
 }
 
 header#masthead .sub-category-section ul{
@@ -284,24 +298,27 @@ header#masthead #sub-menu-collection a {
 
 #cssmenu a {
     background-color: transparent;
-    font-size: 0.8em;
+    font-size: .8em;
+    font-weight: 600;
+    letter-spacing: 0.15em;
     text-decoration: none;
     text-transform: uppercase;
     color: inherit;
-    font-family: "Open Sans", sans-serif;
     text-align: center;
     line-height: 2em;
 }
 
 .fa-shopping-cart:before {    
-    top: 23%;
-    position: relative;    
+    top: 20%;
+    left:0;    
+    position: absolute;   
 }
 
-.fa-search:before {
-    top: 40%;
-    position: relative;
-    font-size: 10px;
+.menu-elem .fa-search:before {
+    top: 23%;
+    position: absolute;
+    left: 20%;
+    
 }
 
 .site-branding{
@@ -317,10 +334,11 @@ header#masthead #sub-menu-collection a {
 
 #menu-langue a span{
     position: absolute;
-    margin-top: 2em;
-    margin-left: -0.2em;
+    top: 100%;   
+    left:0;
     color: black;
     background: white;    
+    width: 100%;
     border-radius: 3px;
     box-shadow: 0 0 2px rgba(0,0,0,.5);    
 }
@@ -328,10 +346,8 @@ header#masthead #sub-menu-collection a {
 #menu-langue a span::before {
     content: '';
     position: absolute;
-    top: -0.4em;
-    left: 0.5em;
-    width: 0;
-    height: 0;
+    top: -20%;
+    left: 50%;
     border-bottom: 0.4em solid rgba(255, 255, 255, 1);
     border-left: 0.4em solid transparent;
     border-right: 0.4em solid transparent;
@@ -505,20 +521,11 @@ form.woocommerce-product-search{
     -o-transition: border-color 0.2s ease;
     transition: border-color 0.2s ease;
 }
-/*#cssmenu > ul > li.has-sub:hover > a::after {
-    border-color: #009ae1;
-}*/
 #cssmenu ul ul {
     position: relative;
     display: none;
     margin-left: 0px;
 }
-/*#cssmenu li:hover > ul {
-    left: auto;
-}
-#cssmenu.align-right li:hover > ul {
-    right: 0;
-}*/
 #cssmenu ul ul ul {
     margin-left: 100%;
     top: 0;
@@ -535,9 +542,6 @@ form.woocommerce-product-search{
     -o-transition: height .2s ease;
     transition: height .2s ease;
 }
-/*#cssmenu ul li:hover > ul > li {
-    height: 32px;
-}*/
 #cssmenu > ul > li > ul > li {
     margin-bottom: 1px;
     background: #484848;
@@ -561,10 +565,7 @@ form.woocommerce-product-search{
     -o-transition: color .2s ease;
     transition: color .2s ease;
 }
-/*#cssmenu ul ul li:hover > a,
-#cssmenu ul ul li a:hover {
-    color: #ffffff;
-}*/
+
 #cssmenu ul ul li.has-sub > a::after {
     position: absolute;
     top: 13px;
@@ -614,6 +615,7 @@ form.woocommerce-product-search{
     cursor: pointer;
     width: 7em;
     height: 2em;
+    z-index: 1;
 }
 
 #search-box {
@@ -628,6 +630,7 @@ form.woocommerce-product-search{
     background-color: white;
     padding-top: 0em!important;
     color: #9aa0a7;
+    fill: #585d63;
     background-position: center center;
     border-bottom: 1px solid rgba(0,0,0,0.07);
     position: relative;
@@ -653,11 +656,15 @@ form.woocommerce-product-search{
 }
 
 header.header-top .site-branding.invert  {        
-        fill: white;        
+    fill: white;        
 }
 
-header.header-down:not(.overlay-mobile) .site-branding.invert  {        
-        fill: black;        
+header.header-open .site-branding.invert  {        
+    fill: #585d63;      
+}
+
+header.header-down:not(.overlay-mobile) .site-branding.invert {        
+    fill: #585d63;
 }
 
 
@@ -726,9 +733,6 @@ header.header-down:not(.overlay-mobile) .site-branding.invert  {
     position: absolute;
 }
 
-/*#cssmenu ul ul li.has-sub:hover > a::after {
-    border-color: #ffffff;
-}*/
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
     .site-branding {
         display: block!important;
@@ -752,6 +756,9 @@ header.header-down:not(.overlay-mobile) .site-branding.invert  {
     header.overlay-mobile {
         position: absolute!important;
         background: transparent;
+        fill: white;
+        color: white;
+        margin-top: 0!important;
     }
 
     .site-search{
@@ -857,6 +864,8 @@ header.header-down:not(.overlay-mobile) .site-branding.invert  {
         min-height: 2em;
         padding-top: 0;
         position: relative;
+        color: black;
+        fill: black;        
     }
     .fa-home {
         font-size: 1.2em;
@@ -993,10 +1002,15 @@ header.header-down:not(.overlay-mobile) .site-branding.invert  {
         display: block;
         margin-right: 0.5em;
         margin-top: 0.2em;
+        display: flex;
     }
     #menu-button-right > ul {
         margin: 0;
         margin-right: 0.5em;
+    }
+    #menu-button-right i.fa-shopping-cart {
+        position: relative;
+        width: 1em;
     }
     #cssmenu .submenu-button {
         position: absolute;

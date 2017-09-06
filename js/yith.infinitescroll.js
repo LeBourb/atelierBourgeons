@@ -55,6 +55,7 @@
 
                     if( next.length ) {
                         desturl = next.attr( 'href' );
+                        desturl = desturl.split('?_=')[0];
                     }
                     else {
                         // set finished var true
@@ -125,7 +126,7 @@
                 return;
             }
 
-            if ( ! loading && ! finished && ( t.scrollTop() + t.height() ) >= ( elem.offset().top + elem.height() ) ) {
+            if ( ! loading && ! finished && ( t.scrollTop() + t[0].innerHeight ) >= ( elem.offset().top + elem.height() ) ) {
                 main_ajax();
             }
         })

@@ -101,7 +101,15 @@ $(function(){
     // Get an instance API
     //var api = $easyzoom.data('easyZoom');
 
-
-    
+    //infinite scroll
+    new $.fn.yit_infinitescroll({
+        nextSelector   : '.next.page-numbers',
+        navSelector    : '.page-numbers',
+        itemSelector   : '.product-listed',
+        contentSelector: '.products',
+        maxPage        : '9',
+        loader         : '<div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>',
+        is_shop        : true
+    });
     
 });

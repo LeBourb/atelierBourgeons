@@ -28,7 +28,7 @@ get_header(); ?>
 
 		</main><!-- #main -->
                 <div id='col-right'>
-                    <h3 class="widget-right">Instagram</h3><div id="instafeed"><?php echo display_instagram(array("followtext" => __("Follow me on Instagram",'atelierbourgeons'))); ?></div>
+                    <h3 class="widget-right">Instagram</h3><div id="instafeed"><?php if( function_exists( 'display_instagram' ) ) echo display_instagram(array("followtext" => __("Follow me on Instagram",'atelierbourgeons'))); ?></div>
                 </div>
 	</div><!-- #primary -->
 

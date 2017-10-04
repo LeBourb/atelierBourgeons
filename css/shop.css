@@ -94,11 +94,78 @@ li.tags-product > span.product-tags {
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: .25em;
-    background-color: black;
+    background-color: #36384c;
     cursor: pointer;
 }
 
+.col-full {
+    width: 100%;
+}   
 
+.col-full .categories {
+    display:flex;
+    flex-direction: column;
+}
+
+.col-full .categories .sub-category-elem {
+ margin-bottom: 1em;
+ position: relative;
+}
+
+.nav-wrapper {
+    position: relative;
+    min-width: 13em;
+}
+
+.nav-and-products{
+    display:flex;
+}
+
+.cd-tabs .nav-wrapper:after {
+  content: "";  
+  clear: both;
+}
+
+.cd-tabs.is-ended .nav-wrapper::after {
+  /* class added in jQuery - remove the gradient layer when it's no longer possible to scroll */
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+  -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity .3s 0s, visibility 0s .3s;
+}
+
+.cd-tabs-navigation {
+  width: fit-content;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  margin-left: 1em;
+}
+
+.cd-tabs-navigation a {
+    font-weight: 400;
+}
+
+.cd-tabs-navigation:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.cd-tabs-navigation .sub-category-elem a:hover {
+    color: #e9dccd;      
+}
+
+.cd-tabs-navigation .sub-category-elem.selected a {
+    color: #e3bab3;        
+    font-weight: 600;
+}
+
+.cd-tabs-content {
+    flex-grow: 1;
+}
 .thumbnails {
     margin: 2em;
 }
@@ -325,7 +392,34 @@ table.lisTable table {
         margin-top: 10px;
 
     }
+    
+    .cd-tabs-navigation {
+        margin: 0;
+    }
 
+
+    .cd-tabs-navigation a {
+      text-align: center;        
+    }
+    
+    .cd-tabs-navigation .sub-category-elem {
+        margin-bottom: 1em;
+        height :60px;
+        text-align: right;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 2em;
+        overflow: hidden;
+    }
+    
+    .cd-tabs-navigation .sub-category-elem.selected {
+        border-bottom: solid #e3bab3;        
+    }
+    
+    
+    .nav-and-products {
+        flex-direction: column;
+    }
 
     #signid > div {
         display:none;
@@ -355,7 +449,66 @@ table.lisTable table {
         position: fixed;
     }
 
+    .col-full {
+        display: block;
+        width: 100%;
+    } 
+    
+    .col-full .categories {
+        margin: 0;
+        min-width: 100%;
+        width: fit-content;
+        text-transform: uppercase;
+        padding-right: 0.2em;
+        height:auto;
+        margin-bottom: 1em;
+    }
+    
+    .col-full .categories {
+        display: inline-block;
+        width: auto;
+        position: relative;
+        height: 90px;
+        white-space: nowrap;
+        overflow-x: hidden;        
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .cd-tabs {        
+        width: 100%;        
+    }
 
+    .cd-tabs nav {
+        height: 90px;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        position: relative;
+        background: #fafaf7;
+        box-shadow: inset 0 -2px 3px rgba(203, 196, 130, 0.06);
+    }
+
+    .cd-tabs .nav-wrapper::after {
+      /* subtle gradient layer on top right - to indicate it's possible to scroll */
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 50px;
+      z-index: 1;
+      pointer-events: none;
+      background: -webkit-linear-gradient( right , #fafaf7, rgba(248, 247, 238, 0));
+      background: linear-gradient(to left, #f8f7ee, rgba(248, 247, 238, 0));
+      visibility: visible;
+      opacity: 1;
+      -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+      -moz-transition: opacity .3s 0s, visibility 0s 0s;
+      transition: opacity .3s 0s, visibility 0s 0s;
+    }
+    
+    .nav-wrapper {
+        height: 60px;
+        overflow-y: hidden;
+    }   
 
     .single-product .summary {
         float:none;

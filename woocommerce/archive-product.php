@@ -32,6 +32,34 @@ get_header( 'shop' ); ?>
 		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
 		 * @hooked woocommerce_breadcrumb - 20
 		 */
+                        global $post;
+                        //print_r($post);
+        //TODO: A faire !
+                        //$categories = get_the_category($post);
+                        //print_r($categories);
+                        $terms = wc_get_product_terms( $post->ID, 'product_cat');
+                        global $wp_query;
+                        $current = $wp_query->get_queried_object()->term_id;
+                        $main_term = apply_filters( 'woocommerce_breadcrumb_main_term', $terms[0], $terms );
+                        //print_r($terms);
+                        //$termid = get_term($categories, 'product_cat' );
+                        //print_r($termid);
+                        echo '<div class="nav-and-products">';
+                        echo '<aside class="nav-wrapper">';
+                        echo '<nav>';
+                        echo '<ul class="categories cd-tabs-navigation">';
+                        foreach ($terms as $term){
+                            //commandes                            
+                            if($term->parent == 0) {   
+                                // get the parent's hierarchy.                                
+                                display_subcats_from_parentcat_by_ID($term->term_id,$current);
+                                break;
+                            }                            
+                        }
+                        echo '</ul>';
+                        echo '</nav>';
+                        echo '</aside>'
+                        
 		//do_action( 'woocommerce_before_main_content' );
 	?>
 
@@ -48,7 +76,10 @@ get_header( 'shop' ); ?>
 			 * @hooked woocommerce_taxonomy_archive_description - 10
 			 * @hooked woocommerce_product_archive_description - 10
 			 */
-			do_action( 'woocommerce_archive_description' );
+			do_action( 'woocommerce_archive_description' ); 
+                        
+
+                        
 		?>
 
 		<?php if ( have_posts() ) : ?>
@@ -61,7 +92,7 @@ get_header( 'shop' ); ?>
 				 * @hooked woocommerce_catalog_ordering - 30
 				 */
                                 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
-				do_action( 'woocommerce_before_shop_loop' );
+				do_action( 'woocommerce_before_shop_loop' );                                
 			?>
 
 			<?php woocommerce_product_loop_start(); ?>
@@ -75,6 +106,8 @@ get_header( 'shop' ); ?>
 				<?php endwhile; // end of the loop. ?>
 
 			<?php woocommerce_product_loop_end(); ?>
+                        
+                        </div>
 
 			<?php
 				/**
@@ -108,6 +141,7 @@ get_header( 'shop' ); ?>
 		 * @hooked woocommerce_get_sidebar - 10
 		 */
 		//do_action( 'woocommerce_sidebar' );
+                
 	?>
 
 <?php get_footer( 'shop' ); ?>

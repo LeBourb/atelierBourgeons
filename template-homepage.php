@@ -236,7 +236,7 @@ foreach($images as $image) {
             
     
 					
-    <?php } } ?>
+    <?php } }?>
        
 </html>
 	

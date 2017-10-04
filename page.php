@@ -39,7 +39,7 @@
                                 /*wc_get_template('content-product.php', array(
 					'category' => 'NEW'
 				));*/
-                               ?><ul class="products">
+                               ?><ul class="products cd-tabs-content">
 	<?php
 		$args = array(
 			'post_type' => 'product',

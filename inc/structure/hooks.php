@@ -46,6 +46,10 @@ remove_action( 'storefront_header', 'storefront_primary_navigation_wrapper',		42
 remove_action( 'storefront_header', 'storefront_primary_navigation_wrapper_close',		68 );
 */
 
+//SEO YOAST
+//WPSEO_Frontend::get_instance();
+remove_action( 'wpseo_json_ld', 'organization_or_person' );
+
 /**
  * Footer
  * @see  storefront_footer_widgets()

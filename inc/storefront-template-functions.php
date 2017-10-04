@@ -773,6 +773,24 @@ function storefront_primary_navigation_wrapper_close() {
 	echo '</section>';
 }
 
+function  storefront_fix_availability( $availability ) {
+		switch ( $availability ) {
+			case 1:
+				$value = 'available for order';
+				break;
+			case 2:
+				$value = 'out of stock';
+				break;
+			case 3:
+				$value = 'preorder';
+				break;
+			default:
+				$value = 'in stock';
+				break;
+		}
+		return $value;
+	}
+
 if ( ! function_exists( 'storefront_init_structured_data' ) ) {
 	/**
 	 * Generate the structured data...
@@ -784,51 +802,256 @@ if ( ! function_exists( 'storefront_init_structured_data' ) ) {
 	 * Apply `storefront_structured_data` filter hook for structured data customization :)
 	 */
 	function storefront_init_structured_data() {
-		if ( is_home() || is_category() || is_date() || is_search() || is_single() && ( is_woocommerce_activated() && ! is_woocommerce() ) ) {
-			$image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'normal' );
-			$logo  = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
+		
+                $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'normal' );
 
-			$json['@type']            = 'BlogPosting';
 
-			$json['mainEntityOfPage'] = array(
-				'@type'                 => 'webpage',
-				'@id'                   => get_the_permalink(),
-			);
 
-			$json['image']            = array(
-				'@type'                 => 'ImageObject',
-				'url'                   => $image[0],
-				'width'                 => $image[1],
-				'height'                => $image[2],
-			);
+                $json['image']            = array(
+                        '@type'                 => 'ImageObject',
+                        'url'                   => $image[0],
+                        'width'                 => $image[1],
+                        'height'                => $image[2],
+                );
 
-			$json['publisher']        = array(
-				'@type'                 => 'organization',
-				'name'                  => get_bloginfo( 'name' ),
-				'logo'                  => array(
-					'@type'               => 'ImageObject',
-					'url'                 => $logo[0],
-					'width'               => $logo[1],
-					'height'              => $logo[2],
-				),
-			);
+                
 
-			$json['author']           = array(
-				'@type'                 => 'person',
-				'name'                  => get_the_author(),
-			);
-
-			$json['datePublished']    = get_post_time( 'c' );
-			$json['dateModified']     = get_the_modified_date( 'c' );
-			$json['name']             = get_the_title();
-			$json['headline']         = get_the_title();
-			$json['description']      = get_the_excerpt();
-		} elseif ( is_page() ) {
+                $json['name']             = get_the_title();                
+                $json['description']      = get_the_excerpt();
+                $json['publisher']        = array(
+                        '@type'                 => 'Organization',
+                        'name'                  => 'atelier Bourgeons',
+                        'url'                   => 'https://www.atelierbourgeons.com',
+                        'logo'                  => array(
+                                                                            '@type'                 => 'ImageObject',
+                                                                            'url'                   => 'https://www.atelierbourgeons.com/wp-content/themes/atelierbourgeons/img/logo_seul_1-1.png'
+                                                    ),
+                        'brand'                 => 'atelier Bourgeons', 
+                        'sameAs'                 => array(
+                                                    'https://www.instagram.com/atelier_bourgeons/',
+                                                    'https://www.facebook.com/atelierbourgeons/'
+                                                ),
+                        'founder'               => array(
+                                                    '@type'                 => 'Person',
+                                                    'familyName'            => 'Mié',
+                                                    'givenName'             => 'MANABE',
+                                                    'gender'                => 'http://schema.org/Female',
+                                                    'jobTitle'              => 'Fashion Designer, Entrepreneur',
+                                                    'sameAs'                 => array(
+                                                        'https://www.linkedin.com/in/mié-manabé-9a169a67/'
+                                                    )
+                                                ),
+                        'contactPoint'          => array(
+                                                    '@type' => 'ContactPoint',
+                                                    'email' => 'contact@atelierbourgeons.com',
+                                                    'availableLanguage' => '["FRENCH","JAPANESE","ENGLISH"]',
+                                                    'areaServed' => '["FR","JP","EN"]',
+                                                    'contactType' => 'sales contact point',
+                                                    'url' =>  'https://www.atelierbourgeons.com/'
+                        )
+                );
+                
+                if ( is_page() ) {
 			$json['@type']            = 'WebPage';
-			$json['url']              = get_the_permalink();
-			$json['name']             = get_the_title();
-			$json['description']      = get_the_excerpt();
-		}
+                        $json['url']              = get_the_permalink();
+                        
+		}                
+                else if (  is_product() ) {                    
+                        $product = get_product( get_the_ID() );
+                        $json['@type']            = 'Product';
+                        $json['name']             = get_the_title();
+                        $json['description']             = $product->get_description( 'view'  );
+                        $json['url']              = get_the_permalink();
+                        
+                        $thumb = get_post_thumbnail_id();
+			if ( $thumb ) {
+				$image_url = wp_get_attachment_image_src( $thumb, 'shop_single' );
+                                $json['image'] = $image_url[0];
+			}
+                        $brand = get_the_terms( $product->id, 'pa_brand');
+                        if(is_array($brand)) {
+                            $json['brand'] = array ( 
+                                  '@type' => 'Thing',
+                                   'name' =>  array_shift($brand)->name
+                                );
+                        }
+                        
+                        
+                        $my_price = 0;
+                        $currency='EUR';                        
+                        if(pll_current_language()== 'ja') {
+                            $my_price = EURToJPY( $product->get_price() ) ;
+                            $currency='JPY';
+                        }
+                        else {
+                            $my_price = $product->get_price() ;
+                            $currency='EUR';
+                        }
+                        
+                        $json['offers'] = array ( 
+                            '@type' => 'Offer',
+                            'price' => $my_price,
+                            'priceCurrency' => $currency,
+                            'availability' => storefront_fix_availability( $options['availability'] ),
+                            'url' =>    get_permalink(),
+                            'seller' => array(
+                                '@type'                 => 'organization',
+                                'name'                  => 'atelier Bourgeons',
+                                'url'                   => 'https://www.atelierbourgeons.com',
+                                'logo'                  => array(
+                                                                '@type'                 => 'ImageObject',
+                                                                'url'                   => 'https://www.atelierbourgeons.com/wp-content/themes/atelierbourgeons/img/logo_seul_1-1.png'
+                                                            ),
+                                'brand'                 => 'atelier Bourgeons', 
+                                'sameAs'                 => array(
+                                                            'https://www.instagram.com/atelier_bourgeons/',
+                                                            'https://www.facebook.com/atelierbourgeons/'
+                                                            ),
+                                'founder'               => array(
+                                                            '@type'                 => 'Person',
+                                                            'familyName'            => 'Mié',
+                                                            'givenName'             => 'MANABE',
+                                                            'gender'                => 'http://schema.org/Female',
+                                                            'jobTitle'              => 'Fashion Designer, Entrepreneur',
+                                                            'sameAs'                 => array(
+                                                                'https://www.linkedin.com/in/mié-manabé-9a169a67/'
+                                                            )
+                                                )       ,
+                                'contactPoint'          => array(
+                                                    '@type' => 'ContactPoint',
+                                                    'email' => 'contact@atelierbourgeons.com',
+                                                    'availableLanguage' => '["FRENCH","JAPANESE","ENGLISH"]',
+                                                    'areaServed' => '["FR","JP","EN"]',
+                                                    'contactType' => 'sales contact point',
+                                                    'url' =>  'https://www.atelierbourgeons.com/'
+                                )
+                            )
+                        );
+                }else if(is_single()) {
+                    $pageids = get_option('page_for_posts' );  
+                    global $post;
+                    //$blog_ids = $polylang->model->get_translations('page', $pageids); 
+                    $blog_ids = PLL()->model->post->get_translations($pageids);  
+
+                    $blog_id = $blog_ids[pll_current_language()];
+                    
+                    $json['@type']            = 'BlogPosting';
+                    $json['url']              = get_the_permalink();
+                    $json['headline']         = get_the_title();
+                    $json['datePublished']    = get_the_time('c', $post->ID);
+                    $json['dateModified']     = get_the_modified_date( 'c', $post );                    
+                    $json['author']           = array(
+                                                    '@type'                 => 'Person',
+                                                    'familyName'            => 'Mié',
+                                                    'givenName'             => 'MANABE',
+                                                    'gender'                => 'http://schema.org/Female',
+                                                    'jobTitle'              => 'Fashion Designer, Entrepreneur',
+                                                    'name'                  => 'Mié MANABE',
+                                                    'sameAs'                 => array(
+                                                        'https://www.linkedin.com/in/mié-manabé-9a169a67/'
+                                                        )
+                    );
+                    $json['mainEntityOfPage'] = array(
+                            '@type'                 => 'webpage',
+                            '@id'                   => 'https://www.atelierbourgeons.com/'//get_the_permalink($blog_id),
+                    );
+                    
+                }else if(is_home() ){
+                    $pageids = get_option('page_for_posts' );                      
+                    global $post;
+                    //$blog_ids = $polylang->model->get_translations('page', $pageids); 
+                    $blog_ids = PLL()->model->post->get_translations($pageids);  
+
+                    $blog_id = $blog_ids[pll_current_language()];
+                    $args = array(
+			'post_type' => 'post',
+			'posts_per_page' => 100
+			);
+                    $loop = new WP_Query( $args );
+                    if ( $loop->have_posts() ) {
+                            $position=1;
+                            $list_items = array();
+                            $json['type'] =  "ItemList";
+                            //$json['url'] =  get_the_permalink($blog_id);
+                            while ( $loop->have_posts() ) : $loop->the_post();
+                            $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'normal' );
+                            array_push( $list_items, array(
+                                '@type' => 'ListItem',
+                                'position' => $position++,                                
+                                //'url' => get_permalink(get_the_ID()),
+                                'item' => array (
+                                        '@type'            => 'BlogPosting',
+                                        'headline'         => get_the_title(),
+                                        'datePublished'    => get_the_time('c', $post->ID),
+                                        'dateModified'     => get_the_modified_date( 'c', $post ),
+                                        'author'           => array(
+                                                                    '@type'                 => 'Person',
+                                                                    'familyName'            => 'Mié',
+                                                                    'givenName'             => 'MANABE',
+                                                                    'gender'                => 'http://schema.org/Female',
+                                                                    'jobTitle'              => 'Fashion Designer, Entrepreneur',
+                                                                    'name'                  => 'Mié MANABE',                                            
+                                                                    'sameAs'                 => array(
+                                                                        'https://www.linkedin.com/in/mié-manabé-9a169a67/'
+                                                                        )
+                                                            ),
+                                        'image' => array(
+                                                        '@type'                 => 'ImageObject',
+                                                        'url'                   => $image[0],
+                                                        'width'                 => $image[1],
+                                                        'height'                => $image[2],
+                                        ),
+                                        'mainEntityOfPage' => array(
+                                                        '@type'                 => 'webpage',
+                                                        '@id'                   => get_the_permalink($blog_id),
+                                        ),
+
+                                        'publisher'        => array(
+                                                '@type'                 => 'Organization',
+                                                'name'                  => 'atelier Bourgeons',
+                                                'url'                   => 'https://www.atelierbourgeons.com',
+                                                'logo'                  => array(
+                                                                            '@type'                 => 'ImageObject',
+                                                                            'url'                   => 'https://www.atelierbourgeons.com/wp-content/themes/atelierbourgeons/img/logo_seul_1-1.png'
+                                                                            
+                                                                        ),
+                                                'brand'                 => 'atelier Bourgeons', 
+                                                'sameAs'                 => array(
+                                                                            'https://www.instagram.com/atelier_bourgeons/',
+                                                                            'https://www.facebook.com/atelierbourgeons/'
+                                                                        ),
+                                                'founder'               => array(
+                                                                            '@type'                 => 'Person',
+                                                                            'familyName'            => 'Mié',
+                                                                            'givenName'             => 'MANABE',
+                                                                            'gender'                => 'http://schema.org/Female',
+                                                                            'jobTitle'              => 'Fashion Designer, Entrepreneur',
+                                                                            'sameAs'                 => array(
+                                                                                'https://www.linkedin.com/in/mié-manabé-9a169a67/'
+                                                                            )
+                                                                        ),
+                                                'contactPoint'          => array(
+                                                                            '@type' => 'ContactPoint',
+                                                                            'email' => 'contact@atelierbourgeons.com',
+                                                                            'availableLanguage' => '["FRENCH","JAPANESE","ENGLISH"]',
+                                                                            'areaServed' => '["FR","JP","EN"]',
+                                                                            'contactType' => 'sales contact point',
+                                                                            'url' =>  'https://www.atelierbourgeons.com/'
+                                                )
+                                        ),
+                                        'url' => get_permalink(get_the_ID()),
+                                ),
+                               
+                                )
+                            );
+                            endwhile;
+                            $json['itemListElement'] = $list_items;
+
+                        wp_reset_postdata();
+
+                    }
+                }
+                        
 
 		if ( isset( $json ) ) {
 			Storefront::set_structured_data( apply_filters( 'storefront_structured_data', $json ) );

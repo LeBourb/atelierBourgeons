@@ -60,11 +60,14 @@ global $post, $product;
             <?php 
 
                 $tags =  get_the_terms($product->get_id(),'product_tag');
-                foreach ( $tags as $tag ) {
-                    if( !startsWith($tag->name,'['  ) && !endsWith($tag->name , ']' ) ) {
-                        echo '<span class="product-tags">' . $tag->name . '</span>' ; 
+                if(is_array($tags)){
+                    foreach ( $tags as $tag ) {
+                        if( !startsWith($tag->name,'['  ) && !endsWith($tag->name , ']' ) ) {
+                            echo '<span class="product-tags">' . $tag->name . '</span>' ; 
+                        }
                     }
                 }
+                
             ?>
             </li>
             <?php

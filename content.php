@@ -4,7 +4,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="" itemtype="http://schema.org/BlogPosting" style="display:none">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="" style="display:none">
 
 	<?php
 	/**

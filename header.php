@@ -44,7 +44,12 @@ function has_banner() {
     };
     
 </script>
-<?php wp_head(); ?>
+<?php 
+wp_head();
+
+storefront_init_structured_data();
+echo Storefront::get_structured_data();
+?>
 </head>
 
 <?php /*if (! is_front_page()) :*/
@@ -166,7 +171,7 @@ function has_banner() {
                                         echo '<li class="menu-elem"><a id="button-account" href="'. get_pll_wc_url( 'myaccount' ,null) .'">' . __('Account','atelierbourgeons') . '</a></li>';
                                     } 
                                         else { 
-                                        echo '<li class="menu-elem"><a id="button-signin">' . __('Sign In','atelierbourgeons') . '</a></li>';
+                                        echo '<li class="menu-elem"><a href="'. get_pll_wc_url( 'myaccount', null ) .'">' . __('Sign In','atelierbourgeons') . '</a></li>';
                                     } ?>
                                
                                 
@@ -267,7 +272,7 @@ function has_banner() {
         <?php 
             // Sub-Categories widget !
             // 
-            function display_subcats_from_parentcat_by_ID($parent_cat_ID) {
+            function display_subcats_from_parentcat_by_ID($parent_cat_ID, $current_cat_id = null) {
                 $args = array(
                    'hierarchical' => 1,
                    'show_option_none' => '',
@@ -285,7 +290,7 @@ function has_banner() {
                     if ( $thumbnail_id ) {
                         $image = wp_get_attachment_image_url( $thumbnail_id , 'large' );
                     }
-                    echo '<li class="sub-category-elem" thumbnail-url="'. $image . '" ><a href="'. $link .'" >' . $sc->name . '</a></li>';
+                    echo '<li class="sub-category-elem ' . ($sc->term_id == $current_cat_id ? 'selected ' : '' ) . '" thumbnail-url="'. $image . '" ><a href="'. $link .'" >' . $sc->name . '</a></li>';
                 }
             }
             // FOR HIDE/SHOW
@@ -432,7 +437,7 @@ function has_banner() {
         ?>
 
 	<div id="content" class="site-content " tabindex="-1">
-		<div class="col-full">
+		<div class="col-full cd-tabs">
 
 		<?php
         }

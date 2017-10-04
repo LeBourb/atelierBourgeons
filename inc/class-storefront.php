@@ -33,7 +33,7 @@ if ( ! class_exists( 'Storefront' ) ) :
 			add_filter( 'body_class',            array( $this, 'body_classes' ) );
 			add_filter( 'wp_page_menu_args',     array( $this, 'page_menu_args' ) );
 			add_action( 'enqueue_embed_scripts', array( $this, 'print_embed_styles' ) );
-			add_action( 'wp_footer',             array( $this, 'get_structured_data' ) );
+			//add_action( 'wp_footer',             array( $this, 'get_structured_data' ) );
 		}
 
 		/**
@@ -332,9 +332,9 @@ if ( ! class_exists( 'Storefront' ) ) :
 			$json['@context'] = 'http://schema.org/';
 
 			if ( count( self::$structured_data ) > 1 ) {
-				$json['@graph'] = self::$structured_data;
+                            $json['@graph'] = self::$structured_data;
 			} else {
-				$json = $json + self::$structured_data[0];
+                            $json = $json + self::$structured_data[0];
 			}
 
 			echo '<script type="application/ld+json">' . wp_json_encode( $json ) . '</script>';

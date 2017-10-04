@@ -34,6 +34,8 @@ require('amp-woocommerce.php');
 require ('wp-custom-taxonomy-image.php');
 require ('wp-custom-taxonomy-attachment.php');
 
+
+
 /**
  * Storefront  functions.
  *
@@ -142,10 +144,16 @@ function get_pll_url($lang)
               
         require ('inc/init.php');    
         
+
+        //REMOVE json-ld de yoast SEO
+        remove_all_actions( 'wpseo_json_ld' );
+        
         wp_register_script( 'child-jquery', get_template_directory_uri() . '/js/jquery-3.1.1.min.js'); 
         wp_enqueue_script('child-jquery');
         wp_enqueue_style( 'font-awesome-post-style', get_template_directory_uri() . '/css/font-awesome.min.css' );
         wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style-storefront.min.css' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/style-storefront.min.css' )  );
+        
+        
         
         if(is_front_page()) {                     
             wp_register_style('style-homepage', get_template_directory_uri() . '/css/homepage.min.css', array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/homepage.min.css' )  );
@@ -153,7 +161,7 @@ function get_pll_url($lang)
             
             
         } else if ( is_pll_wc('shop') || is_shop() || is_product() || is_product_category() || is_pll_wc('cart')){
-            wp_enqueue_style( 'shop-style', get_template_directory_uri() . '/css/shop.css' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/shop.css' )  );
+            wp_enqueue_style( 'shop-style', get_template_directory_uri() . '/css/shop.min.css' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/shop.min.css' )  );
             
             wp_enqueue_script( 'jquery-ui-js', get_template_directory_uri() . '/js/jquery-ui-1.12.1.min.js',  array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/js/jquery-ui-1.12.1.min.js' ));
             wp_enqueue_style( 'jquery-ui-css', get_template_directory_uri() . '/css/jquery-ui-1.12.1.min.css',  array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/css/jquery-ui-1.12.1.min.css' ) );
@@ -168,6 +176,10 @@ function get_pll_url($lang)
             
             wp_register_style( 'lightboxcss', get_template_directory_uri() . '/css/lightbox.min.css' );
             wp_enqueue_style('lightboxcss');
+            
+            
+            wp_register_script('responsive-tabbed-navjs', get_template_directory_uri() . '/js/responsive-tabbed-nav.min.js' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/js/responsive-tabbed-nav.min.js' ));
+            wp_enqueue_script('responsive-tabbed-navjs');
            
             // infinite scroll
             wp_enqueue_script( 'yith-infs-js', get_template_directory_uri() . '/js/yith-infs.min.js' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/js/yith-infs.min.js' ));
@@ -238,7 +250,7 @@ function get_pll_url($lang)
         wp_register_script( 'menu-stylejs', get_template_directory_uri() . '/js/menu.min.js', array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/js/menu.min.js' )  );
         wp_enqueue_script('menu-stylejs');
         
-       // wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style-storefront.min.css' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/style-storefront.min.css' )  );
+       // wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style-storefront.css' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/style-storefront.min.css' )  );
         wp_enqueue_style( 'force-ab-style', get_template_directory_uri() . '/style.min.css' , array(), filemtime( getcwd() .  '/wp-content/themes/atelierbourgeons/style.min.css' )  );
         
         
@@ -555,6 +567,8 @@ function pll_get_product($product,$lang) {
     $_pf = new WC_Product_Factory();
     return $_pf->get_product($product_id);    
 }
+
+
 
 // woocommerce_cart_collaterals hook.
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display');

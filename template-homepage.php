@@ -38,7 +38,7 @@
 
 <?php  
     echo '<style>';
-    if( pll_current_language() == 'fr') {
+    if( function_exists('pll_current_language') && pll_current_language() == 'fr') {
         echo '
         @font-face{
             font-family: IM_FELL;
@@ -47,7 +47,7 @@
         #text-field-homepage {
             font-family: IM_FELL;
         }';
-    }else if (pll_current_language() == 'ja') {
+    }else if ( function_exists('pll_current_language') && pll_current_language() == 'ja') {
         echo '
         @font-face {
             font-family: Utsukushi;

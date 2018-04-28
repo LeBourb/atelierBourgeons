@@ -45,7 +45,7 @@ function has_banner() {
 wp_head();
 
 storefront_init_structured_data();
-echo Storefront::get_structured_data();
+//echo Storefront::get_structured_data();
 ?>
 </head>
 
@@ -53,19 +53,27 @@ echo Storefront::get_structured_data();
     $pageids = get_option('page_for_posts' );  
     global $polylang;
     //$blog_ids = $polylang->model->get_translations('page', $pageids); 
-    $blog_ids = PLL()->model->post->get_translations($pageids);  
+    $blog_ids = $pageids;
+    if(function_exists('PLL')) {
+        $blog_ids = PLL()->model->post->get_translations($pageids);  
+        $blog_id = $blog_ids[pll_current_language()];
+    }
     
-    $blog_id = $blog_ids[pll_current_language()];
 
     $shop_id = wc_get_page_id( 'shop' );
-    $shop_ids = PLL()->model->post->get_translations($shop_id);  
-    $shop_id = $shop_ids[pll_current_language()];    
-    
+    if( function_exists('PLL')) {
+        $shop_ids = PLL()->model->post->get_translations($shop_id);  
+        $shop_id = $shop_ids[pll_current_language()];    
+    }
     $url_fr = get_pll_url('fr');
     $url_en = get_pll_url('en');
     $url_jp = get_pll_url('ja');
     
-    $cur_lang = pll_current_language(); 
+    $cur_lang = 'fr';
+    if( function_exists('pll_current_language')) {
+        $cur_lang = pll_current_language(); 
+    }
+    
                     
     function get_signin () {
         wc_get_template( 'myaccount/form-login.php' );
@@ -108,7 +116,7 @@ echo Storefront::get_structured_data();
 
       
 	<?php
-        $cur_lang = pll_current_language(); 
+        
                 global $wp;
                 //$current_url = add_query_arg( $wp->query_string, '', home_url( $wp->request ) );
                 //$current_url = the_permalink();

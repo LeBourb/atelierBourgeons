@@ -879,7 +879,7 @@ if ( ! function_exists( 'storefront_init_structured_data' ) ) {
                         
                         $my_price = 0;
                         $currency='EUR';                        
-                        if(pll_current_language()== 'ja') {
+                        if(function_exists('pll_current_language') && pll_current_language()== 'ja') {
                             $my_price = EURToJPY( $product->get_price() ) ;
                             $currency='JPY';
                         }
@@ -892,7 +892,7 @@ if ( ! function_exists( 'storefront_init_structured_data' ) ) {
                             '@type' => 'Offer',
                             'price' => $my_price,
                             'priceCurrency' => $currency,
-                            'availability' => storefront_fix_availability( $options['availability'] ),
+                            //'availability' => storefront_fix_availability( $options['availability'] ),
                             'url' =>    get_permalink(),
                             'seller' => array(
                                 '@type'                 => 'organization',
@@ -960,9 +960,11 @@ if ( ! function_exists( 'storefront_init_structured_data' ) ) {
                     $pageids = get_option('page_for_posts' );                      
                     global $post;
                     //$blog_ids = $polylang->model->get_translations('page', $pageids); 
-                    $blog_ids = PLL()->model->post->get_translations($pageids);  
-
-                    $blog_id = $blog_ids[pll_current_language()];
+                    if(function_exists('PLL')) {
+                        $blog_ids = PLL()->model->post->get_translations($pageids);  
+                        $blog_id = $blog_ids[pll_current_language()];
+                    } 
+                    $blog_id = $pageids[0];
                     $args = array(
 			'post_type' => 'post',
 			'posts_per_page' => 100

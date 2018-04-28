@@ -208,7 +208,7 @@ add_filter( 'woocommerce_package_rates', 'atelierb_package_rates', 10, 2 );
                         
                         //$cart_item_data['data']->adjust_price('10000');
                         $product           = $cart_item_data['data'];
-                        if(pll_current_language() == 'ja') { 
+                        if(function_exists('pll_current_language') && pll_current_language() == 'ja') { 
                             $product->set_price(EURToJPY($cart_item_data['data']->price));
                         }
                         

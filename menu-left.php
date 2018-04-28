@@ -65,7 +65,8 @@
             ));            
             foreach($pages as $page){
                 // Check if page is in the current language. 
-                if( pll_get_post_language($page->ID) == pll_current_language() ) {
+                
+                if( function_exists('pll_get_post_language') && pll_get_post_language($page->ID) == pll_current_language() ) {
                      echo '<li class="menu-item" ><a href="' . get_page_link($page->ID) . '">' . get_the_title( $page ) . '</a></li>';
                 }
             }
@@ -75,7 +76,7 @@
             ));            
             foreach($pages_s as $page){
                 // Check if page is in the current language. 
-                if( pll_get_post_language($page->ID) == pll_current_language() ) {
+                if( function_exists('pll_get_post_language') && pll_get_post_language($page->ID) == pll_current_language() ) {
                      echo '<li class="menu-item" ><a href="' . get_page_link($page->ID) . '">' . get_the_title( $page ) . '</a></li>';
                 }
             }
@@ -97,5 +98,5 @@
         <li class="menu-item"><a href="<?php echo get_pll_page_by_title("Help") . '/#payment'; ?>"> <?php _e('Payment','atelierbourgeons'); ?> </a></li>
     </div>
     
-    <li class="menu-item langue" ><a href="<?php if( pll_current_language() == 'ja' ) echo get_permalink(pll_get_post(get_the_ID() , 'fr'));  ?>"><h5 class="flag-icon flag-icon-fr <?php if( pll_current_language() == 'fr' ) echo 'current';  ?>"></h5></a><a href="<?php if( pll_current_language() == 'fr' ) echo get_permalink(pll_get_post(get_the_ID() , 'ja'));  ?>"><h5 class="flag-icon flag-icon-jp <?php if( pll_current_language() == 'ja' ) echo 'current';  ?>"></h5></span></a></li>
+    <li class="menu-item langue" ><a href="<?php if( function_exists('pll_get_post_language') && pll_current_language() == 'ja' ) echo get_permalink(pll_get_post(get_the_ID() , 'fr'));  ?>"><h5 class="flag-icon flag-icon-fr <?php if( function_exists('pll_get_post_language') && pll_current_language() == 'fr' ) echo 'current';  ?>"></h5></a><a href="<?php if( function_exists('pll_get_post_language') && pll_current_language() == 'fr' ) echo get_permalink(pll_get_post(get_the_ID() , 'ja'));  ?>"><h5 class="flag-icon flag-icon-jp <?php if( function_exists('pll_get_post_language') && pll_current_language() == 'ja' ) echo 'current';  ?>"></h5></span></a></li>
 </div>

@@ -20,6 +20,7 @@
             .title {
                 font-family: Modesty;
                 font-size: 5em;
+                font-weight: 200;
                 text-align: center;
                 margin: 0;
                 margin-bottom: 0.1em;
@@ -32,20 +33,18 @@
             }
             .about-text.ja .title {
                 font-family: Utsukushi;
-                font-size: 2em;
-                text-align: center;
-                margin: 0;
-                margin-bottom: 0.1em;
+                text-align: center;                
             }';
         }
     ?>
     
 </style>
-</head>
-<body style="height:auto;width:100%;">
-    <?php 
+<?php 
     get_header(); 
  ?>
+</head>
+<body style="height:auto;width:100%;">
+    
     <ul id="inline-menu">
         <li class="<?php if(is_page("About")) echo "current"; ?>"><a href="<?php echo get_pll_page_by_title("About");  ?>"><?php echo __( 'About', 'atelierbourgeons' );?></a></li>
         <li class="<?php if(is_page("Products")) echo "current"; ?>"><a href="<?php echo get_pll_page_by_title("Products");  ?>"><?php echo __( 'Our products & Services', 'atelierbourgeons' );?></a></li>

@@ -8,9 +8,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-08-31 17:31+0200\n"
+"PO-Revision-Date: 2017-10-04 16:52+0200\n"
 "Language-Team: EMAIL@ADDRESS\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.0.4\n"
 "Last-Translator: \n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Language: fr_FR\n"
@@ -124,17 +124,29 @@ msgstr "Politique des Cookies"
 msgid "Original Collection"
 msgstr "Collections Originales"
 
+msgid "Fabrics and Accessories Title"
+msgstr "Tissus & Accessoires"
+
 msgid "Fabrics and Accessories"
-msgstr "<p>Tissus & Accessoires</p>Dans un monde de consommation, on trouve beaucoup de matières premières de haute qualité abandonnées dans des entrepôts. On appelle cela des chutes car, dans le processus de fabrication industriel, elle ne sont pas rentables. Atelier Bourgeons donne vie à ces matières inutilisées : nous les achetons aux maisons de créations ou aux professionnels et nous les transformons. Chaque nouvelle matière est ensuite intégrée à un modèle de la collection et, associée à des accessoires vintage, devient une création originale et une pièce unique."
+msgstr "Dans un monde de consommation, on trouve beaucoup de matières premières de haute qualité abandonnées dans des entrepôts. On appelle cela des chutes car, dans le processus de fabrication industriel, elle ne sont pas rentables. Atelier Bourgeons donne vie à ces matières inutilisées : nous les achetons aux maisons de créations ou aux professionnels et nous les transformons. Chaque nouvelle matière est ensuite intégrée à un modèle de la collection et, associée à des accessoires vintage, devient une création originale et une pièce unique."
+
+msgid "Design and Production Title"
+msgstr "Creation & Fabrication"
 
 msgid "Design and Production"
-msgstr "<p>Creation & Fabrication</p> Ce qui guide le processus de création de nos collections c’est l’idée d’offrir à chaque femme ‘‘un charme intemporel en parfaite harmonie avec le rétro et le moderne’’ pour leur permettre d’exprimer leur personnalité, loin des tendances qui les enferment. Chaque pièce est entièrement confectionnée au sein de l’atelier à la manière d’une maison de haute couture."
+msgstr "Ce qui guide le processus de création de nos collections c’est l’idée d’offrir à chaque femme ‘‘un charme intemporel en parfaite harmonie avec le rétro et le moderne’’ pour leur permettre d’exprimer leur personnalité, loin des tendances qui les enferment. Chaque pièce est entièrement confectionnée au sein de l’atelier à la manière d’une maison de haute couture."
+
+msgid "Card, Label, Packaging Title"
+msgstr "Carte, Griffe, Emballage"
 
 msgid "Card, Label, Packaging"
-msgstr "<p>Carte, Griffe, Emballage</p>Les griffes sont fabriquées en coton organique en Italie.La toile utilisée lors la création du patronage est ensuite recyclée pour fabriquer les étiquettes de compositions et de tailles.Les produits utilisés pour l’emballage sont tous fabriqués à partir de matières recyclées. L’ensemble des emballages d’expédition sont recyclables, excepté le papier kraft imperméable et le ruban adhésif utilisés pour protéger les produits pendant le transport..Nous proposons des rubans et des cartes pour vos emballages cadeau. Vous trouverez plus d’informations ici."
+msgstr "Les griffes sont fabriquées en coton organique en Italie.La toile utilisée lors la création du patronage est ensuite recyclée pour fabriquer les étiquettes de compositions et de tailles.Les produits utilisés pour l’emballage sont tous fabriqués à partir de matières recyclées. L’ensemble des emballages d’expédition sont recyclables, excepté le papier kraft imperméable et le ruban adhésif utilisés pour protéger les produits pendant le transport..Nous proposons des rubans et des cartes pour vos emballages cadeau. Vous trouverez plus d’informations ici."
+
+msgid "Vintage and Second Hand Title"
+msgstr "Vintage & Seconde main Vetements customises"
 
 msgid "Vintage and Second Hand"
-msgstr "<p class=\"title\">Vintage & Seconde main Vetements customises</p><li class=\"text\">atelier Bourgeons propose en parallèle de ses collections originales des vêtements et accessoires de seconde main provenant de puces, magasins de recyclage et boutiques solidaires. <br>Dans un processus de recréativité, chaque pièce est étudiée dans l’atelier et peut faire l’objet de retouches ou customisations selon les besoins.<br>Les détails et informations sont consultables sur la page de chaque articles de notre E-boutique.</li>"
+msgstr "atelier Bourgeons propose en parallèle de ses collections originales des vêtements et accessoires de seconde main provenant de puces, magasins de recyclage et boutiques solidaires. <br>Dans un processus de recréativité, chaque pièce est étudiée dans l’atelier et peut faire l’objet de retouches ou customisations selon les besoins.<br>Les détails et informations sont consultables sur la page de chaque articles de notre E-boutique."
 
 msgid "Tailor-made clothes"
 msgstr "<p class=\"concept title\">Vetement sur-mesure</p><li class=\"concept text\">Il n’est pas toujours facile de trouver le vêtement que vous aimez à votre taille,  surtout lorsqu’il sera porté pour une occasion particulière comme un mariage. Nous vous proposons de créer ensemble dans notre atelier une pièce unique à votre goût et parfaitement ajustée à votre taille en 5 étapes.</li>"

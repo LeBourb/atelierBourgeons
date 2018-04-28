@@ -18,7 +18,7 @@
         <img src ="<?php echo get_site_url() . "/wp-content/themes/atelierbourgeons/img/about/About.jpg"; ?>" />
     </div>
     <div class="about-text <?php if(pll_current_language()=='ja') echo 'ja'; ?>">
-        <div><p class="title"><?php _e( 'about', 'atelierbourgeons' );?></p>
+        <div><h2 class="title"><?php _e( 'about', 'atelierbourgeons' );?></h2>
         <li class="text"><?php _e( 'about bourgeons', 'atelierbourgeons' );?></li>
         </div>
     </div>
@@ -30,7 +30,7 @@
         <img src ="<?php echo get_site_url() . "/wp-content/themes/atelierbourgeons/img/about/Concept.jpg"; ?>" />
     </div>
     <div class="about-text <?php if(pll_current_language()=='ja') echo 'ja'; ?>">
-        <div><p class="title"><?php _e( 'Concept', 'atelierbourgeons' );?></p>
+        <div><h2 class="title"><?php _e( 'Concept', 'atelierbourgeons' );?></h2>
         <li class="text"><?php _e( 'Concept bourgeons', 'atelierbourgeons' );?></li>
         </div>
     </div>    
@@ -42,7 +42,7 @@
         <img src ="<?php echo get_site_url(); echo "/wp-content/themes/atelierbourgeons/img/about/Creator.jpg"; ?>" />
     </div>
     <div  class="about-text <?php if(pll_current_language()=='ja') echo 'ja'; ?>">
-        <div><p class="title"><?php _e( 'Creatrice', 'atelierbourgeons' );?></p>
+        <div><h2 class="title"><?php _e( 'Creatrice', 'atelierbourgeons' );?></h2>
         <li class="text"><?php _e( 'Creatrice bourgeons', 'atelierbourgeons' );?></li>
         </div>
     </div>    

@@ -19,8 +19,8 @@
 <div class="parallax">
     <img src ="<?php echo get_site_url() . "/wp-content/themes/atelierbourgeons/img/about/Fabrics.jpg"; ?>" />
 </div>
-<div class="about-text <?php if(pll_current_language()=='ja') echo 'ja'; ?>">
-    <div>
+<div class="about-text <?php if(pll_current_language()=='ja') echo 'ja'; ?>">    
+    <div><h2 class="title"><?php _e( 'Fabrics and Accessories Title', 'atelierbourgeons' );?></h2>
     <li class="text"><?php _e( 'Fabrics and Accessories', 'atelierbourgeons' );?></li>
     </div>
 </div>
@@ -34,6 +34,7 @@
 </div>
 <div class="about-text <?php if(pll_current_language()=='ja') echo 'ja'; ?>">
     <div>
+    <h2 class="title"><?php _e( 'Design and Production Title', 'atelierbourgeons' );?></h2>
     <li class="text"><?php _e( 'Design and Production', 'atelierbourgeons' );?></li>
     </div>
 </div>
@@ -47,6 +48,7 @@
 </div>
 <div class="about-text <?php if(pll_current_language()=='ja') echo 'ja'; ?>">
     <div>
+    <h2 class="title"><?php _e( 'Card, Label, Packaging Title', 'atelierbourgeons' );?></h2>
     <li class="text"><?php _e( 'Card, Label, Packaging', 'atelierbourgeons' );?></li>
     </div>
 </div>
@@ -60,6 +62,7 @@
 </div>
 <div class="about-text <?php if(pll_current_language()=='ja') echo 'ja'; ?>">
     <div>
+    <h2 class="title"><?php _e( 'Vintage and Second Hand Title', 'atelierbourgeons' );?></h2>
     <li class="text"><?php _e( 'Vintage and Second Hand', 'atelierbourgeons' );?></li>
     </div>
 </div>

@@ -34,10 +34,7 @@ function has_banner() {
 <html <?php language_attributes(); ?> <?php /*storefront_html_tag_schema();*/ ?>>
 
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<LINK REL="SHORTCUT ICON" href="<?php echo get_site_url (); ?>/wp-content/themes/atelierbourgeons/ico/logo_seul.ico">
+<?php require 'header-meta.php'; ?>
 <script>
     function gotohome() {
         window.location.href="<?php echo get_home_url();?>";

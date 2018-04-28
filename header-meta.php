@@ -9,13 +9,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta name="application-name" content="atelier Bourgeons">
-<meta name="theme-color" content="#121f2d">
+<meta name="theme-color" content="#36384c">
 <meta property="og:site_name" content="atelier Bourgeons">
-<!--<title><?php //_e('meta-title','atelierbourgeons'); ?></title>
-<meta name="title" itemprop="name" content="<?php //_e('meta-title','atelierbourgeons'); ?>">
-<meta name="description" itemprop="description" content="<?php //_e('meta-description','atelierbourgeons'); ?>">-->
 <meta name="notify:enabled" content="false">
 <meta name="google-site-verification" content="8QlrOpSvQYNLMI6IiXZpEidW_GuwD7SOZrwV_3dkIHU" />
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<LINK REL="SHORTCUT ICON" href="<?php echo get_site_url (); ?>/wp-content/themes/atelierbourgeons/ico/logo_seul.ico">
 <style>                    
     @font-face {
          font-family: Modesty;

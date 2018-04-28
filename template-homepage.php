@@ -36,30 +36,31 @@
 <html <?php language_attributes();  ?> ><?php /*storefront_html_tag_schema();*/ ?>
 <head>
 
-<?php  echo '<style>';
-        if( pll_current_language() == 'fr') {
-            echo '
-            @font-face{
-                font-family: IM_FELL;
-                src: url(' . get_site_url () . '/wp-content/themes/atelierbourgeons/fonts/IMFeFCsc28P.ttf);
-            }
-            #text-field-homepage {
-                font-family: IM_FELL;
-            }';
-        }else if (pll_current_language() == 'ja') {
-            echo '
-            @font-face {
-                font-family: Utsukushi;
-                src: url(' . get_site_url () . '/wp-content/themes/atelierbourgeons/fonts/02UtsukushiMincho.ttf);
-            }
-            #text-field-homepage {
-                font-family: Utsukushi;
-                font-size: 1.3em;
-            }';
+<?php  
+    echo '<style>';
+    if( pll_current_language() == 'fr') {
+        echo '
+        @font-face{
+            font-family: IM_FELL;
+            src: url(' . get_site_url () . '/wp-content/themes/atelierbourgeons/fonts/IMFeFCsc28P.ttf);
         }
-        echo '</style>';
+        #text-field-homepage {
+            font-family: IM_FELL;
+        }';
+    }else if (pll_current_language() == 'ja') {
+        echo '
+        @font-face {
+            font-family: Utsukushi;
+            src: url(' . get_site_url () . '/wp-content/themes/atelierbourgeons/fonts/02UtsukushiMincho.ttf);
+        }
+        #text-field-homepage {
+            font-family: Utsukushi;
+            font-size: 1.3em;
+        }';
+    }
+    echo '</style>';  
 
-        require 'header-meta.php'; 
+    get_header();
 ?>
     
 </head>
@@ -99,7 +100,6 @@
         <!--<div style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-color: rgb(255, 255, 255); display: block;" class="loader-background"></div>-->
     </div>
 
-    <?php get_header();//wp_head(); ?>
   
    <script id='custom-homepage' type="text/javascript">
         $(window).on("load", function() {

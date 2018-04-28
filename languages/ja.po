@@ -8,9 +8,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-08-31 21:19+0200\n"
+"PO-Revision-Date: 2017-10-04 16:52+0200\n"
 "Language-Team: EMAIL@ADDRESS\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.0.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "Last-Translator: \n"
@@ -122,20 +122,35 @@ msgstr "クッキー（Cookie）の利用"
 msgid "Original Collection"
 msgstr " Original Collection "
 
+msgid "Fabrics and Accessories Title"
+msgstr "Fabrics and Accessories"
+
 msgid "Fabrics and Accessories"
-msgstr "<p class=\"title\">Fabrics and Accessories</p>モノが溢れている今の世の中には、まだ使えても倉庫に埋もれていたり、捨てられていく魅力的な素材が沢山あります。そんな彼らの良さをもっと伝えたくて、服の素材には一度表舞台から降りてしまったものを選んで使用しています。小さな布切れも、パズルのピースをはめ込むようにさりげなく服の中へ取り入れて、遊び心をプラス。アクセントにあしらうフランスらしいヴィンテージボタンやリボンも、ちょっとしたこだわりです。"
+msgstr "モノが溢れている今の世の中には、まだ使えても倉庫に埋もれていたり、捨てられていく魅力的な素材が沢山あります。そんな彼らの良さをもっと伝えたくて、服の素材には一度表舞台から降りてしまったものを選んで使用しています。小さな布切れも、パズルのピースをはめ込むようにさりげなく服の中へ取り入れて、遊び心をプラス。アクセントにあしらうフランスらしいヴィンテージボタンやリボンも、ちょっとしたこだわりです。"
+
+msgid "Design and Production Title"
+msgstr "Design and Creation"
 
 msgid "Design and Production"
-msgstr "<p class=\"title\">Design and Creation</p>レトロな雰囲気と新しさが微妙にマッチしたときの、独特な面白さ。次々と入れ替わる「トレンド」だけに縛られず、あなたの“好き”や個性を素直に表せるような服創りを目指して。仮縫い用布をトルソーに沿わせながら形を作り、型紙(パターン)に起こしたら生地を裁断。その後縫いと修正を繰り返し、一枚の服が完成します。クチュールメゾンのように多くの工程を手作業で行い、細やかさと温もりのある服を皆さまへお届けします。"
+msgstr "レトロな雰囲気と新しさが微妙にマッチしたときの、独特な面白さ。次々と入れ替わる「トレンド」だけに縛られず、あなたの“好き”や個性を素直に表せるような服創りを目指して。仮縫い用布をトルソーに沿わせながら形を作り、型紙(パターン)に起こしたら生地を裁断。その後縫いと修正を繰り返し、一枚の服が完成します。クチュールメゾンのように多くの工程を手作業で行い、細やかさと温もりのある服を皆さまへお届けします。"
+
+msgid "Card, Label, Packaging Title"
+msgstr "Card, Label, Packaging"
 
 msgid "Card, Label, Packaging"
-msgstr "<p class=\"title\">Card, Label, Packaging</p>当アトリエでは、３R（リサイクル・リユース・リデュース）をモットーに、洋服の素材はもちろんタグや梱包も全てリサイクル ・エコフレンドリーなものを使用しています。配達BOXと包装紙は、使用後に再びリサイクル資源として分別していただけます。ブランドネームタグとラッピング用リボンは、オーガニックコットン100％のイタリア製です。洗濯表示ラベル&サイズタグは、使用済みの仮縫い用布(シーチング)を再利用して作っています。ギフト用にリボンとメッセージカードをお付けできます。詳しくはこちら"
+msgstr "当アトリエでは、３R（リサイクル・リユース・リデュース）をモットーに、洋服の素材はもちろんタグや梱包も全てリサイクル ・エコフレンドリーなものを使用しています。配達BOXと包装紙は、使用後に再びリサイクル資源として分別していただけます。ブランドネームタグとラッピング用リボンは、オーガニックコットン100％のイタリア製です。洗濯表示ラベル&サイズタグは、使用済みの仮縫い用布(シーチング)を再利用して作っています。ギフト用にリボンとメッセージカードをお付けできます。詳しくはこちら"
+
+msgid "Vintage and Second Hand Title"
+msgstr "Vintage, Second hand and Customised clothing"
 
 msgid "Vintage and Second Hand"
-msgstr "<p class=\"title\">Vintage, Second hand and Customised clothing<p/><li class=\"text\">atelier Bourgeonsでは、主にヨーロッパの蚤の市、ヴィンテージショップ、業者用の倉庫から仕入れる古着・中古服・小物も取り扱っています。より着やすく可愛い服を楽しんでいただけるよう、必要に応じてリサイズ・リメイクも行います。各商品の詳細については、Web shopの商品紹介ページをご覧ください。</li>"
+msgstr "atelier Bourgeonsでは、主にヨーロッパの蚤の市、ヴィンテージショップ、業者用の倉庫から仕入れる古着・中古服・小物も取り扱っています。より着やすく可愛い服を楽しんでいただけるよう、必要に応じてリサイズ・リメイクも行います。各商品の詳細については、Web shopの商品紹介ページをご覧ください。"
+
+msgid "Gift Wrapping text Title"
+msgstr "Gift Wrapping"
 
 msgid "Gift Wrapping text"
-msgstr "<p class=\"title\">Gift Wrapping<p/><li class=\"text\">プレゼント用に、リボンとメッセージカードをお付けできます(別料金)。ご希望の方は、Web shopの各商品ページにある【ギフトラッピング追加】欄に印をつけていただきますようお願いたします。</li>"
+msgstr "プレゼント用に、リボンとメッセージカードをお付けできます(別料金)。ご希望の方は、Web shopの各商品ページにある【ギフトラッピング追加】欄に印をつけていただきますようお願いたします。"
 
 # Custom-options.php
 msgid "\"%s\" is a required field."

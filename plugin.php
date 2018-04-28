@@ -32,7 +32,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                                                 
                                                 require_once( 'classes/class-wc-gmcf-settings.php' );
                                                 
-                                                $Google_Merchant_Center_obj = new WC_Google_Merchant_Center_Feed();
+                                                if(class_exists('WC_Google_Merchant_Center_Feed') ) {
+                                                    $Google_Merchant_Center_obj = new WC_Google_Merchant_Center_Feed();
+                                                }
 					
 					}
 					

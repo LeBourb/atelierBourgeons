@@ -40,8 +40,7 @@ section {
     background-color: white;
     margin-top: auto;
     margin-bottom:auto;
-    padding-top: 2em;
-    padding-bottom:2em;
+    padding: 2em;
     width:100%;
     max-width: 70em;
     margin-left: auto;
@@ -58,8 +57,8 @@ section {
 
 
 .text {
-    font-family: ""Avenir Next;
-    font-size: 0.9em;
+    font-size: 1.4em;
+    font-weight: 300;
     text-align: center;
 }
 
@@ -146,8 +145,6 @@ section {
 #inline-menu  li {
     margin: 0 25px;
     display: inline-block;
-    font-family: ""Avenir Next;
-
     cursor: pointer;
 }
 
@@ -192,24 +189,6 @@ pre code {
   white-space: pre;
 }
 
-footer {
-  background: #000;
-  color: #ddd;
-  padding: 30px 0 30px;
-  text-align: center;
-}
-
-footer a {
-  color: #ddd;
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: #eee;
-  text-decoration: underline;
-}
-
-
 @media all and (max-width: 1000px){
 
     .original > div {
@@ -221,15 +200,6 @@ footer a:hover {
         max-height:30em;
     }
 
-    .title {
-        font-size: 3em;
-        margin: 0;
-        line-height: 0.8em;
-    }
-
-    .text {
-        font-size: 1em;
-    }
 }
 
 .fee {
@@ -332,18 +302,6 @@ footer a:hover {
         margin-left: 2%;
     }
     
-    .parallax-container p.title,.container p.title {
-        padding-left: 1.4em;
-        padding-right: 1.4em;
-        font-size: 3em;
-        margin: 0em;
-    }
-    
-    .parallax-container .about-text.ja p.title , 
-    .container .about-text.ja  p.title.ja {        
-        font-size: 1.4em;
-    }
-    
     .parallax-container {
         height: auto!important;       
     }
@@ -351,13 +309,7 @@ footer a:hover {
     .parallax-container .about-text {
         padding:0;
     }
-    
-    .text {
-        font-size: 1em;
-        padding-left: 0.6em;
-        padding-right: 0.6em;
-    }
-    
+        
     .parallax-container .parallax {
         display: none;
     }
